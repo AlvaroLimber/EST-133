@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1588704742189.000,
+    "created" : 1588713166916.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3798632783",
-    "id" : "BAB3C413",
+    "hash" : "0",
+    "id" : "7D4553DC",
     "lastKnownWriteTime" : 1588712637,
-    "last_content_update" : 1588712637784,
+    "last_content_update" : 1588712637,
     "path" : "~/GitHub/EST-133/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
@@ -19,7 +19,7 @@
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 3,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"
