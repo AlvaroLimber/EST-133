@@ -8,7 +8,7 @@ site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 graphics: yes
-github-repo: alvarolimber/est-133
+github-repo: alvarolimber/EST-133
 pandoc_args: ["-Fpandoc-crossref"]
 ---
 # Prefacio {-}
