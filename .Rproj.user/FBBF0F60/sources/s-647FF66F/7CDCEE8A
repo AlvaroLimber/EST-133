@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "377063603",
+    "hash" : "2952122265",
     "id" : "7CDCEE8A",
-    "lastKnownWriteTime" : 1588268514,
-    "last_content_update" : 1588268514,
-    "path" : "C:/Users/ALVARO/Box/2020/umsa/est133/book_est1/1_descriptiva.Rmd",
+    "lastKnownWriteTime" : 1588711693,
+    "last_content_update" : 1588711693962,
+    "path" : "~/GitHub/EST-133/1_descriptiva.Rmd",
     "project_path" : "1_descriptiva.Rmd",
     "properties" : {
+        "cursorPosition" : "2,8",
+        "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [

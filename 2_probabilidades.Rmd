@@ -30,7 +30,7 @@ Ejercicios recomendados: Pg: 222. 1 al 8.
 
 ### Ejemplos de espacios muestrales
 
-1. El experimento: determinar el sexo de un niño/a recien nacido.
+1. El experimento: determinar el sexo de un niño/a recién nacido.
 
 $$\Omega=\{Femenino, Masculino \}$$
 

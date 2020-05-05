@@ -37,25 +37,9 @@ El libro inluye 5 capitulos, estos son:
 
 ## Software y acuerdos {-}
 
+El sofware de apoyo que se emplea es R, para la instalación y otros tutoriales se recomienda ver [acá](https://cran.r-project.org/)
+
 ```{r}
 sessionInfo()
 ```
-
-## Bases de datos {-}
-
-En este documento se emplearan 4 bases de datos del contecto Boliviano:
-
-1. Encuesta a Hogares 2018. Vivienda y Personas
-2. Encuesta de Demografia y Salud 1989 - 2008
-3. Encuesta de Niños, niñas y adolescentes 2016
-4. Computo oficial de las elecciones del 20 de Octubre de 2020
-5. Bases de datos de contagios, muertes y recpurados del COVID-19 del Johns Hopkins Institute.
-
-Estas bases de datos se encuentran disponibles en formato $.RData$ en el repositorio de Github del texto.
-
-## Agradecimiento  {-}
-
-Carito...
-
-# Acerca del autor {-}
 

@@ -1,6 +1,6 @@
 # Tema 1: Estadística Descriptiva
 
-## Introuducción
+## Introducción
 
 El arte de contar una historia con datos
 $X=\{2,3,4,5,6,71,3,5,7 \}$
