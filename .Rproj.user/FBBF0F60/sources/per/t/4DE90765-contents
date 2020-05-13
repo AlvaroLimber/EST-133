@@ -185,3 +185,38 @@ $P(escudo)=\frac{51}{100}=0.51$
 $$P(escudo)=1/3$$
 
 $$P(llueva_{hoy})=0.99$$
+
+### Algebra de Eventos
+
+> **Definición:** Sea $A$ un evento, Sea $\Sigma$ una clase de subconjuntos de $\Omega$
+
+$$
+\Sigma=\{A \in \Omega \}
+$$
+
+Esta es un algebra de eventos si:
+
+1. $\Omega \in \Sigma$ 
+2. Si $A\in \Sigma\Rightarrow A^C \in \Sigma$
+3. Si $A,B \in \Sigma \Rightarrow A \cup B \in \Sigma$
+
+> **Definición:** Se dice que $\Sigma$ es un $\sigma-algebra$
+
+1. $\Omega \in \Sigma$ 
+2. Si $A\in \Sigma\Rightarrow A^C \in \Sigma$
+3. Si $A_i \in \Sigma$ para $i=1,2, \ldots$ $\Rightarrow \cup_{i=1}^\infty A_i \in \Sigma$
+
+### Probabilidad de un evento
+
+> **Definición:** Una medida de probabilidad $P$ es una función, tal que:
+
+$$
+P:\begin{array}
+ && \Sigma &  \rightarrow & [0,1]\\
+ & \downarrow & & \downarrow \\
+ & A & \rightarrow & P(A)
+\end{array}
+$$
+
+
+

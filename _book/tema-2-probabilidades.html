@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-05-07" />
+<meta name="date" content="2020-05-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,7 +151,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#operaciones-con-los-eventos"><i class="fa fa-check"></i><b>2.4</b> Operaciones con los eventos</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#algunas-propiedades-sobre-las-operaciones-en-eventos"><i class="fa fa-check"></i><b>2.4.1</b> Algunas propiedades sobre las operaciones en eventos</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad-medida-de-incertidumbre"><i class="fa fa-check"></i><b>2.5</b> Probabilidad: Medida de incertidumbre</a></li>
+<li class="chapter" data-level="2.5" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad-medida-de-incertidumbre"><i class="fa fa-check"></i><b>2.5</b> Probabilidad: Medida de incertidumbre</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#algebra-de-eventos"><i class="fa fa-check"></i><b>2.5.1</b> Algebra de Eventos</a></li>
+<li class="chapter" data-level="2.5.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad-de-un-evento"><i class="fa fa-check"></i><b>2.5.2</b> Probabilidad de un evento</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -339,7 +342,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><span class="math display">\[P(escudo)=1/3\]</span></p>
 <p><span class="math display">\[P(llueva_{hoy})=0.99\]</span></p>
+<div id="algebra-de-eventos" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Algebra de Eventos</h3>
+<blockquote>
+<p><strong>Definición:</strong> Sea <span class="math inline">\(A\)</span> un evento, Sea <span class="math inline">\(\Sigma\)</span> una clase de subconjuntos de <span class="math inline">\(\Omega\)</span></p>
+</blockquote>
+<p><span class="math display">\[
+\Sigma=\{A \in \Omega \}
+\]</span></p>
+<p>Esta es un algebra de eventos si:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\Omega \in \Sigma\)</span></li>
+<li>Si <span class="math inline">\(A\in \Sigma\Rightarrow A^C \in \Sigma\)</span></li>
+<li>Si <span class="math inline">\(A,B \in \Sigma \Rightarrow A \cup B \in \Sigma\)</span></li>
+</ol>
+<blockquote>
+<p><strong>Definición:</strong> Se dice que <span class="math inline">\(\Sigma\)</span> es un <span class="math inline">\(\sigma-algebra\)</span></p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\Omega \in \Sigma\)</span></li>
+<li>Si <span class="math inline">\(A\in \Sigma\Rightarrow A^C \in \Sigma\)</span></li>
+<li>Si <span class="math inline">\(A_i \in \Sigma\)</span> para <span class="math inline">\(i=1,2, \ldots\)</span> <span class="math inline">\(\Rightarrow \cup_{i=1}^\infty A_i \in \Sigma\)</span></li>
+</ol>
+</div>
+<div id="probabilidad-de-un-evento" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Probabilidad de un evento</h3>
+<blockquote>
+<p><strong>Definición:</strong> Una medida de probabilidad <span class="math inline">\(P\)</span> es una función, tal que:</p>
+</blockquote>
+<p><span class="math display">\[
+P:\begin{array}
+ &amp; \Sigma &amp;  \rightarrow &amp; [0,1]\\
+ &amp; \downarrow &amp; &amp; \downarrow \\
+ &amp; A &amp; \rightarrow &amp; P(A)
+\end{array}
+\]</span></p>
 
+</div>
 </div>
 </div>
             </section>
