@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-05-19" />
+<meta name="date" content="2020-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -162,6 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5.3" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#propiedades"><i class="fa fa-check"></i><b>2.5.3</b> Propiedades</a></li>
 <li class="chapter" data-level="2.5.4" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#espacios-equiprobables"><i class="fa fa-check"></i><b>2.5.4</b> Espacios equiprobables</a></li>
 </ul></li>
+<li class="chapter" data-level="2.6" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad-condicional"><i class="fa fa-check"></i><b>2.6</b> Probabilidad Condicional</a></li>
 </ul></li>
 </ul>
 
@@ -544,8 +545,176 @@ P:\begin{array}
 </div>
 <div id="espacios-equiprobables" class="section level3">
 <h3><span class="header-section-number">2.5.4</span> Espacios equiprobables</h3>
-
+<p>Sea <span class="math inline">\(\Omega\)</span> un espacio muestral finito de tamaño <span class="math inline">\(n\)</span>,</p>
+<p><span class="math display">\[\Omega=\{w_1,w_2,\ldots,w_n\}\]</span></p>
+<blockquote>
+<p>Definición: Es una función que asigna las mismas probabilidades a todos los resultados del espacio muestral, es decir, todos los eventos simples tienen la misma probabilidad de ocurrencia.</p>
+</blockquote>
+<p><span class="math display">\[P(w_1)=P(w_2)=\ldots=P(w_n)=\frac{1}{n}\]</span></p>
+<p>Nota, tener en cuenta que <span class="math inline">\(w_i \cap w_j=\emptyset\)</span> para <span class="math inline">\(i\neq j\)</span> dado que los <span class="math inline">\(w_i\)</span> son eventos simples</p>
+<p><span class="math display">\[P(w_1 \cup w_2\cup \ldots \cup w_n)=P(\Omega)=1\]</span></p>
+<p><span class="math display">\[P(w_1 \cup w_2\cup \ldots \cup w_n)=P(w_1)+P(w_2)+\ldots+P(w_n)=1\]</span></p>
+<p>Ejemplo, el lazamiento de un dado legal genera un espacio muestral equiprobable. <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span>, <span class="math inline">\(P(1)=P(2)=\ldots=P(6)=\frac{1}{6}\)</span></p>
+<p>Ejemplo. En un hipódromo 4 caballos, <span class="math inline">\(A\)</span>,<span class="math inline">\(B\)</span>,<span class="math inline">\(C\)</span> y <span class="math inline">\(D\)</span> compiten. Suponiendo que todos los caballos tienen la misma probabilidad de ganar, calcular:</p>
+<ol style="list-style-type: decimal">
+<li>Probabilidad que gane el caballo <span class="math inline">\(A\)</span>. Resp. <span class="math inline">\(P(ganaA)=1/4\)</span></li>
+<li>Probabilidad que gane el caballo <span class="math inline">\(A\)</span> o el caballo <span class="math inline">\(D\)</span>. Resp. el evento de interés es <span class="math inline">\(A \cup D\)</span>, <span class="math inline">\(P(A\cup D)=P(A)+P(D)=1/4+1/4=1/2\)</span></li>
+</ol>
+<p>En el ejemplo anterior, tomemos ahora lo siguiente: <span class="math inline">\(A\)</span> tiene 2 veces mas probabilidades de ganar que <span class="math inline">\(B\)</span>; <span class="math inline">\(B\)</span> tiene 2 veces mas probabilidad de ganar que <span class="math inline">\(C\)</span> y <span class="math inline">\(C\)</span> tiene 2 veces mas probabilidades de ganar que <span class="math inline">\(D\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Probabilidad que gane el caballo <span class="math inline">\(A\)</span></li>
+<li>Probabilidad que gane el caballo <span class="math inline">\(A\)</span> o el caballo <span class="math inline">\(D\)</span>.</li>
+</ol>
+<p>Sean los eventos simples, <span class="math inline">\(w_1=gA=GanaA\)</span>, <span class="math inline">\(w_2=gB=GanaB\)</span>, <span class="math inline">\(w=gC=GanaC\)</span> y <span class="math inline">\(w_4=gD=GanaD\)</span></p>
+<p>Sabemos que: <span class="math inline">\(P(gA)=2*P(gB)=2*2*P(gC)=2*2*2*P(gD)=8*P(gD)\)</span></p>
+<p><span class="math display">\[P(gA)+P(gB)+P(gC)+P(gD)=1\]</span></p>
+<p><span class="math display">\[8*P(gD)+4*P(gD)+2*P(gD)+P(gD)=1\]</span></p>
+<p><span class="math display">\[P(gD)(8+4+2+1)=1\]</span>
+<span class="math display">\[P(gD)=\frac{1}{15}\]</span></p>
+<p>Asi, <span class="math inline">\(P(gD)=1/15\)</span>, <span class="math inline">\(P(gC)=2/15\)</span>, <span class="math inline">\(P(gB)=4/15\)</span>, <span class="math inline">\(P(gA)=8/15\)</span></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(P(gA)=8/15\)</span></li>
+<li><span class="math inline">\(P(gA\cup gD)=P(gA)+P(gD)=8/15+1/15=9/15\)</span></li>
+</ol>
+<p>Ejemplo. Se lanza un par de dados legales simultaneamente, encontrar las probabilidades:</p>
+<ol style="list-style-type: lower-alpha">
+<li>La suma sea menor que 4</li>
+<li>La suma sea 9</li>
+<li>El resultado del primer dado sea mayor que el segundo</li>
+</ol>
+<p><span class="math inline">\(\#\Omega=36\)</span>, <span class="math inline">\(P(d1=i,d2=j)=1/36\)</span> para <span class="math inline">\(i,j=1:6\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Resp.
+<span class="math display">\[P((1,1)\cup (1,2)\cup (2,1))=P(1,1)+P(1,2)+P(2,1)=1/36+1/36,1/36=3/36=1/12\]</span></p></li>
+<li><p>Resp.</p></li>
+</ol>
+<p><span class="math display">\[P(suma=9)=\frac{4}{36}\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Resp.</li>
+</ol>
+<p><span class="math display">\[P(d1&gt;d2)=\frac{15}{36}=\frac{5}{12}\]</span></p>
+<ul>
+<li><p>Ejercicio (7, pg243). Un lote continene 10 piezas buenas, 4 con defectos menores y 2 con defectos mayores. Se extraen 2 piezas al azar. Calcular:</p>
+<pre><code>  1. Calcular el tamaño del espacio muestral $\#\Omega=\binom{16}{2}=120$
+  2. Probabilidad que ambas sean perfectas </code></pre></li>
+</ul>
+<p><span class="math display">\[P(2perf)=\frac{\binom{10}{2}}{\binom{16}{2}}=\frac{45}{120}=\frac{15}{40}=\frac{3}{8}\]</span></p>
+<pre><code>    3. Probabilidad que por lo menos una sea perfecta
+    </code></pre>
+<p><span class="math display">\[P(1perf \cup 2perf)=P(1perf)+P(2perf)=\frac{\binom{10}{1}\binom{6}{1}}{\binom{16}{2}}+\frac{3}{8}=\frac{60}{120}+\frac{3}{8}=\frac{1}{2}+\frac{3}{8}=\frac{7}{8}\]</span></p>
+<pre><code>    4. Probabilidad que ninguna tenga un defecto mayorjihj
+    5. Probabilidad que ninguna sea perfecta
+    </code></pre>
+<ul>
+<li>Ejercicio (14, pg-244). Sea un dado, tal que la probabilidad de las distintas caras es proporcional al número de puntos inscritos en ellos. Hallar la probabilidad de obtener con este dado, un número par.</li>
+</ul>
+<p><span class="math display">\[\Omega=\{1,2,3,4,5,6\}\]</span></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co">#relativar </span></a>
+<a class="sourceLine" id="cb9-2" title="2">px&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)<span class="op">/</span><span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="kw">sum</span>(px[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)])</a></code></pre></div>
+<pre><code>## [1] 0.5714286</code></pre>
+<p><span class="math display">\[P(2,4,6)=P(2 \cup 4 \cup 6 )=P(2)+P(4)+P(6)=0.095+0.19+0.286=0.571\]</span></p>
+<ul>
+<li>Ejercicio (11, pg-244). Sea <span class="math inline">\(\Omega=\{x \in Z/ 1 \leq x \leq 200 \}\)</span>, donde <span class="math inline">\(Z\)</span> es el conjunto de los números enteros. Encuentre las probabilidades de los siguiente eventos.
++ <span class="math inline">\(A=\{x \in \Omega / x \text{ es divisible por }7 \}\)</span>
++ <span class="math inline">\(B=\{x \in \Omega / x=3n+10, n\in Z^+ \}\)</span>
++ <span class="math inline">\(C=\{x \in \Omega / x^2+1\leq 375 \}\)</span></li>
+</ul>
+<p>Para <span class="math inline">\(P(A)\)</span></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">sum</span>((<span class="dv">1</span><span class="op">:</span><span class="dv">200</span> <span class="op">%%</span><span class="st"> </span><span class="dv">7</span>)<span class="op">==</span><span class="dv">0</span>)</a></code></pre></div>
+<pre><code>## [1] 28</code></pre>
+<p><span class="math display">\[P(A)=\frac{\# A}{\# \Omega}=\frac{28}{200}=0.14\]</span></p>
+<p>Para <span class="math inline">\(P(B)\)</span></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">n&lt;-<span class="dv">1</span><span class="op">:</span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">sum</span>((<span class="dv">3</span><span class="op">*</span>n<span class="op">+</span><span class="dv">10</span>)<span class="op">&lt;=</span><span class="dv">200</span>)</a></code></pre></div>
+<pre><code>## [1] 63</code></pre>
+<p><span class="math display">\[P(B)=\frac{\# B}{\# \Omega}=\frac{63}{200}=0.315\]</span></p>
+<p><span class="math display">\[P(C)=\frac{\# C}{\# \Omega}=\frac{19}{200}=0.095\]</span></p>
 </div>
+</div>
+<div id="probabilidad-condicional" class="section level2">
+<h2><span class="header-section-number">2.6</span> Probabilidad Condicional</h2>
+<pre><code>    * Evaluamos dos eventos o más
+    * Conocer como se altera o cambia la probabilidad de un evento a partir de la ocurrencia de otro
+    </code></pre>
+<p>Ejemplos.</p>
+<pre><code>    * ¿Cuál es la probabilidad de aprobar la materia X dado que se tiene una nota de 20/30 en el primer parcial?
+    * Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?
+    * Una urna contine 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?
+    </code></pre>
+<blockquote>
+<p>Definición: Sean dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, tal que <span class="math inline">\(P(B)&gt;0\)</span>, la probabilidad condicional de que ocurra el evento <span class="math inline">\(A\)</span>, dado que ha ocurrido el evento <span class="math inline">\(B\)</span>, se define por:</p>
+</blockquote>
+<p><span class="math display">\[P(A/B)=\frac{P(A \cap B)}{P(B)}\]</span></p>
+<p>Nota: Cualquier condición que se de entre las probabilidades, afecta directamente el expacio muestral, esto depende de la relacion entre los eventos.</p>
+<p>Ejercicio: En la carrera de Informática van a existir elecciones para el director de carrera, existen 3 frentes y estos son <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, la carrera esta compuesta por 3 grupos de estudiantes, los políticos, los académicos y el resto, la estructura de votación según un sondeo a 200 estudiantes es:</p>
+<pre><code>    + Los políticos (50), 20 votan por A, 20 votan por B y 10 votan por C
+    + Los académicos que son (40), 10 votan por A, 10 votan por B y 20 votan por C
+    + El resto (110), 30 votan por A, 50 votan por B y el resto vota por C</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">A&lt;-<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">10</span>),<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>),<span class="kw">c</span>(<span class="dv">30</span>,<span class="dv">50</span>,<span class="dv">30</span>))</a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="kw">colnames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)</a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="kw">rownames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;POL&quot;</span>,<span class="st">&quot;ACA&quot;</span>,<span class="st">&quot;RES&quot;</span>)</a>
+<a class="sourceLine" id="cb18-4" title="4">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">addmargins</span>(A))</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">A</th>
+<th align="right">B</th>
+<th align="right">C</th>
+<th align="right">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>POL</td>
+<td align="right">20</td>
+<td align="right">20</td>
+<td align="right">10</td>
+<td align="right">50</td>
+</tr>
+<tr class="even">
+<td>ACA</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">20</td>
+<td align="right">40</td>
+</tr>
+<tr class="odd">
+<td>RES</td>
+<td align="right">30</td>
+<td align="right">50</td>
+<td align="right">30</td>
+<td align="right">110</td>
+</tr>
+<tr class="even">
+<td>Sum</td>
+<td align="right">60</td>
+<td align="right">80</td>
+<td align="right">60</td>
+<td align="right">200</td>
+</tr>
+</tbody>
+</table>
+<p>Encuentre</p>
+<pre><code>    * ¿Cuál es la probabilidad de que un estudiante académico vote por C?
+    </code></pre>
+<p><span class="math display">\[P(\text{vote C}/academico)=\frac{P(\text{vote C} \cap academico)}{P(academico)}=\frac{\frac{20}{200}}{\frac{40}{200}}=\frac{20}{40}=0.5\]</span></p>
+<pre><code>    * ¿Cuál es la probabilidad de que un estudiante político vote por A?
+    </code></pre>
+<p><span class="math display">\[P(\text{vote A}/politico)=\frac{20}{50}=0.4\]</span></p>
+<pre><code>    * ¿Cuál es la probabilidad de que gane el candidato B en estudiantes?</code></pre>
+<p><span class="math display">\[P(\text{gane B})=\frac{80}{200}=0.4\]</span></p>
+<pre><code>    * ¿Cuál es la probabilidad que un estudiante seleccionado al azar sea académico dado que votara por el candidato A?
+    </code></pre>
+<p><span class="math display">\[P(academico/\text{vote A})=\frac{10}{60}=\frac{1}{6}\]</span></p>
+<p>Ejercicios:</p>
+<ol style="list-style-type: decimal">
+<li>¿Cuál es la probabilidad de aprobar la materia X dado que se tiene una nota de 20/30 en el primer parcial?</li>
+<li>Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?</li>
+<li>Una urna contine 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?</li>
+</ol>
+
 </div>
 </div>
             </section>

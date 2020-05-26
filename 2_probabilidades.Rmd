@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Tema 2: Probabilidades
 
 ## Introducción
@@ -341,6 +346,170 @@ Ejercicios, demostrar:
 
 ### Espacios equiprobables
 
+Sea $\Omega$ un espacio muestral finito de tamaño $n$,
+
+$$\Omega=\{w_1,w_2,\ldots,w_n\}$$
+
+> Definición: Es una función que asigna las mismas probabilidades a todos los resultados del espacio muestral, es decir, todos los eventos simples tienen la misma probabilidad de ocurrencia.
+
+$$P(w_1)=P(w_2)=\ldots=P(w_n)=\frac{1}{n}$$
+
+Nota, tener en cuenta que $w_i \cap w_j=\emptyset$ para $i\neq j$ dado que los $w_i$ son eventos simples 
+
+$$P(w_1 \cup w_2\cup \ldots \cup w_n)=P(\Omega)=1$$
+
+$$P(w_1 \cup w_2\cup \ldots \cup w_n)=P(w_1)+P(w_2)+\ldots+P(w_n)=1$$
+
+Ejemplo, el lazamiento de un dado legal genera un espacio muestral equiprobable. $\Omega=\{1,2,3,4,5,6\}$, $P(1)=P(2)=\ldots=P(6)=\frac{1}{6}$
+
+Ejemplo. En un hipódromo 4 caballos, $A$,$B$,$C$ y $D$ compiten. Suponiendo que todos los caballos tienen la misma probabilidad de ganar, calcular:
+
+1. Probabilidad que gane el caballo $A$. Resp. $P(ganaA)=1/4$
+2. Probabilidad que gane el caballo $A$ o el caballo $D$. Resp. el evento de interés es $A \cup D$, $P(A\cup D)=P(A)+P(D)=1/4+1/4=1/2$
+
+En el ejemplo anterior, tomemos ahora lo siguiente: $A$ tiene 2 veces mas probabilidades de ganar que $B$; $B$ tiene 2 veces mas probabilidad de ganar que $C$ y $C$ tiene 2 veces mas probabilidades de ganar que $D$.
+
+1. Probabilidad que gane el caballo $A$
+2. Probabilidad que gane el caballo $A$ o el caballo $D$. 
+
+Sean los eventos simples, $w_1=gA=GanaA$, $w_2=gB=GanaB$, $w=gC=GanaC$ y $w_4=gD=GanaD$
+
+Sabemos que: $P(gA)=2*P(gB)=2*2*P(gC)=2*2*2*P(gD)=8*P(gD)$
+
+$$P(gA)+P(gB)+P(gC)+P(gD)=1$$
+
+$$8*P(gD)+4*P(gD)+2*P(gD)+P(gD)=1$$
+
+$$P(gD)(8+4+2+1)=1$$
+$$P(gD)=\frac{1}{15}$$
+
+Asi, $P(gD)=1/15$, $P(gC)=2/15$, $P(gB)=4/15$, $P(gA)=8/15$
+
+1. $P(gA)=8/15$
+2. $P(gA\cup gD)=P(gA)+P(gD)=8/15+1/15=9/15$
+
+Ejemplo. Se lanza un par de dados legales simultaneamente, encontrar las probabilidades:
+
+a) La suma sea menor que 4 
+b) La suma sea 9
+c) El resultado del primer dado sea mayor que el segundo
+
+$\#\Omega=36$, $P(d1=i,d2=j)=1/36$ para $i,j=1:6$
+
+a) Resp. 
+$$P((1,1)\cup (1,2)\cup (2,1))=P(1,1)+P(1,2)+P(2,1)=1/36+1/36,1/36=3/36=1/12$$
+
+b) Resp. 
+
+$$P(suma=9)=\frac{4}{36}$$
+
+c) Resp.
+
+$$P(d1>d2)=\frac{15}{36}=\frac{5}{12}$$
 
 
+* Ejercicio (7, pg243). Un lote continene 10 piezas buenas, 4 con defectos menores y 2 con defectos mayores. Se extraen 2 piezas al azar. Calcular:
 
+        1. Calcular el tamaño del espacio muestral $\#\Omega=\binom{16}{2}=120$
+        2. Probabilidad que ambas sean perfectas 
+        
+$$P(2perf)=\frac{\binom{10}{2}}{\binom{16}{2}}=\frac{45}{120}=\frac{15}{40}=\frac{3}{8}$$
+        
+        3. Probabilidad que por lo menos una sea perfecta
+        
+$$P(1perf \cup 2perf)=P(1perf)+P(2perf)=\frac{\binom{10}{1}\binom{6}{1}}{\binom{16}{2}}+\frac{3}{8}=\frac{60}{120}+\frac{3}{8}=\frac{1}{2}+\frac{3}{8}=\frac{7}{8}$$
+        
+        4. Probabilidad que ninguna tenga un defecto mayorjihj
+        5. Probabilidad que ninguna sea perfecta
+        
+* Ejercicio (14, pg-244). Sea un dado, tal que la probabilidad de las distintas caras es proporcional al número de puntos inscritos en ellos. Hallar la probabilidad de obtener con este dado, un número par.
+
+$$\Omega=\{1,2,3,4,5,6\}$$
+
+```{r}
+#relativar 
+px<-(1:6)/sum(1:6)
+sum(px[c(2,4,6)])
+```
+
+$$P(2,4,6)=P(2 \cup 4 \cup 6 )=P(2)+P(4)+P(6)=0.095+0.19+0.286=0.571$$
+
+* Ejercicio (11, pg-244). Sea $\Omega=\{x \in Z/ 1 \leq x \leq 200 \}$, donde $Z$ es el conjunto de los números enteros. Encuentre las probabilidades de los siguiente eventos.
+        + $A=\{x \in \Omega / x \text{ es divisible por }7 \}$
+        + $B=\{x \in \Omega / x=3n+10, n\in Z^+ \}$
+        + $C=\{x \in \Omega / x^2+1\leq 375 \}$
+
+
+Para $P(A)$
+
+```{r}
+sum((1:200 %% 7)==0)
+```
+
+$$P(A)=\frac{\# A}{\# \Omega}=\frac{28}{200}=0.14$$
+
+Para $P(B)$
+
+```{r}
+n<-1:100
+sum((3*n+10)<=200)
+```
+
+$$P(B)=\frac{\# B}{\# \Omega}=\frac{63}{200}=0.315$$
+
+$$P(C)=\frac{\# C}{\# \Omega}=\frac{19}{200}=0.095$$
+
+
+## Probabilidad Condicional
+
+        * Evaluamos dos eventos o más
+        * Conocer como se altera o cambia la probabilidad de un evento a partir de la ocurrencia de otro
+        
+Ejemplos.
+
+        * ¿Cuál es la probabilidad de aprobar la materia X dado que se tiene una nota de 20/30 en el primer parcial?
+        * Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?
+        * Una urna contine 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?
+        
+> Definición: Sean dos eventos $A$ y $B$, tal que $P(B)>0$, la probabilidad condicional de que ocurra el evento $A$, dado que ha ocurrido el evento $B$, se define por:
+
+$$P(A/B)=\frac{P(A \cap B)}{P(B)}$$
+
+Nota: Cualquier condición que se de entre las probabilidades, afecta directamente el expacio muestral, esto depende de la relacion entre los eventos.
+
+Ejercicio: En la carrera de Informática van a existir elecciones para el director de carrera, existen 3 frentes y estos son $A$, $B$, $C$, la carrera esta compuesta por 3 grupos de estudiantes, los políticos, los académicos y el resto, la estructura de votación según un sondeo a 200 estudiantes es:
+
+        + Los políticos (50), 20 votan por A, 20 votan por B y 10 votan por C
+        + Los académicos que son (40), 10 votan por A, 10 votan por B y 20 votan por C
+        + El resto (110), 30 votan por A, 50 votan por B y el resto vota por C
+
+```{r}
+A<-rbind(c(20,20,10),c(10,10,20),c(30,50,30))
+colnames(A)<-c("A","B","C")
+rownames(A)<-c("POL","ACA","RES")
+knitr::kable(addmargins(A))
+```
+
+Encuentre
+
+        * ¿Cuál es la probabilidad de que un estudiante académico vote por C?
+        
+$$P(\text{vote C}/academico)=\frac{P(\text{vote C} \cap academico)}{P(academico)}=\frac{\frac{20}{200}}{\frac{40}{200}}=\frac{20}{40}=0.5$$
+
+        * ¿Cuál es la probabilidad de que un estudiante político vote por A?
+        
+$$P(\text{vote A}/politico)=\frac{20}{50}=0.4$$
+        
+        * ¿Cuál es la probabilidad de que gane el candidato B en estudiantes?
+
+$$P(\text{gane B})=\frac{80}{200}=0.4$$
+
+        * ¿Cuál es la probabilidad que un estudiante seleccionado al azar sea académico dado que votara por el candidato A?
+        
+$$P(academico/\text{vote A})=\frac{10}{60}=\frac{1}{6}$$        
+
+Ejercicios:
+
+1. ¿Cuál es la probabilidad de aprobar la materia X dado que se tiene una nota de 20/30 en el primer parcial?
+2. Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?
+3. Una urna contine 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?
