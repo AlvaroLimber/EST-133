@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-05-26" />
+<meta name="date" content="2020-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -162,7 +162,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5.3" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#propiedades"><i class="fa fa-check"></i><b>2.5.3</b> Propiedades</a></li>
 <li class="chapter" data-level="2.5.4" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#espacios-equiprobables"><i class="fa fa-check"></i><b>2.5.4</b> Espacios equiprobables</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad-condicional"><i class="fa fa-check"></i><b>2.6</b> Probabilidad Condicional</a></li>
+<li class="chapter" data-level="2.6" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad-condicional"><i class="fa fa-check"></i><b>2.6</b> Probabilidad Condicional</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#regla-de-la-multiplicación"><i class="fa fa-check"></i><b>2.6.1</b> Regla de la multiplicación</a></li>
+<li class="chapter" data-level="2.6.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#independencia-de-eventos"><i class="fa fa-check"></i><b>2.6.2</b> Independencia de Eventos</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -286,8 +289,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>El experimento es medir el tiempo de vida de un componente electrónico de un aparato (horas).</li>
 </ol>
 <p><span class="math display">\[\Omega=\{x: x \geq 0  \}\]</span></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>),<span class="dt">type=</span><span class="st">&quot;b&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>),<span class="dt">type=</span><span class="st">&quot;b&quot;</span>)</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>El experimento es: Seleccionar 3 personas de un grupo de 50 personas, describir el espacio muestral y el tamaño de este.
 + <span class="math inline">\(\# \Omega= C_3^{50}=19600\)</span>
@@ -461,39 +464,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Probabilidad frecuentista:</li>
 </ul>
 <p><span class="math display">\[P(A)=lim_{n \rightarrow \infty} \frac{n(A)}{n} =lim_{n \rightarrow \infty} \frac{\# A_n}{n}\]</span></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co">#0=cara, 1=escudo</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">set.seed</span>(<span class="dv">999</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3">aux&lt;-<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb2-4" title="4">aux</a></code></pre></div>
-<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 1 0 0 0 1 1 1 1 1
-##   [38] 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 0 1 0 1 0 1 1 1 1 1 1 0 1 1 0 0 0 0 0 0
-##   [75] 1 0 1 0 0 0 0 1 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 1
-##  [112] 0 1 0 0 1 1 0 0 1 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 0
-##  [149] 1 0 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0 1 0 1 1 0
-##  [186] 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 1 0 0 0 0 0 0
-##  [223] 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1
-##  [260] 0 0 0 0 1 1 0 0 0 0 1 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 1 0
-##  [297] 0 0 1 0 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1 1 0 1
-##  [334] 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 1 1 0 1 0 0 1
-##  [371] 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1
-##  [408] 1 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 1 0 0 0
-##  [445] 0 1 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0 0
-##  [482] 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 0 0 0 1
-##  [519] 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1 1 1 0 1 0 1 0 1 1 0 1 1 1 0 1
-##  [556] 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0
-##  [593] 0 1 1 0 1 1 0 1 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0 0 1 1 0 1
-##  [630] 1 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1
-##  [667] 1 0 0 0 1 0 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0 0 0 0 1 1 1 0
-##  [704] 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0 1 0 0 1 1 0 1 1 0 1 0 1
-##  [741] 0 0 1 0 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0
-##  [778] 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1 0 0 0 1
-##  [815] 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 0 1 0 1 0 0 1 1 1 0 0 0 0 0
-##  [852] 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1
-##  [889] 0 1 1 1 0 1 0 1 1 0 1 0 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1 0 1 0 0 0 1 0
-##  [926] 1 0 1 0 0 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1 0 0
-##  [963] 0 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1 0 1 1 0 0 0 1 1 1 0 1 0 1
-## [1000] 1</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">sum</span>(aux)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="co">#0=cara, 1=escudo</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="kw">set.seed</span>(<span class="dv">999</span>)</a>
+<a class="sourceLine" id="cb21-3" title="3">aux&lt;-<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb21-4" title="4">aux</a></code></pre></div>
+<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 1 0
+##   [31] 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 0 1 0 1 0 1
+##   [61] 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 0 0 0 1 1 0
+##   [91] 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 1
+##  [121] 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0
+##  [151] 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0
+##  [181] 1 0 1 1 0 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 1 0 0 1 1
+##  [211] 0 1 1 0 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0
+##  [241] 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 1 1 0 0 0 0 1
+##  [271] 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 1 0 0 0 1 0
+##  [301] 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1
+##  [331] 1 0 1 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0 0 0 1 1 0 0 1 1 0
+##  [361] 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0
+##  [391] 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0
+##  [421] 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1
+##  [451] 0 1 1 1 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0
+##  [481] 0 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1
+##  [511] 0 1 1 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1
+##  [541] 1 1 0 1 0 1 0 1 1 0 1 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1
+##  [571] 1 0 0 1 0 0 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1 0 1 1 0 1
+##  [601] 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0 0 1 1 0 1 1
+##  [631] 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 1 1 0 1
+##  [661] 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0
+##  [691] 0 1 0 0 0 0 0 0 0 1 1 1 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1
+##  [721] 1 1 1 1 1 1 0 0 1 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0
+##  [751] 1 1 0 0 0 0 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1
+##  [781] 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1
+##  [811] 0 0 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 0 1 0
+##  [841] 1 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0
+##  [871] 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 1 0
+##  [901] 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0
+##  [931] 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1
+##  [961] 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1 0 1 1 0
+##  [991] 0 0 1 1 1 0 1 0 1 1</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">sum</span>(aux)</a></code></pre></div>
 <pre><code>## [1] 496</code></pre>
 <p><span class="math inline">\(P(escudo)=\frac{496}{1000}=0.496\)</span></p>
 <ul>
@@ -609,9 +618,9 @@ P:\begin{array}
 <li>Ejercicio (14, pg-244). Sea un dado, tal que la probabilidad de las distintas caras es proporcional al número de puntos inscritos en ellos. Hallar la probabilidad de obtener con este dado, un número par.</li>
 </ul>
 <p><span class="math display">\[\Omega=\{1,2,3,4,5,6\}\]</span></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co">#relativar </span></a>
-<a class="sourceLine" id="cb9-2" title="2">px&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)<span class="op">/</span><span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb9-3" title="3"><span class="kw">sum</span>(px[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)])</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="co">#relativar </span></a>
+<a class="sourceLine" id="cb28-2" title="2">px&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)<span class="op">/</span><span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb28-3" title="3"><span class="kw">sum</span>(px[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)])</a></code></pre></div>
 <pre><code>## [1] 0.5714286</code></pre>
 <p><span class="math display">\[P(2,4,6)=P(2 \cup 4 \cup 6 )=P(2)+P(4)+P(6)=0.095+0.19+0.286=0.571\]</span></p>
 <ul>
@@ -621,12 +630,12 @@ P:\begin{array}
 + <span class="math inline">\(C=\{x \in \Omega / x^2+1\leq 375 \}\)</span></li>
 </ul>
 <p>Para <span class="math inline">\(P(A)\)</span></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">sum</span>((<span class="dv">1</span><span class="op">:</span><span class="dv">200</span> <span class="op">%%</span><span class="st"> </span><span class="dv">7</span>)<span class="op">==</span><span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">sum</span>((<span class="dv">1</span><span class="op">:</span><span class="dv">200</span> <span class="op">%%</span><span class="st"> </span><span class="dv">7</span>)<span class="op">==</span><span class="dv">0</span>)</a></code></pre></div>
 <pre><code>## [1] 28</code></pre>
 <p><span class="math display">\[P(A)=\frac{\# A}{\# \Omega}=\frac{28}{200}=0.14\]</span></p>
 <p>Para <span class="math inline">\(P(B)\)</span></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">n&lt;-<span class="dv">1</span><span class="op">:</span><span class="dv">100</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="kw">sum</span>((<span class="dv">3</span><span class="op">*</span>n<span class="op">+</span><span class="dv">10</span>)<span class="op">&lt;=</span><span class="dv">200</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">n&lt;-<span class="dv">1</span><span class="op">:</span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="kw">sum</span>((<span class="dv">3</span><span class="op">*</span>n<span class="op">+</span><span class="dv">10</span>)<span class="op">&lt;=</span><span class="dv">200</span>)</a></code></pre></div>
 <pre><code>## [1] 63</code></pre>
 <p><span class="math display">\[P(B)=\frac{\# B}{\# \Omega}=\frac{63}{200}=0.315\]</span></p>
 <p><span class="math display">\[P(C)=\frac{\# C}{\# \Omega}=\frac{19}{200}=0.095\]</span></p>
@@ -651,10 +660,10 @@ P:\begin{array}
 <pre><code>    + Los políticos (50), 20 votan por A, 20 votan por B y 10 votan por C
     + Los académicos que son (40), 10 votan por A, 10 votan por B y 20 votan por C
     + El resto (110), 30 votan por A, 50 votan por B y el resto vota por C</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">A&lt;-<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">10</span>),<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>),<span class="kw">c</span>(<span class="dv">30</span>,<span class="dv">50</span>,<span class="dv">30</span>))</a>
-<a class="sourceLine" id="cb18-2" title="2"><span class="kw">colnames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)</a>
-<a class="sourceLine" id="cb18-3" title="3"><span class="kw">rownames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;POL&quot;</span>,<span class="st">&quot;ACA&quot;</span>,<span class="st">&quot;RES&quot;</span>)</a>
-<a class="sourceLine" id="cb18-4" title="4">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">addmargins</span>(A))</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">A&lt;-<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">10</span>),<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>),<span class="kw">c</span>(<span class="dv">30</span>,<span class="dv">50</span>,<span class="dv">30</span>))</a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="kw">colnames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)</a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="kw">rownames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;POL&quot;</span>,<span class="st">&quot;ACA&quot;</span>,<span class="st">&quot;RES&quot;</span>)</a>
+<a class="sourceLine" id="cb37-4" title="4">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">addmargins</span>(A))</a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -710,11 +719,132 @@ P:\begin{array}
 <p><span class="math display">\[P(academico/\text{vote A})=\frac{10}{60}=\frac{1}{6}\]</span></p>
 <p>Ejercicios:</p>
 <ol style="list-style-type: decimal">
-<li>¿Cuál es la probabilidad de aprobar la materia X dado que se tiene una nota de 20/30 en el primer parcial?</li>
+<li>¿Cuál es la probabilidad de aprobar la materia <span class="math inline">\(X\)</span> dado que se tiene una nota de 20/30 en el primer parcial?</li>
 <li>Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?</li>
 <li>Una urna contine 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?</li>
 </ol>
+<p><strong>Ejemplo</strong></p>
+<p>Se tiene la tabla de admisión de 356 estudiantes de la UMSA, de acuerdo a la carrera y su municipio de procedencia</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">A&lt;-<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">20</span>),<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">60</span>,<span class="dv">50</span>,<span class="dv">10</span>),<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>))</a>
+<a class="sourceLine" id="cb42-2" title="2"><span class="kw">colnames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;ING&quot;</span>,<span class="st">&quot;ECO&quot;</span>,<span class="st">&quot;INF&quot;</span>,<span class="st">&quot;DER&quot;</span>)</a>
+<a class="sourceLine" id="cb42-3" title="3"><span class="kw">rownames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;LAPAZ&quot;</span>,<span class="st">&quot;ELALTO&quot;</span>,<span class="st">&quot;VIACHA&quot;</span>)</a>
+<a class="sourceLine" id="cb42-4" title="4">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">addmargins</span>(A))</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">ING</th>
+<th align="right">ECO</th>
+<th align="right">INF</th>
+<th align="right">DER</th>
+<th align="right">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LAPAZ</td>
+<td align="right">100</td>
+<td align="right">40</td>
+<td align="right">50</td>
+<td align="right">20</td>
+<td align="right">210</td>
+</tr>
+<tr class="even">
+<td>ELALTO</td>
+<td align="right">20</td>
+<td align="right">60</td>
+<td align="right">50</td>
+<td align="right">10</td>
+<td align="right">140</td>
+</tr>
+<tr class="odd">
+<td>VIACHA</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td>Sum</td>
+<td align="right">125</td>
+<td align="right">100</td>
+<td align="right">101</td>
+<td align="right">30</td>
+<td align="right">356</td>
+</tr>
+</tbody>
+</table>
+<p>Sea el experimento seleccionar a un estudiante al azar del grupo de 356.</p>
+<ul>
+<li>Cuál es la probabilidad que el estudiantes sea de la carrera de economía, sabiendo que vive en El Alto</li>
+</ul>
+<p><span class="math display">\[P(ECO/ELALTO)=\frac{60}{140}\]</span></p>
+<ul>
+<li>Cuál es la probabilidad que el estudiantes sea de la carrera de informática, sabiendo que vive en La Paz</li>
+</ul>
+<p><span class="math display">\[P(INF/LAPAZ)=\frac{50}{210}\]</span></p>
+<ul>
+<li>Cuál es la probabilidad que el estudiantes sea de Viacha, sabiendo que esta en la carrera de ingenieria.</li>
+</ul>
+<p><span class="math display">\[P(VIACHA/ING)=\frac{5}{125}\]</span></p>
+<ul>
+<li>Cuál es la probabilidad que el estudiantes sea de Viacha ó de La Paz, sabiendo que esta en la carrera de ingenieria.</li>
+</ul>
+<p><span class="math display">\[P(VIACHA\cup LAPAZ  /ING)=\frac{P((VIACHA\cup LAPAZ)\cap ING)}{P(ING)}=\frac{P((VIACHA\cap ING)\cup (LAPAZ\cap ING))}{P(ING)}\]</span></p>
+<p><span class="math display">\[P(VIACHA\cup LAPAZ  /ING)=\frac{P(VIACHA\cap ING)+P(LAPAZ\cap ING)}{P(ING)}\]</span>
+<span class="math display">\[P(VIACHA\cup LAPAZ  /ING)=P(VIACHA/ING)+P(LAPAZ/ING)=5/125+100/125=\frac{105}{125}\]</span></p>
+<p>Por el principio de que Viacha y La Paz son eventos mutuamente excluyentes (axioma 3)</p>
+<div id="regla-de-la-multiplicación" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> Regla de la multiplicación</h3>
+<p><span class="math display">\[P(B/A)=\frac{P(B\cap A)}{P(A)}\]</span></p>
+<p><span class="math display">\[P(A \cap B)=P(B)P(A/B)=P(A)P(B/A)\]</span></p>
+<blockquote>
+<p>Teorema: La regla de la multiplicación</p>
+</blockquote>
+<p>Sean <span class="math inline">\(A_1,A_2,\ldots,A_k\)</span> eventos, de tal forma que:</p>
+<p><span class="math display">\[P(A_1\cap A_2 \cap \ldots \cap A_{k-1})&gt;0\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[P(A_1\cap A_2 \cap \ldots \cap A_{k})=P(A_1)P(A_2/A_1)P(A_3/A_1\cap A_2)\ldots P(A_k/A_1 \cap A_2 \cap \ldots A_{k-1}) \]</span></p>
+<p>Tarea 1, demostrar:</p>
+<p><span class="math display">\[P(A \cap B \cap C)=P(A)P(B/A)P(C/A\cap B)\]</span></p>
+</div>
+<div id="independencia-de-eventos" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Independencia de Eventos</h3>
+<blockquote>
+<p>Definición: Sean los eventos A y B, estos son independientes si la ocurrencia de A no interfiere la ocurrencia de B y viceversa.</p>
+</blockquote>
+<p>Si A y B son independientes,</p>
+<p><span class="math display">\[P(A\cap B)=P(A)*P(B)\]</span></p>
+<p>Ejemplo. Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?</p>
+<p><span class="math display">\[P(D=5/C)=\frac{P(D=5 \cap C)}{P(C)}=\frac{P(D=5)P(C)}{P(C)}=P(D=5)=1/6\]</span></p>
+<p>Nota: Si A y B son independientes, entonces:</p>
+<p><span class="math display">\[P(A/B)=P(A)\]</span>
+<span class="math display">\[P(B/A)=P(B)\]</span></p>
+<p>Ejemplos,</p>
+<ol style="list-style-type: decimal">
+<li>Dado que <span class="math inline">\(P(A)=1/2\)</span>, <span class="math inline">\(P(B)=1/3\)</span>, <span class="math inline">\(P(A\cap B)=1/4\)</span></li>
+</ol>
+<ul>
+<li><span class="math inline">\(P(A \cup B)=P(A)+P(B)-P(A\cap B)=1/2+1/3-1/4=7/12\)</span></li>
+<li><span class="math inline">\(P(A/B)=\frac{P(A \cap B)}{P(B)}=\frac{1/4}{1/3}=3/4\)</span></li>
+<li><span class="math inline">\(P(B/A)=\frac{P(B\cap A)}{P(A)}=\frac{1/4}{1/2}=1/2\)</span></li>
+<li><span class="math inline">\(P(B^C/A^C)=\frac{P(B^C\cap A^c)}{P(A^c)}=\frac{P((A\cup B)^c)}{1-P(A)}=\frac{1-P(A\cup B)}{1-P(A)}=\frac{1-7/12}{1-1/2}=5/6\)</span></li>
+</ul>
+<p>Ejercicio (5, pg 287). Un restaurante ofrece dos tipos de comida, ensalada o plato de carne. 20% de los clientes hombres prefieren la ensalada, 30% de las mujeres escogen carne, el 75% de los clientes son hombres. Considere los siguientes eventos.</p>
+<ul>
+<li>H: es hombre, M: es mujer, E: prefiere la ensalda, C: Prefiere Carne.</li>
+</ul>
+<p>Se pide calcular:</p>
+<ul>
+<li><span class="math inline">\(P(E/H)\)</span>, <span class="math inline">\(P(C/M)\)</span></li>
+<li><span class="math inline">\(P(E \cap H)\)</span>, <span class="math inline">\(P(C \cap M)\)</span></li>
+<li><span class="math inline">\(P(M/E)\)</span></li>
+</ul>
+<p>Tarea 2: Resolver el ejercicio 6 de la página 287 del libro.
+Tarea 3: Leer del libro el desde el apartado 5.6.3 (Teorema de la probabilidad total y el teorema de bayes) hasta la página 267.</p>
 
+</div>
 </div>
 </div>
             </section>

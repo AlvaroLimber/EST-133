@@ -510,6 +510,106 @@ $$P(academico/\text{vote A})=\frac{10}{60}=\frac{1}{6}$$
 
 Ejercicios:
 
-1. ¿Cuál es la probabilidad de aprobar la materia X dado que se tiene una nota de 20/30 en el primer parcial?
+1. ¿Cuál es la probabilidad de aprobar la materia $X$ dado que se tiene una nota de 20/30 en el primer parcial?
 2. Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?
 3. Una urna contine 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?
+
+**Ejemplo**
+
+Se tiene la tabla de admisión de 356 estudiantes de la UMSA, de acuerdo a la carrera y su municipio de procedencia
+
+```{r}
+A<-rbind(c(100,40,50,20),c(20,60,50,10),c(5,0,1,0))
+colnames(A)<-c("ING","ECO","INF","DER")
+rownames(A)<-c("LAPAZ","ELALTO","VIACHA")
+knitr::kable(addmargins(A))
+```
+
+Sea el experimento seleccionar a un estudiante al azar del grupo de 356.
+
+* Cuál es la probabilidad que el estudiantes sea de la carrera de economía, sabiendo que vive en El Alto
+
+$$P(ECO/ELALTO)=\frac{60}{140}$$
+
+* Cuál es la probabilidad que el estudiantes sea de la carrera de informática, sabiendo que vive en La Paz
+
+$$P(INF/LAPAZ)=\frac{50}{210}$$
+
+* Cuál es la probabilidad que el estudiantes sea de Viacha, sabiendo que esta en la carrera de ingenieria.
+
+$$P(VIACHA/ING)=\frac{5}{125}$$
+
+* Cuál es la probabilidad que el estudiantes sea de Viacha ó de La Paz, sabiendo que esta en la carrera de ingenieria.
+
+$$P(VIACHA\cup LAPAZ  /ING)=\frac{P((VIACHA\cup LAPAZ)\cap ING)}{P(ING)}=\frac{P((VIACHA\cap ING)\cup (LAPAZ\cap ING))}{P(ING)}$$
+
+$$P(VIACHA\cup LAPAZ  /ING)=\frac{P(VIACHA\cap ING)+P(LAPAZ\cap ING)}{P(ING)}$$
+$$P(VIACHA\cup LAPAZ  /ING)=P(VIACHA/ING)+P(LAPAZ/ING)=5/125+100/125=\frac{105}{125}$$
+
+Por el principio de que Viacha y La Paz son eventos mutuamente excluyentes (axioma 3)
+
+
+### Regla de la multiplicación
+
+$$P(B/A)=\frac{P(B\cap A)}{P(A)}$$
+
+
+$$P(A \cap B)=P(B)P(A/B)=P(A)P(B/A)$$
+
+
+> Teorema: La regla de la multiplicación
+
+Sean $A_1,A_2,\ldots,A_k$ eventos, de tal forma que:
+
+$$P(A_1\cap A_2 \cap \ldots \cap A_{k-1})>0$$
+
+Entonces:
+
+$$P(A_1\cap A_2 \cap \ldots \cap A_{k})=P(A_1)P(A_2/A_1)P(A_3/A_1\cap A_2)\ldots P(A_k/A_1 \cap A_2 \cap \ldots A_{k-1}) $$
+
+
+Tarea 1, demostrar:
+
+$$P(A \cap B \cap C)=P(A)P(B/A)P(C/A\cap B)$$
+
+### Independencia de Eventos
+
+>Definición: Sean los eventos A y B, estos son independientes si la ocurrencia de A no interfiere la ocurrencia de B y viceversa.
+
+Si A y B son independientes, 
+
+$$P(A\cap B)=P(A)*P(B)$$
+
+Ejemplo. Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?
+
+
+$$P(D=5/C)=\frac{P(D=5 \cap C)}{P(C)}=\frac{P(D=5)P(C)}{P(C)}=P(D=5)=1/6$$
+
+Nota: Si A y B son independientes, entonces:
+
+$$P(A/B)=P(A)$$
+$$P(B/A)=P(B)$$
+
+
+Ejemplos,
+
+1. Dado que $P(A)=1/2$, $P(B)=1/3$, $P(A\cap B)=1/4$
+  
+  * $P(A \cup B)=P(A)+P(B)-P(A\cap B)=1/2+1/3-1/4=7/12$
+  * $P(A/B)=\frac{P(A \cap B)}{P(B)}=\frac{1/4}{1/3}=3/4$
+  * $P(B/A)=\frac{P(B\cap A)}{P(A)}=\frac{1/4}{1/2}=1/2$
+  * $P(B^C/A^C)=\frac{P(B^C\cap A^c)}{P(A^c)}=\frac{P((A\cup B)^c)}{1-P(A)}=\frac{1-P(A\cup B)}{1-P(A)}=\frac{1-7/12}{1-1/2}=5/6$
+  
+Ejercicio (5, pg 287). Un restaurante ofrece dos tipos de comida, ensalada o plato de carne. 20% de los clientes hombres prefieren la ensalada, 30% de las mujeres escogen carne, el 75% de los clientes son hombres. Considere los siguientes eventos.
+
+  * H: es hombre, M: es mujer, E: prefiere la ensalda, C: Prefiere Carne.
+  
+Se pide calcular:
+
+  + $P(E/H)$, $P(C/M)$
+  + $P(E \cap H)$, $P(C \cap M)$
+  + $P(M/E)$
+
+Tarea 2: Resolver el ejercicio 6 de la página 287 del libro.
+Tarea 3: Leer del libro el desde el apartado 5.6.3 (Teorema de la probabilidad total y el teorema de bayes) hasta la página 267.
+
