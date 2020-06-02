@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-05-28" />
+<meta name="date" content="2020-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,6 +166,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#regla-de-la-multiplicación"><i class="fa fa-check"></i><b>2.6.1</b> Regla de la multiplicación</a></li>
 <li class="chapter" data-level="2.6.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#independencia-de-eventos"><i class="fa fa-check"></i><b>2.6.2</b> Independencia de Eventos</a></li>
 </ul></li>
+<li class="chapter" data-level="2.7" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.7</b> Teorema de la Probabilidad Total</a></li>
+<li class="chapter" data-level="2.8" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.8</b> Teorema de Bayes</a></li>
+<li class="chapter" data-level="2.9" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#ejercicios."><i class="fa fa-check"></i><b>2.9</b> Ejercicios.</a></li>
 </ul></li>
 </ul>
 
@@ -205,27 +208,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.4</span> Medidas de tendencia central</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">x&lt;-<span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">90</span>)</a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">100</span></a></code></pre></div>
-<pre><code>## [1] 65.70058</code></pre>
+<pre><code>## [1] 65.22284</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">x[<span class="kw">order</span>(x)]</a></code></pre></div>
-<pre><code>##   [1] 40.30728 41.44683 41.58795 41.77174 41.92647 42.79246
-##   [7] 42.91486 44.06174 44.56010 44.58077 45.61348 45.62609
-##  [13] 46.32179 48.08137 48.78968 48.86015 48.97042 49.58705
-##  [19] 50.53516 51.37509 51.59633 52.32921 53.10202 53.92495
-##  [25] 54.13317 55.29902 55.52407 57.13163 57.18451 58.37699
-##  [31] 58.86103 59.07517 59.70298 59.96197 59.99682 60.54913
-##  [37] 60.60353 60.84450 61.16228 62.90463 63.37850 63.76763
-##  [43] 63.97769 64.07723 64.23411 64.73313 64.79827 64.81661
-##  [49] 64.82011 65.18327 65.20528 66.18325 66.32141 66.66450
-##  [55] 66.68439 68.01563 68.42128 68.46699 68.98816 69.87118
-##  [61] 70.99050 71.55583 71.81739 72.37996 72.67749 72.90129
-##  [67] 74.07831 74.21438 74.60393 75.87801 75.94278 75.97552
-##  [73] 76.28368 76.31188 76.33249 77.09569 77.62776 77.81462
-##  [79] 77.90963 78.43672 78.60677 78.85214 80.06452 80.42592
-##  [85] 80.80468 80.82583 81.15596 83.19340 83.76017 85.15516
-##  [91] 86.13718 86.23486 86.26673 86.57475 86.60630 87.93278
-##  [97] 88.26748 88.69534 89.31868 89.76885</code></pre>
+<pre><code>##   [1] 40.53629 41.56147 41.56661
+##   [4] 41.89026 42.63837 44.14236
+##   [7] 44.26118 44.99543 45.97036
+##  [10] 46.29390 48.48707 49.20949
+##  [13] 49.57008 49.70331 49.83251
+##  [16] 50.15322 50.17708 50.36654
+##  [19] 50.99117 52.19885 52.56064
+##  [22] 53.08848 53.10937 53.14434
+##  [25] 53.17534 53.65341 54.33119
+##  [28] 54.71639 55.56587 55.89558
+##  [31] 56.47829 57.34367 59.19781
+##  [34] 59.92467 59.97692 60.01330
+##  [37] 60.31841 60.40310 60.57347
+##  [40] 60.91162 61.04807 61.35420
+##  [43] 62.39025 63.03315 63.33995
+##  [46] 63.34989 63.79627 64.45352
+##  [49] 64.55268 65.52548 65.79055
+##  [52] 65.86373 65.89067 65.91541
+##  [55] 66.53162 66.61834 66.85058
+##  [58] 66.98713 68.03921 68.49012
+##  [61] 68.89684 69.10523 69.30272
+##  [64] 69.92808 70.14094 70.27423
+##  [67] 71.08889 71.66844 72.24628
+##  [70] 72.97623 73.36670 73.40406
+##  [73] 74.49100 75.07844 75.59900
+##  [76] 75.72304 76.59792 76.91264
+##  [79] 77.33179 77.94304 78.51352
+##  [82] 78.82772 81.51780 82.23835
+##  [85] 82.98165 82.98413 83.48722
+##  [88] 83.91540 84.18697 84.23373
+##  [91] 84.48003 85.88467 85.91204
+##  [94] 85.96270 86.07854 87.29101
+##  [97] 87.38502 87.71676 87.91104
+## [100] 89.95169</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">median</span>(x)</a></code></pre></div>
-<pre><code>## [1] 65.19428</code></pre>
+<pre><code>## [1] 65.65802</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">hist</span>(x)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
@@ -235,9 +255,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb10-2" title="2"><span class="kw">hist</span>(y)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">sd</span>(x)</a></code></pre></div>
-<pre><code>## [1] 13.89175</code></pre>
+<pre><code>## [1] 13.44409</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">sd</span>(y)</a></code></pre></div>
-<pre><code>## [1] 4.445085</code></pre>
+<pre><code>## [1] 5.098573</code></pre>
 </div>
 <div id="medidas-de-forma" class="section level2">
 <h2><span class="header-section-number">1.6</span> Medidas de forma</h2>

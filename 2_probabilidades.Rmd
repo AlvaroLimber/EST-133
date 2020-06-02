@@ -613,3 +613,76 @@ Se pide calcular:
 Tarea 2: Resolver el ejercicio 6 de la página 287 del libro.
 Tarea 3: Leer del libro el desde el apartado 5.6.3 (Teorema de la probabilidad total y el teorema de bayes) hasta la página 267.
 
+
+## Teorema de la Probabilidad Total
+
+![Probabilidad Total](https://4.bp.blogspot.com/-8lzibwRArUw/WJV3xFSHJaI/AAAAAAAAgZM/28mWy8iAm0MKfxJYbDhqVL6iGqXSbJA-QCLcB/s1600/%25E8%259E%25A2%25E5%25B9%2595%25E5%25BF%25AB%25E7%2585%25A7%2B2017-02-04%2B%25E4%25B8%258B%25E5%258D%25882.41.58.png)
+
+Sea $A_1,A_2,\ldots ,A_n$ un partición del espacio muestral, de tal forma que: $P(A_i)>0$ para todo $i=1, \ldots,n$. La partición representa que $U_{i=1}^n A_i=\Omega$ y $A_i \cap A_j =\emptyset$ para todo $i\neq j$. Para cualquier evento $B \in \Omega$.
+
+$$P(B)=\sum_{i=1}^n{P(A_i \cap B)}=\sum_{i=1}^n{P(A_i)P(B/A_i )}$$
+
+Ejemplo: Suponer que la población del departamento de la Paz esta conformado por 55% de mujeres y 45 % de hombres. Supongamos que el 30% de los hombres y el 20% de las mujeres fuman. Determinar la probabilidad de que una persona fume.
+
+Solución: Sean los eventos:
+
+  * H: es hombre ($M^c$)
+  * M: es mujer ($H^c$)
+  * F: Fuma
+  * $F^c$: No fuma
+
+Además, $P(M)=0.55$, $P(H)=P(M^C)=0.45$, $P(F/H)=0.3$ y $P(F/M)=0.2$, $P(F)=?$.
+
+$$P(F)=P(H)P(F/H)+P(M)P(F/M)=0.45*0.3+0.55*0.2=0.245$$
+
+¿Cuál es la probabilidad de no fumar en esta población?
+
+$P(F^c)=1-P(F)=1-0.245=0.755$
+
+## Teorema de Bayes
+
+Sea $A_1,A_2,\ldots ,A_n$ un partición del espacio muestral, de tal forma que: $P(A_i)>0$ para todo $i=1, \ldots,n$. Sea $B \in \Omega$ un evento tal que todas las $P(B/A_i)$ son conocidas. Entonces para cada $A_i$ tenemos:
+
+$$P(A_i/B)=\frac{P(A_i)P(B/A_i)}{\sum_{i=1}^n{P(A_i)P(B/A_i )}}$$
+
+
+> Forma simple:
+
+$$P(A/B)=\frac{P(A)P(B/A)}{P(B)}$$
+
+Ejemplo: Un análisis de sangre de laboratorio es $95$ por ciento efectivo en la detección de una determinada enfermedad, cuando de hecho está presente. Sin embargo, la prueba también arroja un resultado "falso positivo" para el 1 por ciento de las personas sanas evaluadas. (Es decir, si se evalúa a una persona sana, entonces, con una probabilidad de $0.01$, el resultado de la prueba implicará que él o ella tiene la enfermedad). Si el $0.5$ por ciento de la población realmente tiene la enfermedad, ¿cuál es la probabilidad de que una persona tenga la enfermedad dado que el resultado de la prueba es positivo?
+
+
+Solución: vamos a identificar los siguientes eventos:
+
+  * E: Se tiene la enfermedad
+  * $E^c$: No se tiene la enfermedad
+  * T+: La prueba da positiva a la enfermedad
+  * T-: La prueba da negativa a la enfermedad
+  
+Como dato tenemos: $P(E)=0.005$, $P(E^c)=1-P(E)=0.995$, tener o no la enfermedad es la partición dentro del problema. $P(T+/E)=0.95$, $P(T+/E^C)=0.01$. $P(E/T+)=¿?$. 
+
+
+$$P(E/T+)=\frac{P(E \cap T+)}{P(T+)}=\frac{P(E)P(T+/E)}{P(E)P(T+/E)+P(E^C)P(T+/E^C)}=\frac{0.005*0.95}{0.005*0.95+0.995*0.01}=0.3231$$
+  
+El 32.31% de los pacientes que son diagnosticados con la enfermedad en realidad si estan enfermos.
+
+## Ejercicios.
+
+* (Pg, 290. Ej: 22). Una de cada 10 personas de una población tiene tuberculosis. De las personas que tienen tuberculosis, el 80% reacciona positivamente a la prueba Y, mientras que el 30% de los que no tienen tuberculosis reaccionan positivamente. Una persona de la población es seleccionada aleatoriamente y la prueba Y es aplicada. ¿Cuál es la probabildad de que esa persona tenga tuberculosis, si reacciono positivamente a la prueba?
+
+* Para el ejemplo anterior, determinar $P(T-/E^c).$
+
+
+
+
+
+
+
+
+
+
+
+
+
+

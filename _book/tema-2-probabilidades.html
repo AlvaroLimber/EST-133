@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-05-28" />
+<meta name="date" content="2020-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,6 +166,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#regla-de-la-multiplicación"><i class="fa fa-check"></i><b>2.6.1</b> Regla de la multiplicación</a></li>
 <li class="chapter" data-level="2.6.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#independencia-de-eventos"><i class="fa fa-check"></i><b>2.6.2</b> Independencia de Eventos</a></li>
 </ul></li>
+<li class="chapter" data-level="2.7" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.7</b> Teorema de la Probabilidad Total</a></li>
+<li class="chapter" data-level="2.8" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.8</b> Teorema de Bayes</a></li>
+<li class="chapter" data-level="2.9" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#ejercicios."><i class="fa fa-check"></i><b>2.9</b> Ejercicios.</a></li>
 </ul></li>
 </ul>
 
@@ -468,39 +471,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb21-2" title="2"><span class="kw">set.seed</span>(<span class="dv">999</span>)</a>
 <a class="sourceLine" id="cb21-3" title="3">aux&lt;-<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="fl">0.5</span>)</a>
 <a class="sourceLine" id="cb21-4" title="4">aux</a></code></pre></div>
-<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 1 0
-##   [31] 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 0 1 0 1 0 1
-##   [61] 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 0 0 0 1 1 0
-##   [91] 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 1
-##  [121] 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0
-##  [151] 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0
-##  [181] 1 0 1 1 0 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 1 0 0 1 1
-##  [211] 0 1 1 0 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0
-##  [241] 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 1 1 0 0 0 0 1
-##  [271] 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 1 0 0 0 1 0
-##  [301] 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1
-##  [331] 1 0 1 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0 0 0 1 1 0 0 1 1 0
-##  [361] 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0
-##  [391] 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0
-##  [421] 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1
-##  [451] 0 1 1 1 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0
-##  [481] 0 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1
-##  [511] 0 1 1 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1
-##  [541] 1 1 0 1 0 1 0 1 1 0 1 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1
-##  [571] 1 0 0 1 0 0 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1 0 1 1 0 1
-##  [601] 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0 0 1 1 0 1 1
-##  [631] 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 1 1 0 1
-##  [661] 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0
-##  [691] 0 1 0 0 0 0 0 0 0 1 1 1 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1
-##  [721] 1 1 1 1 1 1 0 0 1 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0
-##  [751] 1 1 0 0 0 0 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1
-##  [781] 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1
-##  [811] 0 0 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 0 1 0
-##  [841] 1 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0
-##  [871] 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 1 0
-##  [901] 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0
-##  [931] 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1
-##  [961] 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1 0 1 1 0
+<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0
+##   [16] 1 0 1 0 0 1 1 1 0 1 1 1 1 1 0
+##   [31] 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0
+##   [46] 0 1 0 0 0 1 1 0 1 0 1 0 1 0 1
+##   [61] 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1
+##   [76] 0 1 0 0 0 0 1 1 0 0 0 0 1 1 0
+##   [91] 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1
+##  [106] 0 1 0 0 1 1 0 1 0 0 1 1 0 0 1
+##  [121] 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0
+##  [136] 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0
+##  [151] 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0
+##  [166] 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0
+##  [181] 1 0 1 1 0 0 1 0 0 1 1 1 0 0 0
+##  [196] 0 0 1 1 0 0 0 1 1 0 1 0 0 1 1
+##  [211] 0 1 1 0 1 1 0 0 0 0 0 0 0 1 0
+##  [226] 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0
+##  [241] 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1
+##  [256] 1 1 0 1 0 0 0 0 1 1 0 0 0 0 1
+##  [271] 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0
+##  [286] 0 1 0 1 0 0 1 1 1 1 0 0 0 1 0
+##  [301] 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1
+##  [316] 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1
+##  [331] 1 0 1 0 1 0 0 1 0 1 0 0 0 1 1
+##  [346] 1 1 0 1 1 0 0 0 1 1 0 0 1 1 0
+##  [361] 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0
+##  [376] 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0
+##  [391] 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1
+##  [406] 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0
+##  [421] 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1
+##  [436] 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1
+##  [451] 0 1 1 1 1 0 0 1 1 1 1 1 1 0 1
+##  [466] 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0
+##  [481] 0 0 1 1 1 0 1 1 1 1 0 0 1 1 1
+##  [496] 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1
+##  [511] 0 1 1 1 0 0 0 1 0 1 0 1 0 0 1
+##  [526] 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1
+##  [541] 1 1 0 1 0 1 0 1 1 0 1 1 1 0 1
+##  [556] 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1
+##  [571] 1 0 0 1 0 0 0 1 0 0 0 1 1 0 1
+##  [586] 0 0 0 1 1 1 0 0 1 1 0 1 1 0 1
+##  [601] 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1
+##  [616] 1 1 0 1 0 0 1 0 0 0 1 1 0 1 1
+##  [631] 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0
+##  [646] 1 0 0 1 1 0 0 1 0 0 1 1 1 0 1
+##  [661] 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0
+##  [676] 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0
+##  [691] 0 1 0 0 0 0 0 0 0 1 1 1 0 1 1
+##  [706] 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1
+##  [721] 1 1 1 1 1 1 0 0 1 0 0 1 1 0 1
+##  [736] 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0
+##  [751] 1 1 0 0 0 0 1 0 1 0 1 1 0 0 1
+##  [766] 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1
+##  [781] 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+##  [796] 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1
+##  [811] 0 0 0 1 0 1 1 1 1 0 0 0 1 1 1
+##  [826] 1 1 0 0 1 1 0 1 0 0 1 1 0 1 0
+##  [841] 1 0 0 1 1 1 0 0 0 0 0 1 0 0 0
+##  [856] 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0
+##  [871] 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0
+##  [886] 1 0 1 0 1 1 1 0 1 0 1 1 0 1 0
+##  [901] 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0
+##  [916] 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0
+##  [931] 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0
+##  [946] 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1
+##  [961] 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0
+##  [976] 1 1 1 1 0 1 1 1 0 0 1 0 1 1 0
 ##  [991] 0 0 1 1 1 0 1 0 1 1</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">sum</span>(aux)</a></code></pre></div>
 <pre><code>## [1] 496</code></pre>
@@ -843,8 +879,56 @@ P:\begin{array}
 </ul>
 <p>Tarea 2: Resolver el ejercicio 6 de la página 287 del libro.
 Tarea 3: Leer del libro el desde el apartado 5.6.3 (Teorema de la probabilidad total y el teorema de bayes) hasta la página 267.</p>
-
 </div>
+</div>
+<div id="teorema-de-la-probabilidad-total" class="section level2">
+<h2><span class="header-section-number">2.7</span> Teorema de la Probabilidad Total</h2>
+<div class="figure">
+<img src="https://4.bp.blogspot.com/-8lzibwRArUw/WJV3xFSHJaI/AAAAAAAAgZM/28mWy8iAm0MKfxJYbDhqVL6iGqXSbJA-QCLcB/s1600/%25E8%259E%25A2%25E5%25B9%2595%25E5%25BF%25AB%25E7%2585%25A7%2B2017-02-04%2B%25E4%25B8%258B%25E5%258D%25882.41.58.png" alt="Probabilidad Total" />
+<p class="caption">Probabilidad Total</p>
+</div>
+<p>Sea <span class="math inline">\(A_1,A_2,\ldots ,A_n\)</span> un partición del espacio muestral, de tal forma que: <span class="math inline">\(P(A_i)&gt;0\)</span> para todo <span class="math inline">\(i=1, \ldots,n\)</span>. La partición representa que <span class="math inline">\(U_{i=1}^n A_i=\Omega\)</span> y <span class="math inline">\(A_i \cap A_j =\emptyset\)</span> para todo <span class="math inline">\(i\neq j\)</span>. Para cualquier evento <span class="math inline">\(B \in \Omega\)</span>.</p>
+<p><span class="math display">\[P(B)=\sum_{i=1}^n{P(A_i \cap B)}=\sum_{i=1}^n{P(A_i)P(B/A_i )}\]</span></p>
+<p>Ejemplo: Suponer que la población del departamento de la Paz esta conformado por 55% de mujeres y 45 % de hombres. Supongamos que el 30% de los hombres y el 20% de las mujeres fuman. Determinar la probabilidad de que una persona fume.</p>
+<p>Solución: Sean los eventos:</p>
+<ul>
+<li>H: es hombre (<span class="math inline">\(M^c\)</span>)</li>
+<li>M: es mujer (<span class="math inline">\(H^c\)</span>)</li>
+<li>F: Fuma</li>
+<li><span class="math inline">\(F^c\)</span>: No fuma</li>
+</ul>
+<p>Además, <span class="math inline">\(P(M)=0.55\)</span>, <span class="math inline">\(P(H)=P(M^C)=0.45\)</span>, <span class="math inline">\(P(F/H)=0.3\)</span> y <span class="math inline">\(P(F/M)=0.2\)</span>, <span class="math inline">\(P(F)=?\)</span>.</p>
+<p><span class="math display">\[P(F)=P(H)P(F/H)+P(M)P(F/M)=0.45*0.3+0.55*0.2=0.245\]</span></p>
+<p>¿Cuál es la probabilidad de no fumar en esta población?</p>
+<p><span class="math inline">\(P(F^c)=1-P(F)=1-0.245=0.755\)</span></p>
+</div>
+<div id="teorema-de-bayes" class="section level2">
+<h2><span class="header-section-number">2.8</span> Teorema de Bayes</h2>
+<p>Sea <span class="math inline">\(A_1,A_2,\ldots ,A_n\)</span> un partición del espacio muestral, de tal forma que: <span class="math inline">\(P(A_i)&gt;0\)</span> para todo <span class="math inline">\(i=1, \ldots,n\)</span>. Sea <span class="math inline">\(B \in \Omega\)</span> un evento tal que todas las <span class="math inline">\(P(B/A_i)\)</span> son conocidas. Entonces para cada <span class="math inline">\(A_i\)</span> tenemos:</p>
+<p><span class="math display">\[P(A_i/B)=\frac{P(A_i)P(B/A_i)}{\sum_{i=1}^n{P(A_i)P(B/A_i )}}\]</span></p>
+<blockquote>
+<p>Forma simple:</p>
+</blockquote>
+<p><span class="math display">\[P(A/B)=\frac{P(A)P(B/A)}{P(B)}\]</span></p>
+<p>Ejemplo: Un análisis de sangre de laboratorio es <span class="math inline">\(95\)</span> por ciento efectivo en la detección de una determinada enfermedad, cuando de hecho está presente. Sin embargo, la prueba también arroja un resultado “falso positivo” para el 1 por ciento de las personas sanas evaluadas. (Es decir, si se evalúa a una persona sana, entonces, con una probabilidad de <span class="math inline">\(0.01\)</span>, el resultado de la prueba implicará que él o ella tiene la enfermedad). Si el <span class="math inline">\(0.5\)</span> por ciento de la población realmente tiene la enfermedad, ¿cuál es la probabilidad de que una persona tenga la enfermedad dado que el resultado de la prueba es positivo?</p>
+<p>Solución: vamos a identificar los siguientes eventos:</p>
+<ul>
+<li>E: Se tiene la enfermedad</li>
+<li><span class="math inline">\(E^c\)</span>: No se tiene la enfermedad</li>
+<li>T+: La prueba da positiva a la enfermedad</li>
+<li>T-: La prueba da negativa a la enfermedad</li>
+</ul>
+<p>Como dato tenemos: <span class="math inline">\(P(E)=0.005\)</span>, <span class="math inline">\(P(E^c)=1-P(E)=0.995\)</span>, tener o no la enfermedad es la partición dentro del problema. <span class="math inline">\(P(T+/E)=0.95\)</span>, <span class="math inline">\(P(T+/E^C)=0.01\)</span>. <span class="math inline">\(P(E/T+)=¿?\)</span>.</p>
+<p><span class="math display">\[P(E/T+)=\frac{P(E \cap T+)}{P(T+)}=\frac{P(E)P(T+/E)}{P(E)P(T+/E)+P(E^C)P(T+/E^C)}=\frac{0.005*0.95}{0.005*0.95+0.995*0.01}=0.3231\]</span></p>
+<p>El 32.31% de los pacientes que son diagnosticados con la enfermedad en realidad si estan enfermos.</p>
+</div>
+<div id="ejercicios." class="section level2">
+<h2><span class="header-section-number">2.9</span> Ejercicios.</h2>
+<ul>
+<li><p>(Pg, 290. Ej: 22). Una de cada 10 personas de una población tiene tuberculosis. De las personas que tienen tuberculosis, el 80% reacciona positivamente a la prueba Y, mientras que el 30% de los que no tienen tuberculosis reaccionan positivamente. Una persona de la población es seleccionada aleatoriamente y la prueba Y es aplicada. ¿Cuál es la probabildad de que esa persona tenga tuberculosis, si reacciono positivamente a la prueba?</p></li>
+<li><p>Para el ejemplo anterior, determinar <span class="math inline">\(P(T-/E^c).\)</span></p></li>
+</ul>
+
 </div>
 </div>
             </section>
