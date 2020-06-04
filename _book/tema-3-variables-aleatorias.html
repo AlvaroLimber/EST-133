@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Tema 1: Estadística Descriptiva | Estadística I</title>
+  <title>3 Tema 3: Variables aleatorias | Estadística I</title>
   <meta name="description" content="Este libro esta destinado a la materia de Estadística I de la carrera de Informática de la Universidad Mayor de San Andres." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Tema 1: Estadística Descriptiva | Estadística I" />
+  <meta property="og:title" content="3 Tema 3: Variables aleatorias | Estadística I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="alvarolimber/EST-133" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Tema 1: Estadística Descriptiva | Estadística I" />
+  <meta name="twitter:title" content="3 Tema 3: Variables aleatorias | Estadística I" />
   
   <meta name="twitter:description" content="Este libro esta destinado a la materia de Estadística I de la carrera de Informática de la Universidad Mayor de San Andres." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="tema-2-probabilidades.html"/>
+<link rel="prev" href="tema-2-probabilidades.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -198,76 +198,201 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tema-1-estadística-descriptiva" class="section level1">
-<h1><span class="header-section-number">1</span> Tema 1: Estadística Descriptiva</h1>
-<div id="introducción" class="section level2">
-<h2><span class="header-section-number">1.1</span> Introducción</h2>
-<p>El arte de contar una historia con datos
-<span class="math inline">\(X=\{2,3,4,5,6,71,3,5,7 \}\)</span></p>
+<div id="tema-3-variables-aleatorias" class="section level1">
+<h1><span class="header-section-number">3</span> Tema 3: Variables aleatorias</h1>
+<p>El objetivo de este tema es aproximarnos a modelos probabilísticos con sus respectivos parámetros, esto nos ayudara a adaptar diversos problemas reales.</p>
+<div id="introducción-a-variable-aleatoria" class="section level2">
+<h2><span class="header-section-number">3.1</span> Introducción a variable aleatoria</h2>
+<p>Definión: Sea <span class="math inline">\(E\)</span> un experimento y <span class="math inline">\(\Omega\)</span> el espacio muestral asociado a este experimento. Una función <span class="math inline">\(X: \Omega \rightarrow IR\)</span>, de tal forma que a cada elemento <span class="math inline">\(w \in \Omega\)</span> le asocia un número real <span class="math inline">\(x=X(w)\)</span> se denomina variable aleatoria.</p>
+<p>Nota 1: En el fondo estamos implicando que ahora vamos a trabajar exclusivamente con números en la recta real, donde estos números tienen asociado una probabilidad de ocurrencia.</p>
+<p>Nota 2: Debemos distinguir dos aspectos respecto trabajar sobre la recta real, (1) se pueden definir valores discretos (2) se pueden definir valores continuos.</p>
+<p><span class="math inline">\(X\)</span> es la variable aleatoria (va), el dominio de <span class="math inline">\(X\)</span> es todo <span class="math inline">\(\Omega\)</span>, y el rango es un sub conjunto de la recta real, el rango lo vamo a denotar como <span class="math inline">\(Rx\)</span>. <span class="math inline">\(Rx \in IR\)</span></p>
+<p>Ejemplo 1: Establecer la variable aleatoria detrás del experimento de lanzar dos dados y obtener la suma de las caras.</p>
+<p>Solución, <span class="math inline">\(\#\Omega=36\)</span></p>
+<p><span class="math display">\[\Omega=\{(1,1),(1,2),(1,3),(1,4),\ldots,(6,6)\}\]</span></p>
+<p><span class="math display">\[X: \{X(1,1)=2,X(1,2)=3,\ldots,X(6,6)=12\}\]</span></p>
+<p>El recorrido de <span class="math inline">\(X\)</span>, <span class="math inline">\(Rx=\{2, 3, \ldots,12 \}\)</span></p>
+<p>Ejemplo 2: Sea el experimento lanzar 3 monedas y observar el resultado y definir la variable aleatoria como la cantidad de caras que salen en los lanzamientos.</p>
+<p>Solución, sean los eventos <span class="math inline">\(C=cara\)</span>, <span class="math inline">\(S=Sello\)</span></p>
+<p><span class="math display">\[\Omega=\{(CCC),(CCS),(CSC),(SCC),(CSS),(SCS),(SSC),(SSS) \}\]</span>
+<span class="math display">\[X: \{X(CCC)=3,X(CCS)=2,X(CSC)=2,\ldots,X(SSS)=0 \}\]</span></p>
+<p>A partir de esto, <span class="math inline">\(Rx=\{0,1,2,3\}\)</span></p>
 </div>
-<div id="tipos-de-datos" class="section level2">
-<h2><span class="header-section-number">1.2</span> Tipos de datos</h2>
+<div id="función-de-probabilidad-densidad" class="section level2">
+<h2><span class="header-section-number">3.2</span> Función de probabilidad (densidad)</h2>
+<p>Definión: Sea <span class="math inline">\(X: \Omega \rightarrow IR\)</span>, una va que toma los valores <span class="math inline">\(x_1,x_2, \ldots\)</span>,. Se dice que <span class="math inline">\(P(x_i)\)</span> es una función de probabilidad o distribución de probabilidad de la variable aleatoria <span class="math inline">\(X\)</span>. Si a cada valor de <span class="math inline">\(x_i\)</span> se le asigna una probabilidad de ocurrencia.</p>
+<p><span class="math display">\[P(x_i)=P(X=x_i)=P(w\in \Omega/X(w)=x_i)\]</span></p>
+<p>Ejemplo 1: Para el ejemplo de las monedas, podemos calcular lo siguiente:</p>
+<p><span class="math display">\[\begin{array} 
+&amp; &amp; P(X=0)=\frac{1}{8}\\
+ &amp; P(X=1)=\frac{3}{8}\\
+ &amp; P(X=2)=\frac{3}{8}\\
+ &amp; P(X=3)=\frac{1}{8}\\
+\end{array}
+\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(X=x)\)</span></td>
+<td>1/8</td>
+<td>3/8</td>
+<td>3/8</td>
+<td>1/8</td>
+</tr>
+</tbody>
+</table>
+<p>Tomar en cuenta que:</p>
+<p><span class="math display">\[\sum_{Rx}P(X=x_i)=1\]</span></p>
+<p>Ejercicio: Construir la distribución de probabilidad para el ejemplo del lanzamiento de los 2 dados.</p>
+<table>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(X=x)\)</span></td>
+<td>1/36</td>
+<td>2/36</td>
+<td>3/36</td>
+<td>4/36</td>
+<td>5/36</td>
+<td>6/36</td>
+<td>5/36</td>
+<td>4/36</td>
+<td>3/36</td>
+<td>2/36</td>
+<td>1/36</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>A partir de la tabla calcular las siguientes probabilidad:</p>
 <ul>
-<li>Cualitativos (cualidades). Nominales, ordinales</li>
-<li>Cuantitativos (cantidad)</li>
+<li><span class="math inline">\(P(X\leq 6)=P(X=2)+P(X=3)+P(X=4)+P(X=5)+P(X=6)=15/36\)</span></li>
+<li><span class="math inline">\(P(X\leq 7)=21/36\)</span></li>
+<li><span class="math inline">\(P(X\geq 7)=1-P(X&lt;7)=1-P(X\leq 6)=1-\frac{15}{36}=21/36\)</span></li>
+<li><span class="math inline">\(P(X\leq 2)=P(X=2)=1/36\)</span></li>
+<li><span class="math inline">\(P(X &gt; 2)=1-P(X \leq 2)=1-\frac{1}{36}=\frac{35}{36}\)</span></li>
 </ul>
 </div>
-<div id="visualización" class="section level2">
-<h2><span class="header-section-number">1.3</span> Visualización</h2>
+<div id="función-de-distribución-acumulada" class="section level2">
+<h2><span class="header-section-number">3.3</span> Función de distribución (acumulada)</h2>
+<p>Nota: Es muy similar a lo que se vio en la parte de estadística descriptiva cuando se calculo las frecuencias relativas/absolutas acumuladas.</p>
+<p>Definición: La función de distribución acumulada de una va <span class="math inline">\(X\)</span>, denotada por <span class="math inline">\(F(X)\)</span>, es una función: <span class="math inline">\(F: IR \rightarrow [0,1]\)</span>, esta esta definida como:</p>
+<p><span class="math display">\[F(X)=P(X\leq x)\]</span></p>
+<p>Propiedades de <span class="math inline">\(F(X)\)</span></p>
+<ul>
+<li>Es una función no decreciente, si <span class="math inline">\(x_i&lt;x_j\)</span>, entonces <span class="math inline">\(F(x_i)&lt;F(x_j)\)</span>, <span class="math inline">\(i\neq j\)</span></li>
+<li><span class="math inline">\(F(x)\)</span> es una función continua por la derecha</li>
+</ul>
+<p><span class="math display">\[lim+_{x\rightarrow x_0} F(x)=F(x_0) \]</span>
+* <span class="math inline">\(lim_{x\rightarrow -\infty} F(x)=0\)</span>, <span class="math inline">\(lim_{x\rightarrow +\infty} F(x)=1\)</span>, <span class="math inline">\(F(-\infty)=0\)</span>, <span class="math inline">\(F(+\infty)=1\)</span></p>
+<p>Ejemplo: Para el caso de los dados</p>
+<table>
+<thead>
+<tr class="header">
+<th>X</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(X=x)\)</span></td>
+<td>1/36</td>
+<td>2/36</td>
+<td>3/36</td>
+<td>4/36</td>
+<td>5/36</td>
+<td>6/36</td>
+<td>5/36</td>
+<td>4/36</td>
+<td>3/36</td>
+<td>2/36</td>
+<td>1/36</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(F(x)=P(X\leq x)\)</span></td>
+<td>1/36</td>
+<td>3/36</td>
+<td>6/36</td>
+<td>10/36</td>
+<td>15/36</td>
+<td>21/36</td>
+<td>26/36</td>
+<td>30/36</td>
+<td>33/36</td>
+<td>35/36</td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Ejercicios, Página 315 del libro, resolver los ejercicios 1 y 2.</p>
 </div>
-<div id="medidas-de-tendencia-central" class="section level2">
-<h2><span class="header-section-number">1.4</span> Medidas de tendencia central</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">x&lt;-<span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">90</span>)</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">100</span></a></code></pre></div>
-<pre><code>## [1] 65.33019</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">x[<span class="kw">order</span>(x)]</a></code></pre></div>
-<pre><code>##   [1] 42.09475 42.25233 42.98445 43.29368 43.97426 44.34413 45.81377
-##   [8] 46.24629 46.83386 47.64957 48.00068 48.31357 48.62753 48.75903
-##  [15] 48.87607 49.14749 49.92168 51.97585 52.97332 53.08328 53.52563
-##  [22] 53.57053 53.62340 53.85874 53.89275 54.31914 54.55888 57.11478
-##  [29] 57.12126 57.62031 58.02829 58.37713 59.06477 59.07953 59.28074
-##  [36] 59.36827 59.68385 60.10826 60.13406 60.21533 60.88504 61.03315
-##  [43] 61.27576 61.81460 62.12366 62.18183 62.18263 62.39663 62.44899
-##  [50] 62.81198 63.50879 64.06265 64.50481 64.98897 66.25461 66.30172
-##  [57] 67.38592 67.66794 67.93401 68.08093 68.67423 69.83017 70.22667
-##  [64] 70.59477 70.98390 71.53157 72.66655 73.17163 73.27917 74.53558
-##  [71] 76.37560 77.44224 77.55514 77.91825 78.06446 78.08227 78.37457
-##  [78] 78.44741 78.55269 78.72947 78.75770 78.95495 79.17315 79.30234
-##  [85] 79.96438 81.11377 82.34805 82.74131 82.78242 83.31521 83.33395
-##  [92] 84.09989 84.14966 84.50682 85.99993 86.44196 87.78356 88.36841
-##  [99] 88.58917 88.70061</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">median</span>(x)</a></code></pre></div>
-<pre><code>## [1] 63.16039</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">hist</span>(x)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<div id="variables-aleatorias-discretas" class="section level2">
+<h2><span class="header-section-number">3.4</span> Variables aleatorias discretas</h2>
 </div>
-<div id="medidas-de-dispersión" class="section level2">
-<h2><span class="header-section-number">1.5</span> Medidas de dispersión</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">y&lt;-<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">60</span>,<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">hist</span>(y)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">sd</span>(x)</a></code></pre></div>
-<pre><code>## [1] 13.18794</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">sd</span>(y)</a></code></pre></div>
-<pre><code>## [1] 4.884998</code></pre>
+<div id="variables-aleatorias-continuas" class="section level2">
+<h2><span class="header-section-number">3.5</span> Variables aleatorias continuas</h2>
 </div>
-<div id="medidas-de-forma" class="section level2">
-<h2><span class="header-section-number">1.6</span> Medidas de forma</h2>
-<p>Asimetría</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(y))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(<span class="dv">0</span>,y)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-2.png" width="672" /></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(y,<span class="dv">200</span>)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-3.png" width="672" /></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-4.png" width="672" /></p>
-<p>Kurtosis</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>,<span class="dt">sd=</span><span class="fl">0.5</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</a>
-<a class="sourceLine" id="cb19-3" title="3"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">runif</span>(<span class="dv">100000</span>)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div id="esperanza-matemática" class="section level2">
+<h2><span class="header-section-number">3.6</span> Esperanza matemática</h2>
+</div>
+<div id="varianza" class="section level2">
+<h2><span class="header-section-number">3.7</span> Varianza</h2>
+</div>
+<div id="desigualdad-de-chebyshev" class="section level2">
+<h2><span class="header-section-number">3.8</span> Desigualdad de Chebyshev</h2>
+</div>
+<div id="ejericios-propuestos" class="section level2">
+<h2><span class="header-section-number">3.9</span> Ejericios propuestos</h2>
+<ol style="list-style-type: decimal">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
 
 </div>
 </div>
@@ -276,8 +401,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tema-2-probabilidades.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tema-2-probabilidades.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
