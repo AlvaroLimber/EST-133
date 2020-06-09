@@ -98,9 +98,110 @@ Ejemplo: Para el caso de los dados
 
 Ejercicios, Página 315 del libro, resolver los ejercicios 1 y 2.
 
+Propiedades, si existe un $a<b$
+
+Caso discreto
+
+  * $P(a< X \leq b )=F(b)-F(a)$
+  * $P(a\leq X \leq b )=F(b)-F(a)+P(X=a)$
+  * $P(a < X < b )=F(b)-F(a)-P(X=b)$
+  * $P(X>b)=1-P(X\leq b)=1-F(b)$
+  
+Ejercicio 1 pg-315, $Rx=\{-2,0,1,4\}$, $P(X=-2)=0.4$, $P(X=0)=0.1$, $P(X=1)=0.3$ y $P(X=4)=0.2$.
+
+  * Encontrar a $F(X)$
+  
+  | X            | -2  | 0   | 1   | 4   | TOTAL |
+|--------------|-----|-----|-----|-----|-------|
+| P(X=x)       | 0.4 | 0.1 | 0.3 | 0.2 | 1     |
+| P(X<=x)=F(X) | 0.4 | 0.5 | 0.8 | 1   |       |
+  
+  * $P(X>0)=P(X=1)+P(X=4)=0.5$, $P(X>0)=1-P(X\leq 0)=1-F(0)=1-0.5=0.5$ 
+  * $P(0<X<1)=0$, $P(0<X<1)=F(1)-F(0)-P(X=1)=0.8-0.5-0.3=0$ 
+  * $P(0\le X \leq 1)=F(1)-F(0)+P(X=0)=0.8-0.5+0.1=0.4$
+
+
+# Ejercio 2 pg 315. Una moneda es lanzada repetidamente hasta obtener cara por primera vez, Sea $X$ la va que denota el número de lanzamientos que son necesarios para obtener cara por primera vez.
+
+  * $F(X)$
+
+Solución, definir el $Rx=\{1,2, \ldots , \infty\}$
+
+
+| X            | 1   | 2    | 3     | 4     | 5     | 6     | ... | i     |
+|--------------|-----|------|-------|-------|-------|-------|-----|-------|
+| P(X=x)       | 0.5 | 0.25 | 0.125 | 0.5^4 | 0.5^5 | 0.5^6 | ... | 0.5^i |
+| F(X)=P(X<=x) | 0.5 | 0.75 | 0.875 |       |       |       |     |       |
+
+$P(C)=0.5$, $P(S_1\cap C_2)=P(S_1)*P(C_2/S_1)=0.5*0.5=0.25$, $P(S_1\cap S_2 \cap C_3)=0.5*0.5*0.5=0.125$, Asi,
+
+$$P(X=x)=0.5^x$$
+
+$$\sum_{Rx}{P(X=x)}=1, \sum_{x=1}^\infty{0.5^x}=1 $$
+
+$$F(X)=P(X\leq x)=P(X \leq t)=\sum_{Rx}^t{P(X=x)}=\sum_{x=1}^t{0.5^x}=TAREA$$
+
+Caso continuo
+
+  * $P(a<X<b)=P(a\leq X \leq b)=P(a\le X <b)=F(b)-F(a)$
+
 ## Variables aleatorias discretas
+  
+  * El recorrido es discreto, numerable
+  * $\sum_{Rx}P(X=x)=1$
+  * Distribución acumulada:
+  
+  $$F(t)=P(X\leq t)=\sum_{min Rx}^t{P(X=x)}$$
+
+
 
 ## Variables aleatorias continuas
+  
+  * El recorrido es continuo, no numerable
+  * Sea $f(x)$ una función continua definida en $Rx$, esta es una función de probabilidad (densidad), si cumple:
+  
+    $$\int_{Rx}f(x)dx=1$$
+  * Distribución acumulada
+  
+  $$F(t)=P(X\leq t)= \int_{-\infty,minRx}^t{f(x)dx}  $$
+
+  * Sea $c$ una constante cualquiera, $P(X=c)=0$
+  * sea $a<b$, $P(a<X<b)=F(b)-F(a)$, támbien:
+  
+  $$P(a<x<b)=\int_a^b f(x)dx$$
+
+  * $f(x)= \frac{d F(X)}{dx}=F'(x)$
+
+Ejemplo, Sea $X$ una va con función de densidad dada por:
+
+$$f(x)=c (6x-2x^2), x\in [0,2]$$
+
+Encontrar el valor de $c$ para que la función se una funcion de probabilidad.
+ 
+Solución, 
+
+$$\int_0^2 f(x)dx=1$$
+
+$$
+
+\begin{array}
+
+& \int_0^2 c (6x-2x^2)dx & =  c \left(\int_0^2 6x dx-\int_0^2 2x^2 dx \right)\\
+
+& =  c \left( 6 \frac{x^2}{2}/_0^2- 2 \frac{x^3}{3}/_0^2  \right)\\
+& =  c \left( 3 x^2/_0^2- \frac{2x^3}{3}/_0^2  \right)\\
+& =  c \left( 3 x^2- \frac{2x^3}{3}  \right)/_0^2\\
+& =  c \left(12-16/3 \right)\\
+& =  c \frac{20}{3}=1\\
+
+\end{array}
+$$
+
+Entonces, $C=3/20$. 
+
+$$f(x)=\frac{3}{20} (6x-2x^2), x\in [0,2]$$
+
+Tarea: Realizar los ejercicios 1, 2 y 3 de la pg 345 del libro guía.
 
 ## Esperanza matemática
 
