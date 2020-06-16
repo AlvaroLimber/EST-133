@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Tema 3: Variables aleatorias
 
 El objetivo de este tema es aproximarnos a modelos probabilísticos con sus respectivos parámetros, esto nos ayudara a adaptar diversos problemas reales. 
@@ -121,7 +126,7 @@ Ejercicio 1 pg-315, $Rx=\{-2,0,1,4\}$, $P(X=-2)=0.4$, $P(X=0)=0.1$, $P(X=1)=0.3$
   * $P(0\le X \leq 1)=F(1)-F(0)+P(X=0)=0.8-0.5+0.1=0.4$
 
 
-# Ejercio 2 pg 315. Una moneda es lanzada repetidamente hasta obtener cara por primera vez, Sea $X$ la va que denota el número de lanzamientos que son necesarios para obtener cara por primera vez.
+Ejercio 2 pg 315. Una moneda es lanzada repetidamente hasta obtener cara por primera vez, Sea $X$ la va que denota el número de lanzamientos que son necesarios para obtener cara por primera vez.
 
   * $F(X)$
 
@@ -205,7 +210,113 @@ Tarea: Realizar los ejercicios 1, 2 y 3 de la pg 345 del libro guía.
 
 ## Esperanza matemática
 
+Es el valor esperado detrás de la variable aleatoria.
+
+Nota: vamos a introducir al operador Esperanza (E)
+
+  * Caso Discreto
+  
+$$E[X]=\sum_{Rx}xP(X=x)$$
+  
+El operador esperanza funciona:
+
+$$E[g(x)]=\sum_{Rx}{g(x)*P(X=x)}$$
+
+Calcule $E[X^2]$, 
+
+$$E[X^2]=\sum_{Rx}{X^2*P(X=x)}$$
+
+Ejemplos: Para el caso de la suma del lanzamiento de dos dados 
+
+$$E[X]=2*\frac{1}{36}+3*\frac{2}{36}+\ldots+12*\frac{1}{36}=7$$
+  
+  * Caso Continuo 
+  
+$$E[X]=\int_{Rx} xf(x)dx$$  
+
+El operador esperanza:
+
+$$E[g(x)]=\int_{Rx}g(x)f(x)dx$$
+
+$$E[X^2]=\int_{Rx}{x^2 f(x)dx}$$
+
+Ejemplo, encontrar la esperanza matemática de la última función continua vista.
+
+$$f(x)=\frac{3}{20} (6x-2x^2), x\in [0,2]$$
+
+La esperanza matemática esta dada por:
+
+$$E[X]=\int_0^2{x\frac{3}{20} (6x-2x^2)dx}=$$
+
+$$E[X]=\frac{3}{20}\int_0^2{6x^2-2x^3dx}=\frac{3}{20}\left( 2x^3-\frac{x^4}{2} \right)_0^2=\frac{3}{20}(16-8)=\frac{24}{20}=\frac{6}{5}$$
+
+```{r}
+fx<-function(x){
+  y<-(3/20)*(6*x-2*x^2)
+  return(y)
+}
+curve(fx,xlim=c(0,2))
+abline(v=c(6/5),col="red")
+```
+$$P(0.5<X<1.5)=\int_{0.5}^{1.5}f(x)dx$$
+
+### Propiedades
+Sean $a$, $b$, $c$ constantes
+
+  * $E[0]=0$
+  * $E[a]=a$
+
+$$E[a]=\sum_{Rx}{a*P(X=x)}=a\sum_{Rx}P(X=x)=a*1=a$$  
+  
+  * $E[aX]=aE[X]$
+  * $E[h(x)+g(x)]=E[h(x)]+E[g(x)]$ La esperanza se distribuye en la suma
+  
+$$E[h(x)+g(x)]=\int_{Rx}[h(x)+g(x)]*f(x)dx=\int_{Rx}h(x)f(x)dx+\int_{Rx}g(x)f(x)dx=E[h(x)]+E[g(x)]$$
+  
+  * $E[X+Y]=E[X]+E[Y]$
+  * $E[aX+bY]=aE[X]+bE[Y]$
+
 ## Varianza
+
+La varianza de define a partir del operador esperanza como:
+
+$$V(X)=E[ \left( X-E[X] \right)^2]$$
+
+  * Caso discreto
+  
+$$V(X)=E[ \left( X-E[X] \right)^2]=\sum_{Rx} \left( x-E[X] \right)^2 * P(X=x)$$
+  
+  * Caso continuo
+
+$$V(X)=E[ \left( X-E[X] \right)^2]=\int_{Rx} \left( x-E[X] \right)^2 * f(x)dx$$
+
+Forma corta para el calculo de la varianza:
+
+$$V(X)=E[X^2]-E[X]^2$$
+
+Demostración:
+
+$$V(X)=E[ \left( X-E[X] \right)^2]=E[X^2-2XE[X]+E[X]^2]=E[X^2]-2E[X]E[X]+E[X]^2=$$
+$$= E[X^2]-2E[X]^2+E[X]^2=E[X^2]-E[X]^2$$
+
+Ejercicio: calcular la varianza para el caso continuo visto anteriormente.
+
+$$E[X^2]=\int_0^2{x^2 f(x)dx}$$
+
+### Propiedades
+
+Sean $a$, $b$ y $c$ contantes
+
+  * $V(a)=0$
+  
+$$V(a)=E[a^2]-E[a]^2=a^2-a^2=0$$
+
+  * $V(aX)=a^2V(X)$
+  
+$$V(aX)=E[(aX)^2]-E[aX]^2=a^2E[X^2]-(aE[X])^2=a^2E[X^2]-a^2 E[X]^2=a^2(E[X^2]-E[X]^2)=a^2 V(X)$$
+  
+  * $V(a+X)=V(X)$ Tarea
+  * $V(a+bX)=b^2 V(X)$ Tarea
 
 ## Desigualdad de Chebyshev
 
