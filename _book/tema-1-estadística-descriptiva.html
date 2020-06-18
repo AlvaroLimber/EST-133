@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-06-16" />
+<meta name="date" content="2020-06-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,8 +182,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.7" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#varianza"><i class="fa fa-check"></i><b>3.7</b> Varianza</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#propiedades-2"><i class="fa fa-check"></i><b>3.7.1</b> Propiedades</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#desigualdad-de-chebyshev"><i class="fa fa-check"></i><b>3.8</b> Desigualdad de Chebyshev</a></li>
-<li class="chapter" data-level="3.9" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#ejericios-propuestos"><i class="fa fa-check"></i><b>3.9</b> Ejericios propuestos</a></li>
+<li class="chapter" data-level="3.8" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#teorema-de-markov"><i class="fa fa-check"></i><b>3.8</b> Teorema de Markov</a></li>
+<li class="chapter" data-level="3.9" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#desigualdad-de-chebyshev"><i class="fa fa-check"></i><b>3.9</b> Desigualdad de Chebyshev</a></li>
+<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#repasar-para-el-examen-el-uso-de-la-función-generatriz-de-momentos-en-libro-estan-en-el-punto-6.10-pg-372"><i class="fa fa-check"></i><b>3.10</b> Repasar para el examen el uso de la función generatriz de momentos (En libro estan en el punto 6.10 pg 372)</a></li>
 </ul></li>
 </ul>
 
@@ -223,57 +224,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.4</span> Medidas de tendencia central</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">x&lt;-<span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">90</span>)</a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">100</span></a></code></pre></div>
-<pre><code>## [1] 65.83723</code></pre>
+<pre><code>## [1] 66.17602</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">x[<span class="kw">order</span>(x)]</a></code></pre></div>
-<pre><code>##   [1] 40.27227 40.65420 41.33853 42.70708 43.57533 43.82634
-##   [7] 44.27244 44.34203 44.57998 44.78635 44.97734 45.14471
-##  [13] 45.23587 45.85524 45.97504 46.80734 48.14521 48.26396
-##  [19] 50.13363 50.22471 50.93969 52.13810 52.22459 52.72599
-##  [25] 52.99518 53.23493 54.68761 54.80806 55.45669 55.91560
-##  [31] 55.99988 56.99046 57.32673 58.02946 58.55491 59.00480
-##  [37] 59.13009 59.23446 59.49616 60.16205 60.71565 61.30364
-##  [43] 62.87363 62.95189 63.55758 63.56624 63.87013 64.32945
-##  [49] 65.02490 65.04149 65.22779 65.34697 65.76771 65.83622
-##  [55] 65.91442 66.36742 67.13686 68.95011 69.35026 70.30546
-##  [61] 70.88026 71.60847 72.72437 73.11811 73.92024 74.82918
-##  [67] 74.90394 75.90935 76.59021 76.85137 76.92378 77.66055
-##  [73] 78.73677 78.98016 79.26879 79.47093 80.51003 80.56162
-##  [79] 80.83962 81.04056 81.48947 82.59735 82.66960 83.24227
-##  [85] 84.23442 84.37818 84.51080 85.14636 86.07984 86.18965
-##  [91] 86.87711 86.97323 87.02592 87.84878 88.50269 88.89012
-##  [97] 89.17498 89.52814 89.57738 89.84721</code></pre>
+<pre><code>##   [1] 40.80158 41.34744 42.22994 42.42138 44.45918
+##   [6] 44.65029 45.19820 46.08723 46.15414 46.15550
+##  [11] 46.20951 46.27700 46.36267 46.79561 46.81197
+##  [16] 47.27088 49.78158 50.29089 51.07070 51.63885
+##  [21] 52.08149 52.80546 53.37586 53.82876 54.64438
+##  [26] 54.91375 55.38239 55.55692 55.77160 56.33146
+##  [31] 56.44524 58.57692 59.11245 59.48870 60.05298
+##  [36] 60.07767 60.21689 60.39313 60.48038 60.68373
+##  [41] 61.49376 62.16096 62.62595 62.70065 62.88061
+##  [46] 62.95354 64.86879 64.89740 65.46036 66.86697
+##  [51] 67.43380 67.61543 68.76354 68.94579 69.07534
+##  [56] 69.10215 69.26870 70.28828 70.55043 70.79702
+##  [61] 71.85988 72.42969 73.46604 73.73424 73.73857
+##  [66] 74.15033 74.99836 75.37813 75.86391 75.95633
+##  [71] 76.21432 76.36366 76.99065 77.38984 77.97869
+##  [76] 78.15251 79.27612 80.57527 80.91774 81.01055
+##  [81] 81.58361 81.60752 82.16036 82.55898 82.63947
+##  [86] 83.32061 83.41681 83.63828 83.65685 84.15089
+##  [91] 85.28638 85.43745 85.55885 85.60277 87.08886
+##  [96] 87.53181 87.68383 88.61897 89.27603 89.35483</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">median</span>(x)</a></code></pre></div>
-<pre><code>## [1] 65.13464</code></pre>
+<pre><code>## [1] 67.15039</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">hist</span>(x)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="medidas-de-dispersión" class="section level2">
 <h2><span class="header-section-number">1.5</span> Medidas de dispersión</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">y&lt;-<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">60</span>,<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb10-2" title="2"><span class="kw">hist</span>(y)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">sd</span>(x)</a></code></pre></div>
-<pre><code>## [1] 14.92587</code></pre>
+<pre><code>## [1] 14.09978</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">sd</span>(y)</a></code></pre></div>
-<pre><code>## [1] 5.133357</code></pre>
+<pre><code>## [1] 4.623505</code></pre>
 </div>
 <div id="medidas-de-forma" class="section level2">
 <h2><span class="header-section-number">1.6</span> Medidas de forma</h2>
 <p>Asimetría</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(y))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(<span class="dv">0</span>,y)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(y,<span class="dv">200</span>)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-3.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-3.png" width="672" /></p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-4.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-4.png" width="672" /></p>
 <p>Kurtosis</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</a>
 <a class="sourceLine" id="cb19-2" title="2"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>,<span class="dt">sd=</span><span class="fl">0.5</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</a>
 <a class="sourceLine" id="cb19-3" title="3"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</a>
 <a class="sourceLine" id="cb19-4" title="4"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">runif</span>(<span class="dv">100000</span>)))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 
 </div>
 </div>

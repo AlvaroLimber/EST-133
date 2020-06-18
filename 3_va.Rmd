@@ -318,17 +318,72 @@ $$V(aX)=E[(aX)^2]-E[aX]^2=a^2E[X^2]-(aE[X])^2=a^2E[X^2]-a^2 E[X]^2=a^2(E[X^2]-E[
   * $V(a+X)=V(X)$ Tarea
   * $V(a+bX)=b^2 V(X)$ Tarea
 
+## Teorema de Markov
+Si $X$ es una va, tal que $X\geq 0$, $P(X\geq 0)=1$, entonces, para cualquier constante $a>0$. Se tiene: 
+
+$$P(X \geq a) \leq \frac{E[X]}{a}$$
+
+Demostración
+
+$$E[X]=\int_{Rx}xf(x)dx=\int_0^{\infty}{xf(x)}dx=\int_0^a{xf(x)dx}+\int_a^{\infty}{xf(x)dx} \geq \int_a^{\infty}{xf(x)dx}$$
+
+$$E[X]\geq\int_a^{\infty}{xf(x)dx} \geq \int_a^{\infty}{a f(x)dx} = a \int_a^{\infty}{ f(x)dx} = a P(X\geq a)$$
+
+$$E[X]\geq a P(X\geq a)$$
+$$P(X\geq a) \leq \frac{E[X]}{a}$$
+
+
 ## Desigualdad de Chebyshev
+Si $X$ es una va con media $E[X]=\mu$ (finita) y varianza $V(X)=\sigma^2$ (finita), entonces para cualquier número $k>0$ se cumple:
 
-## Ejericios propuestos
+$$P(|X-\mu|\geq k) \leq \frac{V(x)}{k^2}$$
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+$$P(|X-\mu|\geq k \sigma) \leq \frac{1}{k^2}$$
+
+Demostración
+
+$$P(|X-\mu|\geq k)=P((X-\mu)^2\geq k^2)\leq \frac{E[(X-\mu) ^2]}{k^2}=\frac{E[(X-E[X]) ^2]}{k^2}=\frac{V(X)}{k^2}$$
+
+Ejermplos.
+
+Se conoce en base al curso de verano pasado de la materia de estadística I, que el promedio de notas fue de 65 puntos. Si suponemos un rendimiento similar en este semestre de los estudiantes inscritos.
+
+  a) ¿Cuál es la probabilidad que un estudiante obtenga una nota mayor a 75? (Al menos la probabilidad máxima)
+
+Solución.
+
+$X:$ La nota de los estudiantes de la materia de Estadística I en este semestre, el recorrido de $X$ es $X\geq 0$. $E[X]=65$
+
+$$P(X \geq 75) =\int_{75}^{\infty}{f(x)dx}=\sum_{x=75}^{100}{P(X=x)}$$
+
+Dado que no conocemos $f(x)$ o $P(X=x)$ para $x\geq0$, recurrimo a el teorema de Markov
+
+$$P(X\geq 75) \leq \frac{E[X]}{a}=\frac{65}{75}=0.867$$
+La probabilidad que un estudiantes obtenga una nota mayor o igual a 75, necesariamente es menor a 0.867.
+
+Cuál sera la probabilidad que un estudiantes obtenga una nota mayor o igual a 90 puntos.
+
+$$P(X\geq90)\leq \frac{65}{90}=0.7222$$
+
+
+  b) Se sabe también que la varianza alcanzada en el curso de verano fue de 36, ¿Qué puede decirse de la probabilidad de que un estudiante tenga un puntaje entre 55 y 75?
+  
+Solucion, 
+
+La varianza de $X$, es $V(X)=36$
+
+$$P(55 \leq X \leq 75)=P(55-65\leq X-\mu \leq75-65)=P(-10 \leq X-\mu \leq 10)=P(|X-\mu|\leq10)$$
+$$P(|X-\mu|\leq10)=1-P(|X-\mu|>10)=1-P(|X-\mu|\geq10)$$
+Suponiendo que $X$ es continua
+
+
+$$P(|X-\mu|\geq10) \leq \frac{36}{10^2}=0.36$$
+$$P(55 \leq X \leq 75)=P(|X-\mu|\leq10)\leq 1-0.36=0.64 $$
+
+## Repasar para el examen el uso de la función generatriz de momentos (En libro estan en el punto 6.10 pg 372)
+
+La función generatriz de momentos sirve para encontrar los valores de $E[X],E[X^2],E[X^3],...$,  
+
+
+
+

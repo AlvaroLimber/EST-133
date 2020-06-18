@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-06-16" />
+<meta name="date" content="2020-06-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,8 +182,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.7" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#varianza"><i class="fa fa-check"></i><b>3.7</b> Varianza</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#propiedades-2"><i class="fa fa-check"></i><b>3.7.1</b> Propiedades</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#desigualdad-de-chebyshev"><i class="fa fa-check"></i><b>3.8</b> Desigualdad de Chebyshev</a></li>
-<li class="chapter" data-level="3.9" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#ejericios-propuestos"><i class="fa fa-check"></i><b>3.9</b> Ejericios propuestos</a></li>
+<li class="chapter" data-level="3.8" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#teorema-de-markov"><i class="fa fa-check"></i><b>3.8</b> Teorema de Markov</a></li>
+<li class="chapter" data-level="3.9" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#desigualdad-de-chebyshev"><i class="fa fa-check"></i><b>3.9</b> Desigualdad de Chebyshev</a></li>
+<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#repasar-para-el-examen-el-uso-de-la-función-generatriz-de-momentos-en-libro-estan-en-el-punto-6.10-pg-372"><i class="fa fa-check"></i><b>3.10</b> Repasar para el examen el uso de la función generatriz de momentos (En libro estan en el punto 6.10 pg 372)</a></li>
 </ul></li>
 </ul>
 
@@ -544,7 +545,7 @@ $$</p>
 <a class="sourceLine" id="cb43-4" title="4">}</a>
 <a class="sourceLine" id="cb43-5" title="5"><span class="kw">curve</span>(fx,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb43-6" title="6"><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">6</span><span class="op">/</span><span class="dv">5</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 <span class="math display">\[P(0.5&lt;X&lt;1.5)=\int_{0.5}^{1.5}f(x)dx\]</span></p>
 <div id="propiedades-1" class="section level3">
 <h3><span class="header-section-number">3.6.1</span> Propiedades</h3>
@@ -601,23 +602,50 @@ $$</p>
 </ul>
 </div>
 </div>
-<div id="desigualdad-de-chebyshev" class="section level2">
-<h2><span class="header-section-number">3.8</span> Desigualdad de Chebyshev</h2>
+<div id="teorema-de-markov" class="section level2">
+<h2><span class="header-section-number">3.8</span> Teorema de Markov</h2>
+<p>Si <span class="math inline">\(X\)</span> es una va, tal que <span class="math inline">\(X\geq 0\)</span>, <span class="math inline">\(P(X\geq 0)=1\)</span>, entonces, para cualquier constante <span class="math inline">\(a&gt;0\)</span>. Se tiene:</p>
+<p><span class="math display">\[P(X \geq a) \leq \frac{E[X]}{a}\]</span></p>
+<p>Demostración</p>
+<p><span class="math display">\[E[X]=\int_{Rx}xf(x)dx=\int_0^{\infty}{xf(x)}dx=\int_0^a{xf(x)dx}+\int_a^{\infty}{xf(x)dx} \geq \int_a^{\infty}{xf(x)dx}\]</span></p>
+<p><span class="math display">\[E[X]\geq\int_a^{\infty}{xf(x)dx} \geq \int_a^{\infty}{a f(x)dx} = a \int_a^{\infty}{ f(x)dx} = a P(X\geq a)\]</span></p>
+<p><span class="math display">\[E[X]\geq a P(X\geq a)\]</span>
+<span class="math display">\[P(X\geq a) \leq \frac{E[X]}{a}\]</span></p>
 </div>
-<div id="ejericios-propuestos" class="section level2">
-<h2><span class="header-section-number">3.9</span> Ejericios propuestos</h2>
-<ol style="list-style-type: decimal">
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<div id="desigualdad-de-chebyshev" class="section level2">
+<h2><span class="header-section-number">3.9</span> Desigualdad de Chebyshev</h2>
+<p>Si <span class="math inline">\(X\)</span> es una va con media <span class="math inline">\(E[X]=\mu\)</span> (finita) y varianza <span class="math inline">\(V(X)=\sigma^2\)</span> (finita), entonces para cualquier número <span class="math inline">\(k&gt;0\)</span> se cumple:</p>
+<p><span class="math display">\[P(|X-\mu|\geq k) \leq \frac{V(x)}{k^2}\]</span></p>
+<p><span class="math display">\[P(|X-\mu|\geq k \sigma) \leq \frac{1}{k^2}\]</span></p>
+<p>Demostración</p>
+<p><span class="math display">\[P(|X-\mu|\geq k)=P((X-\mu)^2\geq k^2)\leq \frac{E[(X-\mu) ^2]}{k^2}=\frac{E[(X-E[X]) ^2]}{k^2}=\frac{V(X)}{k^2}\]</span></p>
+<p>Ejermplos.</p>
+<p>Se conoce en base al curso de verano pasado de la materia de estadística I, que el promedio de notas fue de 65 puntos. Si suponemos un rendimiento similar en este semestre de los estudiantes inscritos.</p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad que un estudiante obtenga una nota mayor a 75? (Al menos la probabilidad máxima)</li>
 </ol>
+<p>Solución.</p>
+<p><span class="math inline">\(X:\)</span> La nota de los estudiantes de la materia de Estadística I en este semestre, el recorrido de <span class="math inline">\(X\)</span> es <span class="math inline">\(X\geq 0\)</span>. <span class="math inline">\(E[X]=65\)</span></p>
+<p><span class="math display">\[P(X \geq 75) =\int_{75}^{\infty}{f(x)dx}=\sum_{x=75}^{100}{P(X=x)}\]</span></p>
+<p>Dado que no conocemos <span class="math inline">\(f(x)\)</span> o <span class="math inline">\(P(X=x)\)</span> para <span class="math inline">\(x\geq0\)</span>, recurrimo a el teorema de Markov</p>
+<p><span class="math display">\[P(X\geq 75) \leq \frac{E[X]}{a}=\frac{65}{75}=0.867\]</span>
+La probabilidad que un estudiantes obtenga una nota mayor o igual a 75, necesariamente es menor a 0.867.</p>
+<p>Cuál sera la probabilidad que un estudiantes obtenga una nota mayor o igual a 90 puntos.</p>
+<p><span class="math display">\[P(X\geq90)\leq \frac{65}{90}=0.7222\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Se sabe también que la varianza alcanzada en el curso de verano fue de 36, ¿Qué puede decirse de la probabilidad de que un estudiante tenga un puntaje entre 55 y 75?</li>
+</ol>
+<p>Solucion,</p>
+<p>La varianza de <span class="math inline">\(X\)</span>, es <span class="math inline">\(V(X)=36\)</span></p>
+<p><span class="math display">\[P(55 \leq X \leq 75)=P(55-65\leq X-\mu \leq75-65)=P(-10 \leq X-\mu \leq 10)=P(|X-\mu|\leq10)\]</span>
+<span class="math display">\[P(|X-\mu|\leq10)=1-P(|X-\mu|&gt;10)=1-P(|X-\mu|\geq10)\]</span>
+Suponiendo que <span class="math inline">\(X\)</span> es continua</p>
+<p><span class="math display">\[P(|X-\mu|\geq10) \leq \frac{36}{10^2}=0.36\]</span>
+<span class="math display">\[P(55 \leq X \leq 75)=P(|X-\mu|\leq10)\leq 1-0.36=0.64 \]</span></p>
+</div>
+<div id="repasar-para-el-examen-el-uso-de-la-función-generatriz-de-momentos-en-libro-estan-en-el-punto-6.10-pg-372" class="section level2">
+<h2><span class="header-section-number">3.10</span> Repasar para el examen el uso de la función generatriz de momentos (En libro estan en el punto 6.10 pg 372)</h2>
+<p>La función generatriz de momentos sirve para encontrar los valores de <span class="math inline">\(E[X],E[X^2],E[X^3],...\)</span>,</p>
 
 </div>
 </div>
