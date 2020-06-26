@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Tema 4: Distribuciones Discretas | Estadística I</title>
+  <meta name="description" content="Este libro esta destinado a la materia de Estadística I de la carrera de Informática de la Universidad Mayor de San Andres." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Tema 4: Distribuciones Discretas | Estadística I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro esta destinado a la materia de Estadística I de la carrera de Informática de la Universidad Mayor de San Andres." />
+  <meta name="github-repo" content="alvarolimber/EST-133" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Tema 4: Distribuciones Discretas | Estadística I" />
+  
+  <meta name="twitter:description" content="Este libro esta destinado a la materia de Estadística I de la carrera de Informática de la Universidad Mayor de San Andres." />
+  
+
+<meta name="author" content="Alvaro Chirino Gutierrez" />
+
+
+<meta name="date" content="2020-06-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tema-3-variables-aleatorias.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#audiencia"><i class="fa fa-check"></i>Audiencia</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-libro"><i class="fa fa-check"></i>Estructura del libro</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-acuerdos"><i class="fa fa-check"></i>Software y acuerdos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html"><i class="fa fa-check"></i><b>1</b> Tema 1: Estadística Descriptiva</a><ul>
+<li class="chapter" data-level="1.1" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a></li>
+<li class="chapter" data-level="1.2" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#tipos-de-datos"><i class="fa fa-check"></i><b>1.2</b> Tipos de datos</a></li>
+<li class="chapter" data-level="1.3" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#visualización"><i class="fa fa-check"></i><b>1.3</b> Visualización</a></li>
+<li class="chapter" data-level="1.4" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>1.4</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="1.5" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>1.5</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="1.6" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#medidas-de-forma"><i class="fa fa-check"></i><b>1.6</b> Medidas de forma</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Probabilidades</a><ul>
+<li class="chapter" data-level="2.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#introducción-1"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#experimento-aleatorio"><i class="fa fa-check"></i><b>2.2</b> Experimento Aleatorio</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#ejemplos"><i class="fa fa-check"></i><b>2.2.1</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#espacio-muestral"><i class="fa fa-check"></i><b>2.3</b> Espacio Muestral</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#ejemplos-1"><i class="fa fa-check"></i><b>2.3.1</b> Ejemplos</a></li>
+<li class="chapter" data-level="2.3.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#otros-ejemplos"><i class="fa fa-check"></i><b>2.3.2</b> Otros ejemplos</a></li>
+<li class="chapter" data-level="2.3.3" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#ejercicios"><i class="fa fa-check"></i><b>2.3.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#eventos-e"><i class="fa fa-check"></i><b>2.4</b> Eventos (E)</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#ejemplos-2"><i class="fa fa-check"></i><b>2.4.1</b> Ejemplos</a></li>
+<li class="chapter" data-level="2.4.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#operaciones-con-los-eventos"><i class="fa fa-check"></i><b>2.4.2</b> Operaciones con los eventos</a></li>
+<li class="chapter" data-level="2.4.3" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#algunas-propiedades-sobre-las-operaciones-en-eventos"><i class="fa fa-check"></i><b>2.4.3</b> Algunas propiedades sobre las operaciones en eventos</a></li>
+<li class="chapter" data-level="2.4.4" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#algebra-de-eventos"><i class="fa fa-check"></i><b>2.4.4</b> Algebra de Eventos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad"><i class="fa fa-check"></i><b>2.5</b> Probabilidad</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad-de-un-evento"><i class="fa fa-check"></i><b>2.5.1</b> Probabilidad de un evento</a></li>
+<li class="chapter" data-level="2.5.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#axiomas-basicos-de-la-probabilidad"><i class="fa fa-check"></i><b>2.5.2</b> Axiomas basicos de la probabilidad</a></li>
+<li class="chapter" data-level="2.5.3" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#propiedades"><i class="fa fa-check"></i><b>2.5.3</b> Propiedades</a></li>
+<li class="chapter" data-level="2.5.4" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#espacios-equiprobables"><i class="fa fa-check"></i><b>2.5.4</b> Espacios equiprobables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#probabilidad-condicional"><i class="fa fa-check"></i><b>2.6</b> Probabilidad Condicional</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#regla-de-la-multiplicación"><i class="fa fa-check"></i><b>2.6.1</b> Regla de la multiplicación</a></li>
+<li class="chapter" data-level="2.6.2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#independencia-de-eventos"><i class="fa fa-check"></i><b>2.6.2</b> Independencia de Eventos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.7</b> Teorema de la Probabilidad Total</a></li>
+<li class="chapter" data-level="2.8" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.8</b> Teorema de Bayes</a></li>
+<li class="chapter" data-level="2.9" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#ejercicios."><i class="fa fa-check"></i><b>2.9</b> Ejercicios.</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html"><i class="fa fa-check"></i><b>3</b> Tema 3: Variables aleatorias</a><ul>
+<li class="chapter" data-level="3.1" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#introducción-a-variable-aleatoria"><i class="fa fa-check"></i><b>3.1</b> Introducción a variable aleatoria</a></li>
+<li class="chapter" data-level="3.2" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#función-de-probabilidad-densidad"><i class="fa fa-check"></i><b>3.2</b> Función de probabilidad (densidad)</a></li>
+<li class="chapter" data-level="3.3" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#función-de-distribución-acumulada"><i class="fa fa-check"></i><b>3.3</b> Función de distribución (acumulada)</a></li>
+<li class="chapter" data-level="3.4" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>3.4</b> Variables aleatorias discretas</a></li>
+<li class="chapter" data-level="3.5" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#variables-aleatorias-continuas"><i class="fa fa-check"></i><b>3.5</b> Variables aleatorias continuas</a></li>
+<li class="chapter" data-level="3.6" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#esperanza-matemática"><i class="fa fa-check"></i><b>3.6</b> Esperanza matemática</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#propiedades-1"><i class="fa fa-check"></i><b>3.6.1</b> Propiedades</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#varianza"><i class="fa fa-check"></i><b>3.7</b> Varianza</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#propiedades-2"><i class="fa fa-check"></i><b>3.7.1</b> Propiedades</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#teorema-de-markov"><i class="fa fa-check"></i><b>3.8</b> Teorema de Markov</a></li>
+<li class="chapter" data-level="3.9" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#desigualdad-de-chebyshev"><i class="fa fa-check"></i><b>3.9</b> Desigualdad de Chebyshev</a></li>
+<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#función-generatriz-de-momentos"><i class="fa fa-check"></i><b>3.10</b> Función Generatriz de Momentos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html"><i class="fa fa-check"></i><b>4</b> Tema 4: Distribuciones Discretas</a><ul>
+<li class="chapter" data-level="4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#bernoulli"><i class="fa fa-check"></i><b>4.1</b> Bernoulli</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-bernoulli"><i class="fa fa-check"></i><b>4.1.1</b> Usos Bernoulli</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial"><i class="fa fa-check"></i><b>4.2</b> Binomial</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial"><i class="fa fa-check"></i><b>4.2.1</b> Usos Binomial</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-3"><i class="fa fa-check"></i><b>4.2.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#geométrica"><i class="fa fa-check"></i><b>4.3</b> Geométrica</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-geométrica"><i class="fa fa-check"></i><b>4.3.1</b> Usos Geométrica</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-4"><i class="fa fa-check"></i><b>4.3.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial-negativa"><i class="fa fa-check"></i><b>4.4</b> Binomial Negativa</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial-negativa"><i class="fa fa-check"></i><b>4.4.1</b> Usos Binomial Negativa</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Hipergeométrica</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-hipergeométrica"><i class="fa fa-check"></i><b>4.5.1</b> Usos Hipergeométrica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#poisson"><i class="fa fa-check"></i><b>4.6</b> Poisson</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-poisson"><i class="fa fa-check"></i><b>4.6.1</b> Usos Poisson</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tema-4-distribuciones-discretas" class="section level1">
+<h1><span class="header-section-number">4</span> Tema 4: Distribuciones Discretas</h1>
+<div id="bernoulli" class="section level2">
+<h2><span class="header-section-number">4.1</span> Bernoulli</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim Bernoulli(p)\)</span> si su función de probabilidad es:</p>
+<p><span class="math display">\[p(x)=P(X=x)= p^x (1-p)^{1-x} \hspace{0.5cm}; x=\{0,1\}\]</span></p>
+<p>Probabilidad de exito <span class="math inline">\(P(X=0)=p^0(1-p)^{1-0}=1-p\)</span>, Probabilidad de fracaso <span class="math inline">\(P(X=1)=p^1(1-p)^{1-1}=p\)</span>.</p>
+<p>Ejemplo, Sea el experimento lanzar una moneda y la variable aleatoria X<span class="math inline">\(=\)</span>Sale Cara
+<span class="math inline">\(X=1\)</span> cuando salga cara, <span class="math inline">\(X=0\)</span> cuando no salga cara, si suponemos que la moneda es legal, <span class="math inline">\(p=0.5\)</span>. <span class="math inline">\(X\sim Bernoulli(p=0.5)\)</span></p>
+<p>Sea el experimento lanzar dos dados y sumar el resultados de las caras, si definimos la variable aleatoria como <span class="math inline">\(X=1\)</span> cuando la suma es 12 y <span class="math inline">\(X=0\)</span> en otro caso, en este caso el valor de <span class="math inline">\(p=1/36\)</span>, <span class="math inline">\(X\sim Bernoulli(p=1/36)\)</span></p>
+<p>Donde;</p>
+<p><span class="math display">\[E[x]=p\]</span></p>
+<p>Demostración:</p>
+<p><span class="math display">\[E(X)=\sum_{Rx}xP(X=x)= 0*(1-p)+1*p=p\]</span></p>
+<p><span class="math display">\[V[x]=p*(1-p)\]</span></p>
+<p><span class="math display">\[E[X^2]=\sum_{Rx}x^2P(X=x)=0^2 (1-p)+1^2p=p\]</span></p>
+<p><span class="math display">\[V(X)=E[X^2]-E[X]^2=p-p^2=p(1-p)\]</span></p>
+<div id="usos-bernoulli" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Usos Bernoulli</h3>
+<p><span class="math inline">\(X\)</span> representa éxito (<span class="math inline">\(X=1\)</span>) o fracaso (<span class="math inline">\(X=0\)</span>) en la realización de un proceso al azar. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
+</div>
+</div>
+<div id="binomial" class="section level2">
+<h2><span class="header-section-number">4.2</span> Binomial</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim Binomial(n,p)\)</span> si su función de probabilidad es:
+<span class="math display">\[p(x)=P(X=x)= {n \choose x}   p^x (1-p)^{n-x} \hspace{0.5cm}; x=\{0,1,\ldots,n\}\]</span>
+Donde;</p>
+<p><span class="math display">\[\begin{array}{ll}
+ E[x] &amp; =n*p\\
+ V[x] &amp; =n*p*(1-p)\\
+ M_X(t) &amp; =(p*e^t+(1-p))^n
+ \end{array}
+\]</span></p>
+<div id="usos-binomial" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Usos Binomial</h3>
+<p><span class="math inline">\(X\)</span> representa el número de éxitos en <span class="math inline">\(n\)</span> ensayos <strong>independientes</strong> Bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span> en un ensayo bernoulli.</p>
+</div>
+<div id="ejemplos-3" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Ejemplos</h3>
+<ol style="list-style-type: decimal">
+<li>Un estudiantes rinde un examen con 10 preguntas de opción múltiple, donde cada pregunta contiene hasta 5 alternativas de respuesta, donde solo una es correcta. Si el estudiantes responde las preguntas al azar, defina la distribución de probabilidad que modela el problema y calcula la probabilidad que el estudiante;</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Conteste todas las preguntas de forma incorrecta</li>
+<li>Conteste todas las preguntas de forma correcta</li>
+<li>Obtenga más de la mitad de las respuestas correctas</li>
+</ol>
+<p>Respuesta,</p>
+<p>X: El número de preguntas respondidas de forma correcta, <span class="math inline">\(X\sim Binomial(n=10,p=1/5)\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[P(X=0)={n \choose x}   p^x (1-p)^{n-x}={10 \choose 0}   0.2^0 (1-0.2)^{10-0}=0.107\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[P(X=10)={n \choose x}   p^x (1-p)^{n-x}={10 \choose 10}   0.2^{10} (1-0.2)^{10-10}=0.0000001024\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[P(X&gt;5)=P(X=6)+P(X=7)+P(X=8)+P(X=9)+P(X=10)=\sum_{x=6}^{10}{P(X=x)}=0.0064\]</span>
+<strong>Tarea</strong></p>
+<p>La <span class="math inline">\(E[X]=np=10*0.2=2\)</span>, <span class="math inline">\(V(X)=np(1-p)=npq=10*0.2*0.8=1.6\)</span>, <span class="math inline">\(\sqrt{V(X)}=\sqrt{1.6}=1.26\)</span></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="tema-4-distribuciones-discretas.html#cb44-1"></a><span class="kw">barplot</span>(<span class="kw">table</span>(<span class="kw">rbinom</span>(<span class="dv">100000</span>,<span class="dv">10</span>,<span class="fl">0.2</span>)))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+Nota: Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span>, donde <span class="math inline">\(X_i \sim Bernoulli(p)\)</span> para todo <span class="math inline">\(i=1:n\)</span>, si definimos a <span class="math inline">\(Y=X_1+X_2+\ldots+X_n\)</span>, <span class="math inline">\(Y\sim Binomial(n,p)\)</span>.</p>
+<p><span class="math display">\[E[Y]=E[X_1+X_2+\ldots+X_n]=E[X_1]+E[X_2]+\ldots+E[X_n]=p+p+\ldots+p=np\]</span></p>
+<p>Para la varianza <strong>tarea</strong></p>
+<p>Ejercicio, Supongamos que un jugador de basketball tiene una probabilidad de 7/9 de encestar un tiro libro y sus tiros son independientes. Si el consigue 5 tiros libres en un juego en particular. ¿Cuál es la probabilidad de que él enceste 2 o más tiros?.</p>
+<p>Solución:</p>
+<p>X: Número de tiros correctos, <span class="math inline">\(X\sim Binomial(n=5,p=7/9)\)</span>, <span class="math inline">\(Rx=\{0,1,2,3,4,5\}\)</span></p>
+<p><span class="math display">\[P(X\geq 2)=\sum_{x=2}^{x=5}{P(X=x)}=P(X=2)+P(X=3)+P(X=4)+P(X=5)\]</span></p>
+<p><span class="math display">\[P(X\geq 2)=1-P(X&lt;2)=1-[P(X=0)+P(X=1)]=1- ( {5 \choose 0}   (7/9)^0 (1-7/9)^{5-0}+{5 \choose 1}   (7/9)^1 (1-7/9)^{5-1} )\]</span></p>
+<p><span class="math display">\[P(X\geq2)=1-(0.00054+0.00948)=0.98997\]</span></p>
+</div>
+</div>
+<div id="geométrica" class="section level2">
+<h2><span class="header-section-number">4.3</span> Geométrica</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim G(p)\)</span> si su función de probabilidad es:
+<span class="math display">\[p(x)=P(X=x)=  p (1-p)^{x} \hspace{0.5cm}; x=\{0,1,\ldots\}\]</span></p>
+<p>Donde;
+<span class="math display">\[\begin{array}{ll}
+ E[x] &amp; =\frac{(1-p)}{p}\\
+ V[x] &amp; =\frac{(1-p)}{p^2}\\
+ M_X(t) &amp; = \frac{p}{1-(1-p)*e^t} \hspace{0.5cm}
+ \end{array}
+\]</span></p>
+<div id="usos-geométrica" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Usos Geométrica</h3>
+<p><span class="math inline">\(X\)</span> representa el número de fracasos antes de obtener el primer éxito en ensayos sucesivos bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
+</div>
+<div id="ejemplos-4" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Ejemplos</h3>
+<ol style="list-style-type: decimal">
+<li></li>
+</ol>
+</div>
+</div>
+<div id="binomial-negativa" class="section level2">
+<h2><span class="header-section-number">4.4</span> Binomial Negativa</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim BN(r,p)\)</span> si su función de probabilidad es:
+<span class="math display">\[p(x)=P(X=x)= {r+x-1 \choose x}   p^r (1-p)^{x} \hspace{0.5cm}; x=\{0,1,\ldots\}\]</span>
+Donde;</p>
+<p><span class="math display">\[\begin{array}{ll}
+ E[x] &amp; =\frac{r*(1-p)}{p}\\
+ V[x] &amp; =\frac{r*(1-p)}{p^2}\\
+ M_X(t) &amp; = \left(\frac{p}{1-(1-p)*e^t} \right)^r \hspace{0.5cm} ;t&lt;ln(1/(1-p))
+ \end{array}
+\]</span></p>
+<div id="usos-binomial-negativa" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Usos Binomial Negativa</h3>
+<p><span class="math inline">\(X\)</span> representa el número de fracasos antes de obtener <span class="math inline">\(r\)</span> éxitos en ensayos sucesivos bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
+</div>
+</div>
+<div id="hipergeométrica" class="section level2">
+<h2><span class="header-section-number">4.5</span> Hipergeométrica</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim H(N,n,r)\)</span> si su función de probabilidad es:
+<span class="math display">\[p(x)=P(X=x)= \frac{{N-r \choose n-x}{r \choose x}}{{N \choose n}} \hspace{0.5cm}; max\{0,n-N+r\} \leq x \leq min\{r,n\}\]</span>
+Donde;</p>
+<p><span class="math display">\[\begin{array}{ll}
+ E[x] &amp; =n*\frac{r}{N}\\
+ V[x] &amp; =n * \frac{r}{N} * \frac{N-r}{N} * \frac{N-n}{N-1}\\
+ \end{array}
+\]</span></p>
+<div id="usos-hipergeométrica" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Usos Hipergeométrica</h3>
+<p><span class="math inline">\(X\)</span> denota el número de elementos que poseen la característica <span class="math inline">\(A\)</span> en una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> seleccionado de una población de <span class="math inline">\(N\)</span> elementos de los cuales <span class="math inline">\(r\)</span> tienen característica <span class="math inline">\(A\)</span> y <span class="math inline">\(N-r\)</span> característica <span class="math inline">\(B\)</span>.</p>
+</div>
+</div>
+<div id="poisson" class="section level2">
+<h2><span class="header-section-number">4.6</span> Poisson</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim P(\lambda)\)</span>, (<span class="math inline">\(\lambda&gt;0\)</span>) si su función de probabilidad es:
+<span class="math display">\[p(x)=P(X=x)= \frac{e^{-\lambda} \lambda^x}{x!} \hspace{0.5cm}; x=\{0,1,2, \ldots \}\]</span>
+Donde;</p>
+<p><span class="math display">\[\begin{array}{ll}
+ E[x] &amp; =\lambda\\
+ V[x] &amp; =\lambda\\
+ M_X(t) &amp; =e^{\lambda (e^t -1)}
+ \end{array}
+\]</span></p>
+<div id="usos-poisson" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> Usos Poisson</h3>
+<p><span class="math inline">\(X\)</span> representa el número de eventos de cierto tipo, que ocurren en un intervalo de tiempo, o en una región, o en un volumen.</p>
+<ul>
+<li>Fallas de un computador en un día de operación</li>
+<li>Número de clientes que entran a un banco en un día dado</li>
+</ul>
+<p>Nota: Si <span class="math inline">\(X \sim binomial(n,p)\)</span>, si <span class="math inline">\(n \rightarrow \infty\)</span> , <span class="math inline">\(p \rightarrow 0\)</span> y <span class="math inline">\(\lambda=n*p\)</span> permanece constante. Entonces se puede aproximar con <span class="math inline">\(X \sim Poisson(\lambda = n*p)\)</span>. <span class="math inline">\(n \geq 50\)</span>, <span class="math inline">\(p\leq 0.1\)</span>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tema-3-variables-aleatorias.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

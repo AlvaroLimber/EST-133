@@ -1,9 +1,9 @@
 {
-    "path" : "~/GitHub/EST-133",
-    "sortOrder" : [
+    "path": "~/GitHub/EST-133",
+    "sortOrder": [
         {
-            "ascending" : true,
-            "columnIndex" : 2
+            "ascending": true,
+            "columnIndex": 2
         }
     ]
 }

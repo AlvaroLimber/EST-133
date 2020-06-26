@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-06-18" />
+<meta name="date" content="2020-06-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="tema-2-probabilidades.html"/>
-
+<link rel="next" href="tema-4-distribuciones-discretas.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,12 +50,13 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +65,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -184,7 +187,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.8" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#teorema-de-markov"><i class="fa fa-check"></i><b>3.8</b> Teorema de Markov</a></li>
 <li class="chapter" data-level="3.9" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#desigualdad-de-chebyshev"><i class="fa fa-check"></i><b>3.9</b> Desigualdad de Chebyshev</a></li>
-<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#repasar-para-el-examen-el-uso-de-la-función-generatriz-de-momentos-en-libro-estan-en-el-punto-6.10-pg-372"><i class="fa fa-check"></i><b>3.10</b> Repasar para el examen el uso de la función generatriz de momentos (En libro estan en el punto 6.10 pg 372)</a></li>
+<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#función-generatriz-de-momentos"><i class="fa fa-check"></i><b>3.10</b> Función Generatriz de Momentos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html"><i class="fa fa-check"></i><b>4</b> Tema 4: Distribuciones Discretas</a><ul>
+<li class="chapter" data-level="4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#bernoulli"><i class="fa fa-check"></i><b>4.1</b> Bernoulli</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-bernoulli"><i class="fa fa-check"></i><b>4.1.1</b> Usos Bernoulli</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial"><i class="fa fa-check"></i><b>4.2</b> Binomial</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial"><i class="fa fa-check"></i><b>4.2.1</b> Usos Binomial</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-3"><i class="fa fa-check"></i><b>4.2.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#geométrica"><i class="fa fa-check"></i><b>4.3</b> Geométrica</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-geométrica"><i class="fa fa-check"></i><b>4.3.1</b> Usos Geométrica</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-4"><i class="fa fa-check"></i><b>4.3.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial-negativa"><i class="fa fa-check"></i><b>4.4</b> Binomial Negativa</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial-negativa"><i class="fa fa-check"></i><b>4.4.1</b> Usos Binomial Negativa</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Hipergeométrica</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-hipergeométrica"><i class="fa fa-check"></i><b>4.5.1</b> Usos Hipergeométrica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#poisson"><i class="fa fa-check"></i><b>4.6</b> Poisson</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-poisson"><i class="fa fa-check"></i><b>4.6.1</b> Usos Poisson</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -539,12 +564,12 @@ $$</p>
 <p>La esperanza matemática esta dada por:</p>
 <p><span class="math display">\[E[X]=\int_0^2{x\frac{3}{20} (6x-2x^2)dx}=\]</span></p>
 <p><span class="math display">\[E[X]=\frac{3}{20}\int_0^2{6x^2-2x^3dx}=\frac{3}{20}\left( 2x^3-\frac{x^4}{2} \right)_0^2=\frac{3}{20}(16-8)=\frac{24}{20}=\frac{6}{5}\]</span></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1">fx&lt;-<span class="cf">function</span>(x){</a>
-<a class="sourceLine" id="cb43-2" title="2">  y&lt;-(<span class="dv">3</span><span class="op">/</span><span class="dv">20</span>)<span class="op">*</span>(<span class="dv">6</span><span class="op">*</span>x<span class="dv">-2</span><span class="op">*</span>x<span class="op">^</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb43-3" title="3">  <span class="kw">return</span>(y)</a>
-<a class="sourceLine" id="cb43-4" title="4">}</a>
-<a class="sourceLine" id="cb43-5" title="5"><span class="kw">curve</span>(fx,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb43-6" title="6"><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">6</span><span class="op">/</span><span class="dv">5</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="tema-3-variables-aleatorias.html#cb43-1"></a>fx&lt;-<span class="cf">function</span>(x){</span>
+<span id="cb43-2"><a href="tema-3-variables-aleatorias.html#cb43-2"></a>  y&lt;-(<span class="dv">3</span><span class="op">/</span><span class="dv">20</span>)<span class="op">*</span>(<span class="dv">6</span><span class="op">*</span>x<span class="dv">-2</span><span class="op">*</span>x<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb43-3"><a href="tema-3-variables-aleatorias.html#cb43-3"></a>  <span class="kw">return</span>(y)</span>
+<span id="cb43-4"><a href="tema-3-variables-aleatorias.html#cb43-4"></a>}</span>
+<span id="cb43-5"><a href="tema-3-variables-aleatorias.html#cb43-5"></a><span class="kw">curve</span>(fx,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">2</span>))</span>
+<span id="cb43-6"><a href="tema-3-variables-aleatorias.html#cb43-6"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">6</span><span class="op">/</span><span class="dv">5</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 <span class="math display">\[P(0.5&lt;X&lt;1.5)=\int_{0.5}^{1.5}f(x)dx\]</span></p>
 <div id="propiedades-1" class="section level3">
@@ -643,9 +668,10 @@ Suponiendo que <span class="math inline">\(X\)</span> es continua</p>
 <p><span class="math display">\[P(|X-\mu|\geq10) \leq \frac{36}{10^2}=0.36\]</span>
 <span class="math display">\[P(55 \leq X \leq 75)=P(|X-\mu|\leq10)\leq 1-0.36=0.64 \]</span></p>
 </div>
-<div id="repasar-para-el-examen-el-uso-de-la-función-generatriz-de-momentos-en-libro-estan-en-el-punto-6.10-pg-372" class="section level2">
-<h2><span class="header-section-number">3.10</span> Repasar para el examen el uso de la función generatriz de momentos (En libro estan en el punto 6.10 pg 372)</h2>
-<p>La función generatriz de momentos sirve para encontrar los valores de <span class="math inline">\(E[X],E[X^2],E[X^3],...\)</span>,</p>
+<div id="función-generatriz-de-momentos" class="section level2">
+<h2><span class="header-section-number">3.10</span> Función Generatriz de Momentos</h2>
+<p><span class="math display">\[M_X(t)=E[ e^{tx}]\]</span></p>
+<p><span class="math display">\[M_X^{(n)}(t=0)= \left\{ \frac{\partial^n}{\partial t^n} E[ e^{tx}] \right\}_{t=0}=E[x^n]  \]</span></p>
 
 </div>
 </div>
@@ -654,8 +680,8 @@ Suponiendo que <span class="math inline">\(X\)</span> es continua</p>
           </div>
         </div>
       </div>
-<a href="tema-2-probabilidades.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="tema-2-probabilidades.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tema-4-distribuciones-discretas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

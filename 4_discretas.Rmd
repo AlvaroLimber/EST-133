@@ -1,0 +1,181 @@
+# Tema 4: Distribuciones Discretas
+
+## Bernoulli
+
+Sea $X$ una v.a, se dice que $X\sim Bernoulli(p)$ si su función de probabilidad es:
+
+$$p(x)=P(X=x)= p^x (1-p)^{1-x} \hspace{0.5cm}; x=\{0,1\}$$
+
+Probabilidad de exito $P(X=0)=p^0(1-p)^{1-0}=1-p$, Probabilidad de fracaso $P(X=1)=p^1(1-p)^{1-1}=p$.
+
+Ejemplo, Sea el experimento lanzar una moneda y la variable aleatoria X$=$Sale Cara
+$X=1$ cuando salga cara, $X=0$ cuando no salga cara, si suponemos que la moneda es legal, $p=0.5$. $X\sim Bernoulli(p=0.5)$
+
+Sea el experimento lanzar dos dados y sumar el resultados de las caras, si definimos la variable aleatoria como $X=1$ cuando la suma es 12 y $X=0$ en otro caso, en este caso el valor de $p=1/36$, $X\sim Bernoulli(p=1/36)$
+
+
+Donde;
+
+$$E[x]=p$$
+
+Demostración:
+
+$$E(X)=\sum_{Rx}xP(X=x)= 0*(1-p)+1*p=p$$
+
+$$V[x]=p*(1-p)$$
+
+$$E[X^2]=\sum_{Rx}x^2P(X=x)=0^2 (1-p)+1^2p=p$$
+
+$$V(X)=E[X^2]-E[X]^2=p-p^2=p(1-p)$$
+
+
+### Usos Bernoulli
+
+$X$ representa éxito ($X=1$) o fracaso ($X=0$) en la realización de un proceso al azar. Con $p$ la probabilidad de éxito $0<p<1$. 
+
+
+## Binomial
+
+Sea $X$ una v.a, se dice que $X\sim Binomial(n,p)$ si su función de probabilidad es:
+$$p(x)=P(X=x)= {n \choose x}   p^x (1-p)^{n-x} \hspace{0.5cm}; x=\{0,1,\ldots,n\}$$
+Donde;
+
+
+$$\begin{array}{ll}
+ E[x] & =n*p\\
+ V[x] & =n*p*(1-p)\\
+ M_X(t) & =(p*e^t+(1-p))^n
+ \end{array}
+$$
+ 
+### Usos Binomial
+
+$X$ representa el número de éxitos en $n$ ensayos **independientes** Bernoullis. Con $p$ la probabilidad de éxito $0<p<1$ en un ensayo bernoulli.  
+
+### Ejemplos
+
+1. Un estudiantes rinde un examen con 10 preguntas de opción múltiple, donde cada pregunta contiene hasta 5 alternativas de respuesta, donde solo una es correcta. Si el estudiantes responde las preguntas al azar, defina la distribución de probabilidad que modela el problema y calcula la probabilidad que el estudiante; 
+
+  a) Conteste todas las preguntas de forma incorrecta
+  b) Conteste todas las preguntas de forma correcta
+  c) Obtenga más de la mitad de las respuestas correctas
+
+Respuesta, 
+
+X: El número de preguntas respondidas de forma correcta, $X\sim Binomial(n=10,p=1/5)$
+
+  a) 
+  
+$$P(X=0)={n \choose x}   p^x (1-p)^{n-x}={10 \choose 0}   0.2^0 (1-0.2)^{10-0}=0.107$$
+
+  b) 
+
+$$P(X=10)={n \choose x}   p^x (1-p)^{n-x}={10 \choose 10}   0.2^{10} (1-0.2)^{10-10}=0.0000001024$$
+
+ c) 
+ 
+$$P(X>5)=P(X=6)+P(X=7)+P(X=8)+P(X=9)+P(X=10)=\sum_{x=6}^{10}{P(X=x)}=0.0064$$
+**Tarea**
+ 
+La $E[X]=np=10*0.2=2$, $V(X)=np(1-p)=npq=10*0.2*0.8=1.6$, $\sqrt{V(X)}=\sqrt{1.6}=1.26$ 
+
+```{r}
+barplot(table(rbinom(100000,10,0.2)))
+```
+Nota: Sea $X_1,X_2,\ldots,X_n$, donde $X_i \sim Bernoulli(p)$ para todo $i=1:n$, si definimos a $Y=X_1+X_2+\ldots+X_n$, $Y\sim Binomial(n,p)$.
+
+$$E[Y]=E[X_1+X_2+\ldots+X_n]=E[X_1]+E[X_2]+\ldots+E[X_n]=p+p+\ldots+p=np$$
+
+Para la varianza **tarea**
+
+Ejercicio, Supongamos que un jugador de basketball tiene una probabilidad de 7/9 de encestar un tiro libro y sus tiros son independientes. Si el consigue 5 tiros libres  en un juego en particular. ¿Cuál es la probabilidad de que él enceste 2 o más tiros?.
+
+Solución:
+
+X: Número de tiros correctos, $X\sim Binomial(n=5,p=7/9)$, $Rx=\{0,1,2,3,4,5\}$
+
+$$P(X\geq 2)=\sum_{x=2}^{x=5}{P(X=x)}=P(X=2)+P(X=3)+P(X=4)+P(X=5)$$
+ 
+$$P(X\geq 2)=1-P(X<2)=1-[P(X=0)+P(X=1)]=1- ( {5 \choose 0}   (7/9)^0 (1-7/9)^{5-0}+{5 \choose 1}   (7/9)^1 (1-7/9)^{5-1} )$$
+
+$$P(X\geq2)=1-(0.00054+0.00948)=0.98997$$
+ 
+## Geométrica
+
+Sea $X$ una v.a, se dice que $X\sim G(p)$ si su función de probabilidad es:
+$$p(x)=P(X=x)=  p (1-p)^{x} \hspace{0.5cm}; x=\{0,1,\ldots\}$$
+
+Donde;
+$$\begin{array}{ll}
+ E[x] & =\frac{(1-p)}{p}\\
+ V[x] & =\frac{(1-p)}{p^2}\\
+ M_X(t) & = \frac{p}{1-(1-p)*e^t} \hspace{0.5cm}
+ \end{array}
+$$
+
+### Usos Geométrica
+
+$X$ representa el número de fracasos antes de obtener el primer éxito en ensayos sucesivos bernoullis. Con $p$ la probabilidad de éxito $0<p<1$. 
+
+
+### Ejemplos
+
+1. 
+
+## Binomial Negativa
+
+Sea $X$ una v.a, se dice que $X\sim BN(r,p)$ si su función de probabilidad es:
+$$p(x)=P(X=x)= {r+x-1 \choose x}   p^r (1-p)^{x} \hspace{0.5cm}; x=\{0,1,\ldots\}$$
+Donde;
+
+
+$$\begin{array}{ll}
+ E[x] & =\frac{r*(1-p)}{p}\\
+ V[x] & =\frac{r*(1-p)}{p^2}\\
+ M_X(t) & = \left(\frac{p}{1-(1-p)*e^t} \right)^r \hspace{0.5cm} ;t<ln(1/(1-p))
+ \end{array}
+$$
+
+### Usos Binomial Negativa
+
+$X$ representa el número de fracasos antes de obtener $r$ éxitos en ensayos sucesivos bernoullis. Con $p$ la probabilidad de éxito $0<p<1$. 
+
+## Hipergeométrica
+
+Sea $X$ una v.a, se dice que $X\sim H(N,n,r)$ si su función de probabilidad es:
+$$p(x)=P(X=x)= \frac{{N-r \choose n-x}{r \choose x}}{{N \choose n}} \hspace{0.5cm}; max\{0,n-N+r\} \leq x \leq min\{r,n\}$$
+Donde;
+
+
+$$\begin{array}{ll}
+ E[x] & =n*\frac{r}{N}\\
+ V[x] & =n * \frac{r}{N} * \frac{N-r}{N} * \frac{N-n}{N-1}\\
+ \end{array}
+$$
+
+### Usos Hipergeométrica
+
+$X$ denota el número de elementos que poseen la característica $A$ en una muestra aleatoria de tamaño $n$ seleccionado de una población de $N$ elementos de los cuales $r$ tienen característica $A$ y $N-r$ característica $B$.
+
+## Poisson
+
+Sea $X$ una v.a, se dice que $X\sim P(\lambda)$, ($\lambda>0$) si su función de probabilidad es:
+$$p(x)=P(X=x)= \frac{e^{-\lambda} \lambda^x}{x!} \hspace{0.5cm}; x=\{0,1,2, \ldots \}$$
+Donde;
+
+
+$$\begin{array}{ll}
+ E[x] & =\lambda\\
+ V[x] & =\lambda\\
+ M_X(t) & =e^{\lambda (e^t -1)}
+ \end{array}
+$$
+
+### Usos Poisson
+
+$X$ representa el número de eventos de cierto tipo, que ocurren en un intervalo de tiempo, o en una región, o en un volumen.
+
+  * Fallas de un computador en un día de operación
+  * Número de clientes que entran a un banco en un día dado
+  
+Nota: Si $X \sim binomial(n,p)$, si $n \rightarrow \infty$ , $p \rightarrow  0$ y $\lambda=n*p$ permanece constante. Entonces se puede aproximar con $X \sim Poisson(\lambda = n*p)$.  $n \geq 50$, $p\leq 0.1$.

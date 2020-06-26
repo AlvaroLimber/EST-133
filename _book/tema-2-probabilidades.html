@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-06-18" />
+<meta name="date" content="2020-06-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,12 +50,13 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +65,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -184,7 +187,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.8" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#teorema-de-markov"><i class="fa fa-check"></i><b>3.8</b> Teorema de Markov</a></li>
 <li class="chapter" data-level="3.9" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#desigualdad-de-chebyshev"><i class="fa fa-check"></i><b>3.9</b> Desigualdad de Chebyshev</a></li>
-<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#repasar-para-el-examen-el-uso-de-la-función-generatriz-de-momentos-en-libro-estan-en-el-punto-6.10-pg-372"><i class="fa fa-check"></i><b>3.10</b> Repasar para el examen el uso de la función generatriz de momentos (En libro estan en el punto 6.10 pg 372)</a></li>
+<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#función-generatriz-de-momentos"><i class="fa fa-check"></i><b>3.10</b> Función Generatriz de Momentos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html"><i class="fa fa-check"></i><b>4</b> Tema 4: Distribuciones Discretas</a><ul>
+<li class="chapter" data-level="4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#bernoulli"><i class="fa fa-check"></i><b>4.1</b> Bernoulli</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-bernoulli"><i class="fa fa-check"></i><b>4.1.1</b> Usos Bernoulli</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial"><i class="fa fa-check"></i><b>4.2</b> Binomial</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial"><i class="fa fa-check"></i><b>4.2.1</b> Usos Binomial</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-3"><i class="fa fa-check"></i><b>4.2.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#geométrica"><i class="fa fa-check"></i><b>4.3</b> Geométrica</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-geométrica"><i class="fa fa-check"></i><b>4.3.1</b> Usos Geométrica</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-4"><i class="fa fa-check"></i><b>4.3.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial-negativa"><i class="fa fa-check"></i><b>4.4</b> Binomial Negativa</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial-negativa"><i class="fa fa-check"></i><b>4.4.1</b> Usos Binomial Negativa</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Hipergeométrica</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-hipergeométrica"><i class="fa fa-check"></i><b>4.5.1</b> Usos Hipergeométrica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#poisson"><i class="fa fa-check"></i><b>4.6</b> Poisson</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-poisson"><i class="fa fa-check"></i><b>4.6.1</b> Usos Poisson</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -220,24 +245,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>La historia de la probabilidad comienza en el siglo XVII cuando Pierre Fermat y Blaise Pascal tratan de resolver algunos problemas relacionados con los juegos de azar. Aunque algunos marcan sus inicios cuando Cardano (jugador donde los haya) escribió sobre 1520 El Libro de los Juegos de Azar (aunque no fué publicado hasta más de un siglo después, sobre 1660) no es hasta dicha fecha que comienza a elaborarse una teoría aceptable sobre los juegos.</p>
 <div class="figure">
-<img src="https://www.biografiasyvidas.com/biografia/f/fotos/fermat.jpg" alt="Pierre Fermat" />
+<img src="https://www.biografiasyvidas.com/biografia/f/fotos/fermat.jpg" alt="" />
 <p class="caption">Pierre Fermat</p>
 </div>
 <div class="figure">
-<img src="https://www.biografiasyvidas.com/biografia/p/fotos/pascal_blaise_1.jpg" alt="Blaise Pascal" />
+<img src="https://www.biografiasyvidas.com/biografia/p/fotos/pascal_blaise_1.jpg" alt="" />
 <p class="caption">Blaise Pascal</p>
 </div>
 <p>Durante el siglo XVIII, debido muy particularmente a la popularidad de los juegos de azar, el cálculo de probabilidades tuvo un notable desarrollo sobre la base de la anterior definición de probabilidad. Destacan en 1713 el teorema de Bernoulli y la distribución binomial, y en 1738 el primer caso particular estudiado por De Moivre, del teorema central del límite. En 1809 Gauss inició el estudio de la teoría de errores y en 1810 Laplace, que había considerado anteriormente el tema, completó el desarrollo de esta teoría. En 1812 Pierre Laplace publicó Théorie analytique des probabilités en el que expone un análisis matemático sobre los juegos de azar.</p>
 <div class="figure">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Danielbernoulli.jpg/220px-Danielbernoulli.jpg" alt="Daniel Bernoulli" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Danielbernoulli.jpg/220px-Danielbernoulli.jpg" alt="" />
 <p class="caption">Daniel Bernoulli</p>
 </div>
 <div class="figure">
-<img src="https://estaticos.elperiodico.com/resources/jpg/2/5/johann-carl-friedrich-gauss-1525091415852.jpg" alt="Gauss" />
+<img src="https://estaticos.elperiodico.com/resources/jpg/2/5/johann-carl-friedrich-gauss-1525091415852.jpg" alt="" />
 <p class="caption">Gauss</p>
 </div>
 <div class="figure">
-<img src="https://historiaybiografias.com/archivos_varios5/laplace.jpg" alt="Pierre Laplace" />
+<img src="https://historiaybiografias.com/archivos_varios5/laplace.jpg" alt="" />
 <p class="caption">Pierre Laplace</p>
 </div>
 </div>
@@ -308,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>El experimento es medir el tiempo de vida de un componente electrónico de un aparato (horas).</li>
 </ol>
 <p><span class="math display">\[\Omega=\{x: x \geq 0  \}\]</span></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>),<span class="dt">type=</span><span class="st">&quot;b&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tema-2-probabilidades.html#cb20-1"></a><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>),<span class="dt">type=</span><span class="st">&quot;b&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>El experimento es: Seleccionar 3 personas de un grupo de 50 personas, describir el espacio muestral y el tamaño de este.
@@ -483,50 +508,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Probabilidad frecuentista:</li>
 </ul>
 <p><span class="math display">\[P(A)=lim_{n \rightarrow \infty} \frac{n(A)}{n} =lim_{n \rightarrow \infty} \frac{\# A_n}{n}\]</span></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="co">#0=cara, 1=escudo</span></a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="kw">set.seed</span>(<span class="dv">999</span>)</a>
-<a class="sourceLine" id="cb21-3" title="3">aux&lt;-<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb21-4" title="4">aux</a></code></pre></div>
-<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1
-##   [27] 1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1
-##   [53] 0 1 0 1 0 1 0 1 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 0
-##   [79] 0 0 0 1 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 0 1 0 1
-##  [105] 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 1 0 1 1 0 1 1 1 1 0 0
-##  [131] 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0 1 1 1 1 0 1
-##  [157] 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0 1 0
-##  [183] 1 1 0 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 1 0 0
-##  [209] 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1
-##  [235] 1 0 0 1 1 0 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0
-##  [261] 0 0 0 1 1 0 0 0 0 1 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0
-##  [287] 1 0 1 0 0 1 1 1 1 0 0 0 1 0 1 0 1 1 1 1 1 1 1 0 0 0
-##  [313] 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1 1 0 1 0 1 0 0 1
-##  [339] 0 1 0 0 0 1 1 1 1 0 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 1
-##  [365] 1 0 1 0 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0
-##  [391] 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 1 1 0 1 1 1 0 0 0
-##  [417] 1 1 0 0 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 1 0
-##  [443] 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 1 1 0 1 1 1 0
-##  [469] 0 0 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 1 1 0 0 1 1
-##  [495] 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 0 0 0 1 0 1
-##  [521] 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1 1 1 0 1 0 1
-##  [547] 0 1 1 0 1 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1 1 0
-##  [573] 0 1 0 0 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1 0 1 1
-##  [599] 0 1 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0
-##  [625] 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 0 1 1
-##  [651] 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0 1
-##  [677] 0 1 1 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0 0 0 0 1 1 1
-##  [703] 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0
-##  [729] 1 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0 1 1 0 0
-##  [755] 0 0 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1
-##  [781] 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0
-##  [807] 1 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0
-##  [833] 1 0 0 1 1 0 1 0 1 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1
-##  [859] 0 0 1 0 1 1 0 1 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1
-##  [885] 0 1 0 1 0 1 1 1 0 1 0 1 1 0 1 0 1 0 1 0 0 0 0 0 1 0
-##  [911] 0 1 1 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 1 1 0
-##  [937] 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1 0 0
-##  [963] 0 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1 0 1
-##  [989] 1 0 0 0 1 1 1 0 1 0 1 1</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">sum</span>(aux)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tema-2-probabilidades.html#cb21-1"></a><span class="co">#0=cara, 1=escudo</span></span>
+<span id="cb21-2"><a href="tema-2-probabilidades.html#cb21-2"></a><span class="kw">set.seed</span>(<span class="dv">999</span>)</span>
+<span id="cb21-3"><a href="tema-2-probabilidades.html#cb21-3"></a>aux&lt;-<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="fl">0.5</span>)</span>
+<span id="cb21-4"><a href="tema-2-probabilidades.html#cb21-4"></a>aux</span></code></pre></div>
+<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1
+##   [28] 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1
+##   [55] 0 1 0 1 0 1 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0
+##   [82] 1 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 1 0
+##  [109] 0 1 1 0 1 0 0 1 1 0 0 1 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0
+##  [136] 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0 1 1 1 1 0 1 1 0 0 1 0 0
+##  [163] 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0 1 0 1 1 0 0 1 0 0
+##  [190] 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 1
+##  [217] 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0 0 0 1
+##  [244] 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 1 1 0 0 0 0 1
+##  [271] 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 1 0 0
+##  [298] 0 1 0 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 1 1 1 0
+##  [325] 0 1 0 1 0 1 1 0 1 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0
+##  [352] 0 0 1 1 0 0 1 1 0 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 0
+##  [379] 0 1 0 0 1 0 0 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1
+##  [406] 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 1 1 0 0 0 1 1 0
+##  [433] 0 0 1 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 1 1
+##  [460] 1 1 1 1 0 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0
+##  [487] 1 1 1 1 0 0 1 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 1 1
+##  [514] 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1
+##  [541] 1 1 0 1 0 1 0 1 1 0 1 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0
+##  [568] 0 0 1 1 0 0 1 0 0 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1
+##  [595] 1 0 1 1 0 1 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0
+##  [622] 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 0
+##  [649] 1 1 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0
+##  [676] 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0 0 0 0 1 1 1
+##  [703] 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0 1
+##  [730] 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0 1 1 0 0 0 0
+##  [757] 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1 0 1 0
+##  [784] 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1
+##  [811] 0 0 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1
+##  [838] 0 1 0 1 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1
+##  [865] 0 1 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1 0 1 1
+##  [892] 1 0 1 0 1 1 0 1 0 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1
+##  [919] 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0
+##  [946] 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1 0 0 0 0 1 1 1 1 0 1 0 0
+##  [973] 0 1 0 1 1 1 1 0 1 1 1 0 0 1 0 1 1 0 0 0 1 1 1 0 1 0 1
+## [1000] 1</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tema-2-probabilidades.html#cb23-1"></a><span class="kw">sum</span>(aux)</span></code></pre></div>
 <pre><code>## [1] 496</code></pre>
 <p><span class="math inline">\(P(escudo)=\frac{496}{1000}=0.496\)</span></p>
 <ul>
@@ -642,9 +666,9 @@ P:\begin{array}
 <li>Ejercicio (14, pg-244). Sea un dado, tal que la probabilidad de las distintas caras es proporcional al número de puntos inscritos en ellos. Hallar la probabilidad de obtener con este dado, un número par.</li>
 </ul>
 <p><span class="math display">\[\Omega=\{1,2,3,4,5,6\}\]</span></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="co">#relativar </span></a>
-<a class="sourceLine" id="cb28-2" title="2">px&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)<span class="op">/</span><span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb28-3" title="3"><span class="kw">sum</span>(px[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)])</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tema-2-probabilidades.html#cb28-1"></a><span class="co">#relativar </span></span>
+<span id="cb28-2"><a href="tema-2-probabilidades.html#cb28-2"></a>px&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)<span class="op">/</span><span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</span>
+<span id="cb28-3"><a href="tema-2-probabilidades.html#cb28-3"></a><span class="kw">sum</span>(px[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)])</span></code></pre></div>
 <pre><code>## [1] 0.5714286</code></pre>
 <p><span class="math display">\[P(2,4,6)=P(2 \cup 4 \cup 6 )=P(2)+P(4)+P(6)=0.095+0.19+0.286=0.571\]</span></p>
 <ul>
@@ -654,12 +678,12 @@ P:\begin{array}
 + <span class="math inline">\(C=\{x \in \Omega / x^2+1\leq 375 \}\)</span></li>
 </ul>
 <p>Para <span class="math inline">\(P(A)\)</span></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">sum</span>((<span class="dv">1</span><span class="op">:</span><span class="dv">200</span> <span class="op">%%</span><span class="st"> </span><span class="dv">7</span>)<span class="op">==</span><span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tema-2-probabilidades.html#cb30-1"></a><span class="kw">sum</span>((<span class="dv">1</span><span class="op">:</span><span class="dv">200</span> <span class="op">%%</span><span class="st"> </span><span class="dv">7</span>)<span class="op">==</span><span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 28</code></pre>
 <p><span class="math display">\[P(A)=\frac{\# A}{\# \Omega}=\frac{28}{200}=0.14\]</span></p>
 <p>Para <span class="math inline">\(P(B)\)</span></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">n&lt;-<span class="dv">1</span><span class="op">:</span><span class="dv">100</span></a>
-<a class="sourceLine" id="cb32-2" title="2"><span class="kw">sum</span>((<span class="dv">3</span><span class="op">*</span>n<span class="op">+</span><span class="dv">10</span>)<span class="op">&lt;=</span><span class="dv">200</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tema-2-probabilidades.html#cb32-1"></a>n&lt;-<span class="dv">1</span><span class="op">:</span><span class="dv">100</span></span>
+<span id="cb32-2"><a href="tema-2-probabilidades.html#cb32-2"></a><span class="kw">sum</span>((<span class="dv">3</span><span class="op">*</span>n<span class="op">+</span><span class="dv">10</span>)<span class="op">&lt;=</span><span class="dv">200</span>)</span></code></pre></div>
 <pre><code>## [1] 63</code></pre>
 <p><span class="math display">\[P(B)=\frac{\# B}{\# \Omega}=\frac{63}{200}=0.315\]</span></p>
 <p><span class="math display">\[P(C)=\frac{\# C}{\# \Omega}=\frac{19}{200}=0.095\]</span></p>
@@ -684,10 +708,10 @@ P:\begin{array}
 <pre><code>    + Los políticos (50), 20 votan por A, 20 votan por B y 10 votan por C
     + Los académicos que son (40), 10 votan por A, 10 votan por B y 20 votan por C
     + El resto (110), 30 votan por A, 50 votan por B y el resto vota por C</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">A&lt;-<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">10</span>),<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>),<span class="kw">c</span>(<span class="dv">30</span>,<span class="dv">50</span>,<span class="dv">30</span>))</a>
-<a class="sourceLine" id="cb37-2" title="2"><span class="kw">colnames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)</a>
-<a class="sourceLine" id="cb37-3" title="3"><span class="kw">rownames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;POL&quot;</span>,<span class="st">&quot;ACA&quot;</span>,<span class="st">&quot;RES&quot;</span>)</a>
-<a class="sourceLine" id="cb37-4" title="4">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">addmargins</span>(A))</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tema-2-probabilidades.html#cb37-1"></a>A&lt;-<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">10</span>),<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">20</span>),<span class="kw">c</span>(<span class="dv">30</span>,<span class="dv">50</span>,<span class="dv">30</span>))</span>
+<span id="cb37-2"><a href="tema-2-probabilidades.html#cb37-2"></a><span class="kw">colnames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)</span>
+<span id="cb37-3"><a href="tema-2-probabilidades.html#cb37-3"></a><span class="kw">rownames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;POL&quot;</span>,<span class="st">&quot;ACA&quot;</span>,<span class="st">&quot;RES&quot;</span>)</span>
+<span id="cb37-4"><a href="tema-2-probabilidades.html#cb37-4"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">addmargins</span>(A))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -749,10 +773,10 @@ P:\begin{array}
 </ol>
 <p><strong>Ejemplo</strong></p>
 <p>Se tiene la tabla de admisión de 356 estudiantes de la UMSA, de acuerdo a la carrera y su municipio de procedencia</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">A&lt;-<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">20</span>),<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">60</span>,<span class="dv">50</span>,<span class="dv">10</span>),<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>))</a>
-<a class="sourceLine" id="cb42-2" title="2"><span class="kw">colnames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;ING&quot;</span>,<span class="st">&quot;ECO&quot;</span>,<span class="st">&quot;INF&quot;</span>,<span class="st">&quot;DER&quot;</span>)</a>
-<a class="sourceLine" id="cb42-3" title="3"><span class="kw">rownames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;LAPAZ&quot;</span>,<span class="st">&quot;ELALTO&quot;</span>,<span class="st">&quot;VIACHA&quot;</span>)</a>
-<a class="sourceLine" id="cb42-4" title="4">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">addmargins</span>(A))</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="tema-2-probabilidades.html#cb42-1"></a>A&lt;-<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">20</span>),<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">60</span>,<span class="dv">50</span>,<span class="dv">10</span>),<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb42-2"><a href="tema-2-probabilidades.html#cb42-2"></a><span class="kw">colnames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;ING&quot;</span>,<span class="st">&quot;ECO&quot;</span>,<span class="st">&quot;INF&quot;</span>,<span class="st">&quot;DER&quot;</span>)</span>
+<span id="cb42-3"><a href="tema-2-probabilidades.html#cb42-3"></a><span class="kw">rownames</span>(A)&lt;-<span class="kw">c</span>(<span class="st">&quot;LAPAZ&quot;</span>,<span class="st">&quot;ELALTO&quot;</span>,<span class="st">&quot;VIACHA&quot;</span>)</span>
+<span id="cb42-4"><a href="tema-2-probabilidades.html#cb42-4"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">addmargins</span>(A))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -872,7 +896,7 @@ Tarea 3: Leer del libro el desde el apartado 5.6.3 (Teorema de la probabilidad t
 <div id="teorema-de-la-probabilidad-total" class="section level2">
 <h2><span class="header-section-number">2.7</span> Teorema de la Probabilidad Total</h2>
 <div class="figure">
-<img src="https://4.bp.blogspot.com/-8lzibwRArUw/WJV3xFSHJaI/AAAAAAAAgZM/28mWy8iAm0MKfxJYbDhqVL6iGqXSbJA-QCLcB/s1600/%25E8%259E%25A2%25E5%25B9%2595%25E5%25BF%25AB%25E7%2585%25A7%2B2017-02-04%2B%25E4%25B8%258B%25E5%258D%25882.41.58.png" alt="Probabilidad Total" />
+<img src="https://4.bp.blogspot.com/-8lzibwRArUw/WJV3xFSHJaI/AAAAAAAAgZM/28mWy8iAm0MKfxJYbDhqVL6iGqXSbJA-QCLcB/s1600/%25E8%259E%25A2%25E5%25B9%2595%25E5%25BF%25AB%25E7%2585%25A7%2B2017-02-04%2B%25E4%25B8%258B%25E5%258D%25882.41.58.png" alt="" />
 <p class="caption">Probabilidad Total</p>
 </div>
 <p>Sea <span class="math inline">\(A_1,A_2,\ldots ,A_n\)</span> un partición del espacio muestral, de tal forma que: <span class="math inline">\(P(A_i)&gt;0\)</span> para todo <span class="math inline">\(i=1, \ldots,n\)</span>. La partición representa que <span class="math inline">\(U_{i=1}^n A_i=\Omega\)</span> y <span class="math inline">\(A_i \cap A_j =\emptyset\)</span> para todo <span class="math inline">\(i\neq j\)</span>. Para cualquier evento <span class="math inline">\(B \in \Omega\)</span>.</p>

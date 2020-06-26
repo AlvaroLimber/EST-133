@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-06-18" />
+<meta name="date" content="2020-06-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,12 +50,13 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +65,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -184,7 +187,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.8" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#teorema-de-markov"><i class="fa fa-check"></i><b>3.8</b> Teorema de Markov</a></li>
 <li class="chapter" data-level="3.9" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#desigualdad-de-chebyshev"><i class="fa fa-check"></i><b>3.9</b> Desigualdad de Chebyshev</a></li>
-<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#repasar-para-el-examen-el-uso-de-la-función-generatriz-de-momentos-en-libro-estan-en-el-punto-6.10-pg-372"><i class="fa fa-check"></i><b>3.10</b> Repasar para el examen el uso de la función generatriz de momentos (En libro estan en el punto 6.10 pg 372)</a></li>
+<li class="chapter" data-level="3.10" data-path="tema-3-variables-aleatorias.html"><a href="tema-3-variables-aleatorias.html#función-generatriz-de-momentos"><i class="fa fa-check"></i><b>3.10</b> Función Generatriz de Momentos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html"><i class="fa fa-check"></i><b>4</b> Tema 4: Distribuciones Discretas</a><ul>
+<li class="chapter" data-level="4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#bernoulli"><i class="fa fa-check"></i><b>4.1</b> Bernoulli</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-bernoulli"><i class="fa fa-check"></i><b>4.1.1</b> Usos Bernoulli</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial"><i class="fa fa-check"></i><b>4.2</b> Binomial</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial"><i class="fa fa-check"></i><b>4.2.1</b> Usos Binomial</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-3"><i class="fa fa-check"></i><b>4.2.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#geométrica"><i class="fa fa-check"></i><b>4.3</b> Geométrica</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-geométrica"><i class="fa fa-check"></i><b>4.3.1</b> Usos Geométrica</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-4"><i class="fa fa-check"></i><b>4.3.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial-negativa"><i class="fa fa-check"></i><b>4.4</b> Binomial Negativa</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial-negativa"><i class="fa fa-check"></i><b>4.4.1</b> Usos Binomial Negativa</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Hipergeométrica</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-hipergeométrica"><i class="fa fa-check"></i><b>4.5.1</b> Usos Hipergeométrica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#poisson"><i class="fa fa-check"></i><b>4.6</b> Poisson</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-poisson"><i class="fa fa-check"></i><b>4.6.1</b> Usos Poisson</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -222,61 +247,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="medidas-de-tendencia-central" class="section level2">
 <h2><span class="header-section-number">1.4</span> Medidas de tendencia central</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">x&lt;-<span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">90</span>)</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">100</span></a></code></pre></div>
-<pre><code>## [1] 66.17602</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">x[<span class="kw">order</span>(x)]</a></code></pre></div>
-<pre><code>##   [1] 40.80158 41.34744 42.22994 42.42138 44.45918
-##   [6] 44.65029 45.19820 46.08723 46.15414 46.15550
-##  [11] 46.20951 46.27700 46.36267 46.79561 46.81197
-##  [16] 47.27088 49.78158 50.29089 51.07070 51.63885
-##  [21] 52.08149 52.80546 53.37586 53.82876 54.64438
-##  [26] 54.91375 55.38239 55.55692 55.77160 56.33146
-##  [31] 56.44524 58.57692 59.11245 59.48870 60.05298
-##  [36] 60.07767 60.21689 60.39313 60.48038 60.68373
-##  [41] 61.49376 62.16096 62.62595 62.70065 62.88061
-##  [46] 62.95354 64.86879 64.89740 65.46036 66.86697
-##  [51] 67.43380 67.61543 68.76354 68.94579 69.07534
-##  [56] 69.10215 69.26870 70.28828 70.55043 70.79702
-##  [61] 71.85988 72.42969 73.46604 73.73424 73.73857
-##  [66] 74.15033 74.99836 75.37813 75.86391 75.95633
-##  [71] 76.21432 76.36366 76.99065 77.38984 77.97869
-##  [76] 78.15251 79.27612 80.57527 80.91774 81.01055
-##  [81] 81.58361 81.60752 82.16036 82.55898 82.63947
-##  [86] 83.32061 83.41681 83.63828 83.65685 84.15089
-##  [91] 85.28638 85.43745 85.55885 85.60277 87.08886
-##  [96] 87.53181 87.68383 88.61897 89.27603 89.35483</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">median</span>(x)</a></code></pre></div>
-<pre><code>## [1] 67.15039</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">hist</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tema-1-estadística-descriptiva.html#cb3-1"></a>x&lt;-<span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">90</span>)</span>
+<span id="cb3-2"><a href="tema-1-estadística-descriptiva.html#cb3-2"></a><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">100</span></span></code></pre></div>
+<pre><code>## [1] 65.56496</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tema-1-estadística-descriptiva.html#cb5-1"></a>x[<span class="kw">order</span>(x)]</span></code></pre></div>
+<pre><code>##   [1] 40.39884 40.57062 40.58809 41.57923 41.88592 42.12200
+##   [7] 42.50194 42.52661 43.37293 44.02268 44.27746 44.52213
+##  [13] 44.68559 44.87011 44.95677 45.50901 45.81119 46.11460
+##  [19] 48.43026 48.49422 49.17410 49.19219 49.69804 50.31105
+##  [25] 51.06617 51.17548 51.30805 52.39302 53.73790 53.97584
+##  [31] 54.55422 54.94929 55.73757 56.28789 56.64369 59.19066
+##  [37] 61.26999 61.30799 61.86919 62.05135 62.51085 63.04893
+##  [43] 63.55352 63.84341 63.98287 64.45106 64.66340 65.33068
+##  [49] 65.34565 67.25419 67.83385 69.04276 69.12582 69.40325
+##  [55] 69.58760 69.88731 71.97585 72.11869 72.23898 72.63341
+##  [61] 72.63759 73.09967 73.38753 73.57454 74.26107 74.49953
+##  [67] 74.58123 75.82501 76.15216 76.18783 76.25645 77.21515
+##  [73] 78.08466 78.74161 78.78320 80.09318 80.47252 81.03155
+##  [79] 81.04659 81.71339 81.77038 81.84671 82.16418 82.41581
+##  [85] 82.84700 83.15237 83.50049 83.61495 84.48723 84.60168
+##  [91] 85.40819 85.52961 85.56196 86.11721 86.31918 86.80974
+##  [97] 87.38104 87.43101 88.20163 88.72483</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tema-1-estadística-descriptiva.html#cb7-1"></a><span class="kw">median</span>(x)</span></code></pre></div>
+<pre><code>## [1] 67.54402</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tema-1-estadística-descriptiva.html#cb9-1"></a><span class="kw">hist</span>(x)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="medidas-de-dispersión" class="section level2">
 <h2><span class="header-section-number">1.5</span> Medidas de dispersión</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">y&lt;-<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">60</span>,<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">hist</span>(y)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tema-1-estadística-descriptiva.html#cb10-1"></a>y&lt;-<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">60</span>,<span class="dv">5</span>)</span>
+<span id="cb10-2"><a href="tema-1-estadística-descriptiva.html#cb10-2"></a><span class="kw">hist</span>(y)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">sd</span>(x)</a></code></pre></div>
-<pre><code>## [1] 14.09978</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">sd</span>(y)</a></code></pre></div>
-<pre><code>## [1] 4.623505</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tema-1-estadística-descriptiva.html#cb11-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
+<pre><code>## [1] 15.17382</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tema-1-estadística-descriptiva.html#cb13-1"></a><span class="kw">sd</span>(y)</span></code></pre></div>
+<pre><code>## [1] 4.561682</code></pre>
 </div>
 <div id="medidas-de-forma" class="section level2">
 <h2><span class="header-section-number">1.6</span> Medidas de forma</h2>
 <p>Asimetría</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(y))</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tema-1-estadística-descriptiva.html#cb15-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(y))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(<span class="dv">0</span>,y)))</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tema-1-estadística-descriptiva.html#cb16-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(<span class="dv">0</span>,y)))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(y,<span class="dv">200</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tema-1-estadística-descriptiva.html#cb17-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(y,<span class="dv">200</span>)))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-5-3.png" width="672" /></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tema-1-estadística-descriptiva.html#cb18-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-5-4.png" width="672" /></p>
 <p>Kurtosis</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>,<span class="dt">sd=</span><span class="fl">0.5</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</a>
-<a class="sourceLine" id="cb19-3" title="3"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">runif</span>(<span class="dv">100000</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tema-1-estadística-descriptiva.html#cb19-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<span id="cb19-2"><a href="tema-1-estadística-descriptiva.html#cb19-2"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>,<span class="dt">sd=</span><span class="fl">0.5</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</span>
+<span id="cb19-3"><a href="tema-1-estadística-descriptiva.html#cb19-3"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</span>
+<span id="cb19-4"><a href="tema-1-estadística-descriptiva.html#cb19-4"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">runif</span>(<span class="dv">100000</span>)))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 
 </div>
