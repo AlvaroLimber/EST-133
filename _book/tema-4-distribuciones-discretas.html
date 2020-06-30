@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-06-25" />
+<meta name="date" content="2020-06-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -202,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-4"><i class="fa fa-check"></i><b>4.3.2</b> Ejemplos</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial-negativa"><i class="fa fa-check"></i><b>4.4</b> Binomial Negativa</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial-negativa"><i class="fa fa-check"></i><b>4.4.1</b> Usos Binomial Negativa</a></li>
+<li class="chapter" data-level="4.4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplo"><i class="fa fa-check"></i><b>4.4.1</b> Ejemplo,</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Hipergeométrica</a><ul>
 <li class="chapter" data-level="4.5.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-hipergeométrica"><i class="fa fa-check"></i><b>4.5.1</b> Usos Hipergeométrica</a></li>
@@ -317,12 +317,29 @@ Nota: Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span>, donde <span c
 \]</span></p>
 <div id="usos-geométrica" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Usos Geométrica</h3>
-<p><span class="math inline">\(X\)</span> representa el número de fracasos antes de obtener el primer éxito en ensayos sucesivos bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
+<p><span class="math inline">\(X\)</span> representa el número de fracasos antes de obtener el primer éxito en ensayos sucesivos Bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
 </div>
 <div id="ejemplos-4" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Ejemplos</h3>
 <ol style="list-style-type: decimal">
-<li></li>
+<li>Se realiza el lanzamiento de una moneda legal, Sea X una va, donde X: El número de fracasos antes de sacar Cara por primera vez. Calcular la probabilidad de <span class="math inline">\(X=10\)</span>, <span class="math inline">\(X=0\)</span>, <span class="math inline">\(X=5\)</span>.</li>
+</ol>
+<p>Solución, <span class="math inline">\(X\sim G(p=0.5)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(P(X=10)=p (1-p)^x=0.5*0.5^{10}=0.00049\)</span></li>
+<li><span class="math inline">\(P(X=0)=p (1-p)^x=0.5*0.5^0=0.5\)</span></li>
+<li><span class="math inline">\(P(X=5)=0.5*0.5^5=0.0156=P(S_1\cap S_2\cap S_3\cap S_4 \cap S_5 \cap C_6)=P(S)^5*P(C)\)</span></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Una persona se compra un boleto de lotería cada mes, se conoce que en cada sorteo participan 100,000 boletos de lotería, 1) modele el problema, 2) calcule la probabilidad que esta persona gane la lotería el primer mes, 3) la probabilidad que gane la lotería en el mes 13, 4) La probabilidad que gane la lotería el primer año. 5) ¿Cuántos meses se espera hasta que esta persona gane la lotería?</li>
+</ol>
+<p>Solución,</p>
+<ol style="list-style-type: decimal">
+<li>X: El número de meses antes de ganar la lotería, <span class="math inline">\(X\sim G(p=1/100000)\)</span></li>
+<li><span class="math inline">\(P(X=0)=p(1-p)^x=p(1-p)^0=p=\frac{1}{100000}\)</span></li>
+<li><span class="math inline">\(P(X=12)=p(1-p)^{12}=1/100000*(1-1/100000)^{12}=0.000009998\)</span></li>
+<li><span class="math inline">\(P(X=0)+P(X=1)+P(X=2)+\ldots+P(X=11)=P(X&lt;12)=P(X\leq11)=TAREA\)</span></li>
+<li><span class="math inline">\(E[X]=\frac{(1-p)}{p}=\frac{1-1/100000}{1/100000}=99999\)</span>, <span class="math inline">\(V(X)=\frac{1-p}{p^2}=9999900000\)</span>, <span class="math inline">\(\sqrt{V(x)}=99999.5\)</span></li>
 </ol>
 </div>
 </div>
@@ -336,10 +353,37 @@ Donde;</p>
  V[x] &amp; =\frac{r*(1-p)}{p^2}\\
  M_X(t) &amp; = \left(\frac{p}{1-(1-p)*e^t} \right)^r \hspace{0.5cm} ;t&lt;ln(1/(1-p))
  \end{array}
-\]</span></p>
-<div id="usos-binomial-negativa" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Usos Binomial Negativa</h3>
-<p><span class="math inline">\(X\)</span> representa el número de fracasos antes de obtener <span class="math inline">\(r\)</span> éxitos en ensayos sucesivos bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
+\]</span>
+### Usos Binomial Negativa</p>
+<p><span class="math inline">\(X\)</span> representa el número de fracasos antes de obtener <span class="math inline">\(r\)</span> éxitos en ensayos sucesivos Bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
+<div id="ejemplo" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Ejemplo,</h3>
+<ol style="list-style-type: decimal">
+<li>(pg 471, 3). Una moneda correcta es lanzada sucesivamente hasta que aparezca cara por décima vez. Sea X la va que denota el número de sellos que ocurren. Hallar la función de probabilidad de <span class="math inline">\(X\)</span>.</li>
+</ol>
+<p>Solución, <span class="math inline">\(X\sim BN(r=10,p=0.5)\)</span></p>
+<p><span class="math display">\[P(X=x)= {9+x \choose x}   0.5^{10} 0.5^x \]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Supongamos que una sucesión de lanzamientos independientes es hecho con una moneda, cuya probabilidad de obtener cara en cualquiera de los lanzamientos es de <span class="math inline">\(1/30\)</span></li>
+</ol>
+<ul>
+<li>¿Cuál es la esperanza del número de sellos que se pueden obtener antes de que se obtengan 5 caras?</li>
+<li>¿Cuál es la varianza del número de sellos que se pueden obtener antes de que se obtengan 5 caras?</li>
+</ul>
+<p>Solución, <span class="math inline">\(X\sim BN(r=5,p=1/30)\)</span>, X: El número de sellos antes de obtener 5 caras</p>
+<ul>
+<li><span class="math inline">\(E[X]=\frac{r*(1-p)}{p}=\frac{5*(29/30)}{1/30}=145\)</span></li>
+<li><span class="math inline">\(V(X)=\frac{r*(1-p)}{p^2}=\frac{5*(29/30)}{(1/30)^2}=4350\)</span>, <span class="math inline">\(\sqrt{V(X)}=65\)</span></li>
+</ul>
+<p>Tarea 1,</p>
+<p>Tres personas tiran monedas al aire y el disparejo paga el café. Si los tres resultados son iguales, las monedas se tiran nuevamente. Encuentre la probabilidad de que se necesitan menos de 4 intentos. (Pg: 476, 30)</p>
+<blockquote>
+<p>Nota: BN(r=1, p) = G(p)</p>
+</blockquote>
+<p>Tarea 2,</p>
+<p>Para la distribución geométrica, demostrar:</p>
+<p><span class="math display">\[E[X]=\frac{(1-p)}{p}\]</span></p>
+<p><span class="math display">\[E[X]=\sum_{Rx}{x*P(X=x)}=\sum_0^{\infty}{xp(1-p)^x}=\frac{(1-p)}{p}\]</span></p>
 </div>
 </div>
 <div id="hipergeométrica" class="section level2">

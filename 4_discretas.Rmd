@@ -115,12 +115,28 @@ $$
 
 ### Usos Geométrica
 
-$X$ representa el número de fracasos antes de obtener el primer éxito en ensayos sucesivos bernoullis. Con $p$ la probabilidad de éxito $0<p<1$. 
+$X$ representa el número de fracasos antes de obtener el primer éxito en ensayos sucesivos Bernoullis. Con $p$ la probabilidad de éxito $0<p<1$. 
 
 
 ### Ejemplos
 
-1. 
+1. Se realiza el lanzamiento de una moneda legal, Sea X una va, donde X: El número de fracasos antes de sacar Cara por primera vez. Calcular la probabilidad de $X=10$, $X=0$, $X=5$.
+
+Solución, $X\sim G(p=0.5)$. 
+
+  * $P(X=10)=p (1-p)^x=0.5*0.5^{10}=0.00049$
+  * $P(X=0)=p (1-p)^x=0.5*0.5^0=0.5$
+  * $P(X=5)=0.5*0.5^5=0.0156=P(S_1\cap S_2\cap S_3\cap S_4 \cap S_5 \cap C_6)=P(S)^5*P(C)$
+
+2. Una persona se compra un boleto de lotería cada mes, se conoce que en cada sorteo participan 100,000 boletos de lotería, 1) modele el problema, 2) calcule la probabilidad que esta persona gane la lotería el primer mes, 3) la probabilidad que gane la lotería en el mes 13, 4) La probabilidad que gane la lotería el primer año. 5) ¿Cuántos meses se espera hasta que esta persona gane la lotería?
+
+Solución,
+
+  1. X: El número de meses antes de ganar la lotería, $X\sim G(p=1/100000)$
+  2. $P(X=0)=p(1-p)^x=p(1-p)^0=p=\frac{1}{100000}$
+  3. $P(X=12)=p(1-p)^{12}=1/100000*(1-1/100000)^{12}=0.000009998$
+  4. $P(X=0)+P(X=1)+P(X=2)+\ldots+P(X=11)=P(X<12)=P(X\leq11)=TAREA$
+  5. $E[X]=\frac{(1-p)}{p}=\frac{1-1/100000}{1/100000}=99999$, $V(X)=\frac{1-p}{p^2}=9999900000$, $\sqrt{V(x)}=99999.5$
 
 ## Binomial Negativa
 
@@ -135,10 +151,41 @@ $$\begin{array}{ll}
  M_X(t) & = \left(\frac{p}{1-(1-p)*e^t} \right)^r \hspace{0.5cm} ;t<ln(1/(1-p))
  \end{array}
 $$
-
 ### Usos Binomial Negativa
 
-$X$ representa el número de fracasos antes de obtener $r$ éxitos en ensayos sucesivos bernoullis. Con $p$ la probabilidad de éxito $0<p<1$. 
+$X$ representa el número de fracasos antes de obtener $r$ éxitos en ensayos sucesivos Bernoullis. Con $p$ la probabilidad de éxito $0<p<1$. 
+
+
+### Ejemplo, 
+
+1. (pg 471, 3). Una moneda correcta es lanzada sucesivamente hasta que aparezca cara por décima vez. Sea X la va que denota el número de sellos que ocurren. Hallar la función de probabilidad de $X$.
+
+Solución, $X\sim BN(r=10,p=0.5)$
+
+$$P(X=x)= {9+x \choose x}   0.5^{10} 0.5^x $$
+
+2. Supongamos que una sucesión de lanzamientos independientes es hecho con una moneda, cuya probabilidad de obtener cara en cualquiera de los lanzamientos es de $1/30$
+  * ¿Cuál es la esperanza del número de sellos que se pueden obtener antes de que se obtengan 5 caras?
+  * ¿Cuál es la varianza del número de sellos que se pueden obtener antes de que se obtengan 5 caras?
+  
+Solución, $X\sim BN(r=5,p=1/30)$, X: El número de sellos antes de obtener 5 caras
+
+  * $E[X]=\frac{r*(1-p)}{p}=\frac{5*(29/30)}{1/30}=145$
+  * $V(X)=\frac{r*(1-p)}{p^2}=\frac{5*(29/30)}{(1/30)^2}=4350$, $\sqrt{V(X)}=65$
+
+Tarea 1, 
+
+Tres personas tiran monedas al aire y el disparejo paga el café. Si los tres resultados son iguales, las monedas se tiran nuevamente. Encuentre la probabilidad de que se necesitan menos de 4 intentos. (Pg: 476, 30)
+
+> Nota: BN(r=1, p) = G(p)
+
+Tarea 2, 
+
+Para la distribución geométrica, demostrar:
+
+$$E[X]=\frac{(1-p)}{p}$$
+
+$$E[X]=\sum_{Rx}{x*P(X=x)}=\sum_0^{\infty}{xp(1-p)^x}=\frac{(1-p)}{p}$$
 
 ## Hipergeométrica
 

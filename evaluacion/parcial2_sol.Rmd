@@ -1,8 +1,12 @@
 ---
 title: "Parcial 2. Estadística I."
+subtitle: "Solucionario"
 author: "Alvaro Chirino Gutierrez"
 date: "23/6/2020"
-output: pdf_document
+output: 
+  pdf_document:
+      toc: true
+      toc_depth: 2
 editor_options: 
   chunk_output_type: console
 ---
@@ -11,14 +15,14 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+\newpage
+
 # Probabilidades
 
-1. En una urna son mezcladas diez bolas numeradas del 1 al 10, dos bolas (a,b) son retiradas al azar y sin reposición ¿Cuál es la probabilidad de que su suma sea:
+## 1a. 
+En una urna son mezcladas diez bolas numeradas del 1 al 10, dos bolas (a,b) son retiradas al azar y sin reposición ¿Cuál es la probabilidad de que su suma sea 9.
 
-  a) 9
-
-
-```{r}
+```{r,echo=FALSE}
 res<-matrix(0,10,10)
 for(i in 1:10){
   for(j in 1:10){
@@ -27,14 +31,17 @@ for(i in 1:10){
     }
   }
 }
+res
 res==9
 (sum(res==9)/2)/choose(10,2)
 ```
 
-  
-  b) 7
+$$P(a+b=9)=\frac{8}{90}=\frac{4}{45}=0.0889$$
 
-```{r}
+## 1b. 
+En una urna son mezcladas diez bolas numeradas del 1 al 10, dos bolas (a,b) son retiradas al azar y sin reposición ¿Cuál es la probabilidad de que su suma sea 7.
+
+```{r,echo=FALSE}
 res<-matrix(0,10,10)
 for(i in 1:10){
   for(j in 1:10){
@@ -43,83 +50,132 @@ for(i in 1:10){
     }
   }
 }
+res
 res==7
 (sum(res==7)/2)/choose(10,2)
 ```
 
-2. Una urna contiene 15 bolas, otra urna contiene 14 bolas. Una bola es seleccionada de cada urna. ¿Cuál es la probabilidad que las bolas sean del mismo color?. La estructura de las urnas es:
+$$P(a+b=7)=\frac{6}{90}=\frac{3}{45}=0.0667$$
 
-(Urna 1) Blancas: 6, Negras: 7, Rojas: 2. 
-(Urna 2) Blancas: 3, Negras: 5, Rojas: 6 
+
+## 2. 
+Una urna contiene 15 bolas, otra urna contiene 14 bolas. Una bola es seleccionada de cada urna. ¿Cuál es la probabilidad que las bolas sean del mismo color?. La estructura de las urnas es:
+
+  * (Urna 1) Blancas: 6, Negras: 7, Rojas: 2. 
+  * (Urna 2) Blancas: 3, Negras: 5, Rojas: 6 
 
 Solución, sean los eventos B1=Bola Blanca seleccionada de la urna 1, N1=Bola Negra seleccionada de la urna 1 y  R1=Bola Roja seleccionada de la urna 1, de manera análoga para la urna 2.
+
 $$P(MismoColor)=P((B1\cap B2) \cup (N1\cap N2) \cup (R1\cap R2))$$
 Por ser eventos mutuamente excluyentes y por independencia entre las urnas.
 
 $$=P(B1\cap B2)+P(N1\cap N2)+P(R1\cap R2)=P(B1)P(B2)+P(N1)P(N2)P(R1)P(R2)$$
 
-```{r}
+```{r,echo=F,eval=F}
 (6/15)*(3/14)+(7/15)*(5/14)+(2/15)*(6/14)
 ```
 
 
 $$=\frac{6}{15}\frac{3}{14}+\frac{7}{15}\frac{5}{14}+\frac{2}{15}\frac{6}{14}=0.3095$$
 
+## 3a. 
+Un hombre toma un micro o un minibus para ir a su trabajo, con probabilidad 0.2 y 0.8 respectivamente. 20% de las veces que toma el minibus llega tarde al trabajo, mientras que el 20% de las veces que toma el micro llega tarde a su trabajo. Si el hombre llega tarde un día en particular ¿Cuál es la probabilidad que haya tomado el micro?
+
+Solución, sean los eventos $P(micro)=0.2$ $P(minibus)=0.8$, $P(Tarde/minibus)=0.2$ y $P(Tarde/micro)=0.2$
+
+Por Bayes,
+
+$$P(micro/Tarde)=\frac{P(micro)P(Tarde/micro)}{P(Tarde)}$$
+
+Por el teorema de la probabilidad total
+
+$$P(Tarde)=P(micro)*P(Tarde/micro)+P(minibus)*P(Tarde/minibus)$$
+$$=0.2*0.2+0.8*0.2=0.2$$
+Asi, 
+
+$$P(micro/Tarde)=\frac{P(micro)P(Tarde/micro)}{P(Tarde)}=\frac{0.2*0.2}{0.2}=0.2$$
 
 
-3a. Un hombre toma un micro o un minibus para ir a su trabajo, con probabilidad 0.2 y 0.8 respectivamente. 20% de las veces que toma el minibus llega tarde al trabajo, mientras que el 20% de las veces que toma el micro llega tarde a su trabajo. Si el hombre llega tarde un dia en particular ¿Cuál es la probabilidad que haya tomado el micro?
+## 3b. 
+Un hombre toma un micro o un minibus para ir a su trabajo, con probabilidad 0.35 y 0.65 respectivamente. 30% de las veces que toma el minibus llega tarde al trabajo, mientras que el 15% de las veces que toma el micro llega tarde a su trabajo. Si el hombre llega tarde un día en particular ¿Cuál es la probabilidad que haya tomado el micro?
+
+Solución, sean los eventos $P(micro)=0.35$ $P(minibus)=0.65$, $P(Tarde/minibus)=0.3$ y $P(Tarde/micro)=0.15$
+
+Por Bayes,
+
+$$P(micro/Tarde)=\frac{P(micro)P(Tarde/micro)}{P(Tarde)}$$
+
+Por el teorema de la probabilidad total
+
+$$P(Tarde)=P(micro)*P(Tarde/micro)+P(minibus)*P(Tarde/minibus)$$
+$$=0.35*0.15+0.65*0.3=0.2475$$
+Asi, 
+
+$$P(micro/Tarde)=\frac{P(micro)P(Tarde/micro)}{P(Tarde)}=\frac{0.35*0.15}{0.2475}=0.2121$$
 
 
+## 4a. 
+Defina la verdad (V), falsedad (F) o información insuficiente (II),  de los siguientes enunciados
 
-3b. Un hombre toma un micro o un minibus para ir a su trabajo, con probabilidad 0.35 y 0.65 respectivamente. 30% de las veces que toma el minibus llega tarde al trabajo, mientras que el 15% de las veces que toma el micro llega tarde a su trabajo. Si el hombre llega tarde un dia en particular ¿Cuál es la probabilidad que haya tomado el micro?
-
-4a. Defina la verdad (V), falsedad (F) o información insuficiente (II),  de los siguientes enunciados
-
-  * Un evento es un subconjunto del espacio muestral
-  * La probabilidad es una función
-  * El teorema de probabilidad Total es lo mismo que la formula de Bayes
-  * El tercer axioma de probabilidad establece que la probabilidad de la unión de conjuntos es igual a la suma de sus probabilidades. 
+  * Un evento es un subconjunto del espacio muestral (V)
+  * La probabilidad es una función (V)
+  * El teorema de probabilidad Total es lo mismo que la formula de Bayes (F)
+  * El tercer axioma de probabilidad establece que la probabilidad de la unión de conjuntos es igual a la suma de sus probabilidades. (II) Siempre y cuando los eventos sean mutuamente excluyentes $P(A\cap B )=\emptyset$
   
-4b. Defina la verdad (V), falsedad (F) o información insuficiente (II),  de los siguientes enunciados
+## 4b. 
+Defina la verdad (V), falsedad (F) o información insuficiente (II),  de los siguientes enunciados
 
-  * Un evento no es un subconjunto del espacio muestral
-  * La probabilidad es una función
-  * El teorema de probabilidad Total es lo mismo que la regla de multiplicación (teorema del producto)
-  * El tercer axioma de probabilidad establece que la probabilidad de la unión de conjuntos es igual a la suma de sus probabilidades siempre y cuando los conjuntos sean independientes.
+  * Un evento no es un subconjunto del espacio muestral (F)
+  * La probabilidad es una función (V)
+  * El teorema de probabilidad Total es lo mismo que la regla de multiplicación (teorema del producto) (F)
+  * El tercer axioma de probabilidad establece que la probabilidad de la unión de conjuntos es igual a la suma de sus probabilidades siempre y cuando los conjuntos sean independientes. (F)
 
-5a. La probabilidad de 3 jugadores de que conviertan un penal son respectivamente 1/3, 3/5 y 9/10. Si cada uno cobra uno cobra una única vez. ¿Cuál es la probabilidad de que todos fallen?
+## 5a. 
+La probabilidad de 3 jugadores de que conviertan un penal son respectivamente 1/3, 3/5 y 9/10. Si cada uno cobra uno cobra una única vez. ¿Cuál es la probabilidad de que todos fallen?
 
   a) `r (1/3)*(3/5)*(9/10)`
   b) `r (2/3)*(2/5)*(1/10)`
   c) 0.8333
   d) `r (1/3)*(3/5)*(1/10)`
 
-5b. La probabilidad de 3 jugadores de que conviertan un penal son respectivamente 2/3, 4/5 y 7/10. Si cada uno cobra uno cobra una única vez. ¿Cuál es la probabilidad de que todos fallen?
+Solución, Sean los eventos J1: Jugador 1 anota, J2: Jugador 2 anota y J3: Jugador 3 nota. La probabilidad que se pide es:
+
+$$P(J1^c\cap J2^c \cup J3^c)=P(J1^c)P(J2^c)P(J3^c)=\frac{2}{3}*\frac{2}{5}*\frac{1}{10}=0.2667$$
+
+## 5b. 
+La probabilidad de 3 jugadores de que conviertan un penal son respectivamente 2/3, 4/5 y 7/10. Si cada uno cobra uno cobra una única vez. ¿Cuál es la probabilidad de que todos fallen?
 
   a) `r (2/3)*(4/5)*(7/10)`
   b) `r (1/3)*(1/5)*(3/10)`
   c) 0.8333
   d) `r (2/3)*(4/5)*(3/10)`
+  
+Solución, Sean los eventos J1: Jugador 1 anota, J2: Jugador 2 anota y J3: Jugador 3 nota. La probabilidad que se pide es:
+
+$$P(J1^c\cap J2^c \cup J3^c)=P(J1^c)P(J2^c)P(J3^c)=\frac{1}{3}*\frac{1}{5}*\frac{3}{10}=0.2$$  
 
 # Variables Aleatorias
 
-6a. Defina la verdad (V), falsedad (F) o información insuficiente (II),  de los siguientes enunciados
+## 6a. 
+Defina la verdad (V), falsedad (F) o información insuficiente (II),  de los siguientes enunciados
 
-  * Una variable aleatoria es una función
-  * Si $X$ es una va y b es una constante $V(bX)=bV(X)$
-  * $\int_{Rx}F(x)dx=f(x)$
-  * $F(x)$ es una función creciente
+  * Una variable aleatoria es una función. (V)
+  * Si $X$ es una va y b es una constante $V(bX)=bV(X)$. (F) $V(bX)=b^2V(X)$
+  * $\int_{Rx}F(x)dx=f(x)$. (F) $\frac{dF(x)}{dx}=f(x)$
+  * $F(x)$ es una función creciente. (V)
   
-6b. Defina la verdad (V), falsedad (F) o información insuficiente (II),  de los siguientes enunciados
+## 6b. 
+Defina la verdad (V), falsedad (F) o información insuficiente (II),  de los siguientes enunciados
 
-  * Una variable aleatoria es un conjunto
-  * Si X es una va y b es una constante $V(bX)=b+V(X)$
-  * $\int_{Rx}f(x)dx=F(x)$
-  * F(x) es una función decreciente
+  * Una variable aleatoria es un conjunto. (F) es una función
+  * Si X es una va y b es una constante $V(b+X)=V(X)$. (V) $V(bX)=b^2V(X)$
+  * $\int_{Rx}f(x)dx=F(x)$. (F) $\int_{Rx}f(x)dx=1$
+  * F(x) es una función decreciente. (F) F(x) es creciente.
   
-7 Dada la siguiente función de probabilidad, encontrar la varianza. 
+## 7a 
 
-  a) 
+Dada la siguiente función de probabilidad, encontrar la varianza. 
+
   
 ```{r,echo=FALSE,message=F}
 library(knitr)
@@ -139,8 +195,8 @@ Solución,
 sum((x^2)*px)-(sum(px*x))^2
 ```
 
-
-  b)
+## 7b
+Dada la siguiente función de probabilidad, encontrar la varianza. 
 
 ```{r,echo=FALSE,message=F}
 library(knitr)
@@ -157,47 +213,51 @@ kable(t1,col.names = NA)
 sum((x^2)*px)-(sum(px*x))^2
 ```
 
-8. Dada la siguiente función de densidad, encontrar el valor de $c$ y calcular la probabilidad que X sea mayor a 1.5.
-
-  a)
+## 8a. 
+Dada la siguiente función de densidad, encontrar el valor de $c$ y calcular la probabilidad que X sea mayor a 1.5.
   
 $$f(x)=\frac{1}{6}x+c, \text{ } 0\leq x \leq 5  $$
   
-Solución, $C=-13/60$, así
+Solución, 
 
-```{r}
-fx<-function(x){(1/6)*x-13/60}
-integrate(fx,0,5)
-integrate(fx,1.5,5)
-```
+$$\int_0^5 \left(  \frac{1}{6}x+c \right) dx=\left(  \frac{1}{6*2}x^2+cx \right)_0^5=\frac{25}{12}+5c=1$$
+Así $c=-13/60$.
 
 
-    b)
+## 8b. 
+Dada la siguiente función de densidad, encontrar el valor de $c$ y calcular la probabilidad que X sea mayor a 1.5.
   
 $$f(x)=\frac{1}{6}x+c, \text{ } 0\leq x \leq 4  $$
 
-9. Dada la siguiente función de distribución, encontrar la funcion de densidad de $X$
+Solución, 
+
+$$\int_0^4 \left(  \frac{1}{6}x+c \right) dx=\left(  \frac{1}{6*2}x^2+cx \right)_0^4=\frac{16}{12}+4c=1$$
+Así $C=-1/12$.
+
+
+## 9. 
+Dada la siguiente función de distribución, encontrar la función de densidad de $X$
 
 $$F(X)=\frac{x}{x+1}, \text{ } x\geq 0$$
 
+Solución,
 
-  * $f(x)=\frac{1}{x+1},\text{ } x\geq 0$
-  
-  * $f(x)=\frac{x+1}{x}, \text{ } x\geq 0$
-  
-  * $f(x)=\frac{1}{x^2+2x-1}, \text{ } x\geq 0$
-  
-  * $f(x)=\frac{1}{x^2+2x+1}, \text{ } x\geq 0$
-  
-  * $f(x)=\frac{1}{2x^2+x+1}, \text{ } x\geq 0$
-  
-10. Sea la función generatriz de momentos de una va X, Encontrar la varianza.
+$$\frac{dF(x)}{dx}=\frac{(x+1)-x}{(x+1)^2}=\frac{1}{x^2+2x+1}$$
 
-  a) 
+  
+## 10a
+Sea la función generatriz de momentos de una va X, Encontrar la varianza.
 
 $$M_x(t)=\frac{25}{25-t^2}, \text{ } -\infty < x <\infty$$
+Solución, 
 
-  b) 
+$$E(X)=\frac{dM_x(t=0)}{dt}=\frac{-25*(-2t)}{(25-t^2)^2}=\left(\frac{50t}{(25-t^2)^2}\right)_{t=0}=0$$
+
+## 10b
+Sea la función generatriz de momentos de una va X, Encontrar la varianza.
 
 $$M_x(t)=\frac{36}{36-t^2}, \text{ } -\infty < x <\infty$$
 
+Solución,
+
+$$E(X)=\frac{dM_x(t=0)}{dt}=\frac{-36*(-2t)}{(36-t^2)^2}=\left(\frac{72t}{(36-t^2)^2}\right)_{t=0}=0$$
