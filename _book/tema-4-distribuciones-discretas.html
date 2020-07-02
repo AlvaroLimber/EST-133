@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-06-30" />
+<meta name="date" content="2020-07-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -206,9 +206,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Hipergeométrica</a><ul>
 <li class="chapter" data-level="4.5.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-hipergeométrica"><i class="fa fa-check"></i><b>4.5.1</b> Usos Hipergeométrica</a></li>
+<li class="chapter" data-level="4.5.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplo-1"><i class="fa fa-check"></i><b>4.5.2</b> Ejemplo</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#poisson"><i class="fa fa-check"></i><b>4.6</b> Poisson</a><ul>
 <li class="chapter" data-level="4.6.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-poisson"><i class="fa fa-check"></i><b>4.6.1</b> Usos Poisson</a></li>
+<li class="chapter" data-level="4.6.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-5"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplos</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -400,6 +402,20 @@ Donde;</p>
 <h3><span class="header-section-number">4.5.1</span> Usos Hipergeométrica</h3>
 <p><span class="math inline">\(X\)</span> denota el número de elementos que poseen la característica <span class="math inline">\(A\)</span> en una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> seleccionado de una población de <span class="math inline">\(N\)</span> elementos de los cuales <span class="math inline">\(r\)</span> tienen característica <span class="math inline">\(A\)</span> y <span class="math inline">\(N-r\)</span> característica <span class="math inline">\(B\)</span>.</p>
 </div>
+<div id="ejemplo-1" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Ejemplo</h3>
+<ol style="list-style-type: decimal">
+<li>En una urna con 30 bolas de colores (10 negras, 5 blancas, 15 verdes). Se seleccionan 7 bolas de forma aleatoria y <strong>sin reposición</strong>. Si el interés es calcular la probabilidad de obtener bolas negras:</li>
+</ol>
+<pre><code>* Modelar la distribución que se ajusta al problema
+* Calcular la probabilidad que se seleccionen; 0 bolas negras, todas negras, al menos 2 bolas negras.</code></pre>
+<p>Solución, <span class="math inline">\(X\sim H(N=30,n=7,r=10)\)</span>, <span class="math inline">\(max(0,7-30+10) \leq x \leq min(10,7)\)</span>, <span class="math inline">\(0 \leq x \leq 7\)</span></p>
+<p><span class="math display">\[P(X=0)=\frac{{20 \choose 7-x}{10 \choose x}}{{30 \choose 7}}=\frac{{20 \choose 7}{10 \choose 0}}{{30 \choose 7}}=\frac{77520*1}{2035800}=\frac{77520}{2035800}=0.038\]</span>
+<span class="math display">\[P(X=7)==\frac{{20 \choose 0}{10 \choose 7}}{{30 \choose 7}}=\frac{120}{2035800}=0.000059\]</span></p>
+<p><span class="math display">\[P(X\geq 2)=P(X=2)+P(X=3)+...+P(X=7)\]</span>
+<span class="math display">\[P(X\geq 2)=1-P(X&lt;2)=1-[P(X=0)+P(X=1)]=1-0.038-\frac{{20 \choose 6}{10 \choose 1}}{{30 \choose 7}}=1-0.038-0.19=0.772\]</span>
+Tarea (Pg 459, Ej 8)</p>
+</div>
 </div>
 <div id="poisson" class="section level2">
 <h2><span class="header-section-number">4.6</span> Poisson</h2>
@@ -420,6 +436,47 @@ Donde;</p>
 <li>Número de clientes que entran a un banco en un día dado</li>
 </ul>
 <p>Nota: Si <span class="math inline">\(X \sim binomial(n,p)\)</span>, si <span class="math inline">\(n \rightarrow \infty\)</span> , <span class="math inline">\(p \rightarrow 0\)</span> y <span class="math inline">\(\lambda=n*p\)</span> permanece constante. Entonces se puede aproximar con <span class="math inline">\(X \sim Poisson(\lambda = n*p)\)</span>. <span class="math inline">\(n \geq 50\)</span>, <span class="math inline">\(p\leq 0.1\)</span>.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu. 
+##   0.000   2.000   3.000   3.001   4.000 
+##    Max. 
+##  14.000</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu. 
+##   0.000   2.000   3.000   3.002   4.000 
+##    Max. 
+##  16.000</code></pre>
+</div>
+<div id="ejemplos-5" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> Ejemplos</h3>
+<ol style="list-style-type: decimal">
+<li>Cierta oficina de bomberos recibe en <strong>promedio 3 llamadas por día</strong>, calcular la probabilidad de que:</li>
+</ol>
+<ul>
+<li>Reciba 4 llamadas en un día</li>
+</ul>
+<p>Solución, X: Número de llamadas que recibe la oficina de bomberos <strong>en un día</strong>, <span class="math inline">\(X\sim P(\lambda=3)\)</span></p>
+<p><span class="math display">\[P(X=4)=\frac{e^{-\lambda} \lambda^x}{x!}=\frac{e^{-3}3^4}{4!}=\frac{4.0327}{24}=0.168\]</span></p>
+<ul>
+<li>Reciba 3 o más llamadas en un día</li>
+</ul>
+<p>Solución, <span class="math inline">\(X\sim P(\lambda=3)\)</span></p>
+<p><span class="math display">\[P(X\geq 3)=1-P(X&lt;3)=1-[P(X=0)+P(X=1)+P(X=2)]=\ldots\]</span></p>
+<ul>
+<li>Reciba 10 llamadas en una semana (7 días)</li>
+</ul>
+<p>Solución, X: el número de llamadas a la oficina de bomberos durante 7 días. <span class="math inline">\(X\sim P(\lambda=3*7=21)\)</span></p>
+<p><span class="math display">\[P(X=10)=\frac{e^{-21}21^{10}}{10!}=0.00348\]</span></p>
+<ul>
+<li>¿Cuántas llamadas en promedio se espera tener durante un año (365 días)?</li>
+</ul>
+<p>Solución: 3*365=1095</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Suponga que hay en promedio 2 suicidios por año en una población de 50 mil habitantes. En una ciudad de 100 mil habitantes. Encuentre la probabilidad de que en un año dado haya:</li>
+</ol>
+<ul>
+<li>Un suicidio</li>
+<li>2 o más suicidios</li>
+</ul>
 
 </div>
 </div>

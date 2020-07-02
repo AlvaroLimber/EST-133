@@ -204,6 +204,22 @@ $$
 
 $X$ denota el número de elementos que poseen la característica $A$ en una muestra aleatoria de tamaño $n$ seleccionado de una población de $N$ elementos de los cuales $r$ tienen característica $A$ y $N-r$ característica $B$.
 
+### Ejemplo
+
+  1. En una urna con 30 bolas de colores (10 negras, 5 blancas, 15 verdes). Se seleccionan 7 bolas de forma aleatoria y **sin reposición**. Si el interés es calcular la probabilidad de obtener bolas negras:
+  
+    * Modelar la distribución que se ajusta al problema
+    * Calcular la probabilidad que se seleccionen; 0 bolas negras, todas negras, al menos 2 bolas negras.
+    
+Solución, $X\sim H(N=30,n=7,r=10)$, $max(0,7-30+10) \leq x \leq min(10,7)$, $0 \leq x \leq 7$
+
+$$P(X=0)=\frac{{20 \choose 7-x}{10 \choose x}}{{30 \choose 7}}=\frac{{20 \choose 7}{10 \choose 0}}{{30 \choose 7}}=\frac{77520*1}{2035800}=\frac{77520}{2035800}=0.038$$
+$$P(X=7)==\frac{{20 \choose 0}{10 \choose 7}}{{30 \choose 7}}=\frac{120}{2035800}=0.000059$$
+
+$$P(X\geq 2)=P(X=2)+P(X=3)+...+P(X=7)$$
+$$P(X\geq 2)=1-P(X<2)=1-[P(X=0)+P(X=1)]=1-0.038-\frac{{20 \choose 6}{10 \choose 1}}{{30 \choose 7}}=1-0.038-0.19=0.772$$
+Tarea (Pg 459, Ej 8)
+
 ## Poisson
 
 Sea $X$ una v.a, se dice que $X\sim P(\lambda)$, ($\lambda>0$) si su función de probabilidad es:
@@ -226,3 +242,47 @@ $X$ representa el número de eventos de cierto tipo, que ocurren en un intervalo
   * Número de clientes que entran a un banco en un día dado
   
 Nota: Si $X \sim binomial(n,p)$, si $n \rightarrow \infty$ , $p \rightarrow  0$ y $\lambda=n*p$ permanece constante. Entonces se puede aproximar con $X \sim Poisson(\lambda = n*p)$.  $n \geq 50$, $p\leq 0.1$.
+
+
+```{r,echo=FALSE}
+n<-60;p<-0.05
+xb<-rbinom(10^6,n,p)
+xp<-rpois(10^6,n*p)
+par(mfrow=c(1,2))
+hist(xb)
+hist(xp)
+summary(xb)
+summary(xp)
+```
+
+### Ejemplos
+
+1. Cierta oficina de bomberos recibe en **promedio 3 llamadas por día**, calcular la probabilidad de que:
+
+  * Reciba 4 llamadas en un día
+  
+Solución, X: Número de llamadas que recibe la oficina de bomberos **en un día**, $X\sim P(\lambda=3)$
+
+$$P(X=4)=\frac{e^{-\lambda} \lambda^x}{x!}=\frac{e^{-3}3^4}{4!}=\frac{4.0327}{24}=0.168$$
+  
+  * Reciba 3 o más llamadas en un día
+  
+Solución, $X\sim P(\lambda=3)$
+
+$$P(X\geq 3)=1-P(X<3)=1-[P(X=0)+P(X=1)+P(X=2)]=\ldots$$
+  
+  * Reciba 10 llamadas en una semana (7 días)
+
+Solución, X: el número de llamadas a la oficina de bomberos durante 7 días. $X\sim P(\lambda=3*7=21)$
+
+$$P(X=10)=\frac{e^{-21}21^{10}}{10!}=0.00348$$
+
+  * ¿Cuántas llamadas en promedio se espera tener durante un año (365 días)?
+  
+Solución: 3*365=1095
+
+2. Suponga que hay en promedio 2 suicidios por año en una población de 50 mil habitantes. En una ciudad de 100 mil habitantes. Encuentre la probabilidad de que en un año dado haya: 
+
+  * Un suicidio
+  * 2 o más suicidios
+  

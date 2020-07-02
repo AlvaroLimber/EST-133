@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-06-30" />
+<meta name="date" content="2020-07-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -206,9 +206,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Hipergeométrica</a><ul>
 <li class="chapter" data-level="4.5.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-hipergeométrica"><i class="fa fa-check"></i><b>4.5.1</b> Usos Hipergeométrica</a></li>
+<li class="chapter" data-level="4.5.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplo-1"><i class="fa fa-check"></i><b>4.5.2</b> Ejemplo</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#poisson"><i class="fa fa-check"></i><b>4.6</b> Poisson</a><ul>
 <li class="chapter" data-level="4.6.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-poisson"><i class="fa fa-check"></i><b>4.6.1</b> Usos Poisson</a></li>
+<li class="chapter" data-level="4.6.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-5"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplos</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -249,30 +251,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.4</span> Medidas de tendencia central</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tema-1-estadística-descriptiva.html#cb3-1"></a>x&lt;-<span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">90</span>)</span>
 <span id="cb3-2"><a href="tema-1-estadística-descriptiva.html#cb3-2"></a><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">100</span></span></code></pre></div>
-<pre><code>## [1] 64.81276</code></pre>
+<pre><code>## [1] 66.06959</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tema-1-estadística-descriptiva.html#cb5-1"></a>x[<span class="kw">order</span>(x)]</span></code></pre></div>
-<pre><code>##   [1] 40.78435 43.28458 43.48176 43.61522 43.87953
-##   [6] 45.83024 46.00744 46.25232 46.27396 46.54214
-##  [11] 46.84412 46.86554 47.23048 47.23968 47.81255
-##  [16] 48.03416 48.53560 48.57716 48.68079 48.89651
-##  [21] 48.95471 50.05106 50.11081 51.01188 51.37877
-##  [26] 51.82033 52.07615 52.91375 54.11410 54.51831
-##  [31] 54.81088 55.18448 55.20269 55.51806 55.57112
-##  [36] 55.91354 56.75111 56.85944 57.13062 57.35016
-##  [41] 58.30928 61.39489 61.43564 61.67936 61.80734
-##  [46] 61.88483 62.26200 62.26684 63.60496 63.88034
-##  [51] 64.07192 64.76997 64.90029 65.15762 65.60688
-##  [56] 65.70069 66.01938 70.14958 70.26239 70.38866
-##  [61] 70.48949 70.71964 71.63741 71.63772 72.60167
-##  [66] 72.65021 72.78140 73.93293 74.56057 74.59754
-##  [71] 74.62900 75.07088 76.26890 76.65323 77.30956
-##  [76] 77.77555 78.38575 78.41374 79.49892 79.89363
-##  [81] 80.23409 80.80207 81.20054 81.41133 81.65481
-##  [86] 82.46788 83.07031 83.61216 83.77673 84.80258
-##  [91] 84.80583 85.12046 85.86101 85.88810 86.20299
-##  [96] 88.31882 88.50936 88.64961 88.68521 89.23143</code></pre>
+<pre><code>##   [1] 40.12900 40.50841 40.68223 41.03451
+##   [5] 41.12173 41.85601 42.29121 42.59823
+##   [9] 43.16819 43.77636 45.12373 46.66637
+##  [13] 46.93077 46.98324 47.13756 47.18702
+##  [17] 48.39906 48.65978 48.79792 49.25611
+##  [21] 49.27890 49.38463 49.60370 49.65658
+##  [25] 50.05055 50.77841 50.79554 51.87933
+##  [29] 52.16990 53.83534 54.00916 55.99573
+##  [33] 56.48363 56.60931 58.35197 58.53360
+##  [37] 58.86724 59.23897 59.56280 59.84854
+##  [41] 60.02707 60.35513 61.20837 61.61418
+##  [45] 62.51933 64.95959 65.04372 65.62931
+##  [49] 68.02419 68.53047 68.68085 68.75599
+##  [53] 69.92544 70.29014 70.71752 71.27206
+##  [57] 72.35862 72.37111 72.43645 72.73477
+##  [61] 72.73592 73.91493 74.69049 74.86522
+##  [65] 75.15376 75.97853 76.17189 76.72997
+##  [69] 76.87438 77.02019 77.85795 77.86941
+##  [73] 78.36548 78.37598 78.69529 79.22311
+##  [77] 79.63769 79.83975 80.75325 81.02692
+##  [81] 83.21920 83.29735 84.16034 84.58880
+##  [85] 84.75849 85.61789 85.96701 86.40459
+##  [89] 86.81840 87.03397 87.07919 87.12091
+##  [93] 87.24016 87.54431 88.05841 88.64710
+##  [97] 89.58567 89.72591 89.76993 89.84609</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tema-1-estadística-descriptiva.html#cb7-1"></a><span class="kw">median</span>(x)</span></code></pre></div>
-<pre><code>## [1] 63.97613</code></pre>
+<pre><code>## [1] 68.60566</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tema-1-estadística-descriptiva.html#cb9-1"></a><span class="kw">hist</span>(x)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
@@ -282,9 +289,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-2"><a href="tema-1-estadística-descriptiva.html#cb10-2"></a><span class="kw">hist</span>(y)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tema-1-estadística-descriptiva.html#cb11-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
-<pre><code>## [1] 14.22686</code></pre>
+<pre><code>## [1] 15.63707</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tema-1-estadística-descriptiva.html#cb13-1"></a><span class="kw">sd</span>(y)</span></code></pre></div>
-<pre><code>## [1] 5.044203</code></pre>
+<pre><code>## [1] 5.185603</code></pre>
 </div>
 <div id="medidas-de-forma" class="section level2">
 <h2><span class="header-section-number">1.6</span> Medidas de forma</h2>
