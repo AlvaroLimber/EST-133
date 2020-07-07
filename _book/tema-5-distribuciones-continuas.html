@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Estadística I</title>
+  <title>5 Tema 5: Distribuciones Continuas | Estadística I</title>
   <meta name="description" content="Este libro esta destinado a la materia de Estadística I de la carrera de Informática de la Universidad Mayor de San Andres." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Estadística I" />
+  <meta property="og:title" content="5 Tema 5: Distribuciones Continuas | Estadística I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="alvarolimber/EST-133" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Estadística I" />
+  <meta name="twitter:title" content="5 Tema 5: Distribuciones Continuas | Estadística I" />
   
   <meta name="twitter:description" content="Este libro esta destinado a la materia de Estadística I de la carrera de Informática de la Universidad Mayor de San Andres." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="tema-4-distribuciones-discretas.html"/>
 
-<link rel="next" href="tema-1-estadística-descriptiva.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -236,62 +236,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Estadística I</h1>
-<h2 class="subtitle"><em>EST-133</em></h2>
-<p class="author"><em>Alvaro Chirino Gutierrez</em></p>
-<p class="date"><em>2020-07-07</em></p>
-</div>
-<div id="prefacio" class="section level1 unnumbered">
-<h1>Prefacio</h1>
-<p><a href="https://www.crcpress.com/product/isbn/9781138700109" target="_blank"><img src="images/cover.jpg" style="display: block; margin: auto;" /></a></p>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Este documento de <a href="https://twiiter/alvarochirinog">Alvaro Chirino</a> esta bajo la licencia de <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<div id="audiencia" class="section level2 unnumbered">
-<h2>Audiencia</h2>
-<p>El libro fue diseñado originalmente para los estudiantes de la materia de Estadística I, de la carrera de Informática de la Universidad Mayor de San Andres.</p>
-</div>
-<div id="estructura-del-libro" class="section level2 unnumbered">
-<h2>Estructura del libro</h2>
-<p>El libro inluye 5 capitulos, estos son:</p>
+<div id="tema-5-distribuciones-continuas" class="section level1">
+<h1><span class="header-section-number">5</span> Tema 5: Distribuciones Continuas</h1>
+<div id="uniforme" class="section level2">
+<h2><span class="header-section-number">5.1</span> Uniforme</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim U(a,b)\)</span>, con <span class="math inline">\(a&lt;b\)</span>. Si su función de densidad es:</p>
+<p><span class="math display">\[f(x)=\frac{1}{b-a} \hspace{0.5cm}; x \in [a,b]\]</span>
+Ejemplo,</p>
+<p>Sea <span class="math inline">\(X\)</span> una va, donde <span class="math inline">\(X\sim U(a=2,b=4)\)</span>. Dibuje la función y encuentre las probabilidades de:</p>
+<ul>
+<li><span class="math inline">\(P(2&lt;X&lt;3)\)</span></li>
+<li><span class="math inline">\(P(3&lt;X&lt;4)\)</span></li>
+<li><span class="math inline">\(P(X&lt;2.5)\)</span></li>
+</ul>
+<p>Solución,</p>
+<p><span class="math display">\[f(x)=\frac{1}{4-2}=\frac{1}{2}=0.5\]</span></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><span class="math display">\[\int_{Rx} f(x)dx=\int_2^40.5 dx=0.5 x/_2^4=0.5*(4-2)=0.5*2=1\]</span></p>
+<ul>
+<li><span class="math inline">\(P(2&lt;X&lt;3)=0.5\)</span></li>
+</ul>
+<p><span class="math display">\[P(2&lt;X&lt;3)=\int_2^3 0.5dx=0.5*(3-2)=0.5\]</span></p>
+<ul>
+<li><span class="math inline">\(P(3&lt;X&lt;4)=0.5\)</span></li>
+</ul>
+<p><span class="math display">\[P(3&lt;X&lt;4)=\int_3^4 0.5dx=0.5*(4-3)=0.5\]</span></p>
+<ul>
+<li><span class="math inline">\(P(X&lt;2.5)=0.25\)</span></li>
+</ul>
+<p><span class="math display">\[P(X&lt;2.5)=\int_2^{2.5} 0.5dx=0.5*(2.5-2)=0.5*0.5=0.25\]</span></p>
+<p>Donde;</p>
+<p><span class="math display">\[\begin{array}{ll}
+ F(x) &amp; =\frac{x-a}{b-a} \\
+ E[x] &amp; =\frac{a+b}{2} \\
+ V[x] &amp; =\frac{(b-a)^2}{12}\\
+ M_X(t) &amp; = \frac{e^{bt}-e^{at}}{(b-a)*t}
+ \end{array}
+\]</span></p>
+<p>Demostración,</p>
+<p><span class="math display">\[F(t)=P(X&lt;t)=P(X\leq t)=\int_a^t \frac{1}{b-a} dx=\frac{1}{b-a}*x/_a^t=\frac{t-a}{b-a}\]</span>
+Para una <span class="math inline">\(x\)</span>:</p>
+<p><span class="math display">\[F(x)=\frac{x-a}{b-a}\]</span></p>
+<p><span class="math display">\[P(X&lt;2.5)=F(2.5)=\frac{2.5-2}{4-2}=\frac{0.5}{2}=0.25\]</span>
+<span class="math display">\[E[X]=\int_a^b x \frac{1}{b-a} dx=\frac{1}{b-a} \frac{x^2}{2}/_a^b=\frac{b^2-a^2}{2(b-a)}=\frac{(b+a)(b-a)}{2(b-a)}=\frac{a+b}{2}\]</span></p>
+<p>Tarea, demostrar la varianza y la función generatriz de momentos.</p>
 <ol style="list-style-type: decimal">
-<li>Estadística Descriptiva</li>
-<li>Probabilidades</li>
-<li>Variable Aleatoria</li>
-<li>Distribuciones discretas</li>
-<li>Distribuciones continuas</li>
+<li>Un punto escogido al azar en el segmento de recta <span class="math inline">\([1,4]\)</span>. Calcular:
+* La probabilidad de que el punto escogido esté entre 2 y 3
+* la probabilidad de que sea igual a 2
+* la media y la varianza</li>
+</ol>
+<p>Solución, sea X una va, <span class="math inline">\(X\sim U(1,4)\)</span>. <span class="math inline">\(f(x)=\frac{1}{3}\)</span></p>
+<p><span class="math display">\[P(2&lt;X&lt;3)=F(3)-F(2)=\int_2^3\frac{1}{3}dx=\frac{1}{3}\]</span></p>
+<p><span class="math display">\[P(X=2)=0\]</span>
+<span class="math inline">\(E[X]=\frac{a+b}{2}=5/2=2.5\)</span>, <span class="math inline">\(V(X)=\frac{(b-a)^2}{12}=\frac{(4-1)^2}{12}=9/12=3/4\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>(TAREA) La clase de un profesor esta programada para comenzar a las 10:00 am; pero él comienza su clase en un tiempo <span class="math inline">\(X\)</span> que tiene distribución uniforme en el intervalo de 9:55 am. a 10:05 am. ¿Cuál es la probabilidad de que él comience su clase:
+* 2 minutos más temprano?
+* 2 minutos más tarde?</li>
 </ol>
 </div>
-<div id="software-y-acuerdos" class="section level2 unnumbered">
-<h2>Software y acuerdos</h2>
-<p>El sofware de apoyo que se emplea es R, para la instalación y otros tutoriales se recomienda ver <a href="https://cran.r-project.org/">acá</a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R version 4.0.2 (2020-06-22)
-## Platform: x86_64-w64-mingw32/x64 (64-bit)
-## Running under: Windows 10 x64 (build 18363)
-## 
-## Matrix products: default
-## 
-## locale:
-## [1] LC_COLLATE=Spanish_Bolivia.1252 
-## [2] LC_CTYPE=Spanish_Bolivia.1252   
-## [3] LC_MONETARY=Spanish_Bolivia.1252
-## [4] LC_NUMERIC=C                    
-## [5] LC_TIME=Spanish_Bolivia.1252    
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils    
-## [5] datasets  methods   base     
-## 
-## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.4.6     bookdown_0.18   
-##  [3] packrat_0.5.0    digest_0.6.25   
-##  [5] magrittr_1.5     evaluate_0.14   
-##  [7] rlang_0.4.6      stringi_1.4.6   
-##  [9] rstudioapi_0.11  rmarkdown_2.3   
-## [11] tools_4.0.2      stringr_1.4.0   
-## [13] xfun_0.13        yaml_2.2.1      
-## [15] rsconnect_0.8.16 compiler_4.0.2  
-## [17] htmltools_0.4.0  knitr_1.28</code></pre>
+<div id="exponencial" class="section level2">
+<h2><span class="header-section-number">5.2</span> Exponencial</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim exp(\lambda)\)</span>, con <span class="math inline">\(\lambda&gt;0\)</span> . Si su función de densidad es:
+<span class="math display">\[f(x)= \lambda e^{-\lambda x} \hspace{0.5cm}; x&gt;0\]</span>
+Donde;</p>
+<p><span class="math display">\[\begin{array}{ll}
+ F(x) &amp; = 1- e^{-\lambda x} \\ 
+ E[x] &amp; =\frac{1}{\lambda}\\
+ V[x] &amp; =\frac{1}{\lambda^2}\\
+ M_X(t) &amp; = \frac{\lambda}{\lambda-t} \hspace{0.5cm}; t&lt;\lambda
+ \end{array}
+\]</span></p>
+<p>Demostrando algunas propiedades,</p>
+<p><span class="math display">\[\int_{Rx}f(x)dx=\int_0^{\infty}\lambda*e^{-\lambda x}dx=\lambda \int_0^{\infty}e^{-\lambda x}dx=\lambda \left(- \frac{e^{-\lambda x}}{\lambda} \right)/_0^{\infty}=-e^{-\infty}+e^0=-0+1=1\]</span></p>
+<p><span class="math display">\[M_X(t)=E[e^{tx}]=\int_0^{\infty} e^{tx}\lambda e^{-\lambda x}dx=\lambda \int_0^{\infty} e^{-x(\lambda-t)} dx=\lambda \left( -\frac{e^{-x(\lambda-t)}}{(\lambda-t)}  \right)_0^{\infty}=\frac{\lambda}{(\lambda-t)}*(-e^{-\infty (\lambda-t)}+e^0)=\frac{\lambda}{\lambda-t}\]</span>
+Esto se da, siempre y cuando <span class="math inline">\(\lambda-t&gt;0\)</span>, <span class="math inline">\(\lambda&gt;t\)</span></p>
+<p>Tarea, demostrar la <span class="math inline">\(E[X]\)</span> y la <span class="math inline">\(V(X)\)</span> a partir de la función generatriz de momentos.</p>
+</div>
+<div id="normal" class="section level2">
+<h2><span class="header-section-number">5.3</span> Normal</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> si su función de densidad es:
+<span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi} * \sigma} e^{-\frac{1}{2} \left( \frac{x-\mu}{ \sigma}\right)^2 } \hspace{0.5cm};  -\infty \leq x \leq \infty\]</span>
+Donde;</p>
+<p><span class="math display">\[\begin{array}{ll}
+ E[x] &amp; =\mu\\
+ V[x] &amp; =\sigma^2\\
+ M_X(t) &amp; = e^{\mu t +\frac{1}{2} \sigma^2 t^2}
+ \end{array}
+\]</span></p>
+</div>
+<div id="normal-estándar" class="section level2">
+<h2><span class="header-section-number">5.4</span> Normal Estándar</h2>
+<p>Sea <span class="math inline">\(x \sim N(\mu, \sigma^2)\)</span>, entonces <span class="math inline">\(z=\frac{x-mu}{\sigma}\)</span> es una v.a, y se dice que <span class="math inline">\(Z\sim N(0,1)\)</span> es una normal estándar, si su función de densidad es:
+<span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} z^2 } \hspace{0.5cm};  -\infty \leq z \leq \infty\]</span>
+Donde;</p>
+<p><span class="math display">\[\begin{array}{ll}
+ E[x] &amp; =0\\
+ V[x] &amp; =1\\
+ M_X(t) &amp; = e^{\frac{1}{2} t^2}
+ \end{array}
+\]</span></p>
 
 </div>
 </div>
@@ -300,8 +345,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="tema-4-distribuciones-discretas.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="tema-1-estadística-descriptiva.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

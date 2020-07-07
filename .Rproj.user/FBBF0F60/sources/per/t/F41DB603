@@ -1,0 +1,25 @@
+{
+    "id": "F41DB603",
+    "path": "~/GitHub/EST-133/5_continuas.Rmd",
+    "project_path": "5_continuas.Rmd",
+    "type": "r_markdown",
+    "hash": "2273435577",
+    "contents": "",
+    "dirty": false,
+    "created": 1594137543188.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "cursorPosition": "102,85",
+        "scrollLine": "98",
+        "chunk_output_type": "console"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1594150253,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1594150253169,
+    "read_only": false,
+    "read_only_alternatives": []
+}

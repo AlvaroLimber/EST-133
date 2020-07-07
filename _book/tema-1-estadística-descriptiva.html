@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-07-02" />
+<meta name="date" content="2020-07-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -213,6 +213,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-5"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplos</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html"><i class="fa fa-check"></i><b>5</b> Tema 5: Distribuciones Continuas</a><ul>
+<li class="chapter" data-level="5.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#uniforme"><i class="fa fa-check"></i><b>5.1</b> Uniforme</a></li>
+<li class="chapter" data-level="5.2" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#exponencial"><i class="fa fa-check"></i><b>5.2</b> Exponencial</a></li>
+<li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.3</b> Normal</a></li>
+<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -251,65 +257,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.4</span> Medidas de tendencia central</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tema-1-estadística-descriptiva.html#cb3-1"></a>x&lt;-<span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">90</span>)</span>
 <span id="cb3-2"><a href="tema-1-estadística-descriptiva.html#cb3-2"></a><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">100</span></span></code></pre></div>
-<pre><code>## [1] 66.06959</code></pre>
+<pre><code>## [1] 67.6116</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tema-1-estadística-descriptiva.html#cb5-1"></a>x[<span class="kw">order</span>(x)]</span></code></pre></div>
-<pre><code>##   [1] 40.12900 40.50841 40.68223 41.03451
-##   [5] 41.12173 41.85601 42.29121 42.59823
-##   [9] 43.16819 43.77636 45.12373 46.66637
-##  [13] 46.93077 46.98324 47.13756 47.18702
-##  [17] 48.39906 48.65978 48.79792 49.25611
-##  [21] 49.27890 49.38463 49.60370 49.65658
-##  [25] 50.05055 50.77841 50.79554 51.87933
-##  [29] 52.16990 53.83534 54.00916 55.99573
-##  [33] 56.48363 56.60931 58.35197 58.53360
-##  [37] 58.86724 59.23897 59.56280 59.84854
-##  [41] 60.02707 60.35513 61.20837 61.61418
-##  [45] 62.51933 64.95959 65.04372 65.62931
-##  [49] 68.02419 68.53047 68.68085 68.75599
-##  [53] 69.92544 70.29014 70.71752 71.27206
-##  [57] 72.35862 72.37111 72.43645 72.73477
-##  [61] 72.73592 73.91493 74.69049 74.86522
-##  [65] 75.15376 75.97853 76.17189 76.72997
-##  [69] 76.87438 77.02019 77.85795 77.86941
-##  [73] 78.36548 78.37598 78.69529 79.22311
-##  [77] 79.63769 79.83975 80.75325 81.02692
-##  [81] 83.21920 83.29735 84.16034 84.58880
-##  [85] 84.75849 85.61789 85.96701 86.40459
-##  [89] 86.81840 87.03397 87.07919 87.12091
-##  [93] 87.24016 87.54431 88.05841 88.64710
-##  [97] 89.58567 89.72591 89.76993 89.84609</code></pre>
+<pre><code>##   [1] 40.04604 40.24389 40.26595 40.97789
+##   [5] 41.69635 41.85458 41.86194 44.70573
+##   [9] 44.80547 45.41586 45.46722 45.76277
+##  [13] 46.76943 46.79659 46.81197 48.70003
+##  [17] 48.78244 51.26811 51.47253 52.86230
+##  [21] 53.99590 54.30068 54.98739 55.02735
+##  [25] 55.28353 55.31369 55.42241 55.97019
+##  [29] 55.98339 56.04114 56.22880 57.05440
+##  [33] 58.47105 58.55393 58.63279 58.79281
+##  [37] 60.62480 60.90232 62.66844 63.31007
+##  [41] 65.32220 66.17697 67.06332 67.50178
+##  [45] 68.06019 68.18188 68.60195 68.92430
+##  [49] 68.97204 69.06779 69.15591 69.42013
+##  [53] 69.66607 69.72653 70.15358 70.96645
+##  [57] 71.36627 72.00194 73.02960 74.20056
+##  [61] 74.32628 75.37796 76.59990 76.91416
+##  [65] 77.00448 77.42313 77.53074 77.67810
+##  [69] 77.91115 78.24325 78.56236 78.57027
+##  [73] 80.41415 80.45716 80.87421 81.75149
+##  [77] 82.19725 82.52878 83.91801 84.09162
+##  [81] 84.16461 84.28808 84.52656 84.60190
+##  [85] 84.84662 85.49668 85.64042 86.51629
+##  [89] 86.72867 86.86503 87.03561 87.28599
+##  [93] 87.47240 87.58995 88.01476 88.24061
+##  [97] 89.02191 89.33520 89.58772 89.83485</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tema-1-estadística-descriptiva.html#cb7-1"></a><span class="kw">median</span>(x)</span></code></pre></div>
-<pre><code>## [1] 68.60566</code></pre>
+<pre><code>## [1] 69.11185</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tema-1-estadística-descriptiva.html#cb9-1"></a><span class="kw">hist</span>(x)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 <div id="medidas-de-dispersión" class="section level2">
 <h2><span class="header-section-number">1.5</span> Medidas de dispersión</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tema-1-estadística-descriptiva.html#cb10-1"></a>y&lt;-<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">60</span>,<span class="dv">5</span>)</span>
 <span id="cb10-2"><a href="tema-1-estadística-descriptiva.html#cb10-2"></a><span class="kw">hist</span>(y)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tema-1-estadística-descriptiva.html#cb11-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
-<pre><code>## [1] 15.63707</code></pre>
+<pre><code>## [1] 15.20276</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tema-1-estadística-descriptiva.html#cb13-1"></a><span class="kw">sd</span>(y)</span></code></pre></div>
-<pre><code>## [1] 5.185603</code></pre>
+<pre><code>## [1] 4.430303</code></pre>
 </div>
 <div id="medidas-de-forma" class="section level2">
 <h2><span class="header-section-number">1.6</span> Medidas de forma</h2>
 <p>Asimetría</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tema-1-estadística-descriptiva.html#cb15-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(y))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tema-1-estadística-descriptiva.html#cb16-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(<span class="dv">0</span>,y)))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-2.png" width="672" /></p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tema-1-estadística-descriptiva.html#cb17-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">c</span>(y,<span class="dv">200</span>)))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-3.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-3.png" width="672" /></p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tema-1-estadística-descriptiva.html#cb18-1"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-4.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-4.png" width="672" /></p>
 <p>Kurtosis</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tema-1-estadística-descriptiva.html#cb19-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
 <span id="cb19-2"><a href="tema-1-estadística-descriptiva.html#cb19-2"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>,<span class="dt">sd=</span><span class="fl">0.5</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</span>
 <span id="cb19-3"><a href="tema-1-estadística-descriptiva.html#cb19-3"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>)),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</span>
 <span id="cb19-4"><a href="tema-1-estadística-descriptiva.html#cb19-4"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">runif</span>(<span class="dv">100000</span>)))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 
 </div>
 </div>
