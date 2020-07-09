@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-07-07" />
+<meta name="date" content="2020-07-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -215,7 +215,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html"><i class="fa fa-check"></i><b>5</b> Tema 5: Distribuciones Continuas</a><ul>
 <li class="chapter" data-level="5.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#uniforme"><i class="fa fa-check"></i><b>5.1</b> Uniforme</a></li>
-<li class="chapter" data-level="5.2" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#exponencial"><i class="fa fa-check"></i><b>5.2</b> Exponencial</a></li>
+<li class="chapter" data-level="5.2" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#exponencial"><i class="fa fa-check"></i><b>5.2</b> Exponencial</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.2.1</b> Ejercicios,</a></li>
+</ul></li>
 <li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.3</b> Normal</a></li>
 <li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a></li>
 </ul></li>
@@ -300,7 +302,7 @@ Donde;</p>
 <strong>Tarea</strong></p>
 <p>La <span class="math inline">\(E[X]=np=10*0.2=2\)</span>, <span class="math inline">\(V(X)=np(1-p)=npq=10*0.2*0.8=1.6\)</span>, <span class="math inline">\(\sqrt{V(X)}=\sqrt{1.6}=1.26\)</span></p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="tema-4-distribuciones-discretas.html#cb44-1"></a><span class="kw">barplot</span>(<span class="kw">table</span>(<span class="kw">rbinom</span>(<span class="dv">100000</span>,<span class="dv">10</span>,<span class="fl">0.2</span>)))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 Nota: Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span>, donde <span class="math inline">\(X_i \sim Bernoulli(p)\)</span> para todo <span class="math inline">\(i=1:n\)</span>, si definimos a <span class="math inline">\(Y=X_1+X_2+\ldots+X_n\)</span>, <span class="math inline">\(Y\sim Binomial(n,p)\)</span>.</p>
 <p><span class="math display">\[E[Y]=E[X_1+X_2+\ldots+X_n]=E[X_1]+E[X_2]+\ldots+E[X_n]=p+p+\ldots+p=np\]</span></p>
 <p>Para la varianza <strong>tarea</strong></p>
@@ -442,15 +444,11 @@ Donde;</p>
 <li>Número de clientes que entran a un banco en un día dado</li>
 </ul>
 <p>Nota: Si <span class="math inline">\(X \sim binomial(n,p)\)</span>, si <span class="math inline">\(n \rightarrow \infty\)</span> , <span class="math inline">\(p \rightarrow 0\)</span> y <span class="math inline">\(\lambda=n*p\)</span> permanece constante. Entonces se puede aproximar con <span class="math inline">\(X \sim Poisson(\lambda = n*p)\)</span>. <span class="math inline">\(n \geq 50\)</span>, <span class="math inline">\(p\leq 0.1\)</span>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu. 
-##   0.000   2.000   3.000   3.001   4.000 
-##    Max. 
-##  14.000</code></pre>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu. 
-##   0.000   2.000   3.000   3.002   4.000 
-##    Max. 
-##  16.000</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   2.000   3.000   3.001   4.000  14.000</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   2.000   3.000   3.002   4.000  16.000</code></pre>
 </div>
 <div id="ejemplos-5" class="section level3">
 <h3><span class="header-section-number">4.6.2</span> Ejemplos</h3>

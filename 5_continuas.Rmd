@@ -1,8 +1,3 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
 # Tema 5: Distribuciones Continuas
 
 ## Uniforme
@@ -102,6 +97,38 @@ Esto se da, siempre y cuando $\lambda-t>0$, $\lambda>t$
 
 Tarea, demostrar la $E[X]$ y la $V(X)$ a partir de la función generatriz de momentos.
 
+### Ejercicios,
+
+1. (pg525, 1) La duración de una lampara se distribuye exponencial con parámetro $\lambda=1/100$ (horas). Determinar:
+  * La probabilidad de que se queme antes de las 1000 horas
+  * La probabilidad de que se queme después de la duración media
+  * ¿Cuál es la desviación estándar de la distribución?
+
+Solución, sea $X$ la va, que denota la duración en horas. $X\sim exp(\lambda=1/100)$.
+
+$$f(x)=\frac{1}{100}e^{-\frac{1}{100}x}; \text{ } x>0$$
+$$F(x) =P(X<x) = 1- e^{-\frac{1}{100} x}$$
+La probabilidad de que se queme antes de las 1000 horas
+
+$$P(X<1000)=F(1000)=1-e^{-1000/100}=1-e^{-10}=0.9999546$$
+
+La probabilidad de que se queme después de la duración media.
+
+$$E[X]=\frac{1}{\lambda}=\frac{1}{\frac{1}{100}}=100$$
+
+$$P(X>E[X])=P(X>100)=1-P(X\leq 100)=1-F(100)=1-(1-e^{-100/100})=$$
+$$=1-1+e^{-1}=e^{-1}=0.3679$$
+¿Cuál es la desviación estándar de la distribución? $\sqrt{V(X)}$
+
+$\sqrt{V(X)}=\sqrt{\frac{1}{\lambda^2}}=1/\lambda=100$
+
+
+2. Supongamos que el número de kilómetros que un carro puede recorrer antes que su batería se consuma, está exponencialmente distribuida con un promedio de 15000 kilómetros. Si una persona desea hacer una excursión de 10000 kilómetros. ¿Cuál es la probabilidad de que la persona complete la excursión sin que tenga que cambiar de batería del carro?.
+
+Solución, sea $X$ la duración de la batería en kilómetros. $X\sim exp(\lambda=1/15000)$. $E[X]=15000=1/\lambda$, entonces, $\lambda=1/15000$.
+
+$$P(X>10000)=tarea$$
+
 ## Normal
 
 Sea $X$ una v.a, se dice que $X\sim N(\mu,\sigma^2)$ si su función de densidad es:
@@ -116,16 +143,43 @@ $$\begin{array}{ll}
  \end{array}
 $$
 
+
+```{r,echo=FALSE}
+x<-round(runif(1000,20,80),0)
+hist(x)
+n<-10
+k<-10000
+aux<-NULL
+for(i in 1:k){
+s<-sample(x,10)
+aux[i]<-mean(s)
+}
+hist(aux)
+```
+
 ## Normal Estándar
 
-Sea $x \sim N(\mu, \sigma^2)$, entonces $z=\frac{x-mu}{\sigma}$ es una v.a, y se dice que $Z\sim N(0,1)$ es una normal estándar, si su función de densidad es:
+Sea $x \sim N(\mu, \sigma^2)$, entonces $z=\frac{x-\mu}{\sigma}$ es una v.a, y se dice que $Z\sim N(0,1)$ es una normal estándar, si su función de densidad es:
 $$f(x)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} z^2 } \hspace{0.5cm};  -\infty \leq z \leq \infty$$
 Donde;
 
 
 $$\begin{array}{ll}
- E[x] & =0\\
- V[x] & =1\\
- M_X(t) & = e^{\frac{1}{2} t^2}
+ E[z] & =0\\
+ V[z] & =1\\
+ M_Z(t) & = e^{\frac{1}{2} t^2}
  \end{array}
 $$
+### Ejercicios
+
+$$P(Z\leq t)=P(Z<t)=F(t)=\phi(t)$$
+
+1. Si $Z$ en una va. $Z\sim N(0,1)$, calcular:
+  
+  * $P(0<Z<1.44)=F(1.44)-F(0)=\phi(1.44)-\phi(0)=0.9251-0.5=0.4251$
+  * $P(-0.85<Z<0)=\phi(0)-\phi(-0.85)=0.5-0.1977=0.3023$
+  * $P(-1.48<Z<2.05)=\phi(2.05)-\phi(-1.48)=0.9798-0.0694=0.9104$
+  * $P(Z<1.08)=F(1.08)=\phi(1.08)=0.8599$
+  * $P(Z>-0.66)=1-P(Z\leq -0.66)=1-\phi(-0.66)=1-0.2566=0.7434$
+
+Tarea: Revisar los ejercicios a partir de la página 511

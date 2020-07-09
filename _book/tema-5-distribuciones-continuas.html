@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-07-07" />
+<meta name="date" content="2020-07-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -215,7 +215,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html"><i class="fa fa-check"></i><b>5</b> Tema 5: Distribuciones Continuas</a><ul>
 <li class="chapter" data-level="5.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#uniforme"><i class="fa fa-check"></i><b>5.1</b> Uniforme</a></li>
-<li class="chapter" data-level="5.2" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#exponencial"><i class="fa fa-check"></i><b>5.2</b> Exponencial</a></li>
+<li class="chapter" data-level="5.2" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#exponencial"><i class="fa fa-check"></i><b>5.2</b> Exponencial</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.2.1</b> Ejercicios,</a></li>
+</ul></li>
 <li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.3</b> Normal</a></li>
 <li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a></li>
 </ul></li>
@@ -251,7 +253,7 @@ Ejemplo,</p>
 </ul>
 <p>Solución,</p>
 <p><span class="math display">\[f(x)=\frac{1}{4-2}=\frac{1}{2}=0.5\]</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p><span class="math display">\[\int_{Rx} f(x)dx=\int_2^40.5 dx=0.5 x/_2^4=0.5*(4-2)=0.5*2=1\]</span></p>
 <ul>
 <li><span class="math inline">\(P(2&lt;X&lt;3)=0.5\)</span></li>
@@ -313,6 +315,33 @@ Donde;</p>
 <p><span class="math display">\[M_X(t)=E[e^{tx}]=\int_0^{\infty} e^{tx}\lambda e^{-\lambda x}dx=\lambda \int_0^{\infty} e^{-x(\lambda-t)} dx=\lambda \left( -\frac{e^{-x(\lambda-t)}}{(\lambda-t)}  \right)_0^{\infty}=\frac{\lambda}{(\lambda-t)}*(-e^{-\infty (\lambda-t)}+e^0)=\frac{\lambda}{\lambda-t}\]</span>
 Esto se da, siempre y cuando <span class="math inline">\(\lambda-t&gt;0\)</span>, <span class="math inline">\(\lambda&gt;t\)</span></p>
 <p>Tarea, demostrar la <span class="math inline">\(E[X]\)</span> y la <span class="math inline">\(V(X)\)</span> a partir de la función generatriz de momentos.</p>
+<div id="ejercicios-1" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Ejercicios,</h3>
+<ol style="list-style-type: decimal">
+<li>(pg525, 1) La duración de una lampara se distribuye exponencial con parámetro <span class="math inline">\(\lambda=1/100\)</span> (horas). Determinar:</li>
+</ol>
+<ul>
+<li>La probabilidad de que se queme antes de las 1000 horas</li>
+<li>La probabilidad de que se queme después de la duración media</li>
+<li>¿Cuál es la desviación estándar de la distribución?</li>
+</ul>
+<p>Solución, sea <span class="math inline">\(X\)</span> la va, que denota la duración en horas. <span class="math inline">\(X\sim exp(\lambda=1/100)\)</span>.</p>
+<p><span class="math display">\[f(x)=\frac{1}{100}e^{-\frac{1}{100}x}; \text{ } x&gt;0\]</span>
+<span class="math display">\[F(x) =P(X&lt;x) = 1- e^{-\frac{1}{100} x}\]</span>
+La probabilidad de que se queme antes de las 1000 horas</p>
+<p><span class="math display">\[P(X&lt;1000)=F(1000)=1-e^{-1000/100}=1-e^{-10}=0.9999546\]</span></p>
+<p>La probabilidad de que se queme después de la duración media.</p>
+<p><span class="math display">\[E[X]=\frac{1}{\lambda}=\frac{1}{\frac{1}{100}}=100\]</span></p>
+<p><span class="math display">\[P(X&gt;E[X])=P(X&gt;100)=1-P(X\leq 100)=1-F(100)=1-(1-e^{-100/100})=\]</span>
+<span class="math display">\[=1-1+e^{-1}=e^{-1}=0.3679\]</span>
+¿Cuál es la desviación estándar de la distribución? <span class="math inline">\(\sqrt{V(X)}\)</span></p>
+<p><span class="math inline">\(\sqrt{V(X)}=\sqrt{\frac{1}{\lambda^2}}=1/\lambda=100\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Supongamos que el número de kilómetros que un carro puede recorrer antes que su batería se consuma, está exponencialmente distribuida con un promedio de 15000 kilómetros. Si una persona desea hacer una excursión de 10000 kilómetros. ¿Cuál es la probabilidad de que la persona complete la excursión sin que tenga que cambiar de batería del carro?.</li>
+</ol>
+<p>Solución, sea <span class="math inline">\(X\)</span> la duración de la batería en kilómetros. <span class="math inline">\(X\sim exp(\lambda=1/15000)\)</span>. <span class="math inline">\(E[X]=15000=1/\lambda\)</span>, entonces, <span class="math inline">\(\lambda=1/15000\)</span>.</p>
+<p><span class="math display">\[P(X&gt;10000)=tarea\]</span></p>
+</div>
 </div>
 <div id="normal" class="section level2">
 <h2><span class="header-section-number">5.3</span> Normal</h2>
@@ -325,18 +354,32 @@ Donde;</p>
  M_X(t) &amp; = e^{\mu t +\frac{1}{2} \sigma^2 t^2}
  \end{array}
 \]</span></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-18-2.png" width="672" /></p>
 </div>
 <div id="normal-estándar" class="section level2">
 <h2><span class="header-section-number">5.4</span> Normal Estándar</h2>
-<p>Sea <span class="math inline">\(x \sim N(\mu, \sigma^2)\)</span>, entonces <span class="math inline">\(z=\frac{x-mu}{\sigma}\)</span> es una v.a, y se dice que <span class="math inline">\(Z\sim N(0,1)\)</span> es una normal estándar, si su función de densidad es:
+<p>Sea <span class="math inline">\(x \sim N(\mu, \sigma^2)\)</span>, entonces <span class="math inline">\(z=\frac{x-\mu}{\sigma}\)</span> es una v.a, y se dice que <span class="math inline">\(Z\sim N(0,1)\)</span> es una normal estándar, si su función de densidad es:
 <span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} z^2 } \hspace{0.5cm};  -\infty \leq z \leq \infty\]</span>
 Donde;</p>
 <p><span class="math display">\[\begin{array}{ll}
- E[x] &amp; =0\\
- V[x] &amp; =1\\
- M_X(t) &amp; = e^{\frac{1}{2} t^2}
+ E[z] &amp; =0\\
+ V[z] &amp; =1\\
+ M_Z(t) &amp; = e^{\frac{1}{2} t^2}
  \end{array}
-\]</span></p>
+\]</span>
+### Ejercicios</p>
+<p><span class="math display">\[P(Z\leq t)=P(Z&lt;t)=F(t)=\phi(t)\]</span></p>
+<ol style="list-style-type: decimal">
+<li>Si <span class="math inline">\(Z\)</span> en una va. <span class="math inline">\(Z\sim N(0,1)\)</span>, calcular:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(P(0&lt;Z&lt;1.44)=F(1.44)-F(0)=\phi(1.44)-\phi(0)=0.9251-0.5=0.4251\)</span></li>
+<li><span class="math inline">\(P(-0.85&lt;Z&lt;0)=\phi(0)-\phi(-0.85)=0.5-0.1977=0.3023\)</span></li>
+<li><span class="math inline">\(P(-1.48&lt;Z&lt;2.05)=\phi(2.05)-\phi(-1.48)=0.9798-0.0694=0.9104\)</span></li>
+<li><span class="math inline">\(P(Z&lt;1.08)=F(1.08)=\phi(1.08)=0.8599\)</span></li>
+<li><span class="math inline">\(P(Z&gt;-0.66)=1-P(Z\leq -0.66)=1-\phi(-0.66)=1-0.2566=0.7434\)</span></li>
+</ul>
+<p>Tarea: Revisar los ejercicios a partir de la página 511</p>
 
 </div>
 </div>
