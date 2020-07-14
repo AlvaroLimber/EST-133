@@ -183,3 +183,68 @@ $$P(Z\leq t)=P(Z<t)=F(t)=\phi(t)$$
   * $P(Z>-0.66)=1-P(Z\leq -0.66)=1-\phi(-0.66)=1-0.2566=0.7434$
 
 Tarea: Revisar los ejercicios a partir de la página 511
+
+2. Si $X\sim N(\mu=1,\sigma^2=4)$. Calcular:
+
+
+  * $P(X\leq 3)=P(\frac{X-\mu}{\sigma} \leq \frac{3-1}{2})=P(Z\leq 1)=F(1)=\phi(1)=0.8413$
+  * $P(X>1.5)=P(\frac{X-\mu}{\sigma}>\frac{1.5-1}{2})=P(Z>0.25)=1-P(Z\leq 0.25)$
+  $=1-P(Z\leq0.25)=1-\phi(0.25)=1-0.5987=0.4013$
+  
+  * $P(2<X<5)=P(\frac{2-1}{2}<Z<\frac{5-1}{2})=P(0.5<Z<2)=\phi(2)-\phi(0.5)=0.9772-0.6915=0.2857$
+
+  * $P(-1<X<0.5)=P(\frac{-1-1}{2}<Z< \frac{ 0.5-1}{2})=P(-1<Z<-0.25)$
+  
+  $=\phi(-0.25)-\phi(-1)=0.4013-0.1587=0.2426$
+  
+3. Los pesos de 600 estudiantes están normalmente distribuidos con media 65.3 Kg y desviación estándar de 5.51 Kg. Encuentre el número de alumnos que pesan:
+
+  a) entre 60 y 70 kg
+  b) más de 63.2
+  c) entre 55 y 60 Kg (1pt)
+  
+Solución, $X\sim N(\mu=65.3,\sigma=5.51)$
+
+a) $P(60<X<70)=P(-0.962<Z<0.853)=\phi(0.85)-\phi(-0.96)=0.8023-0.1685=0.6338$
+
+Dado que hay 600 estudiantes de estos la probabilidad que pesen entre 60 y 70 es de 0.6338 que representa a $600*0.6338=380$ estudiantes.
+
+b) $P(X>63.2)=P(Z>-0.38)=1-P(Z\leq -0.38)=1-\phi(-0.38)=1-0.3520=0.648$
+
+En personas esto equivale a $600*0.648=389$
+
+c) $P(55<X<60)=P(-1.87<Z<-0.96)=\phi(-0.96)-\phi(-1.87)=0.1685-0.0307=0.1378$
+
+En personas esto equivale a $600*0.1378=83$
+
+### Propiedades sobre la normal 
+
+> Teorema de la suma de normales independientes
+
+Sea $X_1, X_2, \ldots ,X_k$ va independientes y que cada una de ellas $X_i\sim N(\mu_i,\sigma^2_i)$. Entonces la suma de estas $k$ variables también se distribuye normal.
+
+$$X_1+X_2+\ldots+X_k=Y\sim N \left(\mu_y=\mu_1+\mu_2+\ldots+\mu_k,\sigma^2_y=\sum_{i=1}^k{\sigma_i^2} \right) $$
+> Teorema del limite central
+
+Si $X_1, X_2, \ldots,X_n,\ldots$ es una sucesión de va independientes e idénticamente distribuidas (iid). Cada una con media $E[X_i]=\mu$ y varianza $V(X_i)=\sigma^2$ (finita). Entonces para cualquier número fijo $x$ se tiene:
+
+$$lim_{(n\rightarrow +\infty)} P\left(\frac{\bar{X_n}-\mu}{\sigma/\sqrt{n}}\leq x  \right)=P(Z_n<x)=\phi(x)$$
+$$Z_n\sim N(0,1)$$
+Donde,
+
+$$\bar{X}_n=\frac{\sum_{i=1}^n X_i}{n}$$
+
+Ejemplo (Pg 518, ej 41.). Un fabricante de papel de embalar requiere resistencia mínima de 20 kilos por centímetro cuadrado. Para verificar la calidad del papel, cada hora se selecciona una muestra de 10 piezas de papel  y se mide la resistencia de cada una de ellas. Se identifica que el promedio de la resistencia es de 21 kilos por centímetro cuadrado y la desviación estándar es de 2 kilos por cm2.
+
+  a) ¿Cuál es la distribución aproximadamente de la media muestral de las $n=10$ piezas de papel.
+  
+  b) ¿Cuál es la probabilidad de que para una muestra aleatoria de $n=10$ piezas de papel sea $\bar{X}<20$?
+
+Solución, Sea $X_i$: Resistencia del papel $i$ una va para $i=1, 2, \ldots$. $X_i \sim .(\mu=21,\sigma=2)$
+
+a) La distribución de la media muestral se la puede aproximar mediante la distribución normal por el teorema del limite central. 
+
+$$\bar{X}_{10}\sim N(\mu=21,\sigma=2/\sqrt{10})=N(\mu=21,\sigma=0.63)$$
+b) $P(\bar{X}<20)=P(Z_{10}<\frac{20-21}{0.63})=P(Z<-1.58)=\phi(-1.58)=0.0571$
+
+

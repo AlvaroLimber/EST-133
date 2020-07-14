@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-07-09" />
+<meta name="date" content="2020-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,7 +219,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.2.1</b> Ejercicios,</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.3</b> Normal</a></li>
-<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a></li>
+<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.4.1</b> Propiedades sobre la normal</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -380,7 +382,64 @@ Donde;</p>
 <li><span class="math inline">\(P(Z&gt;-0.66)=1-P(Z\leq -0.66)=1-\phi(-0.66)=1-0.2566=0.7434\)</span></li>
 </ul>
 <p>Tarea: Revisar los ejercicios a partir de la página 511</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Si <span class="math inline">\(X\sim N(\mu=1,\sigma^2=4)\)</span>. Calcular:</li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(P(X\leq 3)=P(\frac{X-\mu}{\sigma} \leq \frac{3-1}{2})=P(Z\leq 1)=F(1)=\phi(1)=0.8413\)</span></p></li>
+<li><p><span class="math inline">\(P(X&gt;1.5)=P(\frac{X-\mu}{\sigma}&gt;\frac{1.5-1}{2})=P(Z&gt;0.25)=1-P(Z\leq 0.25)\)</span>
+<span class="math inline">\(=1-P(Z\leq0.25)=1-\phi(0.25)=1-0.5987=0.4013\)</span></p></li>
+<li><p><span class="math inline">\(P(2&lt;X&lt;5)=P(\frac{2-1}{2}&lt;Z&lt;\frac{5-1}{2})=P(0.5&lt;Z&lt;2)=\phi(2)-\phi(0.5)=0.9772-0.6915=0.2857\)</span></p></li>
+<li><p><span class="math inline">\(P(-1&lt;X&lt;0.5)=P(\frac{-1-1}{2}&lt;Z&lt; \frac{ 0.5-1}{2})=P(-1&lt;Z&lt;-0.25)\)</span></p></li>
+</ul>
+<p><span class="math inline">\(=\phi(-0.25)-\phi(-1)=0.4013-0.1587=0.2426\)</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Los pesos de 600 estudiantes están normalmente distribuidos con media 65.3 Kg y desviación estándar de 5.51 Kg. Encuentre el número de alumnos que pesan:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>entre 60 y 70 kg</li>
+<li>más de 63.2</li>
+<li>entre 55 y 60 Kg (1pt)</li>
+</ol>
+<p>Solución, <span class="math inline">\(X\sim N(\mu=65.3,\sigma=5.51)\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(60&lt;X&lt;70)=P(-0.962&lt;Z&lt;0.853)=\phi(0.85)-\phi(-0.96)=0.8023-0.1685=0.6338\)</span></li>
+</ol>
+<p>Dado que hay 600 estudiantes de estos la probabilidad que pesen entre 60 y 70 es de 0.6338 que representa a <span class="math inline">\(600*0.6338=380\)</span> estudiantes.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X&gt;63.2)=P(Z&gt;-0.38)=1-P(Z\leq -0.38)=1-\phi(-0.38)=1-0.3520=0.648\)</span></li>
+</ol>
+<p>En personas esto equivale a <span class="math inline">\(600*0.648=389\)</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(55&lt;X&lt;60)=P(-1.87&lt;Z&lt;-0.96)=\phi(-0.96)-\phi(-1.87)=0.1685-0.0307=0.1378\)</span></li>
+</ol>
+<p>En personas esto equivale a <span class="math inline">\(600*0.1378=83\)</span></p>
+<div id="propiedades-sobre-la-normal" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Propiedades sobre la normal</h3>
+<blockquote>
+<p>Teorema de la suma de normales independientes</p>
+</blockquote>
+<p>Sea <span class="math inline">\(X_1, X_2, \ldots ,X_k\)</span> va independientes y que cada una de ellas <span class="math inline">\(X_i\sim N(\mu_i,\sigma^2_i)\)</span>. Entonces la suma de estas <span class="math inline">\(k\)</span> variables también se distribuye normal.</p>
+<p><span class="math display">\[X_1+X_2+\ldots+X_k=Y\sim N \left(\mu_y=\mu_1+\mu_2+\ldots+\mu_k,\sigma^2_y=\sum_{i=1}^k{\sigma_i^2} \right) \]</span>
+&gt; Teorema del limite central</p>
+<p>Si <span class="math inline">\(X_1, X_2, \ldots,X_n,\ldots\)</span> es una sucesión de va independientes e idénticamente distribuidas (iid). Cada una con media <span class="math inline">\(E[X_i]=\mu\)</span> y varianza <span class="math inline">\(V(X_i)=\sigma^2\)</span> (finita). Entonces para cualquier número fijo <span class="math inline">\(x\)</span> se tiene:</p>
+<p><span class="math display">\[lim_{(n\rightarrow +\infty)} P\left(\frac{\bar{X_n}-\mu}{\sigma/\sqrt{n}}\leq x  \right)=P(Z_n&lt;x)=\phi(x)\]</span>
+<span class="math display">\[Z_n\sim N(0,1)\]</span>
+Donde,</p>
+<p><span class="math display">\[\bar{X}_n=\frac{\sum_{i=1}^n X_i}{n}\]</span></p>
+<p>Ejemplo (Pg 518, ej 41.). Un fabricante de papel de embalar requiere resistencia mínima de 20 kilos por centímetro cuadrado. Para verificar la calidad del papel, cada hora se selecciona una muestra de 10 piezas de papel y se mide la resistencia de cada una de ellas. Se identifica que el promedio de la resistencia es de 21 kilos por centímetro cuadrado y la desviación estándar es de 2 kilos por cm2.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es la distribución aproximadamente de la media muestral de las <span class="math inline">\(n=10\)</span> piezas de papel.</p></li>
+<li><p>¿Cuál es la probabilidad de que para una muestra aleatoria de <span class="math inline">\(n=10\)</span> piezas de papel sea <span class="math inline">\(\bar{X}&lt;20\)</span>?</p></li>
+</ol>
+<p>Solución, Sea <span class="math inline">\(X_i\)</span>: Resistencia del papel <span class="math inline">\(i\)</span> una va para <span class="math inline">\(i=1, 2, \ldots\)</span>. <span class="math inline">\(X_i \sim .(\mu=21,\sigma=2)\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>La distribución de la media muestral se la puede aproximar mediante la distribución normal por el teorema del limite central.</li>
+</ol>
+<p><span class="math display">\[\bar{X}_{10}\sim N(\mu=21,\sigma=2/\sqrt{10})=N(\mu=21,\sigma=0.63)\]</span>
+b) <span class="math inline">\(P(\bar{X}&lt;20)=P(Z_{10}&lt;\frac{20-21}{0.63})=P(Z&lt;-1.58)=\phi(-1.58)=0.0571\)</span></p>
 
+</div>
 </div>
 </div>
             </section>

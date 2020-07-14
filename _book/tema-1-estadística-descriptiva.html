@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-07-09" />
+<meta name="date" content="2020-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,7 +219,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.2.1</b> Ejercicios,</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.3</b> Normal</a></li>
-<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a></li>
+<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.4.1</b> Propiedades sobre la normal</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -259,30 +261,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.4</span> Medidas de tendencia central</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tema-1-estadística-descriptiva.html#cb3-1"></a>x&lt;-<span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">40</span>,<span class="dv">90</span>)</span>
 <span id="cb3-2"><a href="tema-1-estadística-descriptiva.html#cb3-2"></a><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">100</span></span></code></pre></div>
-<pre><code>## [1] 64.5668</code></pre>
+<pre><code>## [1] 63.2469</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tema-1-estadística-descriptiva.html#cb5-1"></a>x[<span class="kw">order</span>(x)]</span></code></pre></div>
-<pre><code>##   [1] 40.38771 40.73989 41.25613 41.52584 41.66411
-##   [6] 42.64533 42.91709 43.01271 43.13811 43.51144
-##  [11] 43.78633 45.01312 45.02532 45.44013 45.69445
-##  [16] 46.61364 46.73244 46.77350 46.80500 47.73621
-##  [21] 47.88872 48.41216 48.52924 49.59969 50.79467
-##  [26] 51.82060 52.62721 52.87038 52.98397 53.04562
-##  [31] 53.29447 54.33310 54.34499 54.58181 56.92970
-##  [36] 58.64711 58.81911 58.82950 60.38963 60.62705
-##  [41] 60.76242 60.82594 61.27764 61.69565 62.22156
-##  [46] 62.80714 63.08024 63.81858 64.58090 65.21012
-##  [51] 65.94146 67.17304 67.59380 68.31008 68.50043
-##  [56] 69.66069 69.73999 70.07384 70.08371 70.15393
-##  [61] 70.30029 70.68319 71.36460 71.40809 71.74246
-##  [66] 72.25131 72.47547 72.67341 72.79054 76.07060
-##  [71] 76.17471 76.20486 76.24072 76.79994 76.90084
-##  [76] 77.11101 77.84725 78.71458 79.88494 80.01840
-##  [81] 80.12589 80.16450 80.26751 80.31486 80.38473
-##  [86] 80.82880 81.75155 82.45180 82.64392 84.26996
-##  [91] 84.49765 84.64044 84.92484 85.78361 87.42851
-##  [96] 88.19187 88.43971 88.67263 89.94628 89.99536</code></pre>
+<pre><code>##   [1] 40.27065 40.48482 40.71792 40.83554 40.84093 41.00286
+##   [7] 41.13509 42.44153 42.52786 43.21622 43.37174 43.78117
+##  [13] 44.82342 44.86758 46.19263 47.35510 48.57852 48.96982
+##  [19] 49.80765 49.86549 49.88507 50.16119 50.22110 50.87678
+##  [25] 51.09572 52.58132 52.98052 53.08661 53.67998 53.72934
+##  [31] 54.25625 54.62797 54.94410 55.63719 55.80208 56.36478
+##  [37] 56.75785 57.43180 57.52620 57.99729 58.26972 60.58691
+##  [43] 60.67361 61.82238 62.18435 62.31965 63.11302 63.89961
+##  [49] 64.38416 64.86152 65.00947 65.17847 65.81178 65.83004
+##  [55] 65.99871 66.42841 66.59681 66.63506 66.82389 67.73812
+##  [61] 68.28358 68.29795 68.87622 69.03699 69.08205 69.21957
+##  [67] 70.02128 70.02802 70.07804 70.25605 71.29193 71.91010
+##  [73] 72.03714 72.43765 72.69446 73.44732 73.65000 74.53765
+##  [79] 74.78458 75.89303 76.17541 76.89954 77.46633 78.28710
+##  [85] 78.87848 79.14339 79.55273 80.70378 80.89674 81.71301
+##  [91] 81.83711 82.56712 83.35640 84.41269 87.01575 87.54091
+##  [97] 88.90831 89.04253 89.74105 89.79240</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tema-1-estadística-descriptiva.html#cb7-1"></a><span class="kw">median</span>(x)</span></code></pre></div>
-<pre><code>## [1] 65.57579</code></pre>
+<pre><code>## [1] 64.93549</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tema-1-estadística-descriptiva.html#cb9-1"></a><span class="kw">hist</span>(x)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
@@ -292,9 +291,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-2"><a href="tema-1-estadística-descriptiva.html#cb10-2"></a><span class="kw">hist</span>(y)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tema-1-estadística-descriptiva.html#cb11-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
-<pre><code>## [1] 14.79465</code></pre>
+<pre><code>## [1] 13.82435</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tema-1-estadística-descriptiva.html#cb13-1"></a><span class="kw">sd</span>(y)</span></code></pre></div>
-<pre><code>## [1] 5.341436</code></pre>
+<pre><code>## [1] 5.468197</code></pre>
 </div>
 <div id="medidas-de-forma" class="section level2">
 <h2><span class="header-section-number">1.6</span> Medidas de forma</h2>

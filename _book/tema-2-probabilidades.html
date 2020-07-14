@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-07-09" />
+<meta name="date" content="2020-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,7 +219,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.2.1</b> Ejercicios,</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.3</b> Normal</a></li>
-<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a></li>
+<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.4.1</b> Propiedades sobre la normal</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -522,48 +524,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-2"><a href="tema-2-probabilidades.html#cb21-2"></a><span class="kw">set.seed</span>(<span class="dv">999</span>)</span>
 <span id="cb21-3"><a href="tema-2-probabilidades.html#cb21-3"></a>aux&lt;-<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="fl">0.5</span>)</span>
 <span id="cb21-4"><a href="tema-2-probabilidades.html#cb21-4"></a>aux</span></code></pre></div>
-<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0
-##   [25] 1 1 1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0
-##   [49] 0 0 1 1 0 1 0 1 0 1 0 1 1 1 1 1 1 0 1 1 0 0 0 0
-##   [73] 0 0 1 0 1 0 0 0 0 1 1 0 0 0 0 1 1 0 1 0 0 1 1 0
-##   [97] 1 1 0 1 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 1
-##  [121] 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1
-##  [145] 1 1 0 0 1 0 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0 0 1 1
-##  [169] 0 0 0 0 1 0 0 0 1 1 1 0 1 0 1 1 0 0 1 0 0 1 1 1
-##  [193] 0 0 0 0 0 1 1 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 1
-##  [217] 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0
-##  [241] 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 1
-##  [265] 1 0 0 0 0 1 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0
-##  [289] 1 0 0 1 1 1 1 0 0 0 1 0 1 0 1 1 1 1 1 1 1 0 0 0
-##  [313] 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1 1 0 1 0 1 0
-##  [337] 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0 0 0 1 1 0 0 1 1 0
-##  [361] 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0
-##  [385] 0 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 1
-##  [409] 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 1 1 0 0 0 1 1 0
-##  [433] 0 0 1 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1 0 1 1 1 1 0
-##  [457] 0 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0
-##  [481] 0 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 0 1 0 0 1 0 1 0
-##  [505] 0 1 0 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1
-##  [529] 0 1 0 1 0 1 0 1 1 1 0 1 1 1 0 1 0 1 0 1 1 0 1 1
-##  [553] 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0
-##  [577] 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1 0 1 1 0 1
-##  [601] 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0
-##  [625] 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 0
-##  [649] 1 1 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1 0 0 0 1 0
-##  [673] 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0
-##  [697] 0 0 0 1 1 1 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1
-##  [721] 1 1 1 1 1 1 0 0 1 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0
-##  [745] 0 1 0 1 1 0 1 1 0 0 0 0 1 0 1 0 1 1 0 0 1 1 0 0
-##  [769] 1 1 0 1 1 1 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0
-##  [793] 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1 0 0 0 1 0 1
-##  [817] 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 0 1 0
-##  [841] 1 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1
-##  [865] 0 1 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1
-##  [889] 0 1 1 1 0 1 0 1 1 0 1 0 1 0 1 0 0 0 0 0 1 0 0 1
-##  [913] 1 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 1 1 0
-##  [937] 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1
-##  [961] 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0
-##  [985] 0 1 0 1 1 0 0 0 1 1 1 0 1 0 1 1</code></pre>
+<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1
+##   [28] 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1
+##   [55] 0 1 0 1 0 1 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0
+##   [82] 1 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 1 0
+##  [109] 0 1 1 0 1 0 0 1 1 0 0 1 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0
+##  [136] 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0 1 1 1 1 0 1 1 0 0 1 0 0
+##  [163] 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0 1 0 1 1 0 0 1 0 0
+##  [190] 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 1
+##  [217] 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0 0 0 1
+##  [244] 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 1 1 0 0 0 0 1
+##  [271] 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 1 0 0
+##  [298] 0 1 0 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 1 1 1 0
+##  [325] 0 1 0 1 0 1 1 0 1 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0
+##  [352] 0 0 1 1 0 0 1 1 0 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 0
+##  [379] 0 1 0 0 1 0 0 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1
+##  [406] 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 1 1 0 0 0 1 1 0
+##  [433] 0 0 1 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 1 1
+##  [460] 1 1 1 1 0 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0
+##  [487] 1 1 1 1 0 0 1 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 1 1
+##  [514] 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1
+##  [541] 1 1 0 1 0 1 0 1 1 0 1 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0
+##  [568] 0 0 1 1 0 0 1 0 0 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1
+##  [595] 1 0 1 1 0 1 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0
+##  [622] 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 0
+##  [649] 1 1 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0
+##  [676] 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0 0 0 0 1 1 1
+##  [703] 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0 1
+##  [730] 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0 1 1 0 0 0 0
+##  [757] 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1 0 1 0
+##  [784] 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1
+##  [811] 0 0 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1
+##  [838] 0 1 0 1 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1
+##  [865] 0 1 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1 0 1 1
+##  [892] 1 0 1 0 1 1 0 1 0 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1
+##  [919] 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0
+##  [946] 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1 0 0 0 0 1 1 1 1 0 1 0 0
+##  [973] 0 1 0 1 1 1 1 0 1 1 1 0 0 1 0 1 1 0 0 0 1 1 1 0 1 0 1
+## [1000] 1</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tema-2-probabilidades.html#cb23-1"></a><span class="kw">sum</span>(aux)</span></code></pre></div>
 <pre><code>## [1] 496</code></pre>
 <p><span class="math inline">\(P(escudo)=\frac{496}{1000}=0.496\)</span></p>

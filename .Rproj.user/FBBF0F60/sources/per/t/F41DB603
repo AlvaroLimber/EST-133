@@ -3,23 +3,24 @@
     "path": "~/GitHub/EST-133/5_continuas.Rmd",
     "project_path": "5_continuas.Rmd",
     "type": "r_markdown",
-    "hash": "2649450897",
+    "hash": "4140995847",
     "contents": "",
     "dirty": false,
     "created": 1594137543188.0,
     "source_on_save": false,
     "relative_order": 3,
     "properties": {
-        "cursorPosition": "0,0",
-        "scrollLine": "0",
-        "chunk_output_type": "console"
+        "cursorPosition": "212,0",
+        "scrollLine": "195",
+        "chunk_output_type": "console",
+        "docOutlineVisible": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1594327909,
+    "lastKnownWriteTime": 1594757202,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1594327909968,
+    "last_content_update": 1594757202585,
     "read_only": false,
     "read_only_alternatives": []
 }
