@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Instrucciones
 
 * Seleccione el enlace según el último dígito de su carnet de identidad.
-* Las respuestas deben ser marcadas en el formulario de respuesta en línea, en este enlace: [Aquí]()
+* Las respuestas deben ser marcadas en el formulario de respuesta en línea, en este enlace: [Aquí](https://forms.gle/Lpm3GxB7rwPqa7wP9)
 * El formulario estará disponible hasta las 14:00, pasada esa hora no se reciben más respuestas.
 * Tenga cuidado en el marcado de las respuestas y el llenado de la información básica.
 * Si presenta algún inconveniente durante la realización de la prueba puede escribir al correo achirino.stat@gmail.com
@@ -22,13 +22,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Último dígito Carnet | Enlace 
 ------|---------
-0 | [Aquí]()
-1 | [Aquí]()
-2 | [Aquí]()
-3 | [Aquí]()
-4 | [Aquí]()
-5 | [Aquí]()
-6 | [Aquí]()
-7 | [Aquí]()
-8 | [Aquí]()
-9 | [Aquí]()
+0 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_10.pdf)
+1 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_01.pdf)
+2 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_02.pdf)
+3 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_03.pdf)
+4 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_04.pdf)
+5 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_05.pdf)
+6 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_06.pdf)
+7 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_07.pdf)
+8 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_08.pdf)
+9 | [Aquí](https://alvarolimber.github.io/EST-133/evaluacion/mesa/me_est133_I2020_09.pdf)
