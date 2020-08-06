@@ -1,0 +1,34 @@
+---
+title: "Mesa de Examen"
+subtitle: "Estadística I EST-133, Paralelo C."
+author: "Alvaro Chirino Gutierrez"
+date: "10 de Agosto, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instrucciones
+
+* Seleccione el enlace según el último dígito de su carnet de identidad.
+* Las respuestas deben ser marcadas en el formulario de respuesta en línea, en este enlace: [Aquí]()
+* El formulario estará disponible hasta las 14:00, pasada esa hora no se reciben más respuestas.
+* Tenga cuidado en el marcado de las respuestas y el llenado de la información básica.
+* Si presenta algún inconveniente durante la realización de la prueba puede escribir al correo achirino.stat@gmail.com
+
+## Exámenes
+
+Último dígito Carnet | Enlace 
+------|---------
+0 | [Aquí]()
+1 | [Aquí]()
+2 | [Aquí]()
+3 | [Aquí]()
+4 | [Aquí]()
+5 | [Aquí]()
+6 | [Aquí]()
+7 | [Aquí]()
+8 | [Aquí]()
+9 | [Aquí]()
