@@ -3,22 +3,23 @@
     "path": "~/GitHub/EST-133/1_descriptiva.Rmd",
     "project_path": "1_descriptiva.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "345157359",
     "contents": "",
     "dirty": false,
     "created": 1598371512521.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
-        "cursorPosition": "3,0",
-        "scrollLine": "0"
+        "cursorPosition": "146,0",
+        "scrollLine": "125",
+        "chunk_output_type": "console"
     },
     "folds": "",
-    "lastKnownWriteTime": 1598465050,
+    "lastKnownWriteTime": 1598559345,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1598465050527,
+    "last_content_update": 1598559345441,
     "read_only": false,
     "read_only_alternatives": []
 }
