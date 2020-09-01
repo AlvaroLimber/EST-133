@@ -114,73 +114,104 @@ Nota: Las variables continuas se pueden volver variables discretas (discretizar 
 Nota: Todo el contenido de la materia en adelante esta mas relacionado con variables cuantitativas.
 
 ## Ordenando los datos
+
 La idea de este punto es conocer las formas en las que se puede manejar las información disponible.
 
 Podemos observar tres formas de ordenar la información proveniente de una sola variable. 
 
 Imaginar que tenemos la información de edades de una población de 1000 personas.
 
-```{r}
-x<-round(runif(1000,1,100))
+```{r,echo=F}
+library(dplyr)
+set.seed(1234)
+x<-round(runif(1000,0,100))
+load(url("https://github.com/AlvaroLimber/EST-383/raw/master/data/oct20.RData"))
+bd<-computo %>% filter(Elección==unique(Elección)[1])
 ```
 
   * Mantenerlos en su forma simple (Datos no ordenados, datos simples).
   
-```{r}
+```{r,echo=F}
 x
 ```
   
   * Tenerlos en una tabla de frecuencias, es una tabla que para cada valor de la variable se realiza un proceso de conteo.
   
-```{r}
+```{r,echo=FALSE}
 as.data.frame(table(x))
 ```
   
   * Tener los datos en una tabla de frecuencias con intervalos de clase.
   
-```{r}
-t1<-as.data.frame(table(cut(x,11)))
-t1$Var1<-as.character(t1$Var1)
-t1$Var1[1]<-"[0,10]"
+```{r,echo=FALSE}
+t1<-as.data.frame(table(cut(x,seq(0,100,10))))
 t1
 ```
 
 ## Medidas de tendencia central
 
-```{r}
-x<-runif(100,40,90)
-sum(x)/100
-x[order(x)]
-median(x)
-hist(x)
+Imaginemos que tenemos los siguientes números: 2,2,3,3,3,4,4. 
+
+### Moda (Mo)
+La moda es el número que aparece con mas frecuencia en la serie de datos.
+ 
+En los números descritos la moda es $Mo=3$. Si la serie de números ahora es: 2,2,2,3,3,3,4,4. ¿Cuál es la moda?, en este caso se tienen 2 modas, el 2 y 3 (bi-modal).
+
+Nota: Si todos los números aparecen la misma cantidad de veces, no hay moda
+
+### Mediana (Me)
+La mediana corresponde al valor que se encuentra en el centro, de la serie de números ordenados.
+
+Es el número que deja la misma cantidad de información tanto a la derecha como a la izquierda.
+
+En el ejemplo: 2,2,3,3,3,4,4. La mediana es igual a $Me=3$. Veamos los siguientes ejemplos:
+
+  * 9,5,2,6,2,4,8.  Ordenando,  2, 2, 4, 5, 6, 8, 9. Así $Me=5$, $Mo=2$
+  * 4,2,7,7,4,3,2,9. Ordenando,  2, 2, 3, 4, 4, 7, 7, 9. Así $Me=4$, $Mo=2,4,7$
+  * 1,2,3,4,5,5,5,90. Ordenando, 1,  2,  3,  4,  5,  5,  5, 90. Así $Me=\frac{4+5}{2}=4.5$, $Mo=5$.
+  
+Para obtener el valor de la mediana se debe tomar el cuenta si la cantidad de datos es impar o par.
+
+Si $N$ es impar:
+$$Me= X_{||N/2||+1}$$
+$$Me= X_{(N+1)/2}$$
+
+* En el ejemplo:  2, 2, 4, 5, 6, 8, 9. Corresponden a este conjunto ($X_1,X_2,X_3,X_4,X_5,X_6,X_7$). Entonces $Me=X_{||N/2||+1}=X_{||7/2||+1}=X_{||3.5||+1}=X_{3+1}=X_4=5$
+
+
+Si $N$ es par:
+$$Me=\frac{X_{N/2}+X_{N/2+1}}{2} $$
+  
+### Media, Promedio, Media aritmética
+Esta medida se caracteriza en que su construcción depende de todas las observaciones en los datos, (democrática).
+
+$$\bar{x}=\frac{\sum_{i=1}^N {x_i}}{N}=\frac{x_1}{N}+\frac{x_2}{N}+\ldots+\frac{x_N}{N}$$
+
+Ejemplo, 
+
+  * 9,5,2,6,2,4,8. $\bar{x}=\frac{36}{7}=5.14$
+  * 4,2,7,7,4,3,2,9. $\bar{x}=\frac{38}{8}=4.75$
+  * 1,2,3,4,5,5,5,90.  $\bar{x}=\frac{115}{8}=14.38$
+
+Nota: La media es una medida sensible a los números atípicos. (Grandes)
+
+La media para datos agrupados:
+
+```{r,echo=F}
+t2<-data.frame(table(c(4,2,7,7,4,3,2,9)))
+colnames(t2)<-c("xi","fi")
+t2
 ```
+
+Donde $f_i$ se conoce como frecuencia absoluta (conteo). $\sum_{i=1}^k{f_i}=N$. Donde $k$ es la cantidad de filas en la tabla de frecuencias.
+
+$$\bar{x}=\frac{\sum_{i=1}^k{x_i*f_i}}{N}$$
+
+En el ejemplo:
+
+$$\bar{x}=\frac{2*2+3*1+4*2+7*2+9*1}{8}=\frac{38}{8}=4.75$$
+
 
 ## Medidas de dispersión
-
-```{r}
-y<-rnorm(100,60,5)
-hist(y)
-sd(x)
-sd(y)
-```
-
-
-## Medidas de forma
-
-Asimetría
-```{r}
-plot(density(y))
-plot(density(c(0,y)))
-plot(density(c(y,200)))
-plot(density(rnorm(100000)))
-```
-
-Kurtosis
-```{r}
-par(mfrow=c(1,3))
-plot(density(rnorm(100000,sd=0.5)),xlim=c(-5,5),ylim=c(0,0.8))
-plot(density(rnorm(100000)),xlim=c(-5,5),ylim=c(0,0.8))
-plot(density(runif(100000)))
-```
 
 
