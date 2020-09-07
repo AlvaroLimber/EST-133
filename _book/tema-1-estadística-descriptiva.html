@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-09-01" />
+<meta name="date" content="2020-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,8 +151,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5.1" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#moda-mo"><i class="fa fa-check"></i><b>1.5.1</b> Moda (Mo)</a></li>
 <li class="chapter" data-level="1.5.2" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#mediana-me"><i class="fa fa-check"></i><b>1.5.2</b> Mediana (Me)</a></li>
 <li class="chapter" data-level="1.5.3" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#media-promedio-media-aritmética"><i class="fa fa-check"></i><b>1.5.3</b> Media, Promedio, Media aritmética</a></li>
+<li class="chapter" data-level="1.5.4" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#propiedades-de-la-media"><i class="fa fa-check"></i><b>1.5.4</b> Propiedades de la media</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>1.6</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="1.6" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>1.6</b> Medidas de dispersión</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#rango"><i class="fa fa-check"></i><b>1.6.1</b> Rango</a></li>
+<li class="chapter" data-level="1.6.2" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#varianza-poblacional"><i class="fa fa-check"></i><b>1.6.2</b> Varianza poblacional</a></li>
+<li class="chapter" data-level="1.6.3" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#varianza-muestral-cuasivarianza"><i class="fa fa-check"></i><b>1.6.3</b> Varianza muestral (cuasivarianza)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#gráficos"><i class="fa fa-check"></i><b>1.7</b> Gráficos</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#boxplot-diagramas-de-caja"><i class="fa fa-check"></i><b>1.7.1</b> Boxplot (Diagramas de caja)</a></li>
+<li class="chapter" data-level="1.7.2" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#histograma"><i class="fa fa-check"></i><b>1.7.2</b> Histograma</a></li>
+<li class="chapter" data-level="1.7.3" data-path="tema-1-estadística-descriptiva.html"><a href="tema-1-estadística-descriptiva.html#densidad"><i class="fa fa-check"></i><b>1.7.3</b> Densidad</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html"><i class="fa fa-check"></i><b>2</b> Tema 2: Probabilidades</a><ul>
 <li class="chapter" data-level="2.1" data-path="tema-2-probabilidades.html"><a href="tema-2-probabilidades.html#introducción"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
@@ -371,65 +381,89 @@ Siguiendo el ejemplo:</p>
 <p>La idea de este punto es conocer las formas en las que se puede manejar las información disponible.</p>
 <p>Podemos observar tres formas de ordenar la información proveniente de una sola variable.</p>
 <p>Imaginar que tenemos la información de edades de una población de 1000 personas.</p>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
 <ul>
 <li>Mantenerlos en su forma simple (Datos no ordenados, datos simples).</li>
 </ul>
-<pre><code>##    [1]  11  62  61  62  86  64   1  23  67  51  69  54  28  92  29  84  29  27
-##   [19]  19  23  32  30  16   4  22  81  53  91  83   5  46  27  30  51  18  76
-##   [37]  20  26  99  81  55  65  31  62  33  50  68  48  24  77   7  31  72  50
-##   [55]  15  50  49  75  17  85  86   4  32   1  24  71  31  51   5  56  12  89
-##   [73]   1  78   9  52  38   7  32  67  93  47  14  54  20  90  39  31  16  90
-##   [91]  17  90  13  13  11  51  30   3  31  74   4  57  28  20  13  33  16  13
-##  [109]  44   4  71  10  95  12  22  91  95  28  12  80  74  92  99  94  49  28
-##  [127]  25  50  50  32  96  63  13  42  91  47  91  60  63  87  50  98  32  48
-##  [145]  36  63  74  57  98  58  44  23   8  85  23  99  60 100  38  56  43  58
-##  [163]  43  22   8  64  43   7  80  33  76  58  71  43  34  76  42  56  12  30
-##  [181]  48  34  60   8  96   2  84  63  31  74  64  99  13  88  81  82  83  73
-##  [199]  98  64  66  53  32  77  53  73  31  40  20  99  57  28  19  76  57  93
-##  [217]  64  70  48  85  42   3  26  33  13  50  80  34  51  49  80  57  11  81
-##  [235]  57  21  75  31  49  99  42  24  22  69  98  48  77  57  97  80  53  60
-##  [253]  26  28   7  56  26   0  59  52  84   3  60  27  12  10  75   2   5  75
-##  [271]  36  76  38  80   3  51  82  54  27  34  37  43  92  78  74  28  46  29
-##  [289]  70  82  66  41  95  24  61  76  69  12  64  31  35  98  54  44  95  45
-##  [307]  19  99  55  77  91  68  41  41  15  20  19  41  35  83  20  86  40  15
-##  [325]  34  37  43  19  66  92  73  88  95  19  47  39  37   3  93  41  96  27
-##  [343]  52  98  37  31   3  67  92   4  20  74  13  71 100  94  59  73  49  77
-##  [361]   0  56  46  33  84  98  66  23  82  72  98  27  88  49  31  40  76  10
-##  [379]  42  66  30  21   0  11  21  12  69  19  98  95  69  74  73  65  17  92
-##  [397]  56  54   2  37  69  42  76  78  57  19  76   9  62  42  78  81  97  22
-##  [415]  87  42  51  77  13  41  66  91  34  11  93  20   5  43  34  28  66  78
-##  [433]  44  93  27  66  38  94  74  59  81  88  75  50  99  56  88  63  61   3
-##  [451]  25  78 100  96  75  68  25  61  57   5  37  89  39  52  18  19  55  39
-##  [469]  63  57  14  29   0  96  40  98  51  47  72  14  52  56  66  37  14   7
-##  [487]  76  70  76  16  60  76  91  31  66  34  60   8  61  60  67  80  86   5
-##  [505]  67  85  75  83  13  79  36  95  93  59  11  78  60   9  66  33  84  25
-##  [523]  36  92  56  81   4   4  63  24  25  62  41  80  12  99  65  66  75  51
-##  [541]  38  61  97  22  75  43  83  88  98  91  26  22  79  17  84  97  50   4
-##  [559]  63  83  16  99  68  86  24  86  79  61  21   6  63  80  20  67  40  39
-##  [577]   6  42  55  82  84   1  57  30   4  36  27  97  95  62  96  88  12  60
-##  [595]  36  67  64  70  63  12  28  17  17  56  43  39  84  21  51  39  26  80
-##  [613]  31   8  95  38  33  66  78  48  93   5  67  83  34  93  48  95  31  60
-##  [631]  89  61  44  56  94  83  29  84  26  34  56  19  51  93  31  36   6  88
-##  [649]  51  80  24  69  86  45  17  51  87   3  26  94  62  95  82   5  30  51
-##  [667]  71  28  46  73  13  93  39  25  95  84  42  89  21  95  48  11  63  29
-##  [685]  83  33  87   3  54  48  88  49  22  51   1   9  32  55  30  74   1  60
-##  [703]  71  47  22  12  41  64   6  57  71  98  97  12  19  19  46  20  97  10
-##  [721]  82  10  97   1  50  99  44  34  31  99  92   1  10  54  62  79  48  81
-##  [739]  99  93  27  10   7  19  59   0  48  66  20  66  55  74  39  84  25  89
-##  [757]  69  92  37  62   3  65   0  58  28  61  93  57  80  30  89  86  84   7
-##  [775]  62  51   7  22  58  36  94   6   0  29  22  69  86   3  70  17  79  15
-##  [793]  68  52  70  26  51  82  18  86  11  87  51  29  34  57  18  44  66  42
-##  [811]  56  20  93  67  13  38  30  81  47  44   8  37  39  39  24  79   2  40
-##  [829]  39  46  30  80  87  94  27  68  71  20  56  62  11  58  65  19  46  92
-##  [847]  57  94  74  72  55  98  94  18  55  64  10   4  77  96  11  40   3  41
-##  [865]  21  92  23  98  27  53  95  90  95  30  77  19  10   9  51  58  69  25
-##  [883]  45  54  57  93  17   4  10   2  92  75  61  38  34  33  63  63  98  87
-##  [901]  64  41  92  45  91   3  34  26  78  30  26  47   7  23  11   8  44  98
-##  [919]  96  80  54  46  21  23  59  26  76  55  10  15  15  99   3  61  10  51
-##  [937]  19  51  39  59  92  58  81  77  61  53  29  12  48  37  71  95  31  82
-##  [955]  86   5  86  48  12  66  23  46  89  79   5   7  66  23  59  33 100  71
-##  [973]   0  77  20  69  75  24  95  58  80  93   8  66  99  25   4  99  13  18
-##  [991]  48  64  99  10  69   0  77  32  96  20</code></pre>
+<pre><code>##    [1]  11  62  61  62  86  64   1  23  67  51  69  54  28  92
+##   [15]  29  84  29  27  19  23  32  30  16   4  22  81  53  91
+##   [29]  83   5  46  27  30  51  18  76  20  26  99  81  55  65
+##   [43]  31  62  33  50  68  48  24  77   7  31  72  50  15  50
+##   [57]  49  75  17  85  86   4  32   1  24  71  31  51   5  56
+##   [71]  12  89   1  78   9  52  38   7  32  67  93  47  14  54
+##   [85]  20  90  39  31  16  90  17  90  13  13  11  51  30   3
+##   [99]  31  74   4  57  28  20  13  33  16  13  44   4  71  10
+##  [113]  95  12  22  91  95  28  12  80  74  92  99  94  49  28
+##  [127]  25  50  50  32  96  63  13  42  91  47  91  60  63  87
+##  [141]  50  98  32  48  36  63  74  57  98  58  44  23   8  85
+##  [155]  23  99  60 100  38  56  43  58  43  22   8  64  43   7
+##  [169]  80  33  76  58  71  43  34  76  42  56  12  30  48  34
+##  [183]  60   8  96   2  84  63  31  74  64  99  13  88  81  82
+##  [197]  83  73  98  64  66  53  32  77  53  73  31  40  20  99
+##  [211]  57  28  19  76  57  93  64  70  48  85  42   3  26  33
+##  [225]  13  50  80  34  51  49  80  57  11  81  57  21  75  31
+##  [239]  49  99  42  24  22  69  98  48  77  57  97  80  53  60
+##  [253]  26  28   7  56  26   0  59  52  84   3  60  27  12  10
+##  [267]  75   2   5  75  36  76  38  80   3  51  82  54  27  34
+##  [281]  37  43  92  78  74  28  46  29  70  82  66  41  95  24
+##  [295]  61  76  69  12  64  31  35  98  54  44  95  45  19  99
+##  [309]  55  77  91  68  41  41  15  20  19  41  35  83  20  86
+##  [323]  40  15  34  37  43  19  66  92  73  88  95  19  47  39
+##  [337]  37   3  93  41  96  27  52  98  37  31   3  67  92   4
+##  [351]  20  74  13  71 100  94  59  73  49  77   0  56  46  33
+##  [365]  84  98  66  23  82  72  98  27  88  49  31  40  76  10
+##  [379]  42  66  30  21   0  11  21  12  69  19  98  95  69  74
+##  [393]  73  65  17  92  56  54   2  37  69  42  76  78  57  19
+##  [407]  76   9  62  42  78  81  97  22  87  42  51  77  13  41
+##  [421]  66  91  34  11  93  20   5  43  34  28  66  78  44  93
+##  [435]  27  66  38  94  74  59  81  88  75  50  99  56  88  63
+##  [449]  61   3  25  78 100  96  75  68  25  61  57   5  37  89
+##  [463]  39  52  18  19  55  39  63  57  14  29   0  96  40  98
+##  [477]  51  47  72  14  52  56  66  37  14   7  76  70  76  16
+##  [491]  60  76  91  31  66  34  60   8  61  60  67  80  86   5
+##  [505]  67  85  75  83  13  79  36  95  93  59  11  78  60   9
+##  [519]  66  33  84  25  36  92  56  81   4   4  63  24  25  62
+##  [533]  41  80  12  99  65  66  75  51  38  61  97  22  75  43
+##  [547]  83  88  98  91  26  22  79  17  84  97  50   4  63  83
+##  [561]  16  99  68  86  24  86  79  61  21   6  63  80  20  67
+##  [575]  40  39   6  42  55  82  84   1  57  30   4  36  27  97
+##  [589]  95  62  96  88  12  60  36  67  64  70  63  12  28  17
+##  [603]  17  56  43  39  84  21  51  39  26  80  31   8  95  38
+##  [617]  33  66  78  48  93   5  67  83  34  93  48  95  31  60
+##  [631]  89  61  44  56  94  83  29  84  26  34  56  19  51  93
+##  [645]  31  36   6  88  51  80  24  69  86  45  17  51  87   3
+##  [659]  26  94  62  95  82   5  30  51  71  28  46  73  13  93
+##  [673]  39  25  95  84  42  89  21  95  48  11  63  29  83  33
+##  [687]  87   3  54  48  88  49  22  51   1   9  32  55  30  74
+##  [701]   1  60  71  47  22  12  41  64   6  57  71  98  97  12
+##  [715]  19  19  46  20  97  10  82  10  97   1  50  99  44  34
+##  [729]  31  99  92   1  10  54  62  79  48  81  99  93  27  10
+##  [743]   7  19  59   0  48  66  20  66  55  74  39  84  25  89
+##  [757]  69  92  37  62   3  65   0  58  28  61  93  57  80  30
+##  [771]  89  86  84   7  62  51   7  22  58  36  94   6   0  29
+##  [785]  22  69  86   3  70  17  79  15  68  52  70  26  51  82
+##  [799]  18  86  11  87  51  29  34  57  18  44  66  42  56  20
+##  [813]  93  67  13  38  30  81  47  44   8  37  39  39  24  79
+##  [827]   2  40  39  46  30  80  87  94  27  68  71  20  56  62
+##  [841]  11  58  65  19  46  92  57  94  74  72  55  98  94  18
+##  [855]  55  64  10   4  77  96  11  40   3  41  21  92  23  98
+##  [869]  27  53  95  90  95  30  77  19  10   9  51  58  69  25
+##  [883]  45  54  57  93  17   4  10   2  92  75  61  38  34  33
+##  [897]  63  63  98  87  64  41  92  45  91   3  34  26  78  30
+##  [911]  26  47   7  23  11   8  44  98  96  80  54  46  21  23
+##  [925]  59  26  76  55  10  15  15  99   3  61  10  51  19  51
+##  [939]  39  59  92  58  81  77  61  53  29  12  48  37  71  95
+##  [953]  31  82  86   5  86  48  12  66  23  46  89  79   5   7
+##  [967]  66  23  59  33 100  71   0  77  20  69  75  24  95  58
+##  [981]  80  93   8  66  99  25   4  99  13  18  48  64  99  10
+##  [995]  69   0  77  32  96  20</code></pre>
 <ul>
 <li>Tenerlos en una tabla de frecuencias, es una tabla que para cada valor de la variable se realiza un proceso de conteo.</li>
 </ul>
@@ -602,10 +636,99 @@ Siguiendo el ejemplo:</p>
 <p>En el ejemplo:</p>
 <p><span class="math display">\[\bar{x}=\frac{2*2+3*1+4*2+7*2+9*1}{8}=\frac{38}{8}=4.75\]</span></p>
 </div>
+<div id="propiedades-de-la-media" class="section level3">
+<h3><span class="header-section-number">1.5.4</span> Propiedades de la media</h3>
+<p>Sea <span class="math inline">\(x\)</span> la variable de interés, y <span class="math inline">\(a, b\)</span> contantes.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tema-1-estadística-descriptiva.html#cb10-1"></a>x&lt;-<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
+<span id="cb10-2"><a href="tema-1-estadística-descriptiva.html#cb10-2"></a><span class="kw">sum</span>(x)<span class="op">/</span><span class="dv">7</span></span></code></pre></div>
+<pre><code>## [1] 4.857143</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tema-1-estadística-descriptiva.html#cb12-1"></a>x<span class="op">+</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1]  5  5  6  8  6  8 10</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tema-1-estadística-descriptiva.html#cb14-1"></a><span class="kw">sum</span>(x<span class="op">+</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">7</span></span></code></pre></div>
+<pre><code>## [1] 6.857143</code></pre>
+<ul>
+<li><span class="math inline">\(y=x+a\)</span>, entonces, <span class="math inline">\(\bar{y}=\bar{x}+a\)</span></li>
+</ul>
+<p>Demostración</p>
+<p><span class="math display">\[\bar{y}=\frac{\sum_{i=1}^N {y_i}}{N}=\frac{\sum_{i=1}^N {(x_i+a)}}{N}=\frac{\sum {x_i}+\sum a}{N}=\frac{\sum {x_i}}{N}+\frac{N a}{N}=\bar{x}+a\]</span></p>
+<ul>
+<li><span class="math inline">\(\bar{a}=a\)</span></li>
+<li><span class="math inline">\(y=ax\)</span>, entonces, <span class="math inline">\(\bar{y}=a\bar{x}\)</span></li>
+</ul>
+<p>Demostración</p>
+<p><span class="math display">\[\bar{y}=\frac{\sum_{i=1}^N {y_i}}{N}=\frac{\sum_{i=1}^N {a*x_i}}{N}=a*\frac{\sum_{i=1}^N {x_i}}{N}=a \bar{x}\]</span></p>
+<ul>
+<li><span class="math inline">\(y=a+bx\)</span>, entonces, <span class="math inline">\(\bar{y}=a+b\bar{x}\)</span></li>
+</ul>
+<p>Ejemplo:</p>
+<p>En 2020 de un grupo de 30 trabajadores, existen 15 obreros que tienen un salario de 2000 Bs, 10 técnicos tienen un salario de 4000 Bs. y 5 gerentes un salario de 7000 Bs. Para 2021 se decide darles un incremento de 500 Bs a todos, más un incremento del 15% sobre su salario del 2020. ¿Cuál es el promedio de salario de estos trabajadores para la gestión 2021?</p>
+<p>Solución,</p>
+<p><span class="math inline">\(N=30=15+10+5=N_{obr}+N_{tec}+N_{ger}\)</span>, definamos la variable salario <span class="math inline">\(S\)</span>.</p>
+<p><span class="math display">\[\bar{S}_{2020}=\frac{\sum_{i=1}^{30}{s_i}}{30}=\frac{2000*15+4000*10+7000*5}{30}=\frac{105000}{30}=3500\]</span></p>
+<p><span class="math display">\[\bar{S}_{2021}=500+1.15*\bar{S}_{2020}=500+1.15*3500=4525\]</span></p>
+</div>
 </div>
 <div id="medidas-de-dispersión" class="section level2">
 <h2><span class="header-section-number">1.6</span> Medidas de dispersión</h2>
+<p>Son medidas que tienen el objetivo de brindar información respecto la variabilidad de la información.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tema-1-estadística-descriptiva.html#cb16-1"></a>s&lt;-<span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">2000</span>,<span class="dv">4000</span>,<span class="dv">7000</span>),<span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb16-2"><a href="tema-1-estadística-descriptiva.html#cb16-2"></a><span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">20</span>,<span class="dv">10</span>,<span class="dv">12</span>),<span class="dv">0</span>)</span></code></pre></div>
+<pre><code>##  [1] 12 11 10 11 12 11 11 10 12 12 11 12 10 11 11 11 11 11 11 12</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tema-1-estadística-descriptiva.html#cb18-1"></a><span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">20</span>,<span class="dv">10</span>,<span class="dv">20</span>),<span class="dv">0</span>)</span></code></pre></div>
+<pre><code>##  [1] 11 14 12 20 15 14 19 17 14 14 12 18 10 19 17 13 17 15 19 13</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tema-1-estadística-descriptiva.html#cb20-1"></a><span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">20</span>,<span class="dv">10</span>,<span class="dv">100</span>),<span class="dv">0</span>)</span></code></pre></div>
+<pre><code>##  [1] 94 33 50 74 91 56 55 14 32 81 28 89 43 34 63 25 54 97 62 81</code></pre>
+<div id="rango" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Rango</h3>
+<p><span class="math display">\[R=X_{max}-X_{min}\]</span>
+En el ejemplo de los salarios: <span class="math inline">\(R=7000-2000=5000\)</span></p>
+</div>
+<div id="varianza-poblacional" class="section level3">
+<h3><span class="header-section-number">1.6.2</span> Varianza poblacional</h3>
+<p><span class="math display">\[\sigma^2_x=\frac{\sum_{i=1}^N{(x_i-\bar{x})^2}}{N}\]</span></p>
+<p>Para el ejemplo de salarios. <span class="math inline">\(\sigma_s^2=3250000\)</span>.</p>
+<p>Nota: La varianza es una medida estadística poco informativa y nada interpretable. Por ello, existe otra medida derivada de la varianza, conocida como la desviación estándar.</p>
+<p><span class="math display">\[\sigma_x=\sqrt{\sigma_x^2}=\sqrt{\frac{\sum_{i=1}^N{(x_i-\bar{x})^2}}{N}}\]</span>
+Para el ejemplo, <span class="math inline">\(\sigma_s=\sqrt{3250000 (Bs.^2)}=1802.78 (Bs)\)</span></p>
+<p>Existe una medida relativa, para conocer la dispersión. Esta se llama el coeficiente de variación.</p>
+<p><span class="math display">\[CV(x)=CV_x=\frac{\sigma_x}{\bar{x}}\]</span>
+Una interpretación de esta medida se refiere al porcentaje de elementos que no se sienten representados por el promedio. (<span class="math inline">\(\%CV=CV_x*100\)</span>)</p>
+<p>En el ejemplo de los salarios, <span class="math inline">\(CV_s=\frac{1802.78}{3500}=0.51\)</span>, en porcentaje es 51%.</p>
+<p>Nota: Mientras <span class="math inline">\(\%CV_x \rightarrow 0\)</span> la información es menos dispersa, en otro caso, la información es mucho más dispersa <span class="math inline">\(\%CV_x \rightarrow 100\)</span></p>
+</div>
+<div id="varianza-muestral-cuasivarianza" class="section level3">
+<h3><span class="header-section-number">1.6.3</span> Varianza muestral (cuasivarianza)</h3>
+<p><span class="math display">\[S^2_x=\frac{\sum_{i=1}^N{(x_i-\bar{x})^2}}{N-1}\]</span></p>
+<p><span class="math display">\[S^2_x=\frac{\sum_{i=1}^n{(x_i-\bar{x})^2}}{n-1}\]</span></p>
+<p>En el ejemplo de salarios, <span class="math inline">\(S^2_s=\frac{97500000}{29}=3362069\)</span>.</p>
+</div>
+</div>
+<div id="gráficos" class="section level2">
+<h2><span class="header-section-number">1.7</span> Gráficos</h2>
+<div id="boxplot-diagramas-de-caja" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Boxplot (Diagramas de caja)</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tema-1-estadística-descriptiva.html#cb22-1"></a><span class="kw">boxplot</span>(s)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tema-1-estadística-descriptiva.html#cb23-1"></a><span class="kw">boxplot</span>(x)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+</div>
+<div id="histograma" class="section level3">
+<h3><span class="header-section-number">1.7.2</span> Histograma</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tema-1-estadística-descriptiva.html#cb24-1"></a><span class="kw">hist</span>(s)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tema-1-estadística-descriptiva.html#cb25-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">200</span>,<span class="dv">40</span>,<span class="dv">6</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="tema-1-estadística-descriptiva.html#cb26-1"></a><span class="kw">hist</span>(<span class="kw">rchisq</span>(<span class="dv">200</span>,<span class="dv">4</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-3.png" width="672" /></p>
+</div>
+<div id="densidad" class="section level3">
+<h3><span class="header-section-number">1.7.3</span> Densidad</h3>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tema-1-estadística-descriptiva.html#cb27-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb27-2"><a href="tema-1-estadística-descriptiva.html#cb27-2"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rchisq</span>(<span class="dv">200</span>,<span class="dv">4</span>)))</span>
+<span id="cb27-3"><a href="tema-1-estadística-descriptiva.html#cb27-3"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">rchisq</span>(<span class="dv">200</span>,<span class="dv">4</span>)))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 
+</div>
 </div>
 </div>
             </section>

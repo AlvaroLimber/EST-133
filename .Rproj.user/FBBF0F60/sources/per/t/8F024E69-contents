@@ -183,6 +183,7 @@ Si $N$ es par:
 $$Me=\frac{X_{N/2}+X_{N/2+1}}{2} $$
   
 ### Media, Promedio, Media aritmética
+
 Esta medida se caracteriza en que su construcción depende de todas las observaciones en los datos, (democrática).
 
 $$\bar{x}=\frac{\sum_{i=1}^N {x_i}}{N}=\frac{x_1}{N}+\frac{x_2}{N}+\ldots+\frac{x_N}{N}$$
@@ -211,7 +212,112 @@ En el ejemplo:
 
 $$\bar{x}=\frac{2*2+3*1+4*2+7*2+9*1}{8}=\frac{38}{8}=4.75$$
 
+### Propiedades de la media
+
+Sea $x$ la variable de interés, y $a, b$ contantes.
+
+```{r}
+x<-c(3,3,4,6,4,6,8)
+sum(x)/7
+
+x+2
+sum(x+2)/7
+```
+
+
+  * $y=x+a$, entonces, $\bar{y}=\bar{x}+a$
+  
+Demostración
+
+  $$\bar{y}=\frac{\sum_{i=1}^N {y_i}}{N}=\frac{\sum_{i=1}^N {(x_i+a)}}{N}=\frac{\sum {x_i}+\sum a}{N}=\frac{\sum {x_i}}{N}+\frac{N a}{N}=\bar{x}+a$$
+
+  * $\bar{a}=a$
+  * $y=ax$, entonces, $\bar{y}=a\bar{x}$ 
+  
+Demostración
+
+$$\bar{y}=\frac{\sum_{i=1}^N {y_i}}{N}=\frac{\sum_{i=1}^N {a*x_i}}{N}=a*\frac{\sum_{i=1}^N {x_i}}{N}=a \bar{x}$$
+
+  * $y=a+bx$, entonces, $\bar{y}=a+b\bar{x}$
+  
+Ejemplo:
+
+En 2020 de un grupo de 30 trabajadores, existen 15 obreros que tienen un salario de 2000 Bs, 10 técnicos tienen un salario de 4000 Bs. y 5 gerentes un salario de 7000 Bs. Para 2021 se decide darles un incremento de 500 Bs a todos, más un incremento del 15% sobre su salario del 2020. ¿Cuál es el promedio de salario de estos trabajadores para la gestión 2021?  
+
+Solución,
+
+$N=30=15+10+5=N_{obr}+N_{tec}+N_{ger}$, definamos la variable salario $S$.
+
+$$\bar{S}_{2020}=\frac{\sum_{i=1}^{30}{s_i}}{30}=\frac{2000*15+4000*10+7000*5}{30}=\frac{105000}{30}=3500$$
+
+$$\bar{S}_{2021}=500+1.15*\bar{S}_{2020}=500+1.15*3500=4525$$
 
 ## Medidas de dispersión
 
+Son medidas que tienen el objetivo de brindar información respecto la variabilidad de la información.
+
+```{r}
+s<-rep(c(2000,4000,7000),c(15,10,5))
+round(runif(20,10,12),0)
+round(runif(20,10,20),0)
+round(runif(20,10,100),0)
+```
+
+### Rango
+
+$$R=X_{max}-X_{min}$$
+En el ejemplo de los salarios: $R=7000-2000=5000$
+
+### Varianza poblacional
+
+$$\sigma^2_x=\frac{\sum_{i=1}^N{(x_i-\bar{x})^2}}{N}$$
+
+Para el ejemplo de salarios. $\sigma_s^2=3250000$.
+
+Nota: La varianza es una medida estadística poco informativa y nada interpretable. Por ello, existe otra medida derivada de la varianza, conocida como la desviación estándar.
+
+$$\sigma_x=\sqrt{\sigma_x^2}=\sqrt{\frac{\sum_{i=1}^N{(x_i-\bar{x})^2}}{N}}$$
+Para el ejemplo, $\sigma_s=\sqrt{3250000 (Bs.^2)}=1802.78 (Bs)$
+
+Existe una medida relativa, para conocer la dispersión. Esta se llama el coeficiente de variación.
+
+$$CV(x)=CV_x=\frac{\sigma_x}{\bar{x}}$$
+Una interpretación de esta medida se refiere al porcentaje de elementos que no se sienten representados por el promedio. ($\%CV=CV_x*100$)
+
+En el ejemplo de los salarios, $CV_s=\frac{1802.78}{3500}=0.51$, en porcentaje es 51%.
+
+Nota: Mientras $\%CV_x \rightarrow 0$ la información es menos dispersa, en otro caso, la información es mucho más dispersa $\%CV_x \rightarrow 100$
+
+### Varianza muestral (cuasivarianza)
+
+$$S^2_x=\frac{\sum_{i=1}^N{(x_i-\bar{x})^2}}{N-1}$$
+
+$$S^2_x=\frac{\sum_{i=1}^n{(x_i-\bar{x})^2}}{n-1}$$
+
+En el ejemplo de salarios, $S^2_s=\frac{97500000}{29}=3362069$.
+
+## Gráficos
+
+### Boxplot (Diagramas de caja)
+
+```{r}
+boxplot(s)
+boxplot(x)
+```
+
+### Histograma
+
+```{r}
+hist(s)
+hist(rnorm(200,40,6))
+hist(rchisq(200,4))
+```
+
+### Densidad
+
+```{r}
+par(mfrow=c(1,2))
+plot(density(rchisq(200,4)))
+plot(density(rchisq(200,4)))
+```
 
