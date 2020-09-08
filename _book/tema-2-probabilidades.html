@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-09-04" />
+<meta name="date" content="2020-09-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -353,6 +353,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Infinito numerables
 + Los dias hasta que suceda un terremoto en la ciudad <span class="math inline">\(x\)</span></li>
 </ul>
+<p>Ejemplo, sean los siguientes experimentos aleatorios:</p>
+<ul>
+<li><p>El estado de animo de una persona. <span class="math inline">\(\Omega=\{feliz, triste, enojada, asustada, \ldots\}\)</span> es finito<br />
+y es numerable. Donde <span class="math inline">\(\# \Omega=\)</span> la cantidad de estados de animo que definamos estudiar.</p></li>
+<li><p>El número de veces necesario al lanzar una moneda hasta sacar cara. <span class="math inline">\(\Omega=\{1,2,3,4, \ldots, \infty \}\)</span> es infinito y numerable. <span class="math inline">\(\# \Omega=\infty\)</span>.</p></li>
+<li><p>Duración de un artefacto electrónico. <span class="math inline">\(\Omega=\{w\in IR, w \geq 0 \}\)</span> es infinito y no numerable. <span class="math inline">\(\# \Omega=\infty\)</span>.</p></li>
+</ul>
 </div>
 <div id="otros-ejemplos" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> Otros ejemplos</h3>
@@ -365,14 +372,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="4" style="list-style-type: decimal">
 <li>El experimento es medir el tiempo de vida de un componente electrónico de un aparato (horas).</li>
 </ol>
-<p><span class="math display">\[\Omega=\{x: x \geq 0  \}\]</span></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tema-2-probabilidades.html#cb28-1"></a><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>),<span class="dt">type=</span><span class="st">&quot;b&quot;</span>)</span></code></pre></div>
+<p><span class="math display">\[\Omega=\{x \in IR: x \geq 0  \}\]</span></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tema-2-probabilidades.html#cb28-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb28-2"><a href="tema-2-probabilidades.html#cb28-2"></a><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;t&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb28-3"><a href="tema-2-probabilidades.html#cb28-3"></a><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>),<span class="dt">type=</span><span class="st">&quot;b&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;t&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <ol start="5" style="list-style-type: decimal">
-<li>El experimento es: Seleccionar 3 personas de un grupo de 50 personas, describir el espacio muestral y el tamaño de este.
-+ <span class="math inline">\(\# \Omega= C_3^{50}=19600\)</span>
-+ <span class="math inline">\(\Omega=\{(i,j,k); i,j,k \in 1:50, i\neq j \neq k \}\)</span></li>
+<li>El experimento es: Seleccionar 3 personas de un grupo de 50 personas, describir el espacio muestral y el tamaño de este.</li>
 </ol>
+<ul>
+<li><span class="math inline">\(\# \Omega= C_3^{50}=\binom{50}{3}=19600\)</span></li>
+<li><span class="math inline">\(\Omega=\{(i,j,k); i,j,k \in 1:50, i\neq j \neq k \}\)</span></li>
+</ul>
 </div>
 <div id="ejercicios" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> Ejercicios</h3>
@@ -390,9 +401,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>Ignorar al grupo minoritario, <span class="math inline">\(\# \Omega=5!\)</span>, sean los trabajdores a,b,c,d,e,f <span class="math inline">\(\Omega=\{5!; a,b,c,d,e\}\)</span></p></li>
 <li><p>Solo con los 3 trabajadores minoritarios: Sea los trabajadores minoritarios <span class="math inline">\(a,b,c\)</span> y numerámos los empleos de <span class="math inline">\(1:5\)</span> <span class="math inline">\(\Omega=\{(a=i,b=j,c=k); i,j,k=1:5, i \neq j \neq k\}\)</span>, <span class="math inline">\(\# \Omega= CR_{5,3}=\binom{7}{3}=35\)</span></p></li>
-<li><p>Ejercicio: Dos personas A y B se distribuyen al azar en tres oficinas numeradas 1,2 y 3 .Si las dos personas pueden estar en la misma oficina ,defina un espacio muestral adecuado</p></li>
 </ul>
-<p><span class="math display">\[\Omega=\{(1A,1B),(2A,2B),(3A,3B),(1A,2B),(1A,3B),(2A,3B),(1B,2A),(1B,3A),(2B,3A) \}\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Dos personas A y B se distribuyen al azar en tres oficinas numeradas 1,2 y 3 .Si las dos personas pueden estar en la misma oficina ,defina un espacio muestral adecuado</li>
+</ol>
+<p><span class="math display">\[\Omega=\{(1A,1B),(2A,2B),(3A,3B),(1A,2B),(1A,3B),(2A,3B),(1B,2A),(1B,3A),(2B,3A) \}\]</span>
+5. En un profesor toma un examen con 5 preguntas de falso/verdadero, describa el espacio muestral asociado a este experimento aleatorio, relacionado a las respuestas del estudiante.</p>
+<p>Resp. <span class="math inline">\(\# \Omega=2*2*2*2*2=2^5=32\)</span>, <span class="math inline">\(\Omega=\{(VVVVV),(VFVFV),\ldots,(FFFFF)\}\)</span></p>
+<ol start="6" style="list-style-type: decimal">
+<li>En un profesor toma un examen con 5 preguntas de opción múltiple (5 opciones por pregunta, con una sola opción correcta), describa el espacio muestral asociado a este experimento aleatorio, relacionado a las respuestas del estudiante.</li>
+</ol>
+<p>Resp. $# =5<em>5</em>5<em>5</em>5=5^5=3125 $, Supongamos que las alternativas en las opciones son <span class="math inline">\((a,b,c,d,e)\)</span> <span class="math inline">\(\Omega=\{(aaaaa),(aaaab),\ldots ,(eeeee)\}\)</span></p>
 </div>
 </div>
 <div id="eventos-e" class="section level2">
@@ -545,40 +564,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb29-2"><a href="tema-2-probabilidades.html#cb29-2"></a><span class="kw">set.seed</span>(<span class="dv">999</span>)</span>
 <span id="cb29-3"><a href="tema-2-probabilidades.html#cb29-3"></a>aux&lt;-<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="fl">0.5</span>)</span>
 <span id="cb29-4"><a href="tema-2-probabilidades.html#cb29-4"></a>aux</span></code></pre></div>
-<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 1
-##   [30] 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 0 1 0 1
-##   [59] 0 1 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 0 0 0
-##   [88] 1 1 0 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1
-##  [117] 1 0 0 1 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1
-##  [146] 1 0 0 1 0 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0
-##  [175] 0 0 1 1 1 0 1 0 1 1 0 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 0 0 1
-##  [204] 1 0 1 0 0 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1
-##  [233] 1 1 1 0 0 1 1 0 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0
-##  [262] 0 0 1 1 0 0 0 0 1 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1 0
-##  [291] 0 1 1 1 1 0 0 0 1 0 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 0 0
-##  [320] 0 1 1 1 0 0 1 0 1 0 1 1 0 1 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0
-##  [349] 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1
-##  [378] 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0
-##  [407] 1 1 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1
-##  [436] 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 1 1 0
-##  [465] 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 1 1 0 0 1
-##  [494] 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1
-##  [523] 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1 1 1 0 1 0 1 0 1 1 0 1
-##  [552] 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 1 0 0
-##  [581] 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1 0 1 1 0 1 1 0 0 1 1 0 1 0 1
-##  [610] 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0
-##  [639] 1 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1
-##  [668] 0 0 0 1 0 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0
-##  [697] 0 0 0 1 1 1 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1
-##  [726] 1 0 0 1 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0 1 1 0 0
-##  [755] 0 0 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1 0 1 0
-##  [784] 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1 0 0
-##  [813] 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 0 1 0 1
-##  [842] 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0
-##  [871] 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 1
-##  [900] 0 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1
-##  [929] 0 0 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0
-##  [958] 0 1 1 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1
+<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0
+##   [18] 1 0 0 1 1 1 0 1 1 1 1 1 0 0 0 1 1
+##   [35] 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1
+##   [52] 1 0 1 0 1 0 1 0 1 1 1 1 1 1 0 1 1
+##   [69] 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 0
+##   [86] 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 0 1
+##  [103] 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0
+##  [120] 1 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0
+##  [137] 0 0 1 0 0 0 0 1 1 1 0 0 1 0 1 1 1
+##  [154] 1 0 1 1 0 0 1 0 0 1 0 0 0 1 1 0 0
+##  [171] 0 0 1 0 0 0 1 1 1 0 1 0 1 1 0 0 1
+##  [188] 0 0 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1
+##  [205] 0 1 0 0 1 1 0 1 1 0 1 1 0 0 0 0 0
+##  [222] 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1
+##  [239] 1 0 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1
+##  [256] 1 1 0 1 0 0 0 0 1 1 0 0 0 0 1 1 1
+##  [273] 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1
+##  [290] 0 0 1 1 1 1 0 0 0 1 0 1 0 1 1 1 1
+##  [307] 1 1 1 0 0 0 0 0 1 1 1 0 0 0 1 1 1
+##  [324] 0 0 1 0 1 0 1 1 0 1 0 1 0 0 1 0 1
+##  [341] 0 0 0 1 1 1 1 0 1 1 0 0 0 1 1 0 0
+##  [358] 1 1 0 0 0 1 1 1 0 1 0 0 1 1 0 0 1
+##  [375] 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1
+##  [392] 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 1
+##  [409] 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 1
+##  [426] 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 1 0
+##  [443] 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 1 1
+##  [460] 1 1 1 1 0 1 1 1 0 0 0 1 0 0 1 1 1
+##  [477] 0 0 0 0 0 0 1 1 1 0 1 1 1 1 0 0 1
+##  [494] 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1
+##  [511] 0 1 1 1 0 0 0 1 0 1 0 1 0 0 1 0 0
+##  [528] 1 0 1 0 1 0 1 0 1 1 1 0 1 1 1 0 1
+##  [545] 0 1 0 1 1 0 1 1 1 0 1 0 1 0 1 0 0
+##  [562] 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 1
+##  [579] 0 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1
+##  [596] 0 1 1 0 1 1 0 0 1 1 0 1 0 1 0 0 1
+##  [613] 1 1 1 1 1 0 1 0 0 1 0 0 0 1 1 0 1
+##  [630] 1 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1
+##  [647] 0 0 1 1 0 0 1 0 0 1 1 1 0 1 0 0 0
+##  [664] 0 0 1 1 0 0 0 1 0 1 0 0 1 0 1 1 1
+##  [681] 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0 0
+##  [698] 0 0 1 1 1 0 1 1 0 0 1 1 1 0 1 1 1
+##  [715] 0 1 1 1 1 1 1 1 1 1 1 1 0 0 1 0 0
+##  [732] 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1
+##  [749] 1 0 1 1 0 0 0 0 1 0 1 0 1 1 0 0 1
+##  [766] 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1 0 1
+##  [783] 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+##  [800] 1 1 0 1 1 1 0 1 1 0 1 0 0 0 1 0 1
+##  [817] 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1
+##  [834] 0 0 1 1 0 1 0 1 0 0 1 1 1 0 0 0 0
+##  [851] 0 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0
+##  [868] 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1
+##  [885] 0 1 0 1 0 1 1 1 0 1 0 1 1 0 1 0 1
+##  [902] 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1
+##  [919] 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 1 1
+##  [936] 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1
+##  [953] 0 0 1 0 0 0 1 1 0 0 0 0 1 1 1 1 0
+##  [970] 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1
 ##  [987] 0 1 1 0 0 0 1 1 1 0 1 0 1 1</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tema-2-probabilidades.html#cb31-1"></a><span class="kw">sum</span>(aux)</span></code></pre></div>
 <pre><code>## [1] 496</code></pre>
