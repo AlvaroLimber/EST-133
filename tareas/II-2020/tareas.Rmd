@@ -1,0 +1,97 @@
+---
+title: "Estadística I. EST-133"
+author: "Alvaro Chirino Gutierrez"
+date: "10/10/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Primer parcial (7 pts)
+
+\hrule
+
+## Tarea 1 (1pt)
+
+En 2020 de un grupo de 30 trabajadores, existen 15 obreros que tienen un salario de 2000 Bs, 10 técnicos tienen un salario de 4000 Bs. y 5 gerentes un salario de 7000 Bs. Para 2021 se decide darles un incremento de 500 Bs a todos, más un incremento del 15% sobre su salario del 2020. ¿Cuál es el promedio de salario de estos trabajadores para la gestión 2021? 
+
+
+*Solución*, la información $N=30$, sabemos $N_{obreros}=15$, $\bar{x}_{obreros}=2000$, $N_{tec}=10$, $\bar{x}_{tec}=4000$ y $N_{gerentes}=5$ y $\bar{x}_{gerentes}=7000$. Es necesario calcular el salario global para 2020.
+
+$$\bar{x}_{2020}=\frac{2000*15+4000*10+7000*5}{30}=3500$$
+Por propiedades de la media para 2021.
+
+$$\bar{x}_{2021}=\bar{x}_{2020}*1.15+500=3500*1.15+500=4525$$
+\hrule
+
+## Tarea 2 (2pts)
+
+  1. Una compañía de seguros cree que las personas se pueden dividir en dos clases: aquellas
+que son propensos a los accidentes y los que no lo son. Las estadísticas de la empresa muestran que
+una persona propensa a accidentes tendrá un accidente en algún momento dentro de un año fijo
+período con probabilidad 0.6, mientras que esta probabilidad disminuye a 0.25 para una persona que
+no es propenso a sufrir accidentes. Si asumimos que el 20 por ciento de la población es propensa a accidentes, ¿cuál es la probabilidad de que un nuevo asegurado tenga un accidente dentro de un año de la compra de una póliza?
+
+Solución, sean los eventos $PA:$ persona propensa a accidentes y $\sim PA=$ persona no propensa a accidentes, $A:$ persona se accidenta y $\sim A:$ persona no se accidenta.
+
+Como información se tiene  $P(A/PA)=0.6$, $P(A/\sim PA)=0.25$ $P(PA)=0.2$ y $P(\sim PA)=0.8$. Se pide $P(A)=?$. Se emplea el teorema de la probabilidad total, tomando como partición los eventos $PA$ y $\sim PA$
+
+$$P(A)=P(PA)*P(A/PA)+P(\sim PA)*P(A/\sim PA)$$
+$$=0.2*0.6+0.8*0.25=0.32$$
+\hrule
+
+  2. Se conduce una investigación detallada de accidentes aéreos. La probabilidad de que un accidente por falla estructural sea detectado es de $0.98$ y la probabilidad de que un accidente que no se debe a una falla estructural se identifique en forma incorrecta como un accidente producido por ese tipo de falla es de $0.1$. Si el $20$ por ciento de los accidentes aéreos se deben a fallas estructurales, determine la probabilidad de que un accidente aéreo, identificado como falla estructural, se haya producido realmente por ese tipo de falla.
+
+
+Solución, sean los eventos $F:$ Accidente con falla estructural $\sim F:$ Accidente sin falla estructural, $C:$ El accidente se detecta de forma correcta y $\sim C:$ El accidente no se detecta de forma correcta.
+
+La información, $P(C/F)=0.98$, $P(\sim C/\sim F)=0.1$, $P(F)=0.2$ y $P(\sim F)$. Se pide $P(F/C)$.
+
+$$P(F/C)=\frac{P(F)*P(C/F)}{P(C)}=\frac{0.2*0.98}{0.2*0.98+0.8*0.9}=\frac{0.196}{0.916}=0.214$$
+
+\hrule
+
+## Tarea 3 (2pts)
+
+Se tiene un grupo de 10 parejas de casados, de estas se toma una muestra de forma aleatoria de 4 personas. Calcule la probabilidad para los siguientes eventos:
+
+  a) se escojan dos parejas de casados
+  b) las 4 personas seleccionadas provienen de 4 parejas distintas
+
+
+Solución, como información tenemos que el grupo es de $N=20$ personas (10 parejas) y se toma una muestra de $n=4$ personas. El espacio muestral tiene un tamaño de $\# \Omega=\binom{20}{4}=4845$. 
+
+Para a), tenemos:
+
+$$P(a)=\frac{\binom{10}{2}}{4845}=\frac{45}{4845}=$$
+
+Para b), tenemos:
+
+$$P(b)=\frac{2*2*2*2*\binom{10}{4}}{4845}=\frac{3360}{4845}$$
+
+\hrule
+
+## Tarea 4 (2pts)
+
+  1. Sea la función: $f(x)=x/6+k$, definida en $0<x<2$. Encuentre el valor de $k$ para que esta sea una función de densidad.
+
+
+Solución, para ser una función de densidad se debe cumplir $\int_{Rx}f(x)dx=1$. Así:
+
+$$1=\int_0^2 \frac{x}{6}+k dx=\left(\frac{x^2}{12}+kx \right)_0^2=\frac{4}{12}+2k=\frac{1}{3}+2k$$
+$$2k+\frac{1}{3}=1$$
+$$k=\frac{1}{3}$$
+\hrule
+  2. Del ejercicio anterior obtener la esperanza matemática
+  
+Solución, la función de densidad es:
+
+$$f(x)=\frac{x}{6}+\frac{1}{3}; \text{  } 0<x<2 $$
+  
+Así:
+
+$$E[X]=\int_0^2 x \left(\frac{x}{6}+\frac{1}{3} \right) dx=\int_0^2 \left(\frac{x^2}{6}+\frac{x}{3} \right) dx=\left(\frac{x^3}{18}+\frac{x^2}{6} \right)_0^2 $$
+$$=\frac{8}{18}+\frac{4}{6}=\frac{8+12}{18}=\frac{20}{18}=\frac{10}{9}$$
+  

@@ -142,21 +142,31 @@ Resp. $\# \Omega=2*2*2*2*2=2^5=32$, $\Omega=\{(VVVVV),(VFVFV),\ldots,(FFFFF)\}$
 6. En un profesor toma un examen con 5 preguntas de opción múltiple (5 opciones por pregunta, con una sola opción correcta), describa el espacio muestral asociado a este experimento aleatorio, relacionado a las respuestas del estudiante.
 
 Resp. $\# \Omega=5*5*5*5*5=5^5=3125 $, Supongamos que las alternativas en las opciones son $(a,b,c,d,e)$ $\Omega=\{(aaaaa),(aaaab),\ldots ,(eeeee)\}$
- 
- 
+
+
 ## Eventos (E)
+
+Sea $E$ un evento, este se define como:
 
 $$E \subset \Omega$$
 
 ### Ejemplos
 
-1. Sea el evento $E$ nace una niña, $E=\{Femenino \}$
+1. En el ejemplo del nacimiento de niños/as, el experimento trataba de determinar el sexo del niño/a. Sea el evento $E$ nace una niña, $E=\{Femenino \}$, otro evento puede ser $E2=\{masculino\}$
 
-2. Se lanza un dado, sea el evento $A$ sale par
+2. Sea el experimento lanzar un dado (de 6 caras). Sean los eventos 
 
-$$A=\{2,4,6 \}$$
+  * $A$ el resultado es par. $A=\{2,4,6 \}$
+  * $B$ el resultado es mayor a 5. $B=\{6\}$ 
+  * $C$ el resultado es un número primo. $C=\{1,2,3,5\}$, $C=\{2,3,5\}$
+  * $D$ el resultado es mayor a 6. $D=\emptyset$
+  * $E$ el resultado mayor a 0. $E=\Omega$
+  
+Nota: recordar que $\emptyset \subset \Omega$, $\Omega \subset \Omega$.
 
-3, En el ejemplo de los caballos. Sea el evento $E$ el caballo $c$ gana la competencia.
+3. En una competencia de caballos, con 7 caballos, el experimento: ordenar todas las posibles llegadas de estos 7 caballos. $(a,b,c,d,e,f,g)$. Sea el evento $E$ el caballo $c$ gana la competencia, describa el evento o el tamaño de este evento.
+
+Recordar que $\# \Omega= 7!$
 
 $$\# E = 1 * 6*5*4*3*2*1=6!= 720$$
 
@@ -179,18 +189,50 @@ $$E=\{x: x\geq 5 \}$$
 6. En el ejemplo del componente electrónico, sea el evento $E$ el componente dura a lo sumo 5 horas.
 
 $$E=\{x: x\leq 5 \}$$
+7. Una pareja inicia la planificación familiar, ellos quieren tener 4 hijos/as. Esta pareja esta interesada en los siguientes eventos:
+
+  * $A:$ todos del mismo sexo
+  * $B:$ exactamente un varón
+  * $C:$ Por lo menos dos varones
+  * $D:$ exactamente 1 mujer
+
+Listar los elementos vinculados a estos eventos.
+
+Solución,
+
+El experimento aleatorio es: el sexo de los 4 hijos/hijas de esta pareja $(h1,h2,h3,h4)$. $\# \Omega= 2*2*2*2=16$
+
+El espacio muestral es $\Omega:$
+
+| (mmmm) | (hmmm) | (mhmm) | (mmhm) |
+| (mmmh) | (hhmm) | (mhhm) | (hmhm) |
+| (mhmh) | (hmmh) | (mmhh) | (hhhm) |
+| (hhmh) | (hmhh) | (mhhh) | (hhhh) |
+
+Ahora sobre los eventos:
+  
+  * $A=\{(mmmm),(hhhh) \}$, $\# A=2$
+  * $B=\{(hmmm),(mhmm),(mmhm),(mmmh) \}$, $\# B=4$
+  * $C=\{ (hhmm),(mhhm),(hmhm),(mhmh),(hmmh),(mmhh),(hhhm),(hhmh),(hmhh),(mhhh),(hhhh)\}$, $\# C= 11$
+  * $D=\{ (hhhm),(hhmh),(hmhh),(mhhh)\}$
+
+### Evento simple
+Un evento simple, es el elemento más pequeño (suelto) dentro de otro evento. También, un evento simple tiene correspondencia única con los posibles resultados de $\Omega$.
+
+Sea $\Omega=\{w_1,w_2,\ldots,w_i,\ldots\}$, los resultados $w_i$ son conocidos como los eventos simple. En el fondo un evento es la colección de algunos eventos simples, según la definición del evento
+
 
 ### Operaciones con los eventos
 
 Sean $A$, $B$ y $C$ eventos.
 
-* Eventos simples: son eventos que contienen un solo elemento, tienen correspondencia con los resultados del espacio muestral. Sea $w$ un evento simple de un $\Omega$ numerable
+* Eventos simples: son eventos que contienen un solo elemento, tienen correspondencia con los resultados del espacio muestral. Sea $w$ un evento simple de un $\Omega$ "numerable".
 
 * Evento vacio $\emptyset$
 
 * El complemento de un evento 
 
- $$A^c=\{ w \in \Omega \text{ pero no pertenecen a } A\}$$
+ $$A^c=\{ w \in \Omega \wedge  w\notin  A\}$$
 
 * La unión de eventos 
 
@@ -198,36 +240,41 @@ $$A \cup B = \{w \in \Omega: w \in A \text{ ó } w\in B \}$$
 
 * La intersección de eventos
 
-$$A \cap B= \{w \in \Omega: w \in A \text{ y } w \in B   \}$$
+$$A \cap B= \{w \in \Omega: w \in A \wedge w \in B   \}$$
 
-* Dos eventos son mutuamente excluyentes si:
+* Dos eventos son mutuamente excluyentes (No tienen elementos en común) si: 
 
 
 $$A \cap B = \emptyset$$
+* Inclusión de eventos
 
+$$A \subset B =\{w \in \Omega : w \in A \rightarrow w \in B   \}$$
 
 * Ejemplo: En el lanzamiento de 2 dados y la suma de sus resultados, sean los eventos
 
-* $A:$ La suma es Par,
+* $A:$ La suma es par
 * $B:$ La suma es impar
-* $C:$ La suma es multiplo de 7
-* $D:$ La suma es mayor a 5
+* $C:$ La suma es un número primo
+* $D:$ La suma es mayor a 3
 
 Describir los eventos y luego encontrar
 
-* $A \cup C=\{2,4,6,7,8,10,12 \}$
-* $B \cap D=\{7,9,11 \}$
-* $C \cup D^c=\{2,3,4,5,7\}$
-* $A \cap (B\cup C )=A \cap B = \emptyset $
-* $A \cup (B\cap C)=A\cup C=\{2,4,6,7,8,10,12 \}$
+* $A \cup C=\{2,3,4,5,6,7,8,10,11,12\} $
+* $B \cap D=\{5,7,9,11 \}$
+* $C \cup D^c= D^c \subset C= C$
+* $A \cap (B\cup C )=$
+* $A \cup (B\cap C)=$
  
- Los eventos 
+El espacio muestral $\Omega=\{2,3,4,5,6,7,8,9,10,11,12\}$ 
+ 
+Los eventos 
  
 * $A=\{2,4,6,8,10,12\}$
 * $B=\{3,5,7,9,11 \}$
-* $C=\{7 \}$
-* $D=\{6,7,8,9,10,11,12\}$
-* $D^C=\{2,3,4,5\}$
+* $C=\{2,3,5,7,11 \}$
+* $D=\{4,5,6,7,8,9,10,11,12\}$
+* $D^C=\{2,3\}$
+
 * $C \subset B$, entonces $C\cup B=B$, $C \cap B=C$
 
 ### Algunas propiedades sobre las operaciones en eventos
@@ -235,7 +282,7 @@ Describir los eventos y luego encontrar
 Sean $A$, $B$, $C$ y $D$ eventos,
 
 * $A \cup B= B \cup A$, $A \cap B= B \cap A$ Conmutativa
-* $(A \cup B) \cup C= A \cup (B \cup C) $, $(A \cap B) \cap C= A \cap (B \cap C)$ Asociativa
+* $(A \cup B) \cup C= A \cup (B \cup C)$ , $(A \cap B) \cap C= A \cap (B \cap C)$ Asociativa
 * $A \cup (B \cap C)= (A \cup B) \cap (A \cup C)$ Distributiva
 * $A \cap (B \cup C)=(A\cap B) \cup (A\cap C) $ Distributiva
 
@@ -254,10 +301,6 @@ $$ (\cap_{i=1}^{n}\{E_i\})^c = \cup_{i=1}^{n}\{E_i ^c\}$$
 
 > **Definición:** Sea $A$ un evento, Sea $\Sigma$ una clase de subconjuntos de $\Omega$
 
-$$
-\Sigma=\{A \in \Omega \}
-$$
-
 Esta es un algebra de eventos si:
 
 1. $\Omega \in \Sigma$ 
@@ -267,6 +310,12 @@ Esta es un algebra de eventos si:
 Ejemplo: El experimento es lanzar un dado y observar el resultado de la cara $\Omega=\{1,2,3,4,5,6\}$, $\# \Omega=6$, $\Omega \cup \emptyset=\Omega$
 
 $$\Sigma=\{\Omega,\emptyset \}$$
+Sera que la siguiente clase es un algebra de eventos:
+
+$$\Sigma=\{\Omega, \emptyset, 1, (2,3,4,5,6) \}$$
+
+$$\Sigma=\{\Omega, \emptyset, 1, (2,3,4,5,6), 2, (1,3,4,5,6),(1,2),(3,4,5,6) \}$$
+
 > Nota: El algebra de eventos no es único
 
 **Definición:** Se dice que $\Sigma$ es un $\sigma-algebra$
@@ -281,6 +330,8 @@ $$\Sigma=\{\Omega,\emptyset \}$$
 
 $$\Sigma=\{\Omega,\emptyset,1,(2,3,4,5,6) \}$$
 
+Existe un $\sigma -algebra$ que contiene todas las combinaciones posibles contiene en particular todos los eventos simples de $\Omega$. 
+
 $$\Sigma=\{\Omega,\emptyset,1,2,3,4,5,6,(2,3,4,5,6),(1,3,4,5,6),(1,2,4,5,6),(1,2,3,5,6),(1,2,3,4,6),(1,2,3,4,5),(1,2),(1,3),...,(1,2,3),(1,2,4),...(1,2,3,4),(1,2,3,5),...\}$$
 $$\#\Sigma=2^{\# \Omega}$$
 
@@ -292,9 +343,9 @@ $$\Sigma=\{\Omega,\emptyset,CC,SC,CS,SS,(CC,SC),(CC,CS),(CC,SS),(SC,CS),(SC,SS),
 
 ## Probabilidad
 
-> Medida de incertidumbre
+> Medida de incertidumbre entre 0 y 1 asociado a un experimento aleatorio
 
-* Probabilidad teórica: los casos posibles sobre los casos totales 
+* Probabilidad teórica: (asume que los eventos simples son igualmente probables) los casos posibles sobre los casos totales 
 
 $$P(A)= \frac{\text{Casos posibles}}{\text{Casos totales}}=\frac{\#A}{\# \Omega}$$
 
@@ -316,7 +367,7 @@ sum(aux)
 
 $P(escudo)=\frac{496}{1000}=0.496$
 
-* Prabibilidad subjetiva (experiencia) (apriori)
+* Probabilidad subjetiva (experiencia) (apriori)
 
 $$P(escudo)=1/3$$
 
@@ -335,7 +386,7 @@ P:\begin{array}
 \end{array}
 $$
 
-### Axiomas basicos de la probabilidad
+### Axíomas básicos de la probabilidad
 
 1. $P(A) \in [0,1]$, $0 \leq P(A) \leq 1$, Para todo $A\in \Sigma$, $A\in\Omega$
 2. $P(\Omega)=1$
@@ -345,22 +396,48 @@ $$P(\cup_{i=1}^n{A_i})=\sum_{i=1}^n{P(A_i)}$$
 
 Observación: Si $A \cap B=\emptyset$ entonces, $P(A\cup B)=P(A)+P(B)$
 
+Ejemplo, 
+
+En el lanzamiento de un dado, sean los eventos, A=sale Par, B=Sale Impar. Calcular la probabilidad de $P(A\cup B)$.
+
+$A=\{2,4, 6\}$, $B=\{1,3,5\}$, Notar que $A \cap B= \emptyset$.
+
+Por el axioma 2.
+$$P(A \cup B)=P(\Omega)=1$$
+Por el axioma 3.
+
+$$P(A \cup B)=P(A)+P(B)=\frac{3}{6}+\frac{3}{6}=1$$
+
+
+
+
 ### Propiedades
 
 * $P(\emptyset)=0$
 
-Demostracion: sea $A$ un evento, 
+Demostración: sea $A$ un evento, 
 
 i) $A\cap \emptyset=\emptyset$
 ii) $A=A\cup \emptyset$
 
-$P(A)=P(A\cup \emptyset)=P(A)+P(\emptyset)$
-$P(A)=P(A)+P(\emptyset)$
-$P(\emptyset)=0$
+$$P(A)=P(A\cup \emptyset)=P(A)+P(\emptyset)$$
+$$P(A)=P(A)+P(\emptyset)$$
+$$P(\emptyset)=0$$
+
+* $P(A^c)=1-P(A)$
+
+i) $A\cap A^c=\emptyset$, entonces son eventos disjuntos
+ii) $A \cup A^c= \Omega$, entonces, $P(A\cup A^c)=P(\Omega)=1$ Ax2.
+
+$$1=P(\Omega)=P(A \cup A^c)=P(A)+P(A^c)$$
+
+
+Así,
+
+$$P(A^c)=1-P(A)$$ 
 
 Ejercicios, demostrar:
 
-* $P(A^c)=1-P(A)$
 * $P(A \cup B)=P(A)+P(B)-P(A\cap B)$, para cualesquiera eventos $A$, $B$
 
 
@@ -380,19 +457,30 @@ $$P(w_1 \cup w_2\cup \ldots \cup w_n)=P(\Omega)=1$$
 
 $$P(w_1 \cup w_2\cup \ldots \cup w_n)=P(w_1)+P(w_2)+\ldots+P(w_n)=1$$
 
-Ejemplo, el lazamiento de un dado legal genera un espacio muestral equiprobable. $\Omega=\{1,2,3,4,5,6\}$, $P(1)=P(2)=\ldots=P(6)=\frac{1}{6}$
+Ejemplo, el lanzamiento de un dado legal genera un espacio muestral equiprobable. $\Omega=\{1,2,3,4,5,6\}$, $P(1)=P(2)=\ldots=P(6)=\frac{1}{6}$
 
-Ejemplo. En un hipódromo 4 caballos, $A$,$B$,$C$ y $D$ compiten. Suponiendo que todos los caballos tienen la misma probabilidad de ganar, calcular:
+Ejemplo 1. 
 
-1. Probabilidad que gane el caballo $A$. Resp. $P(ganaA)=1/4$
-2. Probabilidad que gane el caballo $A$ o el caballo $D$. Resp. el evento de interés es $A \cup D$, $P(A\cup D)=P(A)+P(D)=1/4+1/4=1/2$
+En un hipódromo 4 caballos, $A$,$B$,$C$ y $D$ compiten. Suponiendo que todos los caballos tienen la misma probabilidad de ganar (espacio equiprobable), calcular:
 
-En el ejemplo anterior, tomemos ahora lo siguiente: $A$ tiene 2 veces mas probabilidades de ganar que $B$; $B$ tiene 2 veces mas probabilidad de ganar que $C$ y $C$ tiene 2 veces mas probabilidades de ganar que $D$.
+1. Probabilidad que gane el caballo $A$. 
+
+Resp. $P(ganaA)=1/4$
+
+2. Probabilidad que gane el caballo $A$ o el caballo $D$. 
+
+Resp. el evento de interés es $ganaA \cup ganaD$, notar que $ganarA \cap ganaD=\emptyset$
+
+$$P(ganaA\cup ganaD)=P(ganaA)+P(ganaD)=1/4+1/4=1/2$$
+
+Ejemplo 2. 
+
+Tomemos ahora lo siguiente: $A$ tiene 2 veces más probabilidades de ganar que $B$; $B$ tiene 2 veces más probabilidad de ganar que $C$ y $C$ tiene 2 veces más probabilidades de ganar que $D$. (espacio no equiprobable)
 
 1. Probabilidad que gane el caballo $A$
 2. Probabilidad que gane el caballo $A$ o el caballo $D$. 
 
-Sean los eventos simples, $w_1=gA=GanaA$, $w_2=gB=GanaB$, $w=gC=GanaC$ y $w_4=gD=GanaD$
+Sean los eventos simples, $w_1=gA=GanaA$, $w_2=gB=GanaB$, $w_3=gC=GanaC$ y $w_4=gD=GanaD$
 
 Sabemos que: $P(gA)=2*P(gB)=2*2*P(gC)=2*2*2*P(gD)=8*P(gD)$
 
@@ -482,26 +570,43 @@ $$P(C)=\frac{\# C}{\# \Omega}=\frac{19}{200}=0.095$$
 
 ## Probabilidad Condicional
 
-        * Evaluamos dos eventos o más
-        * Conocer como se altera o cambia la probabilidad de un evento a partir de la ocurrencia de otro
+  * Evaluamos dos eventos o más
+  * Conocer como se altera o cambia la probabilidad de un evento a partir de la ocurrencia de otro
+
+Ejemplo con las notas de una materia. 
+
+Sea el experimento la nota de que obtiene un estudiante al inscribirse en una materia. Sea el evento A: el estudiante aprueba la materia. ¿Cuál es el probabilidad de A (suponiendo un espacio muestral equiprobable)?
+  
+  * $\Omega=\{0,1,2,\ldots,100 \}$, $\# \Omega= 101$, $P(i)=\frac{1}{101}$
+  * $P(A)=P(51\cup 52 \cup \ldots \cup 100)=P(51)+P(52)+\ldots+P(100)=\frac{50}{101}=0.495$
+  * $P(A^c)=1-P(A)=1-\frac{50}{101}=\frac{51}{101}=0.505$
+  
+Sea el evento B= el estudiante dio 2 parciales cada uno con un valor de 30, obteniendo el estudiante una nota sumada de los 2 de 27 puntos. ¿Cuál sera ahora la probabilidad de que el estudiante apruebe la materia?
+
+Podemos notar que la ocurrencia de $B$ esta alterando el experimento y por ende la probabilidad de aprobar. Pensando en esto, ¿cómo se altera el espacio muestral?
+
+  * $\Omega_{ocurrioB}=\{27,28,29,\ldots, 67\}$, $\#Omega=41$
+  * $P(A/B)=\frac{17}{41}=0.415$
         
 Ejemplos.
 
-        * ¿Cuál es la probabilidad de aprobar la materia X dado que se tiene una nota de 20/30 en el primer parcial?
-        * Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?
-        * Una urna contine 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?
+  * ¿Cuál es la probabilidad de aprobar la materia X dado que se tiene una nota de 20/30 en el primer parcial?
+  * Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?
+  * Una urna contiene 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?
         
 > Definición: Sean dos eventos $A$ y $B$, tal que $P(B)>0$, la probabilidad condicional de que ocurra el evento $A$, dado que ha ocurrido el evento $B$, se define por:
 
 $$P(A/B)=\frac{P(A \cap B)}{P(B)}$$
 
-Nota: Cualquier condición que se de entre las probabilidades, afecta directamente el expacio muestral, esto depende de la relacion entre los eventos.
+Nota: Cualquier condición que se de entre las probabilidades, afecta directamente el espacio muestral, esto depende de la relación entre los eventos.
 
-Ejercicio: En la carrera de Informática van a existir elecciones para el director de carrera, existen 3 frentes y estos son $A$, $B$, $C$, la carrera esta compuesta por 3 grupos de estudiantes, los políticos, los académicos y el resto, la estructura de votación según un sondeo a 200 estudiantes es:
+Ejemplo: 
 
-        + Los políticos (50), 20 votan por A, 20 votan por B y 10 votan por C
-        + Los académicos que son (40), 10 votan por A, 10 votan por B y 20 votan por C
-        + El resto (110), 30 votan por A, 50 votan por B y el resto vota por C
+En la carrera de Informática van a existir elecciones para el director de carrera, existen 3 frentes y estos son $A$, $B$, $C$, la carrera esta compuesta por 3 grupos de estudiantes, los políticos, los académicos y el resto, la estructura de votación según un sondeo aleatorio a 200 estudiantes es:
+
+  + Los políticos (50), 20 votan por A, 20 votan por B y 10 votan por C
+  + Los académicos que son 40, 10 votan por A, 10 votan por B y 20 votan por C
+  + El resto (110), 30 votan por A, 50 votan por B y el resto vota por C
 
 ```{r}
 A<-rbind(c(20,20,10),c(10,10,20),c(30,50,30))
@@ -512,19 +617,19 @@ knitr::kable(addmargins(A))
 
 Encuentre
 
-        * ¿Cuál es la probabilidad de que un estudiante académico vote por C?
+  * ¿Cuál es la probabilidad de que un estudiante académico vote por C?
         
 $$P(\text{vote C}/academico)=\frac{P(\text{vote C} \cap academico)}{P(academico)}=\frac{\frac{20}{200}}{\frac{40}{200}}=\frac{20}{40}=0.5$$
 
-        * ¿Cuál es la probabilidad de que un estudiante político vote por A?
+  * ¿Cuál es la probabilidad de que un estudiante político vote por A?
         
 $$P(\text{vote A}/politico)=\frac{20}{50}=0.4$$
         
-        * ¿Cuál es la probabilidad de que gane el candidato B en estudiantes?
+  * ¿Cuál es la probabilidad de que gane el candidato B en estudiantes?
 
 $$P(\text{gane B})=\frac{80}{200}=0.4$$
 
-        * ¿Cuál es la probabilidad que un estudiante seleccionado al azar sea académico dado que votara por el candidato A?
+  * ¿Cuál es la probabilidad que un estudiante seleccionado al azar sea académico dado que votara por el candidato A?
         
 $$P(academico/\text{vote A})=\frac{10}{60}=\frac{1}{6}$$        
 
@@ -532,7 +637,25 @@ Ejercicios:
 
 1. ¿Cuál es la probabilidad de aprobar la materia $X$ dado que se tiene una nota de 20/30 en el primer parcial?
 2. Se lanza una moneda y después se lanza un dado , ¿Cuál es la probabilidad de obtener un 5 en el dado, si salió cara en la moneda?
-3. Una urna contine 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?
+
+Solución, 
+
+Sean los eventos C: Sale cara en la moneda, S: Sale sello en la moneda, y los eventos D1, D2, ... , D6 sale el número en el dado.
+
+$$P(D5/C)=\frac{P(D5 \cap  C)}{P(C)}=\frac{\frac{1}{12}}{\frac{6}{12}}=\frac{1}{6}$$
+Notar algo: $P(D5)=\frac{1}{6}=P(D5/C)=P(D5/S)$. Si la condición no afecta la probabilidad del evento que busca calcular, podemos afirmar que los eventos son independientes. 
+
+La ocurrencia de un evento, no altera a otro, a eso le llamamos independencia.
+
+Si los eventos A y B son independientes, entonces:
+
+$$P(A \cap B)= P(A)*P(B)$$
+$$P(A/B)=\frac{P(A\cap B)}{P(B)}=\frac{P(A) P(B)}{P(B)}=P(A)$$
+
+
+3. Una urna contiene 3 bolas rojas y 3 bolas blancas, se realiza una selección de 2 bolas de manera consecutiva y sin reemplazo ¿Cuál es la probabilidad de que la segunda bola sea roja, sabiendo que la primera bola fue blanca?
+
+Solución, $P(R/B)=3/5$
 
 **Ejemplo**
 
@@ -547,19 +670,19 @@ knitr::kable(addmargins(A))
 
 Sea el experimento seleccionar a un estudiante al azar del grupo de 356.
 
-* Cuál es la probabilidad que el estudiantes sea de la carrera de economía, sabiendo que vive en El Alto
+  * ¿Cuál es la probabilidad que el estudiantes sea de la carrera de economía, sabiendo que vive en El Alto?
 
 $$P(ECO/ELALTO)=\frac{60}{140}$$
 
-* Cuál es la probabilidad que el estudiantes sea de la carrera de informática, sabiendo que vive en La Paz
+  * ¿Cuál es la probabilidad que el estudiantes sea de la carrera de informática, sabiendo que vive en La Paz?
 
 $$P(INF/LAPAZ)=\frac{50}{210}$$
 
-* Cuál es la probabilidad que el estudiantes sea de Viacha, sabiendo que esta en la carrera de ingenieria.
+  * ¿Cuál es la probabilidad que el estudiantes sea de Viacha, sabiendo que esta en la carrera de ingenieria?
 
 $$P(VIACHA/ING)=\frac{5}{125}$$
 
-* Cuál es la probabilidad que el estudiantes sea de Viacha ó de La Paz, sabiendo que esta en la carrera de ingenieria.
+  * ¿Cuál es la probabilidad que el estudiantes sea de Viacha ó de La Paz, sabiendo que esta en la carrera de ingenieria.?
 
 $$P(VIACHA\cup LAPAZ  /ING)=\frac{P((VIACHA\cup LAPAZ)\cap ING)}{P(ING)}=\frac{P((VIACHA\cap ING)\cup (LAPAZ\cap ING))}{P(ING)}$$
 
@@ -570,6 +693,9 @@ Por el principio de que Viacha y La Paz son eventos mutuamente excluyentes (axio
 
 
 ### Regla de la multiplicación
+
+$$P(A/B)=\frac{P(A\cap B)}{P(B)}$$
+
 
 $$P(B/A)=\frac{P(B\cap A)}{P(A)}$$
 
@@ -588,9 +714,10 @@ Entonces:
 $$P(A_1\cap A_2 \cap \ldots \cap A_{k})=P(A_1)P(A_2/A_1)P(A_3/A_1\cap A_2)\ldots P(A_k/A_1 \cap A_2 \cap \ldots A_{k-1}) $$
 
 
-Tarea 1, demostrar:
+Ejemplo 1, demostrar:
 
 $$P(A \cap B \cap C)=P(A)P(B/A)P(C/A\cap B)$$
+$$P(A)P(B/A)P(C/A\cap B)=P(A)*\frac{P(A \cap B)}{P(A)}*\frac{P(C\cap A \cap B)}{P(A \cap B)}=P(A \cap B \cap C)$$
 
 ### Independencia de Eventos
 
@@ -642,7 +769,7 @@ Sea $A_1,A_2,\ldots ,A_n$ un partición del espacio muestral, de tal forma que: 
 
 $$P(B)=\sum_{i=1}^n{P(A_i \cap B)}=\sum_{i=1}^n{P(A_i)P(B/A_i )}$$
 
-Ejemplo: Suponer que la población del departamento de la Paz esta conformado por 55% de mujeres y 45 % de hombres. Supongamos que el 30% de los hombres y el 20% de las mujeres fuman. Determinar la probabilidad de que una persona fume.
+Ejemplo: Suponer que la población del departamento de la Paz esta conformado por 55% de mujeres y 45 % de hombres. Supongamos que el 30% de los hombres y el 20% de las mujeres fuman. Determinar la probabilidad de que una persona fume en el departamento de La Paz.
 
 Solución: Sean los eventos:
 
@@ -659,19 +786,44 @@ $$P(F)=P(H)P(F/H)+P(M)P(F/M)=0.45*0.3+0.55*0.2=0.245$$
 
 $P(F^c)=1-P(F)=1-0.245=0.755$
 
+Ejercicio,
+
+Para la elección del gobernador en el departamento de La Paz, se realizó una encuesta en 3 dominios de estudio: Municipio de La Paz, El Alto y el resto de los municipios, se sabe que La Paz ocupa el 35% de votantes, El Alto el 40% y los demás el resto de municipios. Los resultados por dominio respecto el apoyo al candidato "Z" es el siguiente:
+
+  * La Paz: 39%
+  * El Alto: 49%
+  * Resto: 65%
+
+Según la encuesta, ¿cuál es la probabilidad que el candidato Z sea gobernador?
+
+Solución, Sea la partición LP: La Paz, EA: El Alto, R: el resto, y el evento Z: Apoyo al candidato Z. Se pide $P(Z)$.
+
+Como información, tenemos $P(LP)=0.35$, $P(EA)=0.4$, $P(R)=0.25$, $P(Z/LP)=0.39$, $P(Z/EA)=0.49$ y $P(Z/R)=0.65$. Así, 
+
+$$P(Z)=P(LP)*P(Z/LP)+P(EA)*P(Z/EA)+P(R)*P(Z/R)=0.35*0.39+0.4*0.49+0.25*0.65=0.495$$
+
 ## Teorema de Bayes
 
 Sea $A_1,A_2,\ldots ,A_n$ un partición del espacio muestral, de tal forma que: $P(A_i)>0$ para todo $i=1, \ldots,n$. Sea $B \in \Omega$ un evento tal que todas las $P(B/A_i)$ son conocidas. Entonces para cada $A_i$ tenemos:
 
-$$P(A_i/B)=\frac{P(A_i)P(B/A_i)}{\sum_{i=1}^n{P(A_i)P(B/A_i )}}$$
+$$P(A_i/B)=\frac{P(A_i)P(B/A_i)}{\sum_{j=1}^n{P(A_j)P(B/A_j )}}$$
 
+Demostración,
 
-> Forma simple:
+$$P(A_i/B)=\frac{P(A_i \cap B)}{P(B)}=\frac{P(A_i)*P(B/A_i)}{\sum_{j=1}^n{P(B\cap A_j)}}=\frac{P(A_i)*P(B/A_i)}{\sum_{j=1}^n{P(A_j)P(B/A_j)}}$$
+
+Dentro del teorema de Bayes, se conoce a $P(A_i)$ como probabilidades a priori, a $P(B/A_i)$ se llama la verosimilitud (información), finalmente a $P(A_i/B)$ se le llama probabilidad a posteriori. 
+
+Forma simple:
 
 $$P(A/B)=\frac{P(A)P(B/A)}{P(B)}$$
 
-Ejemplo: Un análisis de sangre de laboratorio es $95$ por ciento efectivo en la detección de una determinada enfermedad, cuando de hecho está presente. Sin embargo, la prueba también arroja un resultado "falso positivo" para el 1 por ciento de las personas sanas evaluadas. (Es decir, si se evalúa a una persona sana, entonces, con una probabilidad de $0.01$, el resultado de la prueba implicará que él o ella tiene la enfermedad). Si el $0.5$ por ciento de la población realmente tiene la enfermedad, ¿cuál es la probabilidad de que una persona tenga la enfermedad dado que el resultado de la prueba es positivo?
+Demostración,
 
+$$P(A/B)=\frac{P(A\cap B)}{P(B)}=\frac{P(A)P(B/A)}{P(B)}$$
+
+
+Ejemplo: Un análisis de sangre de laboratorio es $95$ por ciento efectivo en la detección de una determinada enfermedad, cuando de hecho está presente. Sin embargo, la prueba también arroja un resultado "falso positivo" para el 1 por ciento de las personas sanas evaluadas. (Es decir, si se evalúa a una persona sana, entonces, con una probabilidad de $0.01$, el resultado de la prueba implicará que él o ella tiene la enfermedad). Si el $0.5$ por ciento de la población realmente tiene la enfermedad, ¿cuál es la probabilidad de que una persona tenga la enfermedad dado que el resultado de la prueba es positivo?
 
 Solución: vamos a identificar los siguientes eventos:
 
@@ -680,29 +832,37 @@ Solución: vamos a identificar los siguientes eventos:
   * T+: La prueba da positiva a la enfermedad
   * T-: La prueba da negativa a la enfermedad
   
-Como dato tenemos: $P(E)=0.005$, $P(E^c)=1-P(E)=0.995$, tener o no la enfermedad es la partición dentro del problema. $P(T+/E)=0.95$, $P(T+/E^C)=0.01$. $P(E/T+)=¿?$. 
+Como dato tenemos: $P(E)=0.5/100=0.005$, $P(E^c)=1-P(E)=0.995$, tener o no la enfermedad es la partición dentro del problema. $P(T+/E)=0.95$, $P(T+/E^C)=0.01$. $P(E/T+)=¿?$. 
 
 
-$$P(E/T+)=\frac{P(E \cap T+)}{P(T+)}=\frac{P(E)P(T+/E)}{P(E)P(T+/E)+P(E^C)P(T+/E^C)}=\frac{0.005*0.95}{0.005*0.95+0.995*0.01}=0.3231$$
+$$P(E/T+)=\frac{P(E \cap T+)}{P(T+)}=\frac{P(E)P(T+/E)}{P(E)P(T+/E)+P(E^C)P(T+/E^C)}$$
+
+
+$$P(E/T+)=\frac{0.005*0.95}{0.005*0.95+0.995*0.01}=0.3231$$
   
-El 32.31% de los pacientes que son diagnosticados con la enfermedad en realidad si estan enfermos.
+El 32.31% de los pacientes que son diagnosticados con la enfermedad en realidad si están enfermos.
+
+Calcular: $P(T-/E^c)$, $P(E/T-)$
+
+$$P(T-/E^c)=0.99$$
+$$P(E/T-)=0,000253$$
 
 ## Ejercicios.
 
-* (Pg, 290. Ej: 22). Una de cada 10 personas de una población tiene tuberculosis. De las personas que tienen tuberculosis, el 80% reacciona positivamente a la prueba Y, mientras que el 30% de los que no tienen tuberculosis reaccionan positivamente. Una persona de la población es seleccionada aleatoriamente y la prueba Y es aplicada. ¿Cuál es la probabildad de que esa persona tenga tuberculosis, si reacciono positivamente a la prueba?
+* (Pg, 290. Ej: 22). Una de cada 10 personas de una población tiene tuberculosis. De las personas que tienen tuberculosis, el 80% reacciona positivamente a la prueba Y, mientras que el 30% de los que no tienen tuberculosis reaccionan positivamente. Una persona de la población es seleccionada aleatoriamente y la prueba Y es aplicada. ¿Cuál es la probabilidad de que esa persona tenga tuberculosis, si reacciono positivamente a la prueba?
 
-* Para el ejemplo anterior, determinar $P(T-/E^c).$
+Solución, sean los siguientes eventos:
 
+  * $Y+$ La prueba da positivo a Tuberculosis
+  * $Y-$ La prueba da negativo a Tuberculosis
+  * $T$ La persona tiene tuberculosis
+  * $T^c$ La persona no tiene tuberculosis
 
-
-
-
-
-
-
-
+La información dada es: $P(T)=0.1$, $P(T^c)=0.9$, $P(Y+/T)=0.8$, $P(Y+/T^C)=0.3$, $P(T/Y+)=?$
 
 
+$$P(T/Y+)=\frac{P(T)P(Y+/T)}{P(Y+)}=\frac{P(T)P(Y+/T)}{P(T)*P(Y+/T)+P(T^C)*P(Y+/T^C)}$$
+  
+$$P(T/Y+)=\frac{0.1*0.8}{0.1*0.8+0.9*0.3}=\frac{0.08}{0.35}=0.2286$$
 
-
-
+Repasar, Monty Hall 

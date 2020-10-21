@@ -1,28 +1,27 @@
 {
-    "id": "8A9D0414",
-    "path": "~/GitHub/EST-133/2_probabilidades.Rmd",
-    "project_path": "2_probabilidades.Rmd",
+    "id": "B1239742",
+    "path": "~/GitHub/EST-133/3_va.Rmd",
+    "project_path": "3_va.Rmd",
     "type": "r_markdown",
-    "hash": "3263725379",
+    "hash": "920412631",
     "contents": "",
     "dirty": false,
-    "created": 1599581338193.0,
+    "created": 1601400062065.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
         "chunk_output_type": "console",
-        "cursorPosition": "847,20",
-        "docOutlineSize": "212.27852576013564",
+        "cursorPosition": "481,1",
         "docOutlineVisible": "0",
         "scrollLine": "0",
-        "working_dir": "project"
+        "tempName": "Untitled1"
     },
     "folds": "",
-    "lastKnownWriteTime": 1600970515,
+    "lastKnownWriteTime": 1602182674,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1600970515652,
+    "last_content_update": 1602182674216,
     "read_only": false,
     "read_only_alternatives": []
 }
