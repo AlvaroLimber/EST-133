@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-10-20" />
+<meta name="date" content="2020-10-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -226,7 +226,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplos-4"><i class="fa fa-check"></i><b>4.3.2</b> Ejemplos</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#binomial-negativa"><i class="fa fa-check"></i><b>4.4</b> Binomial Negativa</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplo"><i class="fa fa-check"></i><b>4.4.1</b> Ejemplo,</a></li>
+<li class="chapter" data-level="4.4.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-binomial-negativa"><i class="fa fa-check"></i><b>4.4.1</b> Usos Binomial Negativa</a></li>
+<li class="chapter" data-level="4.4.2" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#ejemplo"><i class="fa fa-check"></i><b>4.4.2</b> Ejemplo,</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Hipergeométrica</a><ul>
 <li class="chapter" data-level="4.5.1" data-path="tema-4-distribuciones-discretas.html"><a href="tema-4-distribuciones-discretas.html#usos-hipergeométrica"><i class="fa fa-check"></i><b>4.5.1</b> Usos Hipergeométrica</a></li>
@@ -366,6 +367,17 @@ Nota: Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span>, donde <span c
  M_X(t) &amp; = \frac{p}{1-(1-p)*e^t} \hspace{0.5cm}
  \end{array}
 \]</span></p>
+<p>Miremos algunas probabilidades,</p>
+<p><span class="math display">\[P(X=0)=p(1-p)^0=p\]</span>
+<span class="math display">\[P(X=1)=p(1-p)^1\]</span>
+<span class="math display">\[P(X=2)=p(1-p)^2\]</span>
+<span class="math display">\[P(X=2)=P(F_1 \cap F_2 \cap E_3)=P(F_1)*P(F_2)*P(E_1)=(1-p)*(1-p)*p=(1-p)^2p\]</span>
+Tarea,</p>
+<p>Demostrar que la distribución geométrica es una distribución de probabilidad.</p>
+<p><span class="math display">\[\sum_{Rx} P(X=x)=1 \]</span>
+<span class="math display">\[\sum_{x=0}^\infty p (1-p)^x=\frac{p}{1-(1-p)}=1\]</span>
+Resolver,</p>
+<p><span class="math display">\[F(t)=P(X\leq t)=\sum_{x=0}^t p (1-p)^x\]</span></p>
 <div id="usos-geométrica" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Usos Geométrica</h3>
 <p><span class="math inline">\(X\)</span> representa el número de fracasos antes de obtener el primer éxito en ensayos sucesivos Bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
@@ -392,6 +404,7 @@ Nota: Sea <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span>, donde <span c
 <li><span class="math inline">\(P(X=0)+P(X=1)+P(X=2)+\ldots+P(X=11)=P(X&lt;12)=P(X\leq11)=TAREA\)</span></li>
 <li><span class="math inline">\(E[X]=\frac{(1-p)}{p}=\frac{1-1/100000}{1/100000}=99999\)</span>, <span class="math inline">\(V(X)=\frac{1-p}{p^2}=9999900000\)</span>, <span class="math inline">\(\sqrt{V(x)}=99999.5\)</span></li>
 </ol>
+<p>Imaginemos que la persona compra 15 boletos de lotería cada mes, con este cambio, en cuantos años se espera que la persona pueda ganar la lotería. (TAREA)</p>
 </div>
 </div>
 <div id="binomial-negativa" class="section level2">
@@ -404,11 +417,13 @@ Donde;</p>
  V[x] &amp; =\frac{r*(1-p)}{p^2}\\
  M_X(t) &amp; = \left(\frac{p}{1-(1-p)*e^t} \right)^r \hspace{0.5cm} ;t&lt;ln(1/(1-p))
  \end{array}
-\]</span>
-### Usos Binomial Negativa</p>
+\]</span></p>
+<div id="usos-binomial-negativa" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Usos Binomial Negativa</h3>
 <p><span class="math inline">\(X\)</span> representa el número de fracasos antes de obtener <span class="math inline">\(r\)</span> éxitos en ensayos sucesivos Bernoullis. Con <span class="math inline">\(p\)</span> la probabilidad de éxito <span class="math inline">\(0&lt;p&lt;1\)</span>.</p>
+</div>
 <div id="ejemplo" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Ejemplo,</h3>
+<h3><span class="header-section-number">4.4.2</span> Ejemplo,</h3>
 <ol style="list-style-type: decimal">
 <li>(pg 471, 3). Una moneda correcta es lanzada sucesivamente hasta que aparezca cara por décima vez. Sea X la va que denota el número de sellos que ocurren. Hallar la función de probabilidad de <span class="math inline">\(X\)</span>.</li>
 </ol>
@@ -456,14 +471,18 @@ Donde;</p>
 <ol style="list-style-type: decimal">
 <li>En una urna con 30 bolas de colores (10 negras, 5 blancas, 15 verdes). Se seleccionan 7 bolas de forma aleatoria y <strong>sin reposición</strong>. Si el interés es calcular la probabilidad de obtener bolas negras:</li>
 </ol>
-<pre><code>* Modelar la distribución que se ajusta al problema
-* Calcular la probabilidad que se seleccionen; 0 bolas negras, todas negras, al menos 2 bolas negras.</code></pre>
+<ul>
+<li>Modelar la distribución que se ajusta al problema</li>
+<li>Calcular la probabilidad que se seleccionen; 0 bolas negras, todas negras, al menos 2 bolas negras.</li>
+</ul>
 <p>Solución, <span class="math inline">\(X\sim H(N=30,n=7,r=10)\)</span>, <span class="math inline">\(max(0,7-30+10) \leq x \leq min(10,7)\)</span>, <span class="math inline">\(0 \leq x \leq 7\)</span></p>
 <p><span class="math display">\[P(X=0)=\frac{{20 \choose 7-x}{10 \choose x}}{{30 \choose 7}}=\frac{{20 \choose 7}{10 \choose 0}}{{30 \choose 7}}=\frac{77520*1}{2035800}=\frac{77520}{2035800}=0.038\]</span>
 <span class="math display">\[P(X=7)==\frac{{20 \choose 0}{10 \choose 7}}{{30 \choose 7}}=\frac{120}{2035800}=0.000059\]</span></p>
 <p><span class="math display">\[P(X\geq 2)=P(X=2)+P(X=3)+...+P(X=7)\]</span>
-<span class="math display">\[P(X\geq 2)=1-P(X&lt;2)=1-[P(X=0)+P(X=1)]=1-0.038-\frac{{20 \choose 6}{10 \choose 1}}{{30 \choose 7}}=1-0.038-0.19=0.772\]</span>
-Tarea (Pg 459, Ej 8)</p>
+<span class="math display">\[P(X\geq 2)=1-P(X&lt;2)=1-[P(X=0)+P(X=1)]=1-0.038-\frac{{20 \choose 6}{10 \choose 1}}{{30 \choose 7}}=1-0.038-0.19=0.772\]</span></p>
+<p>¿Cuál es la probabilidad de obtener 3 negras, 3 verdes y una blanca?</p>
+<p><span class="math display">\[P(3N \cap 3V \cap 1B)=\frac{{10 \choose 3}{15 \choose 3}{5 \choose 1}}{{30 \choose 7}}\]</span></p>
+<p>Tarea (Pg 459, Ej 8)</p>
 </div>
 </div>
 <div id="poisson" class="section level2">
@@ -486,14 +505,24 @@ Donde;</p>
 </ul>
 <p>Nota: Si <span class="math inline">\(X \sim binomial(n,p)\)</span>, si <span class="math inline">\(n \rightarrow \infty\)</span> , <span class="math inline">\(p \rightarrow 0\)</span> y <span class="math inline">\(\lambda=n*p\)</span> permanece constante. Entonces se puede aproximar con <span class="math inline">\(X \sim Poisson(\lambda = n*p)\)</span>. <span class="math inline">\(n \geq 50\)</span>, <span class="math inline">\(p\leq 0.1\)</span>.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<pre><code>##    Min. 1st Qu.  Median 
-##   0.000   2.000   3.000 
-##    Mean 3rd Qu.    Max. 
-##   3.001   4.000  14.000</code></pre>
-<pre><code>##    Min. 1st Qu.  Median 
-##   0.000   2.000   3.000 
-##    Mean 3rd Qu.    Max. 
-##   3.002   4.000  16.000</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu. 
+##   0.000   2.000   3.000   3.001   4.000 
+##    Max. 
+##  14.000</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu. 
+##   0.000   2.000   3.000   3.002   4.000 
+##    Max. 
+##  16.000</code></pre>
+<p>Ejercicios,</p>
+<ol style="list-style-type: decimal">
+<li>Verificar si efectivamente la distribución de Poisson es una distribución de probabilidad.</li>
+</ol>
+<p><span class="math display">\[1=\sum_{Rx} P(X=x)=\sum_{x=0}^\infty {\frac{e^{-\lambda} \lambda^x}{x!}}=e^{-\lambda}\sum_{x=0}^\infty {\frac{\lambda^x}{x!}}= e^{-\lambda} e^\lambda =e^0=1 \]</span>
+Esto recordando que:</p>
+<p><span class="math display">\[e^y=\sum_{x=0}^\infty {\frac{y^x}{x!}}\]</span>
+2. Demostrar que si <span class="math inline">\(X\sim P(\lambda)\)</span> la <span class="math inline">\(E[X]=\lambda\)</span>,</p>
+<p><span class="math display">\[\lambda=E[X]=\sum_{Rx}x P(X=x)=\sum_{x=0}^\infty {\frac{x e^{-\lambda} \lambda^x}{x!}}=e^{-\lambda}\lambda \sum_{x=0}^\infty {\frac{x  \lambda^x}{x! \lambda}}=e^{-\lambda}\lambda \sum_{x=0}^\infty {\frac{x  \lambda^{x-1}}{x! }}=\]</span>
+<span class="math display">\[=e^{-\lambda}\lambda \sum_{x=1}^\infty {\frac{x  \lambda^{x-1}}{x (x-1)! }}=e^{-\lambda}\lambda \sum_{x-1=0}^\infty {\frac{  \lambda^{x-1}}{(x-1)! }}=e^{-\lambda}\lambda \sum_{y=0}^\infty {\frac{  \lambda^{y}}{y! }}=\lambda e^{-\lambda}e^\lambda=\lambda\]</span></p>
 </div>
 <div id="ejemplos-5" class="section level3">
 <h3><span class="header-section-number">4.6.2</span> Ejemplos</h3>
@@ -503,7 +532,8 @@ Donde;</p>
 <ul>
 <li>Reciba 4 llamadas en un día</li>
 </ul>
-<p>Solución, X: Número de llamadas que recibe la oficina de bomberos <strong>en un día</strong>, <span class="math inline">\(X\sim P(\lambda=3)\)</span></p>
+<p>Solución, X: Número de llamadas que recibe la oficina de bomberos <strong>en un día</strong>,
+tener en cuenta que el promedio o la media puede ser tomada como un sinónimo de la esperanza matemática <span class="math inline">\(E[X]\)</span>. Así, la información dada es <span class="math inline">\(E[X]=3=\lambda\)</span>, entonces, <span class="math inline">\(X\sim P(\lambda=3)\)</span></p>
 <p><span class="math display">\[P(X=4)=\frac{e^{-\lambda} \lambda^x}{x!}=\frac{e^{-3}3^4}{4!}=\frac{4.0327}{24}=0.168\]</span></p>
 <ul>
 <li>Reciba 3 o más llamadas en un día</li>
@@ -513,7 +543,7 @@ Donde;</p>
 <ul>
 <li>Reciba 10 llamadas en una semana (7 días)</li>
 </ul>
-<p>Solución, X: el número de llamadas a la oficina de bomberos durante 7 días. <span class="math inline">\(X\sim P(\lambda=3*7=21)\)</span></p>
+<p>Solución, X: el número de llamadas a la oficina de bomberos durante 7 días. La idea es aplicar una regla de tres para re escalar la información, sabemos que en promedio se reciben 3 llamadas por día, en 7 días se espera en promedio que se reciban <span class="math inline">\(3*7=21=E[X]=\lambda\)</span>. Entonces, <span class="math inline">\(X\sim P(\lambda=3*7=21)\)</span></p>
 <p><span class="math display">\[P(X=10)=\frac{e^{-21}21^{10}}{10!}=0.00348\]</span></p>
 <ul>
 <li>¿Cuántas llamadas en promedio se espera tener durante un año (365 días)?</li>
@@ -526,6 +556,9 @@ Donde;</p>
 <li>Un suicidio</li>
 <li>2 o más suicidios</li>
 </ul>
+<p>Solución, X: Número de suicidios <strong>por año en ciudad de 100 mil habitantes</strong>, <span class="math inline">\(X\sim P(\lambda=4)\)</span>.</p>
+<p><span class="math display">\[P(X=1)=\frac{e^{-4}4^1}{1!}=0.0733\]</span>
+<span class="math display">\[P(X\geq 2)=1-P(X&lt;2)=1-[P(X=0)+P(X=1)]=1-\frac{e^{-4}4^0}{0!}-\frac{e^{-4}4^1}{1!}=0.908\]</span></p>
 
 </div>
 </div>
