@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-10-27" />
+<meta name="date" content="2020-11-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -243,9 +243,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#exponencial"><i class="fa fa-check"></i><b>5.2</b> Exponencial</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.2.1</b> Ejercicios,</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.3</b> Normal</a></li>
-<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.4.1</b> Propiedades sobre la normal</a></li>
+<li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#distribución-gamma"><i class="fa fa-check"></i><b>5.3</b> Distribución Gamma</a></li>
+<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.4</b> Normal</a></li>
+<li class="chapter" data-level="5.5" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.5</b> Normal Estándar</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.5.1</b> Propiedades sobre la normal</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -308,22 +309,38 @@ Para una <span class="math inline">\(x\)</span>:</p>
 <p><span class="math display">\[F(x)=\frac{x-a}{b-a}\]</span></p>
 <p><span class="math display">\[P(X&lt;2.5)=F(2.5)=\frac{2.5-2}{4-2}=\frac{0.5}{2}=0.25\]</span>
 <span class="math display">\[E[X]=\int_a^b x \frac{1}{b-a} dx=\frac{1}{b-a} \frac{x^2}{2}/_a^b=\frac{b^2-a^2}{2(b-a)}=\frac{(b+a)(b-a)}{2(b-a)}=\frac{a+b}{2}\]</span></p>
-<p>Tarea, demostrar la varianza y la función generatriz de momentos.</p>
+<p>Para la varianza,</p>
+<p><span class="math display">\[V(X)=E[X^2]-E[X]^2\]</span></p>
+<p><span class="math display">\[E[X^2]=\int_{Rx} x^2 f(x)dx=\int_a^b x^2 \frac{1}{b-a}dx=\frac{1}{b-a} \frac{x^3}{3}/_a^b=\frac{b^3-a^3}{3(b-a)}=\frac{(b-a)(b^2+ba+a^2)}{3(b-a)}=\frac{b^2+ab+a^2}{3}\]</span></p>
+<p><span class="math display">\[V(X)=\frac{b^2+ab+a^2}{3}-\frac{(a+b)^2}{2^2}=\frac{4b^2+4ab+4a^2-3a^2-6ab-3b^2 }{12}=\frac{b^2-2ab+a^2}{12}=\frac{(b-a)^2}{12}\]</span></p>
+<p>Tarea, demostrar la función generatriz de momentos.</p>
+<p>Ejemplo,</p>
 <ol style="list-style-type: decimal">
-<li>Un punto escogido al azar en el segmento de recta <span class="math inline">\([1,4]\)</span>. Calcular:
-* La probabilidad de que el punto escogido esté entre 2 y 3
-* la probabilidad de que sea igual a 2
-* la media y la varianza</li>
+<li>Un punto es escogido al azar en el segmento de recta <span class="math inline">\([1,4]\)</span>. Calcular:
+<ul>
+<li>La probabilidad de que el punto escogido esté entre 2 y 3</li>
+<li>la probabilidad de que sea igual a 2 (<span class="math inline">\(P(X=2)=0\)</span>)</li>
+<li>la media (esperanza) y la varianza</li>
+</ul></li>
 </ol>
-<p>Solución, sea X una va, <span class="math inline">\(X\sim U(1,4)\)</span>. <span class="math inline">\(f(x)=\frac{1}{3}\)</span></p>
+<p>Solución, sea X una va, <span class="math inline">\(X\sim U(a=1,b=4)\)</span>. <span class="math inline">\(f(x)=\frac{1}{b-a}=\frac{1}{3}\)</span></p>
 <p><span class="math display">\[P(2&lt;X&lt;3)=F(3)-F(2)=\int_2^3\frac{1}{3}dx=\frac{1}{3}\]</span></p>
 <p><span class="math display">\[P(X=2)=0\]</span>
 <span class="math inline">\(E[X]=\frac{a+b}{2}=5/2=2.5\)</span>, <span class="math inline">\(V(X)=\frac{(b-a)^2}{12}=\frac{(4-1)^2}{12}=9/12=3/4\)</span></p>
 <ol start="2" style="list-style-type: decimal">
-<li>(TAREA) La clase de un profesor esta programada para comenzar a las 10:00 am; pero él comienza su clase en un tiempo <span class="math inline">\(X\)</span> que tiene distribución uniforme en el intervalo de 9:55 am. a 10:05 am. ¿Cuál es la probabilidad de que él comience su clase:
-* 2 minutos más temprano?
-* 2 minutos más tarde?</li>
+<li>(TAREA) La clase de un profesor esta programada para comenzar a las 10:00 am; pero él comienza su clase en un tiempo <span class="math inline">\(X\)</span> que tiene distribución uniforme en el intervalo de 9:55 am. a 10:05 am. ¿Cuál es la probabilidad de que él comience su clase:</li>
 </ol>
+<ul>
+<li>hasta 2 minutos más temprano?</li>
+<li>hasta 2 minutos más tarde?</li>
+</ul>
+<p>Solución, X: El inicio de la clase, <span class="math inline">\(X_1\sim U (0,10)\)</span>, <span class="math inline">\(X_2\sim U(-5,5)\)</span></p>
+<ul>
+<li>hasta 2 minutos más temprano?</li>
+<li>A lo sumo 2 minutos más temprano?</li>
+</ul>
+<p><span class="math display">\[P(-2&lt;X_2&lt;0)\]</span>
+<span class="math display">\[P(-5&lt;X_2&lt;2)\]</span></p>
 </div>
 <div id="exponencial" class="section level2">
 <h2><span class="header-section-number">5.2</span> Exponencial</h2>
@@ -341,9 +358,26 @@ Donde;</p>
 <p><span class="math display">\[\int_{Rx}f(x)dx=\int_0^{\infty}\lambda*e^{-\lambda x}dx=\lambda \int_0^{\infty}e^{-\lambda x}dx=\lambda \left(- \frac{e^{-\lambda x}}{\lambda} \right)/_0^{\infty}=-e^{-\infty}+e^0=-0+1=1\]</span></p>
 <p><span class="math display">\[M_X(t)=E[e^{tx}]=\int_0^{\infty} e^{tx}\lambda e^{-\lambda x}dx=\lambda \int_0^{\infty} e^{-x(\lambda-t)} dx=\lambda \left( -\frac{e^{-x(\lambda-t)}}{(\lambda-t)}  \right)_0^{\infty}=\frac{\lambda}{(\lambda-t)}*(-e^{-\infty (\lambda-t)}+e^0)=\frac{\lambda}{\lambda-t}\]</span>
 Esto se da, siempre y cuando <span class="math inline">\(\lambda-t&gt;0\)</span>, <span class="math inline">\(\lambda&gt;t\)</span></p>
-<p>Tarea, demostrar la <span class="math inline">\(E[X]\)</span> y la <span class="math inline">\(V(X)\)</span> a partir de la función generatriz de momentos.</p>
+<p>A partir de la función generatriz de momentos, encontrar a <span class="math inline">\(E[X]\)</span>.</p>
+<p><span class="math display">\[E[X]=M&#39;_X(t=0)=\left(\frac{\lambda}{\lambda-t}\right)_{(t=0)}&#39;= \frac{\lambda}{(\lambda-t)^2}=_{(t=0)} \frac{1}{\lambda}\]</span>
+<span class="math display">\[E[X]=\int_0^\infty x \lambda e^{-\lambda x }dx \]</span></p>
+<p><span class="math display">\[E[X^2]=\int_0^\infty x^2 \lambda e^{-\lambda x }dx \]</span></p>
+<p>Tarea, demostrar la <span class="math inline">\(V(X)\)</span> a partir de la función generatriz de momentos.</p>
 <div id="ejercicios-1" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Ejercicios,</h3>
+<ol start="0" style="list-style-type: decimal">
+<li>(pg525, 2) Suponga que un mecanismo eléctrico tiene un tiempo de vida <span class="math inline">\(X\)</span> (en unidades de 1000 horas) que es considerado como una v.a. continua con función de densidad exponencial (<span class="math inline">\(\lambda=1\)</span>).</li>
+</ol>
+<p>Suponga que el costo de fabricación de un item es 2 Bs. y el precio de venta es 5 Bs. El fabricante garantiza la total devolución si <span class="math inline">\(x\leq 0.9\)</span> ¿Cuál es la ganancia esperada por item?.</p>
+<p>Solución, <span class="math inline">\(X\sim exp(\lambda=1)\)</span>.</p>
+<p><span class="math display">\[P(devolucion)=P(X\leq 0.9)=F(0.9)=1-e^{-0.9}=0.5935\]</span>
+<span class="math display">\[P(\sim devolucion)=1-P(X\leq 0.9)=0.4065\]</span>
+Imaginemos las ganancias:</p>
+<p><span class="math display">\[Ganancia=PrecioVenta-CostoProduccion=5-2=3\]</span>
+Dado que existe una garantía de devolución asociada al comportamiento del tiempo de vida del mecanismo electrónico y este es una variable aleatoria, entonces las ganancias también son aleatorias.</p>
+<p><span class="math display">\[GananciaEsperada_{item}=5*Pr(\sim devolucion)-2=5*0.4065-2=0.0325 Bs.\]</span>
+Se planea vender 3500 items de este mecanismo electrónico, ¿Cuál sera la ganancia esperada de este lote de 3500 items?.</p>
+<p>Resp. la ganancia esperada será de <span class="math inline">\(3500*0.0325=113.75\)</span></p>
 <ol style="list-style-type: decimal">
 <li>(pg525, 1) La duración de una lampara se distribuye exponencial con parámetro <span class="math inline">\(\lambda=1/100\)</span> (horas). Determinar:</li>
 </ol>
@@ -362,7 +396,7 @@ La probabilidad de que se queme antes de las 1000 horas</p>
 <p><span class="math display">\[P(X&gt;E[X])=P(X&gt;100)=1-P(X\leq 100)=1-F(100)=1-(1-e^{-100/100})=\]</span>
 <span class="math display">\[=1-1+e^{-1}=e^{-1}=0.3679\]</span>
 ¿Cuál es la desviación estándar de la distribución? <span class="math inline">\(\sqrt{V(X)}\)</span></p>
-<p><span class="math inline">\(\sqrt{V(X)}=\sqrt{\frac{1}{\lambda^2}}=1/\lambda=100\)</span></p>
+<p><span class="math display">\[\sqrt{V(X)}=\sqrt{\frac{1}{\lambda^2}}=1/\lambda=100\]</span></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Supongamos que el número de kilómetros que un carro puede recorrer antes que su batería se consuma, está exponencialmente distribuida con un promedio de 15000 kilómetros. Si una persona desea hacer una excursión de 10000 kilómetros. ¿Cuál es la probabilidad de que la persona complete la excursión sin que tenga que cambiar de batería del carro?.</li>
 </ol>
@@ -370,8 +404,54 @@ La probabilidad de que se queme antes de las 1000 horas</p>
 <p><span class="math display">\[P(X&gt;10000)=tarea\]</span></p>
 </div>
 </div>
+<div id="distribución-gamma" class="section level2">
+<h2><span class="header-section-number">5.3</span> Distribución Gamma</h2>
+<p>Función Gamma (<span class="math inline">\(\Gamma\)</span>)</p>
+<p><span class="math display">\[\Gamma(\alpha)=\int_0^\infty x^{\alpha-1} e^{-x}dx\]</span></p>
+<p>Esta función Gamma <span class="math inline">\(\Gamma(.)\)</span> es finita cuando <span class="math inline">\(\alpha&gt;0\)</span>.</p>
+<p>Propiedades de la función Gamma</p>
+<ul>
+<li><span class="math inline">\(\Gamma(1)=\int_0^\infty e^{-x}dx=1\)</span></li>
+<li>Si tenemos <span class="math inline">\(n=1,2,\ldots\)</span>. Así <span class="math inline">\(\Gamma(n)=(n-1)!\)</span></li>
+<li><span class="math inline">\(\Gamma(1/2)=\sqrt{\pi}\)</span></li>
+</ul>
+<p>Ejemplos</p>
+<ul>
+<li><span class="math inline">\(\Gamma(2)=(2-1)!=1!=1\)</span></li>
+<li><span class="math inline">\(\Gamma(3)=(3-1)!=2!=2\)</span></li>
+<li><span class="math inline">\(\Gamma(10)=(10-1)!=9!=362880\)</span></li>
+</ul>
+<p>Se dice que la va <span class="math inline">\(X\)</span> tiene una distribución gamma <span class="math inline">\(X\sim Gamma(\alpha,\beta)\)</span>, con <span class="math inline">\(\alpha&gt;0\)</span>, <span class="math inline">\(\beta&gt;0\)</span>. Si su función de densidad esta dada por:</p>
+<p><span class="math display">\[f(x)=\frac{\beta^\alpha x^{\alpha-1}}{\Gamma(\alpha)} e^{-\beta x}\]</span></p>
+<p>Para <span class="math inline">\(x&gt;0\)</span>.</p>
+<p>Nota, con <span class="math inline">\(\alpha=1\)</span> la función queda como:</p>
+<p><span class="math display">\[f(x)=\beta  e^{-\beta x}\]</span>
+Así <span class="math inline">\(Gamma(\alpha=1,\beta)=exp(\lambda=\beta)\)</span></p>
+<p>Recordar que para la exponencial, la variable aleatoria <span class="math inline">\(X\)</span> era el tiempo de espera de Un suceso con tasa de espera <span class="math inline">\(\lambda\)</span>, la distribución Gamma es una generalización donde <span class="math inline">\(X\)</span> se puede entender como el tiempo de espera de varios <span class="math inline">\(n\)</span> sucesos. En esta idea <span class="math inline">\(\beta\)</span> es similar a <span class="math inline">\(\lambda\)</span> con el objetivo de modelar la tasa de espera, <span class="math inline">\(\alpha\)</span> modela el número de sucesos (n).</p>
+<p>Veamos si es una función de probabilidad,</p>
+<p><span class="math display">\[\int_{0}^\infty \frac{\beta^\alpha x^{\alpha-1}}{\Gamma(\alpha)} e^{-\beta x} dx=\frac{\beta^\alpha }{\Gamma(\alpha)} \int_{0}^\infty x^{\alpha-1} e^{-\beta x} dx=  \]</span></p>
+<p>Aplicando un cambio de variable <span class="math inline">\(y=\beta x\)</span>, <span class="math inline">\(\frac{dy}{dx}=\beta\)</span>, <span class="math inline">\(x=y/\beta\)</span></p>
+<p><span class="math display">\[=\frac{\beta^\alpha }{\Gamma(\alpha)} \int_0^\infty \left(\frac{y}{\beta}\right)^{\alpha-1} e^{^-y}\frac{dy}{\beta}=\frac{\beta^\alpha }{\Gamma(\alpha) \beta^\alpha} \int_0^\infty y^{\alpha-1}e^{-y}dy = \frac{\beta^\alpha \Gamma(\alpha)}{\Gamma(\alpha) \beta^\alpha}=1\]</span>
+Propiedades, si <span class="math inline">\(X\sim Gamma(\alpha, \beta)\)</span>, entonces:</p>
+<ul>
+<li><p><span class="math inline">\(E[X]=\frac{\alpha}{\beta}\)</span></p></li>
+<li><p><span class="math inline">\(V(X)=\frac{\alpha}{\beta^2}\)</span></p></li>
+<li><p><span class="math inline">\(M_X(t)=\left(\frac{\beta}{\beta-t}\right)^\alpha\)</span>, para <span class="math inline">\(t&lt;\beta\)</span></p></li>
+<li><p>Si las variables aleatorias <span class="math inline">\(X_1, X_2, \ldots, X_k\)</span> son independientes y si cada <span class="math inline">\(X_i\sim exp(\lambda)\)</span>, entonces, la suma <span class="math inline">\(X_1+X_2+_\ldots+X_k \sim Gamma(\alpha=k,\beta=\lambda)\)</span>.</p></li>
+</ul>
+<p>Ejercicio,</p>
+<p>Supongamos que la vida en años de hombres residentes en un país dado tiene distribución gamma con parámetros <span class="math inline">\(\alpha=2\)</span> y <span class="math inline">\(\beta=0.02\)</span>. ¿Qué proporción de hombres residentes de dicho país vivirán más de 50 años?</p>
+<p>Solución, <span class="math inline">\(X\sim Gamma(\alpha=2,\beta=0.02)\)</span>, se pide <span class="math inline">\(P(X&gt;50)\)</span>, la función de probabilidad es:</p>
+<p><span class="math display">\[f(x)=\frac{0.02^2 x}{\Gamma(2)} e^{-0.02 x}=0.0004 x e^{-0.02x} \]</span></p>
+<p><span class="math display">\[P(X&gt;50)=\int_{50}^\infty 0.0004 x e^{-0.02x} dx=0.7358  \]</span></p>
+<p><span class="math display">\[P(X&gt;50)=1-P(X\leq 50)=1-\int_{0}^{50} 0.0004 x e^{-0.02x} dx= 1-0.2642=0.7358 \]</span></p>
+<p>Encontrar el valor esperado y la desviación estandar</p>
+<p><span class="math display">\[E[X]=\frac{2}{0.02}=100\]</span>
+<span class="math display">\[V(X)=\frac{2}{0.0004}=5000\]</span>
+Asi, <span class="math inline">\(\sqrt{V(X)}=70.71\)</span></p>
+</div>
 <div id="normal" class="section level2">
-<h2><span class="header-section-number">5.3</span> Normal</h2>
+<h2><span class="header-section-number">5.4</span> Normal</h2>
 <p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> si su función de densidad es:
 <span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi} * \sigma} e^{-\frac{1}{2} \left( \frac{x-\mu}{ \sigma}\right)^2 } \hspace{0.5cm};  -\infty \leq x \leq \infty\]</span>
 Donde;</p>
@@ -384,7 +464,7 @@ Donde;</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
 </div>
 <div id="normal-estándar" class="section level2">
-<h2><span class="header-section-number">5.4</span> Normal Estándar</h2>
+<h2><span class="header-section-number">5.5</span> Normal Estándar</h2>
 <p>Sea <span class="math inline">\(x \sim N(\mu, \sigma^2)\)</span>, entonces <span class="math inline">\(z=\frac{x-\mu}{\sigma}\)</span> es una v.a, y se dice que <span class="math inline">\(Z\sim N(0,1)\)</span> es una normal estándar, si su función de densidad es:
 <span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} z^2 } \hspace{0.5cm};  -\infty \leq z \leq \infty\]</span>
 Donde;</p>
@@ -440,7 +520,7 @@ Donde;</p>
 </ol>
 <p>En personas esto equivale a <span class="math inline">\(600*0.1378=83\)</span></p>
 <div id="propiedades-sobre-la-normal" class="section level3">
-<h3><span class="header-section-number">5.4.1</span> Propiedades sobre la normal</h3>
+<h3><span class="header-section-number">5.5.1</span> Propiedades sobre la normal</h3>
 <blockquote>
 <p>Teorema de la suma de normales independientes</p>
 </blockquote>

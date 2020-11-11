@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-10-27" />
+<meta name="date" content="2020-11-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -243,9 +243,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#exponencial"><i class="fa fa-check"></i><b>5.2</b> Exponencial</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.2.1</b> Ejercicios,</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.3</b> Normal</a></li>
-<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.4</b> Normal Estándar</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.4.1</b> Propiedades sobre la normal</a></li>
+<li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#distribución-gamma"><i class="fa fa-check"></i><b>5.3</b> Distribución Gamma</a></li>
+<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.4</b> Normal</a></li>
+<li class="chapter" data-level="5.5" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.5</b> Normal Estándar</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.5.1</b> Propiedades sobre la normal</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -505,14 +506,10 @@ Donde;</p>
 </ul>
 <p>Nota: Si <span class="math inline">\(X \sim binomial(n,p)\)</span>, si <span class="math inline">\(n \rightarrow \infty\)</span> , <span class="math inline">\(p \rightarrow 0\)</span> y <span class="math inline">\(\lambda=n*p\)</span> permanece constante. Entonces se puede aproximar con <span class="math inline">\(X \sim Poisson(\lambda = n*p)\)</span>. <span class="math inline">\(n \geq 50\)</span>, <span class="math inline">\(p\leq 0.1\)</span>.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu. 
-##   0.000   2.000   3.000   3.001   4.000 
-##    Max. 
-##  14.000</code></pre>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu. 
-##   0.000   2.000   3.000   3.002   4.000 
-##    Max. 
-##  16.000</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   2.000   3.000   3.001   4.000  14.000</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   2.000   3.000   3.002   4.000  16.000</code></pre>
 <p>Ejercicios,</p>
 <ol style="list-style-type: decimal">
 <li>Verificar si efectivamente la distribución de Poisson es una distribución de probabilidad.</li>

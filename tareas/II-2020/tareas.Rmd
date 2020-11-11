@@ -65,11 +65,11 @@ Solución, como información tenemos que el grupo es de $N=20$ personas (10 pare
 
 Para a), tenemos:
 
-$$P(a)=\frac{\binom{10}{2}}{4845}=\frac{45}{4845}=$$
+$$P(a)=\frac{\binom{10}{2}}{4845}=\frac{45}{4845}=0.0093$$
 
 Para b), tenemos:
 
-$$P(b)=\frac{2*2*2*2*\binom{10}{4}}{4845}=\frac{3360}{4845}$$
+$$P(b)=\frac{2*2*2*2*\binom{10}{4}}{4845}=\frac{3360}{4845}=0.69$$
 
 \hrule
 
@@ -94,4 +94,6 @@ Así:
 
 $$E[X]=\int_0^2 x \left(\frac{x}{6}+\frac{1}{3} \right) dx=\int_0^2 \left(\frac{x^2}{6}+\frac{x}{3} \right) dx=\left(\frac{x^3}{18}+\frac{x^2}{6} \right)_0^2 $$
 $$=\frac{8}{18}+\frac{4}{6}=\frac{8+12}{18}=\frac{20}{18}=\frac{10}{9}$$
+  
+# Segundo parcial ( pts)  
   

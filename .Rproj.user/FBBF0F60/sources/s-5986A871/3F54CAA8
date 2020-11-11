@@ -1,0 +1,27 @@
+{
+    "id": "3F54CAA8",
+    "path": "~/GitHub/EST-133/5_continuas.Rmd",
+    "project_path": "5_continuas.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1603987570522.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "cursorPosition": "98,0",
+        "scrollLine": "96",
+        "chunk_output_type": "console",
+        "docOutlineVisible": "1",
+        "docOutlineSize": "72"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1605030590,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1605030590227,
+    "read_only": false,
+    "read_only_alternatives": []
+}
