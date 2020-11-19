@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-11-10" />
+<meta name="date" content="2020-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -244,9 +244,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.2.1</b> Ejercicios,</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#distribución-gamma"><i class="fa fa-check"></i><b>5.3</b> Distribución Gamma</a></li>
-<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.4</b> Normal</a></li>
+<li class="chapter" data-level="5.4" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal"><i class="fa fa-check"></i><b>5.4</b> Normal</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#estandarización-de-las-variables-transformación"><i class="fa fa-check"></i><b>5.4.1</b> Estandarización de las variables (transformación)</a></li>
+</ul></li>
 <li class="chapter" data-level="5.5" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#normal-estándar"><i class="fa fa-check"></i><b>5.5</b> Normal Estándar</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.5.1</b> Propiedades sobre la normal</a></li>
+<li class="chapter" data-level="5.5.1" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#otros-ejemplos-1"><i class="fa fa-check"></i><b>5.5.1</b> Otros ejemplos</a></li>
+<li class="chapter" data-level="5.5.2" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#otro-propiedad"><i class="fa fa-check"></i><b>5.5.2</b> Otro propiedad</a></li>
+<li class="chapter" data-level="5.5.3" data-path="tema-5-distribuciones-continuas.html"><a href="tema-5-distribuciones-continuas.html#propiedades-sobre-la-normal"><i class="fa fa-check"></i><b>5.5.3</b> Propiedades sobre la normal</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -452,7 +456,7 @@ Asi, <span class="math inline">\(\sqrt{V(X)}=70.71\)</span></p>
 </div>
 <div id="normal" class="section level2">
 <h2><span class="header-section-number">5.4</span> Normal</h2>
-<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> si su función de densidad es:
+<p>Sea <span class="math inline">\(X\)</span> una v.a, se dice que <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>, <span class="math inline">\(\sigma&gt;0\)</span>, si su función de densidad es:
 <span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi} * \sigma} e^{-\frac{1}{2} \left( \frac{x-\mu}{ \sigma}\right)^2 } \hspace{0.5cm};  -\infty \leq x \leq \infty\]</span>
 Donde;</p>
 <p><span class="math display">\[\begin{array}{ll}
@@ -461,12 +465,37 @@ Donde;</p>
  M_X(t) &amp; = e^{\mu t +\frac{1}{2} \sigma^2 t^2}
  \end{array}
 \]</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<pre><code>## [1] 49.354</code></pre>
+<pre><code>## [1] 50.3</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<p>Comentarios,</p>
+<ul>
+<li>El 68.2% de la probabilidad se concentra en:</li>
+</ul>
+<p><span class="math display">\[P(\mu-\sigma&lt;X&lt;\mu+\sigma)=0.682\]</span></p>
+<p><span class="math display">\[P(\mu-2\sigma&lt;X&lt;\mu+2\sigma)=0.954\]</span></p>
+<p><span class="math display">\[P(\mu-3\sigma&lt;X&lt;\mu+3\sigma)=0.997\]</span></p>
+<p>Nota: La distribución normal es una de las más importantes en la estadística, sin embargo, la forma de la distribución es compleja al momento de querer obtener las probabilidad de forma formal, esto debido a problemas de integración.</p>
+<p>Ejemplo, sea <span class="math inline">\(X\sim N(\mu=0,\sigma=1)\)</span>, encontrar, <span class="math inline">\(P(X&gt;0.5)\)</span>.</p>
+<p><span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} x^2 } \hspace{0.5cm};  -\infty \leq x \leq \infty\]</span></p>
+<p><span class="math display">\[P(X&gt;0.5)=\int_{0.5}^\infty \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} x^2 } dx=\frac{1}{\sqrt{2\pi}} \int_{0.5}^\infty  e^{-\frac{1}{2} x^2 } dx \]</span></p>
+<div id="estandarización-de-las-variables-transformación" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Estandarización de las variables (transformación)</h3>
+<p>La estandarización de una variable aleatoria <span class="math inline">\(X\)</span> parte por una transformación que incluye su esperanzan y su varianza, sea <span class="math inline">\(z\)</span> una variable aleatoria, resultante de aplicar la estadanrización a la variable <span class="math inline">\(x\)</span>, <span class="math inline">\(z\)</span> esta definida como:</p>
+<p><span class="math display">\[z_i=\frac{x_i-E[X]}{\sqrt{V(x)}}\]</span></p>
+<p><span class="math display">\[z_i=\frac{x_i-\bar{x}}{\sigma_x}\]</span>
+Propiedades de <span class="math inline">\(z\)</span>:</p>
+<ul>
+<li><span class="math inline">\(E[Z]=0\)</span></li>
+<li><span class="math inline">\(V(Z)=1\)</span></li>
+</ul>
+</div>
 </div>
 <div id="normal-estándar" class="section level2">
 <h2><span class="header-section-number">5.5</span> Normal Estándar</h2>
 <p>Sea <span class="math inline">\(x \sim N(\mu, \sigma^2)\)</span>, entonces <span class="math inline">\(z=\frac{x-\mu}{\sigma}\)</span> es una v.a, y se dice que <span class="math inline">\(Z\sim N(0,1)\)</span> es una normal estándar, si su función de densidad es:
-<span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} z^2 } \hspace{0.5cm};  -\infty \leq z \leq \infty\]</span>
+<span class="math display">\[f(z)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} z^2 } \hspace{0.5cm};  -\infty \leq z \leq \infty\]</span>
 Donde;</p>
 <p><span class="math display">\[\begin{array}{ll}
  E[z] &amp; =0\\
@@ -475,9 +504,24 @@ Donde;</p>
  \end{array}
 \]</span>
 ### Ejercicios</p>
-<p><span class="math display">\[P(Z\leq t)=P(Z&lt;t)=F(t)=\phi(t)\]</span></p>
+<p><span class="math display">\[P(0&lt;Z&lt;1)=0.3413\]</span></p>
+<p><span class="math display">\[P(Z\leq t)=P(Z&lt;t)=F(t)=\phi(t)\]</span>
+### Propiedades</p>
+<ul>
+<li><span class="math inline">\(P(a&lt;Z&lt;b)=F(b)-F(a)=\phi(b)-\phi(a)\)</span>, <span class="math inline">\(a&lt;b\)</span></li>
+<li><span class="math inline">\(P(Z&gt;a)=1-P(Z\le a)=1-F(a)=1-\phi(a)\)</span></li>
+<li><span class="math inline">\(P(Z&lt;b)=F(b)=\phi(b)\)</span></li>
+</ul>
+<div id="otros-ejemplos-1" class="section level3">
+<h3><span class="header-section-number">5.5.1</span> Otros ejemplos</h3>
+<p>Sea <span class="math inline">\(Z\sim N(0,1)\)</span>, calcular:</p>
 <ol style="list-style-type: decimal">
-<li>Si <span class="math inline">\(Z\)</span> en una va. <span class="math inline">\(Z\sim N(0,1)\)</span>, calcular:</li>
+<li><p><span class="math inline">\(P(Z&gt;0)=0.5\)</span></p></li>
+<li><p><span class="math inline">\(P(Z&gt;3)=1-\phi(3)=1-0.9987=0.0013\)</span></p></li>
+<li><p><span class="math inline">\(P(Z&lt;2)=\phi(2)=0.9772\)</span></p></li>
+<li><p><span class="math inline">\(P(Z&lt;-2)=\phi(-2)=0.028\)</span></p></li>
+<li><p><span class="math inline">\(P(-1.5&lt;Z&lt;0)=\phi(0)-\phi(-1.5)=0.5-0.0668=0.4332\)</span></p></li>
+<li><p>Si <span class="math inline">\(Z\)</span> en una va. <span class="math inline">\(Z\sim N(0,1)\)</span>, calcular:</p></li>
 </ol>
 <ul>
 <li><span class="math inline">\(P(0&lt;Z&lt;1.44)=F(1.44)-F(0)=\phi(1.44)-\phi(0)=0.9251-0.5=0.4251\)</span></li>
@@ -487,7 +531,21 @@ Donde;</p>
 <li><span class="math inline">\(P(Z&gt;-0.66)=1-P(Z\leq -0.66)=1-\phi(-0.66)=1-0.2566=0.7434\)</span></li>
 </ul>
 <p>Tarea: Revisar los ejercicios a partir de la página 511</p>
-<ol start="2" style="list-style-type: decimal">
+</div>
+<div id="otro-propiedad" class="section level3">
+<h3><span class="header-section-number">5.5.2</span> Otro propiedad</h3>
+<p><span class="math display">\[P(-1&lt;Z&lt;1)=0.682\]</span></p>
+<p><span class="math display">\[P(-2&lt;Z&lt;2)=0.954\]</span></p>
+<p><span class="math display">\[P(-3&lt;Z&lt;3)=0.997\]</span>
+2. Si <span class="math inline">\(X\sim N(\mu=54,\sigma=10)\)</span>, calcular:</p>
+<ul>
+<li><span class="math inline">\(P(X&gt;54)=P(\frac{X-\mu}{\sigma} &gt; \frac{54-54}{10})=P(Z&gt;0)=1-\phi(0)=1-0.5=0.5\)</span></li>
+<li><span class="math inline">\(P(X&gt;60)=P(\frac{X-\mu}{\sigma}&gt;\frac{60-54}{10})=P(Z&gt;0.6)=1-\phi(0.6)=1-0.7257=0.2743\)</span></li>
+<li><span class="math inline">\(P(X&lt;45)=P(Z&lt;\frac{45-54}{10})=P(Z&lt;-0.9)=\phi(-0.9)=0.1841\)</span></li>
+<li><span class="math inline">\(P(47&lt;X&lt;62)=P(\frac{47-54}{10}&lt;\frac{X-\mu}{\sigma}&lt;\frac{62-54}{10})=P(-0.7&lt;Z&lt;0.8)\)</span></li>
+</ul>
+<p><span class="math inline">\(P(-0.7&lt;Z&lt;0.8)=\phi(0.8)-\phi(-0.7)=0.7881-0.2420=0.5461\)</span></p>
+<ol start="3" style="list-style-type: decimal">
 <li>Si <span class="math inline">\(X\sim N(\mu=1,\sigma^2=4)\)</span>. Calcular:</li>
 </ol>
 <ul>
@@ -504,7 +562,7 @@ Donde;</p>
 <ol style="list-style-type: lower-alpha">
 <li>entre 60 y 70 kg</li>
 <li>más de 63.2</li>
-<li>entre 55 y 60 Kg (1pt)</li>
+<li>entre 55 y 60 Kg</li>
 </ol>
 <p>Solución, <span class="math inline">\(X\sim N(\mu=65.3,\sigma=5.51)\)</span></p>
 <ol style="list-style-type: lower-alpha">
@@ -519,8 +577,9 @@ Donde;</p>
 <li><span class="math inline">\(P(55&lt;X&lt;60)=P(-1.87&lt;Z&lt;-0.96)=\phi(-0.96)-\phi(-1.87)=0.1685-0.0307=0.1378\)</span></li>
 </ol>
 <p>En personas esto equivale a <span class="math inline">\(600*0.1378=83\)</span></p>
+</div>
 <div id="propiedades-sobre-la-normal" class="section level3">
-<h3><span class="header-section-number">5.5.1</span> Propiedades sobre la normal</h3>
+<h3><span class="header-section-number">5.5.3</span> Propiedades sobre la normal</h3>
 <blockquote>
 <p>Teorema de la suma de normales independientes</p>
 </blockquote>

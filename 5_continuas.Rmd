@@ -251,7 +251,7 @@ Asi, $\sqrt{V(X)}=70.71$
 
 ## Normal
 
-Sea $X$ una v.a, se dice que $X\sim N(\mu,\sigma^2)$ si su función de densidad es:
+Sea $X$ una v.a, se dice que $X\sim N(\mu,\sigma^2)$, $\sigma>0$, si su función de densidad es:
 $$f(x)=\frac{1}{\sqrt{2\pi} * \sigma} e^{-\frac{1}{2} \left( \frac{x-\mu}{ \sigma}\right)^2 } \hspace{0.5cm};  -\infty \leq x \leq \infty$$
 Donde;
 
@@ -265,8 +265,15 @@ $$
 
 
 ```{r,echo=FALSE}
+#recolectamos la información de 1000 personas respecto su número favorito (o un número aleatorio) entre 20 y 80
+
 x<-round(runif(1000,20,80),0)
 hist(x)
+mean(x)
+
+s1<-sample(x,10)
+mean(s1)
+
 n<-10
 k<-10000
 aux<-NULL
@@ -277,10 +284,41 @@ aux[i]<-mean(s)
 hist(aux)
 ```
 
+Comentarios, 
+
+* El 68.2% de la probabilidad se concentra en:
+
+$$P(\mu-\sigma<X<\mu+\sigma)=0.682$$
+
+$$P(\mu-2\sigma<X<\mu+2\sigma)=0.954$$
+
+$$P(\mu-3\sigma<X<\mu+3\sigma)=0.997$$
+
+Nota: La distribución normal es una de las más importantes en la estadística, sin embargo, la forma de la distribución es compleja al momento de querer obtener las probabilidad de forma formal, esto debido a problemas de integración.
+
+Ejemplo, sea $X\sim N(\mu=0,\sigma=1)$, encontrar, $P(X>0.5)$.
+
+$$f(x)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} x^2 } \hspace{0.5cm};  -\infty \leq x \leq \infty$$
+
+$$P(X>0.5)=\int_{0.5}^\infty \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} x^2 } dx=\frac{1}{\sqrt{2\pi}} \int_{0.5}^\infty  e^{-\frac{1}{2} x^2 } dx $$
+
+### Estandarización de las variables (transformación)
+
+La estandarización de una variable aleatoria $X$ parte por una transformación que incluye su esperanzan y su varianza, sea $z$ una variable aleatoria, resultante de aplicar la estadanrización a la variable $x$, $z$ esta definida como:
+
+$$z_i=\frac{x_i-E[X]}{\sqrt{V(x)}}$$
+
+$$z_i=\frac{x_i-\bar{x}}{\sigma_x}$$
+Propiedades de $z$:
+
+  * $E[Z]=0$
+  * $V(Z)=1$
+
+
 ## Normal Estándar
 
 Sea $x \sim N(\mu, \sigma^2)$, entonces $z=\frac{x-\mu}{\sigma}$ es una v.a, y se dice que $Z\sim N(0,1)$ es una normal estándar, si su función de densidad es:
-$$f(x)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} z^2 } \hspace{0.5cm};  -\infty \leq z \leq \infty$$
+$$f(z)=\frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} z^2 } \hspace{0.5cm};  -\infty \leq z \leq \infty$$
 Donde;
 
 
@@ -292,7 +330,24 @@ $$\begin{array}{ll}
 $$
 ### Ejercicios
 
+$$P(0<Z<1)=0.3413$$
+
 $$P(Z\leq t)=P(Z<t)=F(t)=\phi(t)$$
+### Propiedades
+
+* $P(a<Z<b)=F(b)-F(a)=\phi(b)-\phi(a)$, $a<b$
+* $P(Z>a)=1-P(Z\le a)=1-F(a)=1-\phi(a)$
+* $P(Z<b)=F(b)=\phi(b)$
+
+### Otros ejemplos
+
+Sea $Z\sim N(0,1)$, calcular:
+
+  1.   $P(Z>0)=0.5$
+  2.   $P(Z>3)=1-\phi(3)=1-0.9987=0.0013$
+  3.   $P(Z<2)=\phi(2)=0.9772$
+  4.   $P(Z<-2)=\phi(-2)=0.028$
+  5.   $P(-1.5<Z<0)=\phi(0)-\phi(-1.5)=0.5-0.0668=0.4332$
 
 1. Si $Z$ en una va. $Z\sim N(0,1)$, calcular:
   
@@ -304,7 +359,23 @@ $$P(Z\leq t)=P(Z<t)=F(t)=\phi(t)$$
 
 Tarea: Revisar los ejercicios a partir de la página 511
 
-2. Si $X\sim N(\mu=1,\sigma^2=4)$. Calcular:
+### Otro propiedad
+
+$$P(-1<Z<1)=0.682$$
+
+$$P(-2<Z<2)=0.954$$
+
+$$P(-3<Z<3)=0.997$$
+2. Si $X\sim N(\mu=54,\sigma=10)$, calcular:
+
+  * $P(X>54)=P(\frac{X-\mu}{\sigma} > \frac{54-54}{10})=P(Z>0)=1-\phi(0)=1-0.5=0.5$
+  * $P(X>60)=P(\frac{X-\mu}{\sigma}>\frac{60-54}{10})=P(Z>0.6)=1-\phi(0.6)=1-0.7257=0.2743$
+  * $P(X<45)=P(Z<\frac{45-54}{10})=P(Z<-0.9)=\phi(-0.9)=0.1841$
+  * $P(47<X<62)=P(\frac{47-54}{10}<\frac{X-\mu}{\sigma}<\frac{62-54}{10})=P(-0.7<Z<0.8)$
+
+$P(-0.7<Z<0.8)=\phi(0.8)-\phi(-0.7)=0.7881-0.2420=0.5461$
+
+3. Si $X\sim N(\mu=1,\sigma^2=4)$. Calcular:
 
 
   * $P(X\leq 3)=P(\frac{X-\mu}{\sigma} \leq \frac{3-1}{2})=P(Z\leq 1)=F(1)=\phi(1)=0.8413$
@@ -321,7 +392,7 @@ Tarea: Revisar los ejercicios a partir de la página 511
 
   a) entre 60 y 70 kg
   b) más de 63.2
-  c) entre 55 y 60 Kg (1pt)
+  c) entre 55 y 60 Kg 
   
 Solución, $X\sim N(\mu=65.3,\sigma=5.51)$
 
