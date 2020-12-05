@@ -1,0 +1,26 @@
+{
+    "id": "6AF28B98",
+    "path": "~/GitHub/EST-133/4_discretas.Rmd",
+    "project_path": "4_discretas.Rmd",
+    "type": "r_markdown",
+    "hash": "2220829417",
+    "contents": "",
+    "dirty": false,
+    "created": 1606238169411.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "chunk_output_type": "console",
+        "cursorPosition": "363,62",
+        "docOutlineVisible": "0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1606276855,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1606276855099,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -2,14 +2,18 @@
 title: "Estadística I. EST-133"
 author: "Alvaro Chirino Gutierrez"
 date: "10/10/2020"
-output: pdf_document
+output: 
+  pdf_document:
+    toc: TRUE
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Primer parcial (7 pts)
+\clearpage
+
+# Primer parcial (9 pts)
 
 \hrule
 
@@ -95,5 +99,53 @@ Así:
 $$E[X]=\int_0^2 x \left(\frac{x}{6}+\frac{1}{3} \right) dx=\int_0^2 \left(\frac{x^2}{6}+\frac{x}{3} \right) dx=\left(\frac{x^3}{18}+\frac{x^2}{6} \right)_0^2 $$
 $$=\frac{8}{18}+\frac{4}{6}=\frac{8+12}{18}=\frac{20}{18}=\frac{10}{9}$$
   
-# Segundo parcial ( pts)  
+## Primer parcial (2 pts)
+
+Un cierto instrumento diagnostica una cierta enfermedad del corazón con 97% de precisión cuando se aplica a aquellas personas que tiene la enfermedad y aquellas que no tienen la enfermedad. Si se sabe que 5 de cada 10000 personas de una cierta población tienen la enfermedad en cuestión, calcule la probabilidad de que un paciente tenga la enfermedad dado que la prueba indica que él la tiene.  
+
+\hrule  
+  
+# Distribuciones discretas (6 pts)
+
+\hrule
+
+## Tarea 1. (2 pts, 29 oct)
+
+Mediante una demostración, encontrar la varianza de una variable aleatoria de tipo Poisson
+
+\hrule
+
+## Tarea 2. (2 pts, 29 oct)
+
+Sea X una variable aleatoria, tal que; X~Binomial(n,p). Si E[X]=20 y V(X)=4. Encontrar el valor de n y p
+
+\hrule
+
+## Tarea 3. (2 pts, 29 oct)
+
+Un determinado antibiótico se envía a las farmacias en cajas de 24 botellas. El farmacéutico sospecha que la cantidad de antibiótico en algunos frascos es deficiente y decide analizar el contenido de 4 frascos elegidos de forma aleatoria. Suponga que 7 de las 24 botellas tienen cantidad deficiente de antibióticos. a) Encuentre la probabilidad de que ninguno de los frascos analizados tenga una cantidad deficiente de antibióticos b) Encuentre la probabilidad de que exactamente uno de los frascos analizados tenga una cantidad deficiente de antibióticos
+
+\hrule
+
+# Distribuciones continuas (6 pts)
+
+\hrule
+
+## Tarea 1 (2 pts, 17 nov)
+
+Demostrar el valor de la esperanza para la distribución Gamma
+
+\hrule
+
+## Tarea 2 (2 pts, 17 nov)
+
+El tiempo de vida (en años) de un componente electrónico se distribuye de forma exponencial con parámetro 1/20. Determinar la probabilidad que el componente dure más de 10 años.
+
+\hrule
+
+## Tarea 3 (2 pts, 17 nov)
+
+Los pesos de 150 estudiantes están normalmente distribuidos con media 64 kg y desviación estándar de 10 kg. Encuentre: a) el número de alumnos que pesan más de 70 kg b) el número de alumnos que pesan entre 60 y 75 kg
+
+\hrule
   

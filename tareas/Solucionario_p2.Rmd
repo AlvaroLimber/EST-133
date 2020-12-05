@@ -1,0 +1,103 @@
+---
+title: "Solucionario del Parcial 2"
+author: "Alvaro Chirino Gutierrez"
+date: "Diciembre, 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problema 1. 
+En un examen con 10 preguntas de Falso y verdadero, donde un estudiante responde todas al azar. ¿Cuál es la probabilidad que un estudiante responda más de 5 preguntas de manera correcta?
+
+Solución,
+
+Sea $X$ la va, que denota el número de respuestas correctas en el examen de 10 preguntas. $Rx=\{0,1,2\ldots, 10 \}$. $X\sim Binomial (n=10, p=0.5)$
+
+$$P(X=x)= {10 \choose x}   0.5^x 0.5^{10-x} $$
+
+$$P(X > 5)= 1-P(X \leq 5)=1-F(5)= 1-[P(X=0)+P(X=1)+\ldots+P(X=5)]=0.3769$$
+```{r}
+1-(dbinom(0,10,0.5)+dbinom(1,10,0.5)+dbinom(2,10,0.5)+dbinom(3,10,0.5)+
+     dbinom(4,10,0.5)+dbinom(5,10,0.5))
+
+# (1-F(5))
+1-pbinom(5,10,0.5)
+```
+
+## Problema 2. 
+Una moneda correcta es lanzada sucesivamente hasta que aparezca cara por decima vez. Sea $X$ la v.a. que denota el número de sellos que ocurren. La función de probabilidad de X es:
+
+Solución. $X\sim BinomialNegativa(r=10,p=0.5)$
+
+## Problema 3. 
+El promedio de llamadas telefónicas a la secretaria de la carrera de informática en una hora es 9. ¿Cuál es la probabilidad de recibir 7 o más llamadas en 90 minutos?.
+
+
+Solución, sea $X_{90}$ la va que denota la cantidad de llamadas en la secretaría de informática en 90 minutos. Para una hora $X_{60}\sim Poisson(\lambda=9)$, ya que $E[X_{60}]=\lambda=9$, entonces, $X_{90}\sim Poisson(\lambda=13.5)$.
+
+$$P(X_{90}\geq 7)=1-P(X_{90}\leq 6)=1-F(6)=$$
+```{r}
+1-ppois(6,13.5)
+```
+
+## Problema 4. 
+El número de minutos requeridos por un estudiante para terminar un examen se distribuye como una exponencial, con un promedio de 70 minutos. Suponga que el examen inicia a las 8:00 am. ¿Cuál es la probabilidad que termine antes de las 8:45 am?
+
+Solución, sea $X$ la va, esta denota el tiempo que un estudiante tarda en responder un examen. Como $70=E[X]=1/\lambda$, $X\sim exp(\lambda=1/70)$.
+
+$$f(x)=\frac{1}{70}e^{-\frac{x}{70}}$$
+$$P(X\leq 45)=F(45)=1-e^{-\frac{45}{70}}=0.474$$
+
+```{r}
+pexp(45,1/70)
+```
+
+
+## Problema 5. 
+Sea $X \sim gamma(\alpha = 2, \beta = 6)$, encontrar el valor de $E[X^2]$
+
+Solución, recordar que:
+
+$$V(X)=E[X^2]-E[X]^2$$
+$$E[X^2]=V(X)+E[X]^2=\frac{2}{6^2}+\frac{2^2}{6^2}=\frac{6}{36}=\frac{1}{6}=0.16667$$
+
+## Problema 6. 
+La duración de vida (en horas) de dos equipos de distintas marcas $X$ e $Y$ tienen distribución Normal de la forma $X \sim N(\mu = 35, \sigma^2 = 16)$, $Y \sim N(\mu = 35, \sigma^2 = 25)$. Si los equipos tuvieran que ser usados por un periodo de 42 horas. ¿Cuál debe ser preferido?
+
+Solución, se debe calcular y comparar $P(X>42)$, $P(Y>42)$ y elegir la marca que tenga una mayor probabilidad. 
+
+$$P(X>42)=1-P(X\leq 42)=1-P(Z_X\leq \frac{42-35}{4})=1-\phi(1.75)=0.040$$
+$$P(Y>42)=1-P(Y\leq 42)=1-P(Z_Y\leq 1.4)=1-\phi(1.4)=0.081$$
+```{r}
+1-pnorm(1.75)# 1-P(Z<1.75)
+1-pnorm(1.4)#  1-P(Z<1.4)
+
+1-pnorm(42,35,4)#  1-P(X<42)
+1-pnorm(42,35,5)#  1-P(Y<42)
+
+pnorm(42,35,4,lower.tail = F) # P(X>42)
+pnorm(42,35,5,lower.tail = F) # P(X>42)
+```
+
+Se debe elegir la marca $Y$.
+
+## Problema 7.
+Un dado perfecto es lanzado independientemente 1200 veces. Encontrar aproximadamente la probabilidad de que el número de unos ($X$) es tal que $190 \leq X \leq 200$.
+
+Solución, sea $X$ la va, representa la cantidad de $1$ en el lanzamiento de un dado 1200 veces (de forma independiente). Así $X\sim Binomial(n=1200,p=1/6)$. Se pide:
+
+$$P(190 \leq X \leq 200)=P(X=190)+P(X=191)+\ldots+P(X=200)=\sum_{i=190}^{200}P(X=i)$$
+Para R.
+
+$$P(190 \leq X \leq 200)=F(200)-F(190)$$
+
+```{r}
+pbinom(200,1200,1/6)-pbinom(190,1200,1/6)
+```
+
+Aproximando con la distribución normal $X\sim N(\mu=E[X]=200, \sigma^2=V(X)=166.7)$. $X\sim N(\mu=200,\sigma^2=166.7)$
+
+$$P(190 \leq X \leq 200)=P(-0.77\leq Z \leq 0)=\phi(0)-\phi(-0.77)=0.5-0.22=0.28$$
