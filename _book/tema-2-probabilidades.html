@@ -24,7 +24,7 @@
 <meta name="author" content="Alvaro Chirino Gutierrez" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2020-12-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -617,41 +619,40 @@ Sera que la siguiente clase es un algebra de eventos:</p>
 <span id="cb29-2"><a href="tema-2-probabilidades.html#cb29-2"></a><span class="kw">set.seed</span>(<span class="dv">999</span>)</span>
 <span id="cb29-3"><a href="tema-2-probabilidades.html#cb29-3"></a>aux&lt;-<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="fl">0.5</span>)</span>
 <span id="cb29-4"><a href="tema-2-probabilidades.html#cb29-4"></a>aux</span></code></pre></div>
-<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 1
-##   [30] 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 0 1 0 1
-##   [59] 0 1 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 0 0 0
-##   [88] 1 1 0 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1
-##  [117] 1 0 0 1 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1
-##  [146] 1 0 0 1 0 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0
-##  [175] 0 0 1 1 1 0 1 0 1 1 0 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 0 0 1
-##  [204] 1 0 1 0 0 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1
-##  [233] 1 1 1 0 0 1 1 0 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0
-##  [262] 0 0 1 1 0 0 0 0 1 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1 0
-##  [291] 0 1 1 1 1 0 0 0 1 0 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 0 0
-##  [320] 0 1 1 1 0 0 1 0 1 0 1 1 0 1 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0
-##  [349] 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1
-##  [378] 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0
-##  [407] 1 1 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1
-##  [436] 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 1 1 0
-##  [465] 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 1 1 0 0 1
-##  [494] 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1
-##  [523] 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1 1 1 0 1 0 1 0 1 1 0 1
-##  [552] 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 1 0 0
-##  [581] 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1 0 1 1 0 1 1 0 0 1 1 0 1 0 1
-##  [610] 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0
-##  [639] 1 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1
-##  [668] 0 0 0 1 0 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0
-##  [697] 0 0 0 1 1 1 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1
-##  [726] 1 0 0 1 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0 1 1 0 0
-##  [755] 0 0 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1 0 1 0
-##  [784] 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1 0 0
-##  [813] 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 0 1 0 1
-##  [842] 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0
-##  [871] 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 1
-##  [900] 0 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1
-##  [929] 0 0 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0
-##  [958] 0 1 1 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1
-##  [987] 0 1 1 0 0 0 1 1 1 0 1 0 1 1</code></pre>
+<pre><code>##    [1] 0 1 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 1 0
+##   [31] 0 0 1 1 1 1 1 1 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 0 1 0 1 0 1
+##   [61] 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 0 0 0 1 1 0
+##   [91] 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 1
+##  [121] 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0
+##  [151] 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 0
+##  [181] 1 0 1 1 0 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 0 0 1 1 0 1 0 0 1 1
+##  [211] 0 1 1 0 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0
+##  [241] 0 0 1 1 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 1 1 0 0 0 0 1
+##  [271] 1 1 0 1 0 1 0 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 1 0 0 0 1 0
+##  [301] 1 0 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1
+##  [331] 1 0 1 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0 0 0 1 1 0 0 1 1 0
+##  [361] 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0
+##  [391] 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0
+##  [421] 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 1 0 0 0 0 1 0 1 1 1
+##  [451] 0 1 1 1 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 1 1 1 0 0 0 0
+##  [481] 0 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1
+##  [511] 0 1 1 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 1 1 1 0 1
+##  [541] 1 1 0 1 0 1 0 1 1 0 1 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0 0 0 1
+##  [571] 1 0 0 1 0 0 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1 0 1 1 0 1
+##  [601] 1 0 0 1 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0 0 1 1 0 1 1
+##  [631] 1 0 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 0 1 1 1 0 1
+##  [661] 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 0
+##  [691] 0 1 0 0 0 0 0 0 0 1 1 1 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1
+##  [721] 1 1 1 1 1 1 0 0 1 0 0 1 1 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0
+##  [751] 1 1 0 0 0 0 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 0 0 0 1
+##  [781] 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1
+##  [811] 0 0 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 0 1 0
+##  [841] 1 0 0 1 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0
+##  [871] 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 1 0
+##  [901] 1 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0
+##  [931] 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0 0 1 1
+##  [961] 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1 0 1 1 0
+##  [991] 0 0 1 1 1 0 1 0 1 1</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tema-2-probabilidades.html#cb31-1"></a><span class="kw">sum</span>(aux)</span></code></pre></div>
 <pre><code>## [1] 496</code></pre>
 <p><span class="math inline">\(P(escudo)=\frac{496}{1000}=0.496\)</span></p>
@@ -858,7 +859,7 @@ Por el axioma 3.</p>
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">A</th>
 <th align="right">B</th>
 <th align="right">C</th>
@@ -867,28 +868,28 @@ Por el axioma 3.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>POL</td>
+<td align="left">POL</td>
 <td align="right">20</td>
 <td align="right">20</td>
 <td align="right">10</td>
 <td align="right">50</td>
 </tr>
 <tr class="even">
-<td>ACA</td>
+<td align="left">ACA</td>
 <td align="right">10</td>
 <td align="right">10</td>
 <td align="right">20</td>
 <td align="right">40</td>
 </tr>
 <tr class="odd">
-<td>RES</td>
+<td align="left">RES</td>
 <td align="right">30</td>
 <td align="right">50</td>
 <td align="right">30</td>
 <td align="right">110</td>
 </tr>
 <tr class="even">
-<td>Sum</td>
+<td align="left">Sum</td>
 <td align="right">60</td>
 <td align="right">80</td>
 <td align="right">60</td>
@@ -939,7 +940,7 @@ Notar algo: <span class="math inline">\(P(D5)=\frac{1}{6}=P(D5/C)=P(D5/S)\)</spa
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">ING</th>
 <th align="right">ECO</th>
 <th align="right">INF</th>
@@ -949,7 +950,7 @@ Notar algo: <span class="math inline">\(P(D5)=\frac{1}{6}=P(D5/C)=P(D5/S)\)</spa
 </thead>
 <tbody>
 <tr class="odd">
-<td>LAPAZ</td>
+<td align="left">LAPAZ</td>
 <td align="right">100</td>
 <td align="right">40</td>
 <td align="right">50</td>
@@ -957,7 +958,7 @@ Notar algo: <span class="math inline">\(P(D5)=\frac{1}{6}=P(D5/C)=P(D5/S)\)</spa
 <td align="right">210</td>
 </tr>
 <tr class="even">
-<td>ELALTO</td>
+<td align="left">ELALTO</td>
 <td align="right">20</td>
 <td align="right">60</td>
 <td align="right">50</td>
@@ -965,7 +966,7 @@ Notar algo: <span class="math inline">\(P(D5)=\frac{1}{6}=P(D5/C)=P(D5/S)\)</spa
 <td align="right">140</td>
 </tr>
 <tr class="odd">
-<td>VIACHA</td>
+<td align="left">VIACHA</td>
 <td align="right">5</td>
 <td align="right">0</td>
 <td align="right">1</td>
@@ -973,7 +974,7 @@ Notar algo: <span class="math inline">\(P(D5)=\frac{1}{6}=P(D5/C)=P(D5/S)\)</spa
 <td align="right">6</td>
 </tr>
 <tr class="even">
-<td>Sum</td>
+<td align="left">Sum</td>
 <td align="right">125</td>
 <td align="right">100</td>
 <td align="right">101</td>
